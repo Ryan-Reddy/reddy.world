@@ -1,0 +1,80 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --kpn-groen: #00c300;
+  --kpn-blauw: #00aaff;
+  --kpn-wit: #ffffff;
+  --kpn-grijs: #e2e2e2;
+  --kpn-zwart: #1e1e1e;
+  --kpn-warning-red: red;
+  --fullwidth: 100%;
+}
+
+body {
+  margin: 0;
+  /*display: flex;*/
+  place-items: center;
+  min-width: 320px;
+  min-height: 100%;
+
+  background-image: url('/branding/achtergrondshapes.webp');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  /*background-position: top;*/
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: var(--kpn-wit);
+    background-color: var(--kpn-zwart);
+  }
+  main {
+    color: var(--kpn-wit);
+    background-color: var(--kpn-zwart);
+  }
+  table {
+    color: var(--kpn-wit);
+    background: var(--kpn-zwart);
+  }
+  :root .entire_menu_bar {
+    color: var(--kpn-wit);
+    background-color: var(--kpn-zwart);
+  }
+  nav ul li a {
+    color: var(--kpn-wit);
+    background-color: var(--kpn-zwart);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: var(--kpn-zwart);
+    background-color: var(--kpn-wit);
+  }
+  main {
+    color: var(--kpn-zwart);
+    background-color: var(--kpn-wit);
+  }
+  table {
+    color: var(--kpn-wit);
+    background: var(--kpn-wit);
+  }
+  :root .entire_menu_bar {
+    color: var(--kpn-wit);
+    background-color: var(--kpn-wit);
+  }
+
+}
