@@ -2,8 +2,8 @@
   "name": "reddy.world",
   "version": "0.0.1",
   "description": "Ryan Reddy's World",
-  "keywords": "Ryan van Lil Reddy computer science engineer cv developer",
-  "license": "Pirate",
+  "keywords": ["Ryan","van Lil","Reddy","computer","science","engineer","cv","developer"],
+  "license": "Pirate License",
   "author": "Ryan Reddy",
   "scripts": {
     "dev": "vite",
@@ -12,11 +12,9 @@
     "test": "echo \"Error: no test specified in package.json\" && exit 1"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.4"
+    "vite": "^4.0.4"
   },
   "dependencies": {
-    "@vaadin/router": "^1.7.4",
-    "firebase": "^9.15.0",
-    "vite": "^4.0.4"
+    "@vaadin/router": "^1.7.4"
   }
 }
