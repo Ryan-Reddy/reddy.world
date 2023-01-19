@@ -11,9 +11,6 @@ export default defineConfig({
       entry: 'index.html',
       formats: ['es'],
     },
-    rollupOptions: {
-      external: /^lit/,
-    },
     outDir: '../dist',
   },
 });
