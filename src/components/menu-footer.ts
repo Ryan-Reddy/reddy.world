@@ -30,22 +30,27 @@ export class MenuFooter extends LitElement {
         opacity: 1;
     }
 
+
     footer {
-    / / width: 100 %;
-    / / height: 8 em;
-    / / bottom: 0;
-    / / position: fixed;
-        padding: 1rem 1.5rem;
+      /*width: 100%;*/
+      /*height: 8em;*/
+      /*bottom: 0;*/
+      /*position: fixed;*/
+      padding: 1rem 1.5rem;
 
-        overflow: hidden;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+      overflow: hidden;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-        border: 1px solid var(--kpn-zwart);
-        background-color: var(--kpn-zwart);
-        color: var(--kpn-wit);
-        opacity: 1;
+      position: relative;
+      /* negative value of footer height */
+      height: 180px;
+
+      border: 1px solid var(--kpn-zwart);
+      background-color: var(--kpn-zwart);
+      color: var(--kpn-wit);
+      opacity: 1;
     }
 
     input {

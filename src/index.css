@@ -24,6 +24,8 @@
 }
 
 body {
+  height: 100%;
+
   margin: 0;
   /*display: flex;*/
   place-items: center;
@@ -34,6 +36,10 @@ body {
   background-repeat: no-repeat;
   background-size: 100%;
   /*background-position: top;*/
+
+  overflow: auto;
+  /*padding-bottom: 180px;*/
+  /* must be same height as the footer */
 
 }
 .side-by-side {
@@ -84,3 +90,18 @@ body {
   }
 
 }
+
+.entire_menu_bar {
+  height: 8em;
+  border: 1px solid var(--kpn-zwart);
+  background-color: #151617;
+
+  position: relative;
+  overflow: hidden;
+  padding: 1rem 1.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+

@@ -221,16 +221,6 @@ export class MenuNav extends LitElement {
               <li>
                 <a class="nav-button" href="home-page" id="home-page">Home</a>
               </li>
-              <li>
-                <a class="nav-button" href="reis-registreren" id="Reis Registreren"
-                  >Reis Registreren</a
-                >
-              </li>
-              <li>
-                <a class="nav-button" href="#" id="Reisgeschiedenis"
-                  >Reisgeschiedenis</a
-                >
-              </li>
               <li><a class="nav-button" href="#" id="Account">Account</a></li>
               <li><a class="nav-button" href="#" id="Support">Support</a></li>
               <li>
