@@ -47,7 +47,7 @@ export class ReadmeElement extends LitElement {
                 <title>README</title>
                 <script
                         type="module"
-                        src="/node_modules/zero-md"
+                        src="zero-md"
                 ></script>
             </head>
             <body>

@@ -25,7 +25,8 @@
   },
   "dependencies": {
     "@vaadin/router": "^1.7.4",
-    "lit": "^2.6.1"
+    "lit": "^2.6.1",
+    "zero-md": "^2.4.0"
   },
   "main": "vite.config.js",
   "repository": {

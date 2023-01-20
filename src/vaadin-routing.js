@@ -57,6 +57,11 @@ router.setRoutes([
     component: 'home-page-element',
   },
   {
+    name: 'home-page-element', // doet niks impliciet
+    path: '/',                  // standaard landingspage
+    component: 'home-page-element',
+  },
+  {
     name: 'not-found-element', // doet niks impliciet
     path: '(.*)',           // 404 must be last in this file
     component: 'not-found-element',
