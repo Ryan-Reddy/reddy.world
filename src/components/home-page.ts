@@ -23,7 +23,7 @@ export class HomePage extends LitElement {
       }
 
       main {
-        background-color: var(--kpn-zwart);
+        background-color: var(--zwart);
       }
 
       ul {
@@ -36,11 +36,11 @@ export class HomePage extends LitElement {
 
       a {
         font-weight: 500;
-        color: var(--kpn-grijs);
+        color: var(--grijs);
       }
 
       a:hover {
-        color: var(--kpn-groen);
+        color: var(--groen);
       }
 
       h1 {
@@ -55,15 +55,15 @@ export class HomePage extends LitElement {
         font-size: 1em;
         font-weight: 500;
         font-family: inherit;
-        background-color: var(--kpn-wit);
-        color: var(--kpn-zwart);
+        background-color: var(--wit);
+        color: var(--zwart);
 
         cursor: pointer;
         transition: border-color 0.25s;
       }
 
       button:hover {
-        border-color: var(--kpn-groen);
+        border-color: var(--groen);
       }
 
       button:focus,

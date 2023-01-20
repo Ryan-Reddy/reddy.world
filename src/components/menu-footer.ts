@@ -47,9 +47,9 @@ export class MenuFooter extends LitElement {
         /* negative value of footer height */
         height: 180px;
 
-        border: 1px solid var(--kpn-zwart);
-        background-color: var(--kpn-zwart);
-        color: var(--kpn-wit);
+        border: 1px solid var(--zwart);
+        background-color: var(--zwart);
+        color: var(--wit);
         opacity: 1;
       }
 
@@ -76,7 +76,7 @@ export class MenuFooter extends LitElement {
       }
 
       nav ul li a {
-        color: var(--kpn-wit);
+        color: var(--wit);
         border-radius: 3px;
         text-transform: uppercase;
         padding: 5px;
@@ -144,9 +144,9 @@ export class MenuFooter extends LitElement {
 
       @media (prefers-color-scheme: light) {
         footer, nav ul li a {
-          color: var(--kpn-zwart);
-          background-color: var(--kpn-wit);
-          border-color: var(--kpn-wit);
+          color: var(--zwart);
+          background-color: var(--wit);
+          border-color: var(--wit);
         }
       }
     `;

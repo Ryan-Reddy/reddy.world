@@ -29,8 +29,8 @@ export class SupportElement extends LitElement {
         display: none;
         pointer-events: none;
         color: lightgray;
-        foreground-color: var(--kpn-grijs);
-        background-color: var(--kpn-grijs);
+        foreground-color: var(--grijs);
+        background-color: var(--grijs);
         required: invalid;
       }
 

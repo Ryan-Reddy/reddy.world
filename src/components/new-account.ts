@@ -29,8 +29,8 @@ export class NewAccount extends LitElement {
         display: none;
         pointer-events: none;
         color: lightgrey;
-        foreground-color: var(--kpn-grijs);
-        background-color: var(--kpn-grijs);
+        foreground-color: var(--grijs);
+        background-color: var(--grijs);
         required: invalid;
       }
 

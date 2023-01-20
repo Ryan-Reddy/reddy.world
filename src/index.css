@@ -17,12 +17,12 @@
   --silver: #cccccc;
   --gold: #ffcc00;
 
-  --kpn-groen: #00c300;
-  --kpn-blauw: #00aaff;
-  --kpn-wit: #ffffff;
-  --kpn-grijs: #e2e2e2;
-  --kpn-zwart: #1e1e1e;
-  --kpn-warning-red: red;
+  --groen: #00c300;
+  --blauw: #00aaff;
+  --wit: #ffffff;
+  --grijs: #e2e2e2;
+  --zwart: #1e1e1e;
+  --warning-red: red;
   --fullwidth: 100%;
 }
 
@@ -54,57 +54,57 @@ body {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    color: var(--kpn-wit);
-    background-color: var(--kpn-zwart);
+    color: var(--wit);
+    background-color: var(--zwart);
   }
 
   main {
-    color: var(--kpn-wit);
-    background-color: var(--kpn-zwart);
+    color: var(--wit);
+    background-color: var(--zwart);
   }
 
   table {
-    color: var(--kpn-wit);
-    background: var(--kpn-zwart);
+    color: var(--wit);
+    background: var(--zwart);
   }
 
   :root .entire_menu_bar {
-    color: var(--kpn-wit);
-    background-color: var(--kpn-zwart);
+    color: var(--wit);
+    background-color: var(--zwart);
   }
 
   nav ul li a {
-    color: var(--kpn-wit);
-    background-color: var(--kpn-zwart);
+    color: var(--wit);
+    background-color: var(--zwart);
   }
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: var(--kpn-zwart);
-    background-color: var(--kpn-wit);
+    color: var(--zwart);
+    background-color: var(--wit);
   }
 
   main {
-    color: var(--kpn-zwart);
-    background-color: var(--kpn-wit);
+    color: var(--zwart);
+    background-color: var(--wit);
   }
 
   table {
-    color: var(--kpn-wit);
-    background: var(--kpn-wit);
+    color: var(--wit);
+    background: var(--wit);
   }
 
   :root .entire_menu_bar {
-    color: var(--kpn-wit);
-    background-color: var(--kpn-wit);
+    color: var(--wit);
+    background-color: var(--wit);
   }
 
 }
 
 .entire_menu_bar {
   height: 8em;
-  border: 1px solid var(--kpn-zwart);
+  border: 1px solid var(--zwart);
   background-color: #151617;
 
   position: relative;

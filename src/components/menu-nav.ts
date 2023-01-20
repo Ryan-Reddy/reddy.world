@@ -32,15 +32,16 @@ export class MenuNav extends LitElement {
       body {
         font-size: 14px;
         font-family: Montserrat;
-        color: var(--kpn-wit);
+        color: var(--wit);
         font-size: 1em;
         opacity: 1;
       }
 
       .entire_menu_bar {
         height: 8em;
-        border: 1px solid var(--kpn-zwart);
-        background-color: #151617;
+        border: 1px solid;
+        background-color: var(--zwart);
+        border-bottom-color: var(--silver);
 
         position: relative;
         overflow: hidden;
@@ -74,7 +75,7 @@ export class MenuNav extends LitElement {
       }
 
       nav ul li a {
-        color: var(--kpn-wit);
+        color: var(--wit);
         border-radius: 3px;
         text-transform: uppercase;
         padding: 5px;
@@ -169,20 +170,19 @@ export class MenuNav extends LitElement {
       @media (prefers-color-scheme: light) {
         .entire_menu_bar,
         nav ul li a {
-          color: var(--kpn-zwart);
-          background-color: var(--kpn-wit);
-          border-color: var(--kpn-wit);
-        }
+          color: var(--zwart);
+          background-color: var(--wit);
+          border-bottom-color: var(--gold);
 
-        .ingelogd_als {
-          color: red;
-        }
+          .ingelogd_als {
+            color: red;
+          }
 
-        img {
-          -webkit-filter: invert(1);
-          filter: invert(0);
+          img {
+            -webkit-filter: invert(1);
+            filter: invert(0);
+          }
         }
-      }
     `;
   }
 

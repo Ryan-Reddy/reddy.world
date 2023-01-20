@@ -24,6 +24,7 @@ export class Login extends LitElement {
         box-sizing: border-box;
         text-decoration: none;
       }
+
       .full {
         width: 100%;
       }
@@ -40,8 +41,9 @@ export class Login extends LitElement {
 
       table {
         padding: 1em;
-        background: var(--kpn-blauw);
+        background: var(--blauw);
       }
+
       label {
         /*font-size: 2em;*/
         /*visibility: hidden;*/
@@ -75,7 +77,7 @@ export class Login extends LitElement {
       fieldset {
         padding-left: 1em;
         padding-right: 1em;
-        font-color: var(--kpn-zwart);
+        font-color: var(--zwart);
       }
 
       #vervoerstype {
@@ -88,14 +90,15 @@ export class Login extends LitElement {
         /*margin: 0.1em;*/
         border: none;
         border-radius: 4px;
-        background-color: var(--kpn-wit);
-        color: var(--kpn-zwart);
-        background-color: var(--kpn-grijs);
+        background-color: var(--wit);
+        color: var(--zwart);
+        background-color: var(--grijs);
         vertical-align: middle;
         text-indent: 0.7em;
       }
 
       /*Buttons: */
+
       input[type='button'],
       input[type='submit'],
       input[type='reset'] {
@@ -113,8 +116,8 @@ export class Login extends LitElement {
         display: none;
         pointer-events: none;
         color: lightgrey;
-        foreground-color: var(--kpn-grijs);
-        background-color: var(--kpn-grijs);
+        foreground-color: var(--grijs);
+        background-color: var(--grijs);
         required: invalid;
       }
     `;

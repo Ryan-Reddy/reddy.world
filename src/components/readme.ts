@@ -30,7 +30,7 @@ export class ReadmeElement extends LitElement {
         pointer-events: none;
         color: lightgrey;
         foreground-color: grey;
-        background-color: var(--kpn-grijs);
+        background-color: var(--grijs);
         required: invalid;
       }
 

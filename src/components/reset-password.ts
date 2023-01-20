@@ -30,10 +30,11 @@ export class ResetPassword extends LitElement {
         display: none;
         pointer-events: none;
         color: lightgrey;
-        foreground-color: var(--kpn-grijs);
-        background-color: var(--kpn-grijs);
+        foreground-color: var(--grijs);
+        background-color: var(--grijs);
         required: invalid;
       }
+
       button {
         width: 66%;
         height: 2em;

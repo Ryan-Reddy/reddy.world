@@ -47,7 +47,7 @@ export class Accountinfo extends LitElement {
       }
 
       table {
-        background: var(--kpn-blauw);
+        background: var(--blauw);
         max-height: 100%;
         padding: 1em;
       }
@@ -96,7 +96,7 @@ export class Accountinfo extends LitElement {
       fieldset {
         padding-left: 1em;
         padding-right: 1em;
-        font-color: var(--kpn-zwart);
+        font-color: var(--zwart);
       }
 
       .inputfield {
@@ -105,7 +105,7 @@ export class Accountinfo extends LitElement {
         /*margin: 0.1em;*/
         border: none;
         border-radius: 4px;
-        background-color: var(--kpn-blauw);
+        background-color: var(--blauw);
         vertical-align: middle;
         text-indent: 0.7em;
       }
@@ -114,9 +114,9 @@ export class Accountinfo extends LitElement {
 
       input[type=button], input[type=submit], input[type=reset] {
         width: 33%;
-        background-color: var(--kpn-wit);
+        background-color: var(--wit);
         border: none;
-        color: var(--kpn-wit);
+        color: var(--wit);
         padding: 1em 0px;
         text-decoration: none;
         margin: 4px 2px;
@@ -127,8 +127,8 @@ export class Accountinfo extends LitElement {
         display: none;
         pointer-events: none;
         color: lightgrey;
-        foreground-color: var(--kpn-grijs);
-        background-color: var(--kpn-grijs);
+        foreground-color: var(--grijs);
+        background-color: var(--grijs);
         required: invalid;
       }
 
