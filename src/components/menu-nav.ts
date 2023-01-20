@@ -201,7 +201,7 @@ export class MenuNav extends LitElement {
     // TODO create response menu with: https://www.codingnepalweb.com/responsive-dropdown-menu-bar-html-css/
     return html`
       <body id="bodyofmenubar">
-      <a href="#" class="ingelogd_als">ingelogd als ${this.naamGebruiker}</a>
+<!--      <a href="#" class="ingelogd_als">ingelogd als ${this.naamGebruiker}</a>-->
       <div class="entire_menu_bar">
         <img
           @click=${this.logoClicked}
