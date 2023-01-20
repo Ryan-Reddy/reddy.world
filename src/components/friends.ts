@@ -48,10 +48,14 @@ export class ReadmeElement extends LitElement {
 
       </head>
       <body>
+
       <main>
         <h1>Friends</h1>
-        <a href="https://www.noordermeer.tech">
-        <a href="https://kingeve.nl/">
+
+        <a href="https://www.noordermeer.tech">Martijn Noordermeer</a>
+        <a href="https://kingeve.nl/">King Eve</a>
+        <a href="https://www.studiobinnenstad.com/">Studio Binnenstad</a>
+        <a href="https://amsterdamsefrisdrankfabriek.nl/">Amsterdamse Frisdrank Fabriek</a>
 
       </main>
 
