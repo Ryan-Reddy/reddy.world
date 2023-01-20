@@ -1,4 +1,5 @@
-import { LitElement, html, customElement, property, css } from 'lit-element';
+import { css, html, LitElement } from 'lit';
+import { customElement, property } from 'lit/decorators.js';
 
 /**
  * An example element.
@@ -63,7 +64,7 @@ export class MenuNav extends LitElement {
       nav ul {
         float: right;
         margin-right: 8em;
-        padding-right: 0 8em;
+        padding-right: 8em;
       }
 
       nav ul li {
@@ -160,7 +161,7 @@ export class MenuNav extends LitElement {
 
         nav ul li a {
           font-size: 20px;
-        }
+        };
 
         a:hover,
         a.active {

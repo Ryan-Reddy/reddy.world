@@ -1,5 +1,5 @@
-import { LitElement, css, html } from 'lit';
-import { customElement } from 'lit-element';
+import { css, html, LitElement } from 'lit';
+import { customElement, property } from 'lit/decorators.js';
 
 /**
  * An example element.
@@ -21,7 +21,7 @@ export class HomePage extends LitElement {
         padding: 2rem;
         text-align: center;
       }
-      
+
       main {
         background-color: var(--kpn-zwart);
       }
@@ -36,7 +36,7 @@ export class HomePage extends LitElement {
         font-weight: 500;
         color: var(--kpn-grijs);
       }
-      
+
       a:hover {
         color: var(--kpn-groen);
       }
@@ -53,8 +53,9 @@ export class HomePage extends LitElement {
         font-size: 1em;
         font-weight: 500;
         font-family: inherit;
-        background-color: color: var(--kpn-zwart);
-        
+        background-color: var(--kpn-wit);
+        color: var(--kpn-zwart);
+
         cursor: pointer;
         transition: border-color 0.25s;
       }
@@ -91,7 +92,7 @@ export class HomePage extends LitElement {
                 <input id="registreerReis" onclick="window.open('/v2fe-v2a-2/src/main/webapp/formulier-reizen','_self')"
                        type="button" value="registreerReis">
             </li>
-    
+
         <h2>wiki and info/</h2>
         <ul class="externallinks">
             <li>
@@ -117,9 +118,9 @@ export class HomePage extends LitElement {
                     reizen</a>
             </li>
         </ul>
-    
+
         <simple-greeting name="World"></simple-greeting>
-    
+
     </main>
       </body>
     `;

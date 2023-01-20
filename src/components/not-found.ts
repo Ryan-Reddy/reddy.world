@@ -2,7 +2,7 @@ import { css, html, LitElement } from 'lit';
 import { customElement, property } from 'lit-element';
 
 /**
- * An example element.
+ * A support page element.
  *
  * @slot - This element has a slot
  * @csspart button - The button

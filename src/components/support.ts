@@ -1,5 +1,5 @@
 import { css, html, LitElement } from 'lit';
-import { customElement, property } from 'lit-element';
+import { customElement, property } from 'lit/decorators.js';
 
 /**
  * An example element.
@@ -10,7 +10,7 @@ import { customElement, property } from 'lit-element';
 @customElement('support-element')
 export class SupportElement extends LitElement {
   @property() _hiddenElement = 'hidden';
-  @property() currentPage: string;
+  @property() currentPage: string | undefined;
   constructor() {
     super();
   }

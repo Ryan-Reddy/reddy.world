@@ -2,7 +2,7 @@ import { css, html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 /**
- * An example element.
+ * A Login element.
  *
  * @slot - This element has a slot
  * @csspart button - The button

@@ -1,5 +1,5 @@
 import { css, html, LitElement } from 'lit';
-import { customElement, property } from 'lit-element';
+import { customElement, property } from 'lit/decorators.js';
 
 /**
  * An example element.
@@ -24,12 +24,12 @@ export class Login extends LitElement {
         box-sizing: border-box;
         text-decoration: none;
         }
-        .full { 
-        width: 100%; 
-        height: 100%; 
+        .full {
+        width: 100%;
+        height: 100%;
         overflow: auto
         }
-        
+
         H1 {
         padding-top: 1em;
         font-size: 2em;
@@ -38,7 +38,7 @@ export class Login extends LitElement {
         header p{
           font-size: 1em;
         }
-        
+
         .tablecontainer {
           height: 60vh;
           overflow: auto
@@ -53,7 +53,7 @@ export class Login extends LitElement {
           border-bottom: 1px dotted #ddd;
           border-collapse: collapse;
         }
-        tr:hover {background-color: none;}
+        tr:hover {background-color: red;}
 
 
         label {
@@ -61,37 +61,37 @@ export class Login extends LitElement {
             /*visibility: hidden;*/
             display: none;
         }
-        
+
         form {
             margin-top: 1em;
             padding-left: 1em;
             padding-right: 1em;
         }
-        
+
         ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
             overflow: hidden;
         }
-        
+
         ol {
             list-style-type: none;
             margin: 0;
             padding: 0;
             overflow: hidden;
         }
-        
+
         li {
             padding: 0.1em;
         }
-        
+
         fieldset {
             padding-left: 1em;
             padding-right: 1em;
             font-color: var(--kpn-zwart);
         }
-        
+
         .inputfield {
             width: 100%;
             padding: 0.8em 0.4px;
@@ -102,7 +102,7 @@ export class Login extends LitElement {
             vertical-align: middle;
             text-indent: 0.7em;
         }
-        
+
         /*Buttons: */
         input[type=button], input[type=submit], input[type=reset] {
             width: 33%;
@@ -114,7 +114,7 @@ export class Login extends LitElement {
             margin: 4px 2px;
             cursor: pointer;
         }
-        
+
         .visibility-hidden {
             display: none;
             pointer-events: none;
@@ -123,7 +123,7 @@ export class Login extends LitElement {
             background-color: var(--kpn-grijs);
             required: invalid;
         }
-        
+
     @media (max-width: 858px) {
     .hiddensmolscreen {
       display: none;

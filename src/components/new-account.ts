@@ -1,8 +1,8 @@
 import { css, html, LitElement } from 'lit';
-import { customElement, property } from 'lit-element';
+import { customElement, property } from 'lit/decorators.js';
 
 /**
- * An example element.
+ * A new account element.
  *
  * @slot - This element has a slot
  * @csspart button - The button
@@ -10,7 +10,7 @@ import { customElement, property } from 'lit-element';
 @customElement('new-account')
 export class NewAccount extends LitElement {
   @property() _hiddenElement = 'hidden';
-  @property() currentPage: string;
+  @property() currentPage: string | undefined;
   constructor() {
     super();
   }
