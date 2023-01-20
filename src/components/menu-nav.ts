@@ -90,8 +90,8 @@ export class MenuNav extends LitElement {
 
       a.active,
       a:hover {
-        background: var(--kpn-groen);
-        transition: 0.5s;
+        background: var(--silver);
+        transition: 0.6s;
       }
 
       .nav-button {

@@ -83,8 +83,8 @@ export class MenuFooter extends LitElement {
       }
 
       a.active, a:hover {
-        background: var(--kpn-groen);
-        transition: .5s;
+        background: var(--gold);
+        transition: .6s;
       }
 
       .nav-button {
