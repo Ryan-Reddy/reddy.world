@@ -204,10 +204,10 @@ export class MenuNav extends LitElement {
       <a href="#" class="ingelogd_als">ingelogd als ${this.naamGebruiker}</a>
       <div class="entire_menu_bar">
         <img
-          @click=${this.kpnHomePageUrl}
+          @click=${this.logoClicked}
           href="#"
           src="${this.siteLogo}"
-          alt="kpn-logo-zwart-op-wit"
+          alt="Unicorn gold crown breaking free from a golden chain by whyn lewis flower oil on panel"
           class="nav-logo"
         />
         <nav>
@@ -246,7 +246,7 @@ export class MenuNav extends LitElement {
     }
   }
 
-  kpnHomePageUrl() {
+  logoClicked() {
     window.open(this._logoBarClickedLink);
   }
 }

@@ -95,8 +95,7 @@ export class HomePage extends LitElement {
           </div>
 
           <div class="side-by-side">
-            <img src="unicorn-break-chains.jpg"
-                 alt="Unicorn gold crown breaking free from a golden chain by whyn lewis flower oil on panel">
+
             <img src="IMG_7430.JPG" height="845" width="590"
                  alt="harry clarke faust illustration of witch-queen and young prince with elegant fingers, full moon in the background"/>
           </div>
