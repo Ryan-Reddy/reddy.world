@@ -173,6 +173,9 @@ export class MenuFooter extends LitElement {
               <a class="nav-button" href="readme" id="Readme">Readme</a>
             </li>
             <li>
+              <a class="friends-button" href="friends" id="friends-button">Friends</a>
+            </li>
+            <li>
               <a class="nav-button" href="#" id="Logout">Log out</a>
             </li>
           </ul>

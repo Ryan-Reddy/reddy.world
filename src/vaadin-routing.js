@@ -3,12 +3,13 @@ import {Router} from '@vaadin/router';
 import './components/account-info';
 import './components/home-page';
 import './components/login';
-import './components/menu-footer';
+import './components/generic/menu-footer';
 import './components/new-account';
-import './components/not-found';
+import './components/generic/not-found';
 import './components/readme';
 import './components/reset-password';
 import './components/support';
+import './components/friends';
 
 
 const app = document.querySelector('#app');
@@ -60,6 +61,11 @@ router.setRoutes([
     name: 'home-page-element', // doet niks impliciet
     path: '/',                  // standaard landingspage
     component: 'home-page-element',
+  },
+  {
+    name: 'friends-element', // doet niks impliciet
+    path: '/friends',                  // standaard landingspage
+    component: 'friends-element',
   },
   {
     name: 'not-found-element', // doet niks impliciet
