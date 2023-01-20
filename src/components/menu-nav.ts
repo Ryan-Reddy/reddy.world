@@ -34,10 +34,6 @@ export class MenuNav extends LitElement {
         font-size: 1em;
         opacity: 1;
       }
-      li {
-        list-style: none;
-      }
-
 
       .entire_menu_bar {
         height: 8em;
@@ -59,11 +55,6 @@ export class MenuNav extends LitElement {
         text-align: left;
       }
 
-      a.active, a:hover {
-        background: var(--silver);
-        transition: var(--transitionInSeconds);
-      }
-
       nav ul {
         float: right;
         margin-right: 8em;
@@ -83,9 +74,19 @@ export class MenuNav extends LitElement {
         padding: 5px;
       }
 
+      a.active, a:hover {
+        background: var(--silver);
+        transition: var(--transitionInSeconds);
+        color: var(--zwart);
+      }
+
       .nav-button {
         opacity: 1;
         text-align: center;
+      }
+
+      li {
+        list-style: none;
       }
 
       .nav-logo {
@@ -96,11 +97,6 @@ export class MenuNav extends LitElement {
         right: 2em;
         overflow: hidden;
         padding: 0 2em;
-      }
-
-      img {
-        //-webkit-filter: invert(1);
-        //filter: invert(1);
       }
 
       .nav-logo:hover {
@@ -148,8 +144,28 @@ export class MenuNav extends LitElement {
         } nav ul li a {
           font-size: 20px;
         };
+
+        a:hover, a.active {
+          background: none;
+        }
+
+        #check:checked ~ ul {
+          left: 0;
+        }
       }
 
+      @media (prefers-color-scheme: light) {
+        footer, nav ul li a {
+          color: var(--zwart);
+          background-color: var(--wit);
+          border-color: var(--wit);
+        }
+        a.active, a:hover {
+          background: var(--gold);
+          transition: var(--transitionInSeconds);
+          color: var(--zwart);
+        }
+      }
     `;
   }
 
