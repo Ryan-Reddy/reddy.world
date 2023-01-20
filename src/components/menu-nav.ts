@@ -221,8 +221,8 @@ export class MenuNav extends LitElement {
               <li>
                 <a class="nav-button" href="home-page" id="home-page">Home</a>
               </li>
-              <li><a class="nav-button" href="#" id="Account">Account</a></li>
-              <li><a class="nav-button" href="#" id="Support">Support</a></li>
+              <li><a class="nav-button" href="account-info" id="Account">Account</a></li>
+              <li><a class="nav-button" href="support" id="Support">Support</a></li>
               <li>
                 <a class="nav-button" href="#" id="Uitloggen">Uitloggen</a>
               </li>
@@ -243,9 +243,10 @@ export class MenuNav extends LitElement {
 
     if (hasChanged) {
       this.currentPage = id;
+      window.open(id);
 
       //notify parent:
-      this.dispatchEvent(new Event('page-chosen'));
+      // this.dispatchEvent(new Event('page-chosen'));
     }
   }
 

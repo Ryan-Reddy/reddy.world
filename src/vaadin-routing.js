@@ -4,7 +4,6 @@ import './components/account-info';
 import './components/home-page';
 import './components/login';
 import './components/menu-footer';
-import './components/menu-nav';
 import './components/new-account';
 import './components/not-found';
 import './components/readme';
@@ -51,11 +50,6 @@ router.setRoutes([
     name: 'account-info-element', // doet niks impliciet
     path: '/account-info',
     component: 'account-info-element',
-  },
-  {
-    name: 'menu-nav-element', // doet niks impliciet
-    path: '/menu-nav',
-    component: 'menu-nav-element',
   },
   {
     name: 'home-page-element', // doet niks impliciet

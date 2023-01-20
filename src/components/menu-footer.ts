@@ -164,13 +164,13 @@ export class MenuFooter extends LitElement {
             @click=${this._clickMenu}
             id="nope">
             <li>
-              <a class="nav-button" href="#" id="Login">Log in</a>
+              <a class="nav-button" href="login" id="Login">Log in</a>
             </li>
             <li>
-              <a class="nav-button" href="#" id="Support">Support</a>
+              <a class="nav-button" href="support" id="Support">Support</a>
             </li>
             <li>
-              <a class="nav-button" href="#" id="Readme">Readme</a>
+              <a class="nav-button" href="readme" id="Readme">Readme</a>
             </li>
             <li>
               <a class="nav-button" href="#" id="Logout">Log out</a>
