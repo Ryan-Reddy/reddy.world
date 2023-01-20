@@ -53,10 +53,20 @@
   </style>
 </head>
 
-<body>
-  <h1>Page Not Found</h1>
-  <p>Sorry, but the page you were trying to view does not exist.</p>
-</body>
+    <body>
+      <h1>Page Not Found</h1>
+
+      <p>Sorry, but the page you were trying to view does not exist.</p>
+      <br>
+      <audio id="my_audio" src="Yosemitebear_Mountain_Double_Rainbow_1-8-10.mp3" loop="loop"></audio>
+      <img src="../public/double_rainbow.png" height="533" width="800"/>
+
+    </body>
+  <script>
+    window.onload = function () {
+      document.getElementById("my_audio").play();
+    }
+  </script>
 
 </html>
 <!-- IE needs 512+ bytes: https://docs.microsoft.com/archive/blogs/ieinternals/friendly-http-error-pages -->
