@@ -96,8 +96,8 @@ export class NotFound extends LitElement {
       But sometimes that's when you find something you didn't know you where looking for.
     </p>
     <br>
-    <audio id="my_audio" src="Yosemitebear_Mountain_Double_Rainbow_1-8-10.mp3" loop="loop"></audio>
-    <img src="../public/double_rainbow.png" height="533" width="800" alt="double rainbow all the way meme beautiful"/>
+    <audio id="my_audio" src="../../yosemitebear_nountain_double_rainbow.mp3" loop="loop"></audio>
+    <img src="../../double_rainbow.png" height="533" width="800" alt="double rainbow all the way meme beautiful"/>
 
     </body>
     <script>
