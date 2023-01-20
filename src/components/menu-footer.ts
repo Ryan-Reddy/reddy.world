@@ -47,9 +47,7 @@ export class MenuFooter extends LitElement {
         /* negative value of footer height */
         height: 180px;
 
-        border: 1px solid var(--zwart);
         background-color: var(--zwart);
-        color: var(--wit);
         opacity: 1;
       }
 
@@ -83,8 +81,9 @@ export class MenuFooter extends LitElement {
       }
 
       a.active, a:hover {
-        background: var(--gold);
-        transition: .6s;
+        background: var(--silver);
+        transition: var(--transitionInSeconds);
+        color: var(--zwart);
       }
 
       .nav-button {
@@ -147,6 +146,11 @@ export class MenuFooter extends LitElement {
           color: var(--zwart);
           background-color: var(--wit);
           border-color: var(--wit);
+        }
+        a.active, a:hover {
+          background: var(--gold);
+          transition: var(--transitionInSeconds);
+          color: var(--zwart);
         }
       }
     `;

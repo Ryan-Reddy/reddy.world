@@ -1,6 +1,7 @@
 import {css, html, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 
+
 /**
  * An example element.
  *
@@ -30,19 +31,16 @@ export class MenuNav extends LitElement {
       }
 
       body {
-        font-size: 14px;
-        font-family: Montserrat;
-        color: var(--wit);
         font-size: 1em;
         opacity: 1;
       }
+      li {
+        list-style: none;
+      }
+
 
       .entire_menu_bar {
         height: 8em;
-        border: 1px solid;
-        background-color: var(--zwart);
-        border-bottom-color: var(--silver);
-
         position: relative;
         overflow: hidden;
         padding: 1rem 1.5rem;
@@ -54,12 +52,16 @@ export class MenuNav extends LitElement {
 
       .ingelogd_als {
         width: 176px;
-        color: yellow;
         position: relative;
         left: 1em;
-        font-family: Fira Code;
+        font-family: Fira Code,serif;
         font-size: 12px;
         text-align: left;
+      }
+
+      a.active, a:hover {
+        background: var(--silver);
+        transition: var(--transitionInSeconds);
       }
 
       nav ul {
@@ -79,20 +81,6 @@ export class MenuNav extends LitElement {
         border-radius: 3px;
         text-transform: uppercase;
         padding: 5px;
-      }
-
-      a:visited {
-        text-decoration: none;
-      }
-
-      a:link {
-        text-decoration: none;
-      }
-
-      a.active,
-      a:hover {
-        background: var(--silver);
-        transition: 0.6s;
       }
 
       .nav-button {
@@ -116,7 +104,8 @@ export class MenuNav extends LitElement {
       }
 
       .nav-logo:hover {
-        height: 8.5em;
+        height: 7.5em;
+        transition: var(--transitionInSeconds);
       }
 
       #check {
@@ -153,36 +142,14 @@ export class MenuNav extends LitElement {
           top: 80px;
           left: -100%;
           text-align: center;
-          transition: all 0.5s;
+          transition: var(--transitionInSeconds);
         } nav ul li {
           display: block;
         } nav ul li a {
           font-size: 20px;
         };
-
-        a:hover,
-        a.active {
-          background: none;
-          color: #333;
-        }
       }
 
-      @media (prefers-color-scheme: light) {
-        .entire_menu_bar,
-        nav ul li a {
-          color: var(--zwart);
-          background-color: var(--wit);
-          border-bottom-color: var(--gold);
-
-          .ingelogd_als {
-            color: red;
-          }
-
-          img {
-            -webkit-filter: invert(1);
-            filter: invert(0);
-          }
-        }
     `;
   }
 
@@ -201,7 +168,7 @@ export class MenuNav extends LitElement {
     // TODO create response menu with: https://www.codingnepalweb.com/responsive-dropdown-menu-bar-html-css/
     return html`
       <body id="bodyofmenubar">
-<!--      <a href="#" class="ingelogd_als">ingelogd als ${this.naamGebruiker}</a>-->
+      <!--      <a href="#" class="ingelogd_als">ingelogd als ${this.naamGebruiker}</a>-->
       <div class="entire_menu_bar">
         <img
           @click=${this.logoClicked}

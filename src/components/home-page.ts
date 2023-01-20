@@ -23,7 +23,6 @@ export class HomePage extends LitElement {
       }
 
       main {
-        background-color: var(--zwart);
       }
 
       ul {
@@ -36,7 +35,6 @@ export class HomePage extends LitElement {
 
       a {
         font-weight: 500;
-        color: var(--grijs);
       }
 
       a:hover {
@@ -94,9 +92,9 @@ export class HomePage extends LitElement {
 
       <main>
         <div>
-          <h2>This is Ryan Reddy.</h2>
+          <h2></h2>
           <div id="app"></div>
-          <button><a type="button" href="/login">Login</a></button>
+
         </div>
 
         <div class="side-by-side">
@@ -105,7 +103,7 @@ export class HomePage extends LitElement {
                alt="harry clarke faust illustration of witch-queen and young prince with elegant fingers, full moon in the background"/>
         </div>
 
-        <simple-greeting name="World">Get Reddy world!</simple-greeting>
+        <simple-greeting name="World">Here stands Ryan Reddy.</simple-greeting>
 
       </main>
       </body>

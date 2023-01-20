@@ -24,6 +24,9 @@
   --zwart: #1e1e1e;
   --warning-red: red;
   --fullwidth: 100%;
+
+  --transitionInSeconds: 0.6s;
+
 }
 
 body {
@@ -77,6 +80,12 @@ body {
     color: var(--wit);
     background-color: var(--zwart);
   }
+  nav ul li a.active, a:hover {
+    background: var(--silver);
+    transition: var(--transitionInSeconds);
+    color: var(--zwart) !important;
+  }
+
 }
 
 @media (prefers-color-scheme: light) {
@@ -100,11 +109,26 @@ body {
     background-color: var(--wit);
   }
 
+  nav ul li a {
+    color: var(--wit);
+    background-color: var(--zwart);
+  }
+
+  nav ul li a.active, a:hover {
+    background: var(--silver);
+    transition: var(--transitionInSeconds);
+    color: var(--zwart) !important;
+  }
+
+  nav ul li a {
+    background-color: var(--wit);
+    border-bottom-color: var(--gold);
+  }
 }
 
 .entire_menu_bar {
   height: 8em;
-  border: 1px solid var(--zwart);
+  border: 1px solid;
   background-color: #151617;
 
   position: relative;
