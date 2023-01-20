@@ -80,15 +80,15 @@ export class HomePage extends LitElement {
 
   render() {
     return html`
-        <meta name="description" content="KNP medewerkers mobiliteits APP landing page.">
+        <meta name="description" content="Ryan Reddy's world.">
+        <meta title="Home Page">
         <header>
-        <h1 class="header">Welkom bij de KNP medewerkers mobiliteits APP!</h1>
+        <h1 class="header">Get Reddy world!</h1>
         </header>
         <body>
 
         <main>
           <div>
-            <h1>Get Reddy world!</h1>
             <h2>This is Ryan Reddy.</h2>
             <div id="app"></div>
             <button><a type="button" href="/login">Login</a></button>
