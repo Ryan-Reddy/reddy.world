@@ -1,5 +1,5 @@
-import { css, html, LitElement } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import {css, html, LitElement} from 'lit';
+import {customElement, property} from 'lit/decorators.js';
 
 /**
  * An example element.
@@ -11,9 +11,9 @@ import { customElement, property } from 'lit/decorators.js';
 export class MenuNav extends LitElement {
   @property() naamGebruiker = 'Hans Fumphriehd';
   // @property() kpnLogo = '/public/branding/kpn-logo2-jpeg.jpg';
-  @property() kpnLogo = '/kpn-logo2-jpeg.jpg';
+  @property() siteLogo = 'unicorn-break-chains.jpg';
   @property() currentPage: string = '';
-  @property() _kpnHomePageUrl = 'https://www.kpn.com/';
+  @property() _logoBarClickedLink = 'mailto:klugook@gmail.com?subject=Hello fellow wanderer!';
 
   constructor() {
     super();
@@ -110,12 +110,12 @@ export class MenuNav extends LitElement {
       }
 
       img {
-        -webkit-filter: invert(1);
-        filter: invert(1);
+        //-webkit-filter: invert(1);
+        //filter: invert(1);
       }
 
       .nav-logo:hover {
-        height: 3.5em;
+        height: 8.5em;
       }
 
       #check {
@@ -153,13 +153,9 @@ export class MenuNav extends LitElement {
           left: -100%;
           text-align: center;
           transition: all 0.5s;
-        }
-
-        nav ul li {
+        } nav ul li {
           display: block;
-        }
-
-        nav ul li a {
+        } nav ul li a {
           font-size: 20px;
         };
 
@@ -177,9 +173,11 @@ export class MenuNav extends LitElement {
           background-color: var(--kpn-wit);
           border-color: var(--kpn-wit);
         }
+
         .ingelogd_als {
           color: red;
         }
+
         img {
           -webkit-filter: invert(1);
           filter: invert(0);
@@ -203,32 +201,30 @@ export class MenuNav extends LitElement {
     // TODO create response menu with: https://www.codingnepalweb.com/responsive-dropdown-menu-bar-html-css/
     return html`
       <body id="bodyofmenubar">
-        <a href="#" class="ingelogd_als">ingelogd als ${this.naamGebruiker}</a>
-        <div class="entire_menu_bar">
-          <img
-            @click=${this.kpnHomePageUrl}
-            href="#"
-            src="${this.kpnLogo}"
-            alt="kpn-logo-zwart-op-wit"
-            class="nav-logo"
-          />
-          <nav>
-            <input type="checkbox" id="check" />
-            <label for="check">
-              <i class="fas fa-bars"></i>
-            </label>
-            <ul @click=${this._clickMenu} id="nope">
-              <li>
-                <a class="nav-button" href="home-page" id="home-page">Home</a>
-              </li>
-              <li><a class="nav-button" href="account-info" id="Account">Account</a></li>
-              <li><a class="nav-button" href="support" id="Support">Support</a></li>
-              <li>
-                <a class="nav-button" href="#" id="Uitloggen">Uitloggen</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+      <a href="#" class="ingelogd_als">ingelogd als ${this.naamGebruiker}</a>
+      <div class="entire_menu_bar">
+        <img
+          @click=${this.kpnHomePageUrl}
+          href="#"
+          src="${this.siteLogo}"
+          alt="kpn-logo-zwart-op-wit"
+          class="nav-logo"
+        />
+        <nav>
+          <input type="checkbox" id="check"/>
+          <label for="check">
+            <i class="fas fa-bars"></i>
+          </label>
+          <ul @click=${this._clickMenu} id="nope">
+            <li><a class="nav-button" href="home-page" id="home-page">Home</a></li>
+            <li><a class="nav-button" href="account-info" id="Account">Account</a></li>
+            <li><a class="nav-button" href="support" id="Support">Support</a></li>
+            <li>
+              <a class="nav-button" href="#" id="Uitloggen">Uitloggen</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
       </body>
     `;
   }
@@ -251,6 +247,6 @@ export class MenuNav extends LitElement {
   }
 
   kpnHomePageUrl() {
-    window.open(this._kpnHomePageUrl);
+    window.open(this._logoBarClickedLink);
   }
 }
