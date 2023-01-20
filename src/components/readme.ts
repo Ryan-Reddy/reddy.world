@@ -1,5 +1,5 @@
-import { css, html, LitElement } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import {css, html, LitElement} from 'lit';
+import {customElement, property} from 'lit/decorators.js';
 
 /**
  * An example element.
@@ -11,6 +11,7 @@ import { customElement, property } from 'lit/decorators.js';
 export class ReadmeElement extends LitElement {
   @property() _hiddenElement = 'hidden';
   @property() currentPage: string | undefined;
+
   constructor() {
     super();
   }
@@ -32,6 +33,7 @@ export class ReadmeElement extends LitElement {
         background-color: var(--kpn-grijs);
         required: invalid;
       }
+
       button {
         width: 66%;
         height: 2em;
@@ -42,25 +44,26 @@ export class ReadmeElement extends LitElement {
   //TODO properly import /node_modules/zero-md:
   render() {
     return html`
-            <head>
-                <meta charset="UTF-8">
-                <title>README</title>
-                <script
-                        type="module"
-                        src="zero-md"
-                ></script>
-            </head>
-            <body>
-            <main>
-                <h1>README FILE</h1>
-                <zero-md src="README.md"></zero-md>
+      <head>
+        <meta charset="UTF-8">
+        <title>README</title>
+        <script
+          type="module"
+          src="zero-md"
+        ></script>
+      </head>
+      <body>
+      <main>
+        <h1>README FILE</h1>
+        <zero-md src="README.md"></zero-md>
 
-            </main>
+      </main>
 
-            </body>
-            </html>
+      </body>
+      </html>
     `;
   }
+
   _clickForSupport() {
     console.log('Click for support');
     console.log(this._hiddenElement);

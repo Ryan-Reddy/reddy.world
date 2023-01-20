@@ -1,5 +1,6 @@
-import { css, html, LitElement } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import {css, html, LitElement} from 'lit';
+import {customElement, property} from 'lit/decorators.js';
+
 /**
  * An example element.
  *
@@ -10,9 +11,11 @@ import { customElement, property } from 'lit/decorators.js';
 export class ResetPassword extends LitElement {
   @property() _hiddenElement = 'hidden';
   @property() currentPage: string | undefined;
+
   constructor() {
     super();
   }
+
   // TODO: style page reset-password.ts
   static get styles() {
     return css`

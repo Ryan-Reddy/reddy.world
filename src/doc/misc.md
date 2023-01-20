@@ -32,7 +32,8 @@ globally ignore:
     excludesfile = ~/.gitignore
 ```
 
-* More on global ignores: [https://help.github.com/articles/ignoring-files/](https://help.github.com/en/github/using-git/ignoring-files)
+* More on global
+  ignores: [https://help.github.com/articles/ignoring-files/](https://help.github.com/en/github/using-git/ignoring-files)
 * Comprehensive set of ignores on GitHub: https://github.com/github/gitignore
 
 ## .editorconfig
@@ -82,7 +83,8 @@ If you have access to the main server configuration file (usually called
 example, a `<Directory>` section in the main configuration file. This is usually
 the recommended way, as using .htaccess files slows down Apache!
 
-To enable Apache modules locally, please see [the Apache modules documentation](https://github.com/h5bp/server-configs-apache#enable-apache-httpd-modules)
+To enable Apache modules locally, please
+see [the Apache modules documentation](https://github.com/h5bp/server-configs-apache#enable-apache-httpd-modules)
 
 In the repo the `.htaccess` is used for:
 
@@ -118,7 +120,7 @@ be crawled from the website.
 
 By default, the file provided by this project includes the next two lines:
 
-* `User-agent: *` -  the following rules apply to all web robots
+* `User-agent: *` - the following rules apply to all web robots
 * `Disallow:` - everything on the website is allowed to be crawled
 
 If you want to disallow certain pages you will need to specify the path in a
@@ -155,7 +157,8 @@ For more information about `humans.txt`, please see: http://humanstxt.org/
 
 The `browserconfig.xml` file is used to customize the tile displayed when users
 pin your site to the Windows 8.1 start screen. In there you can define custom
-tile colors, custom images or even [live tiles](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/dn455106(v=vs.85)).
+tile colors, custom images or
+even [live tiles](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/samples/dn455106(v=vs.85)).
 
 By default, the file points to 2 placeholder tile images:
 

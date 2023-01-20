@@ -276,7 +276,7 @@ when your app isn't actively running. The badge's value can be a number, or one
 of a predefined list of glyphs.
 
 * [Tutorial on IEBlog with link to badge XML
-schema](https://docs.microsoft.com/en-us/archive/blogs/ie/pinned-sites-in-windows-8)
+  schema](https://docs.microsoft.com/en-us/archive/blogs/ie/pinned-sites-in-windows-8)
 * [Available badge
   values](https://docs.microsoft.com/en-us/uwp/schemas/tiles/badgeschema/element-badge)
 
@@ -291,11 +291,13 @@ schema](https://docs.microsoft.com/en-us/archive/blogs/ie/pinned-sites-in-window
 After creating a [sitemap](https://www.sitemaps.org/protocol.html)
 
 Submit it to search engine tool:
+
 * [Google](https://www.google.com/webmasters/tools/sitemap-list)
 * [Bing](https://www.bing.com/toolbox/webmaster)
 * [Yandex](https://webmaster.yandex.com/)
 * [Baidu](https://zhanzhang.baidu.com/) OR Insert the following line anywhere in
   your robots.txt file, specifying the path to your sitemap:
+
 ```
 Sitemap: https://example.com/sitemap_location.xml
 ```
@@ -323,7 +325,6 @@ plugin](https://www.google.com/search?ie=UTF-8&q=how+to+make+browser+search+plug
 <link rel="search" title="" type="application/opensearchdescription+xml" href="">
 ```
 
-
 ## Miscellaneous
 
 * Use
@@ -347,7 +348,6 @@ plugin](https://www.google.com/search?ie=UTF-8&q=how+to+make+browser+search+plug
 * Avoid development/stage websites "leaking" into SERPs (search engine results
   page) by [implementing X-Robots-tag
   headers](https://github.com/h5bp/html5-boilerplate/issues/804).
-
 
 ## News Feeds
 
@@ -385,8 +385,6 @@ should contain the location of your pingback service.
   https://www.hixie.ch/specs/pingback/pingback-1.0#TOC5
 * PHP pingback service:
   https://web.archive.org/web/20131211032834/http://blog.perplexedlabs.com/2009/07/15/xmlrpc-pingbacks-using-php/
-
-
 
 ## Social Networks
 
@@ -500,7 +498,6 @@ For more information please see:
 
 * https://developers.google.com/search/mobile-sites/mobile-seo/separate-urls
 
-
 ## Web Apps
 
 There are a couple of meta tags that provide information about a web app when
@@ -526,7 +523,6 @@ For further information please read the [official
 documentation](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html)
 on Apple's site.
 
-
 ### Apple Touch Icons
 
 Apple touch icons are used as icons when a user adds your webapp to the home
@@ -543,7 +539,6 @@ Though the dimensions of the icon can vary between iOS devices and versions one
 For a more comprehensive overview, please refer to Mathias' [article on Touch
 Icons](https://mathiasbynens.be/notes/touch-icons).
 
-
 ### Apple Touch Startup Image
 
 Apart from that it is possible to add start-up screens for web apps on iOS. This
@@ -555,7 +550,6 @@ for an iPhone:
 ```html
 <link rel="apple-touch-startup-image" media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" href="img/startup.png">
 ```
-
 
 ### Chrome Mobile web apps
 
@@ -590,7 +584,6 @@ The `content` attribute extension can take any valid CSS color.
 Currently, the `theme-color` meta extension is supported by [Chrome 39+ for
 Android
 Lollipop](https://developers.google.com/web/updates/2014/11/Support-for-theme-color-in-Chrome-39-for-Android).
-
 
 ## security.txt
 

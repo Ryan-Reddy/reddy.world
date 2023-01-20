@@ -1,5 +1,5 @@
-import { css, html, LitElement } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import {css, html, LitElement} from 'lit';
+import {customElement, property} from 'lit/decorators.js';
 
 /**
  * A new account element.
@@ -11,9 +11,11 @@ import { customElement, property } from 'lit/decorators.js';
 export class NewAccount extends LitElement {
   @property() _hiddenElement = 'hidden';
   @property() currentPage: string | undefined;
+
   constructor() {
     super();
   }
+
   static get styles() {
     return css`
       * {
@@ -31,6 +33,7 @@ export class NewAccount extends LitElement {
         background-color: var(--kpn-grijs);
         required: invalid;
       }
+
       button {
         width: 66%;
         height: 2em;
@@ -42,111 +45,112 @@ export class NewAccount extends LitElement {
     return html`
       <!DOCTYPE html>
       <html lang="en">
-        <head>
-          <meta charset="UTF-8" />
+      <head>
+        <meta charset="UTF-8"/>
 
-          <title>New Account</title>
-          <!-- must be uppermost imported script due to const localhost global usage -->
+        <title>New Account</title>
+        <!-- must be uppermost imported script due to const localhost global usage -->
 
-          <script src="https://smtpjs.com/v3/smtp.js"></script>
-        </head>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+      </head>
 
-        <h1 class="header">Maak een nieuw account.</h1>
+      <h1 class="header">Maak een nieuw account.</h1>
 
-        <body>
-          <div id="page-container">
-            <div id="content-wrap">
-              <main>
-                <form autocomplete="on" id="newaccount-form">
-                  <ol>
-                    <li>
-                      <label for="naam">Naam:</label>
-                      <input
-                        autocomplete="naam"
-                        class="inputfield"
-                        id="naam"
-                        name="naam"
-                        placeholder="Naam"
-                        type="text"
-                      />
-                    </li>
-                    <li>
-                      <div class="tooltip">
-                        <!-- omschrijvende lebel van bijbehorende inputveld -->
-                        <label for="email">E-mail adres:</label>
-                        <input
-                          autocomplete="email"
-                          class="inputfield"
-                          id="email"
-                          name="email"
-                          onclick="switchIncompleteNormaleStijl('email')"
-                          placeholder="jouwnaam@voorbeeld.com"
-                          required
-                          type="email"
-                        />
-
-                        <!-- tooltip tekst -->
-                        <span class="tooltiptext-mail"
-                          >Voer een geldig email adres in, bijvoorbeeld
-                          jouwnaam@voorbeeld.com.</span
-                        >
-                      </div>
-                    </li>
-
-                    <br />
-                    <li>
-                      <div class="tooltip">
-                        <!-- omschrijvende lebel van bijbehorende inputveld -->
-                        <label for="password">Nieuw wachtwoord:</label>
-                        <input
-                          autocomplete="password"
-                          class="inputfield"
-                          id="password"
-                          name="password"
-                          onclick="switchIncompleteNormaleStijl('password')"
-                          placeholder="Nieuw wachtwoord"
-                          required
-                          type="password"
-                        /><br />
-                        <!-- tooltip tekst -->
-                        <span class="tooltiptext-ww"
-                          >Voer een combinatie in van ten minste zes cijfers,
-                          letters en leestekens (zoals ! en &).</span
-                        >
-                      </div>
-                    </li>
-                  </ol>
+      <body>
+      <div id="page-container">
+        <div id="content-wrap">
+          <main>
+            <form autocomplete="on" id="newaccount-form">
+              <ol>
+                <li>
+                  <label for="naam">Naam:</label>
                   <input
-                    id="toggle"
-                    onclick="wwZichtbaarToggle()"
-                    type="checkbox"
+                    autocomplete="naam"
+                    class="inputfield"
+                    id="naam"
+                    name="naam"
+                    placeholder="Naam"
+                    type="text"
                   />
-                  <label for="toggle">Toon wachtwoord</label><br /><br />
+                </li>
+                <li>
+                  <div class="tooltip">
+                    <!-- omschrijvende lebel van bijbehorende inputveld -->
+                    <label for="email">E-mail adres:</label>
+                    <input
+                      autocomplete="email"
+                      class="inputfield"
+                      id="email"
+                      name="email"
+                      onclick="switchIncompleteNormaleStijl('email')"
+                      placeholder="jouwnaam@voorbeeld.com"
+                      required
+                      type="email"
+                    />
 
-                  <!--    <input id="send_json" onclick="formulierCheck()" type="button" value="Registreren&#45;&#45; incl wachtwoordchecksend json"/>-->
-                  <!--        <input id="send_formdata" onclick="sendFormData()" type="button" value="Registreren&#45;&#45;send formdata" />-->
-                  <span id="postresponse"></span>
-                </form>
-                <input
-                  id="createAccButton"
-                  onclick="formulierCheck()"
-                  type="button"
-                  value="Creëer een account"
-                />
-                <input
-                  id="wachtwoordvergeten"
-                  onclick="window.location.assign('../home/index.html')"
-                  type="button"
-                  value="Wachtwoord vergeten"
-                />
-              </main>
-            </div>
-            <footer id="footer"></footer>
-          </div>
-        </body>
+                    <!-- tooltip tekst -->
+                    <span class="tooltiptext-mail"
+                    >Voer een geldig email adres in, bijvoorbeeld
+                          jouwnaam@voorbeeld.com.</span
+                    >
+                  </div>
+                </li>
+
+                <br/>
+                <li>
+                  <div class="tooltip">
+                    <!-- omschrijvende lebel van bijbehorende inputveld -->
+                    <label for="password">Nieuw wachtwoord:</label>
+                    <input
+                      autocomplete="password"
+                      class="inputfield"
+                      id="password"
+                      name="password"
+                      onclick="switchIncompleteNormaleStijl('password')"
+                      placeholder="Nieuw wachtwoord"
+                      required
+                      type="password"
+                    /><br/>
+                    <!-- tooltip tekst -->
+                    <span class="tooltiptext-ww"
+                    >Voer een combinatie in van ten minste zes cijfers,
+                          letters en leestekens (zoals ! en &).</span
+                    >
+                  </div>
+                </li>
+              </ol>
+              <input
+                id="toggle"
+                onclick="wwZichtbaarToggle()"
+                type="checkbox"
+              />
+              <label for="toggle">Toon wachtwoord</label><br/><br/>
+
+              <!--    <input id="send_json" onclick="formulierCheck()" type="button" value="Registreren&#45;&#45; incl wachtwoordchecksend json"/>-->
+              <!--        <input id="send_formdata" onclick="sendFormData()" type="button" value="Registreren&#45;&#45;send formdata" />-->
+              <span id="postresponse"></span>
+            </form>
+            <input
+              id="createAccButton"
+              onclick="formulierCheck()"
+              type="button"
+              value="Creëer een account"
+            />
+            <input
+              id="wachtwoordvergeten"
+              onclick="window.location.assign('../home/index.html')"
+              type="button"
+              value="Wachtwoord vergeten"
+            />
+          </main>
+        </div>
+        <footer id="footer"></footer>
+      </div>
+      </body>
       </html>
     `;
   }
+
   // /** Deze functie controleert of een email echt een email is
   //  *   @Function checkEmailIsEchtEmail
   //  *   @returns boolean

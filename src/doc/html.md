@@ -165,10 +165,11 @@ using a polyfill CDN service, like [polyfill.io](https://polyfill.io/v3/), just 
 it before the other scripts in the bottom of the page:
 
 ```html
-    <script src="js/vendor/modernizr-3.10.0.min.js"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+
+<script src="js/vendor/modernizr-3.10.0.min.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
 </body>
 ```
 
@@ -235,7 +236,8 @@ consider: if you place this script at the top of the page, you’ll be able to
 count users who don’t fully load the page, and you’ll incur the max number of
 simultaneous connections of the browser.
 
-Please be aware that while Google [states that it is fully GDPR compliant](https://privacy.google.com/businesses/compliance/),
+Please be aware that while
+Google [states that it is fully GDPR compliant](https://privacy.google.com/businesses/compliance/),
 it is still possible to use analytics to violate GDPR.
 
 Further information:

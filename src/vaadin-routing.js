@@ -1,4 +1,4 @@
-import { Router } from '@vaadin/router';
+import {Router} from '@vaadin/router';
 
 import './components/account-info';
 import './components/home-page';

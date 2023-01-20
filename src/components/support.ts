@@ -1,5 +1,5 @@
-import { css, html, LitElement } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import {css, html, LitElement} from 'lit';
+import {customElement, property} from 'lit/decorators.js';
 
 /**
  * An example element.
@@ -11,6 +11,7 @@ import { customElement, property } from 'lit/decorators.js';
 export class SupportElement extends LitElement {
   @property() _hiddenElement = 'hidden';
   @property() currentPage: string | undefined;
+
   constructor() {
     super();
   }
@@ -32,6 +33,7 @@ export class SupportElement extends LitElement {
         background-color: var(--kpn-grijs);
         required: invalid;
       }
+
       button {
         width: 66%;
         height: 2em;
@@ -42,22 +44,24 @@ export class SupportElement extends LitElement {
   render() {
     return html`
       <body>
-        <main>
-          <label hidden for="support"></label>
-          <button id="support" @click=${this._clickForSupport}>
-            Click here for support!
-          </button>
-          <br />
-          <div class=${this._hiddenElement}>
-            <img src="/Have-you-tried-turning-it-off-and-on-again.jpg" alt="Hello IT... Have you tried turning it off and on again?" />
-            <br />
-            <br />
-            <button>if so, call us on 69-420-420-69</button>
-          </div>
-        </main>
+      <main>
+        <label hidden for="support"></label>
+        <button id="support" @click=${this._clickForSupport}>
+          Click here for support!
+        </button>
+        <br/>
+        <div class=${this._hiddenElement}>
+          <img src="/Have-you-tried-turning-it-off-and-on-again.jpg"
+               alt="Hello IT... Have you tried turning it off and on again?"/>
+          <br/>
+          <br/>
+          <button>if so, call us on 69-420-420-69</button>
+        </div>
+      </main>
       </body>
     `;
   }
+
   _clickForSupport() {
     console.log('Click for support');
     console.log(this._hiddenElement);

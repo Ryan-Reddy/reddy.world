@@ -1,5 +1,5 @@
-import { css, html, LitElement } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import {css, html, LitElement} from 'lit';
+import {customElement, property} from 'lit/decorators.js';
 
 /**
  * A support page element.
@@ -10,6 +10,7 @@ import { customElement, property } from 'lit/decorators.js';
 @customElement('not-found-element')
 export class NotFound extends LitElement {
   @property() _hiddenElement = 'hidden';
+
   constructor() {
     super();
   }
@@ -36,6 +37,7 @@ export class NotFound extends LitElement {
         width: 66%;
         height: 2em;
       }
+
       html {
         color: #888;
         display: table;
@@ -110,6 +112,7 @@ export class NotFound extends LitElement {
     <!-- IE needs 512+ bytes: https://docs.microsoft.com/archive/blogs/ieinternals/friendly-http-error-pages -->
     `;
   }
+
   _clickForSupport() {
     console.log('Click for support');
     console.log(this._hiddenElement);

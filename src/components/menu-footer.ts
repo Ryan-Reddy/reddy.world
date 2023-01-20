@@ -1,5 +1,5 @@
-import { css, html, LitElement } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import {css, html, LitElement} from 'lit';
+import {customElement} from 'lit/decorators.js';
 
 /**
  * An example element.
@@ -15,45 +15,45 @@ export class MenuFooter extends LitElement {
 
   static get styles() {
     return css`
-    * {
+      * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
         text-decoration: none;
-    }
+      }
 
-    body {
+      body {
         font-size: 14px;
         font-family: Montserrat;
         color: white;
         font-size: 1em;
         opacity: 1;
-    }
+      }
 
 
-    footer {
-      /*width: 100%;*/
-      /*height: 8em;*/
-      /*bottom: 0;*/
-      /*position: fixed;*/
-      padding: 1rem 1.5rem;
+      footer {
+        /*width: 100%;*/
+        /*height: 8em;*/
+        /*bottom: 0;*/
+        /*position: fixed;*/
+        padding: 1rem 1.5rem;
 
-      overflow: hidden;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+        overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-      position: relative;
-      /* negative value of footer height */
-      height: 180px;
+        position: relative;
+        /* negative value of footer height */
+        height: 180px;
 
-      border: 1px solid var(--kpn-zwart);
-      background-color: var(--kpn-zwart);
-      color: var(--kpn-wit);
-      opacity: 1;
-    }
+        border: 1px solid var(--kpn-zwart);
+        background-color: var(--kpn-zwart);
+        color: var(--kpn-wit);
+        opacity: 1;
+      }
 
-    input {
+      input {
         width: 176px;
         position: relative;
         left: 1em;
@@ -61,98 +61,94 @@ export class MenuFooter extends LitElement {
         font-size: 12px;
         opacity: 1;
         text-align: left;
-    }
+      }
 
-    nav ul {
+      nav ul {
         float: right;
         margin-right: 8em;
         padding-right: 8em;
-    }
+      }
 
-    nav ul li {
+      nav ul li {
         display: inline-block;
         line-height: 8em;
         margin: 0 5px;
-    }
+      }
 
-    nav ul li a {
+      nav ul li a {
         color: var(--kpn-wit);
         border-radius: 3px;
         text-transform: uppercase;
         padding: 5px;
-    }
+      }
 
-    a.active, a:hover {
+      a.active, a:hover {
         background: var(--kpn-groen);
         transition: .5s;
-    }
+      }
 
-    .nav-button {
+      .nav-button {
         opacity: 1;
         text-align: center;
-    }
+      }
 
-    li {
+      li {
         list-style: none;
-    }
+      }
 
-    #check {
+      #check {
         display: none;
-    }
+      }
 
-    @media (max-width: 952px) {
+      @media (max-width: 952px) {
         .nav-logo {
-            height: 3em;
-            padding-left: 50px;
+          height: 3em;
+          padding-left: 50px;
         }
 
         nav ul li a {
-            font-size: 10px;
-            display: inline-block;
-            line-height: 8em;
-            margin: 0 1em;
+          font-size: 10px;
+          display: inline-block;
+          line-height: 8em;
+          margin: 0 1em;
         }
-    }
+      }
 
-    @media (max-width: 858px) {
+      @media (max-width: 858px) {
         .checkbtn {
-            display: block;
+          display: block;
         }
 
         u: {
-            position: fixed;
-            width: 100%;
-            height: 100vh;
-            top: 80px;
-            left: -100%;
-            text-align: center;
-            transition: all .5s;
-        }
-
-        nav ul li {
-            display: block;
-        }
-
-        nav ul li a {
-            font-size: 20px;
+          position: fixed;
+          width: 100%;
+          height: 100vh;
+          top: 80px;
+          left: -100%;
+          text-align: center;
+          transition: all .5s;
+        } nav ul li {
+          display: block;
+        } nav ul li a {
+          font-size: 20px;
         };
 
         a:hover, a.active {
-            background: none;
+          background: none;
         }
 
         #check:checked ~ ul {
-            left: 0;
+          left: 0;
         }
-    }
+      }
 
-    @media (prefers-color-scheme: light) {
+      @media (prefers-color-scheme: light) {
         footer, nav ul li a {
-            color: var(--kpn-zwart);
-            background-color: var(--kpn-wit);
-            border-color: var(--kpn-wit);
+          color: var(--kpn-zwart);
+          background-color: var(--kpn-wit);
+          border-color: var(--kpn-wit);
         }
-    }
+      }
     `;
   }
 
@@ -183,17 +179,17 @@ export class MenuFooter extends LitElement {
 
   _clickMenu(e: Event) {
     console.log('_dispatchPageLink() need to write funcion clickmenu in menu-footer');
-  //   // @ts-ignore
-  //   const id = e.target.id;
-  //   console.log('id= ' + id);
-  //
-  //   const hasChanged = this.currentPage !== id;
-  //
-  //   if (hasChanged) {
-  //     this.currentPage = id;
-  //
-  //     //notify parent:
-  //     this.dispatchEvent(new Event('page-chosen'));
-  //   }
+    //   // @ts-ignore
+    //   const id = e.target.id;
+    //   console.log('id= ' + id);
+    //
+    //   const hasChanged = this.currentPage !== id;
+    //
+    //   if (hasChanged) {
+    //     this.currentPage = id;
+    //
+    //     //notify parent:
+    //     this.dispatchEvent(new Event('page-chosen'));
+    //   }
   }
 }

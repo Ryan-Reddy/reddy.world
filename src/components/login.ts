@@ -1,5 +1,5 @@
-import { css, html, LitElement } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import {css, html, LitElement} from 'lit';
+import {customElement} from 'lit/decorators.js';
 
 /**
  * A Login element.
@@ -123,59 +123,59 @@ export class Login extends LitElement {
   render() {
     return html`
       <body>
-        <div id="page-container">
-          <main>
-            <div id="content-wrap">
-              <form id="login_account">
-                <ul>
-                  <li>
-                    <label for="email">Email:</label>
-                    <input
-                      autocomplete="email"
-                      class="inputfield"
-                      id="email"
-                      name="email"
-                      required
-                      type="email"
-                      width="50%"
-                    /><br />
-                  </li>
-                  <li>
-                    <label for="password">Wachtwoord:</label>
-                    <input
-                      autocomplete="password"
-                      class="inputfield"
-                      id="password"
-                      name="password"
-                      required
-                      type="password"
-                    /><br /><br />
-                  </li>
-                  <li>
-                    <input
-                      id="login()_button"
-                      @click=${this._login}
-                      type="button"
-                      value="login()_button"
-                    />
-                  </li>
-                </ul>
-              </form>
-              <span id="postresponse"></span>
+      <div id="page-container">
+        <main>
+          <div id="content-wrap">
+            <form id="login_account">
+              <ul>
+                <li>
+                  <label for="email">Email:</label>
+                  <input
+                    autocomplete="email"
+                    class="inputfield"
+                    id="email"
+                    name="email"
+                    required
+                    type="email"
+                    width="50%"
+                  /><br/>
+                </li>
+                <li>
+                  <label for="password">Wachtwoord:</label>
+                  <input
+                    autocomplete="password"
+                    class="inputfield"
+                    id="password"
+                    name="password"
+                    required
+                    type="password"
+                  /><br/><br/>
+                </li>
+                <li>
+                  <input
+                    id="login()_button"
+                    @click=${this._login}
+                    type="button"
+                    value="login()_button"
+                  />
+                </li>
+              </ul>
+            </form>
+            <span id="postresponse"></span>
 
-              <br /><br />
-              <div @click=${this._clickMenu} id="nope">
-                <a class="nav-button" href="#" id="password-reset"
-                  >Wachtwoord vergeten</a
-                >
-                ||
-                <a class="nav-button" href="#" id="new-account"
-                  >Nieuw account creëren</a
-                >
-              </div>
+            <br/><br/>
+            <div @click=${this._clickMenu} id="nope">
+              <a class="nav-button" href="#" id="password-reset"
+              >Wachtwoord vergeten</a
+              >
+              ||
+              <a class="nav-button" href="#" id="new-account"
+              >Nieuw account creëren</a
+              >
             </div>
-          </main>
-        </div>
+          </div>
+        </main>
+      </div>
       </body>
     `;
   }

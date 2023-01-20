@@ -32,7 +32,7 @@ body {
   min-width: 320px;
   min-height: 100%;
 
-  background-image: url('/branding/achtergrondshapes.webp');
+  background-image: url('achtergrondshapes.webp');
   background-repeat: no-repeat;
   background-size: 100%;
   /*background-position: top;*/
@@ -42,6 +42,7 @@ body {
   /* must be same height as the footer */
 
 }
+
 .side-by-side {
   margin-left: auto;
   margin-right: 0;
@@ -53,18 +54,22 @@ body {
     color: var(--kpn-wit);
     background-color: var(--kpn-zwart);
   }
+
   main {
     color: var(--kpn-wit);
     background-color: var(--kpn-zwart);
   }
+
   table {
     color: var(--kpn-wit);
     background: var(--kpn-zwart);
   }
+
   :root .entire_menu_bar {
     color: var(--kpn-wit);
     background-color: var(--kpn-zwart);
   }
+
   nav ul li a {
     color: var(--kpn-wit);
     background-color: var(--kpn-zwart);
@@ -76,14 +81,17 @@ body {
     color: var(--kpn-zwart);
     background-color: var(--kpn-wit);
   }
+
   main {
     color: var(--kpn-zwart);
     background-color: var(--kpn-wit);
   }
+
   table {
     color: var(--kpn-wit);
     background: var(--kpn-wit);
   }
+
   :root .entire_menu_bar {
     color: var(--kpn-wit);
     background-color: var(--kpn-wit);

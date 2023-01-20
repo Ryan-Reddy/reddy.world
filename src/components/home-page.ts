@@ -1,5 +1,5 @@
-import { css, html, LitElement } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import {css, html, LitElement} from 'lit';
+import {customElement} from 'lit/decorators.js';
 
 /**
  * An example element.
@@ -25,9 +25,11 @@ export class HomePage extends LitElement {
       main {
         background-color: var(--kpn-zwart);
       }
+
       ul {
         list-style: none;
       }
+
       .card {
         padding: 2em;
       }
@@ -59,9 +61,11 @@ export class HomePage extends LitElement {
         cursor: pointer;
         transition: border-color 0.25s;
       }
+
       button:hover {
         border-color: var(--kpn-groen);
       }
+
       button:focus,
       button:focus-visible {
         outline: 4px auto -webkit-focus-ring-color;
@@ -71,6 +75,7 @@ export class HomePage extends LitElement {
         a:hover {
           color: #747bff;
         }
+
         button {
           background-color: #f9f9f9;
         }
@@ -80,29 +85,29 @@ export class HomePage extends LitElement {
 
   render() {
     return html`
-        <meta name="description" content="Ryan Reddy's world.">
-        <meta title="Home Page">
-        <header>
+      <meta name="description" content="Ryan Reddy's world.">
+      <meta title="Home Page">
+      <header>
         <h1 class="header">Get Reddy world!</h1>
-        </header>
-        <body>
+      </header>
+      <body>
 
-        <main>
-          <div>
-            <h2>This is Ryan Reddy.</h2>
-            <div id="app"></div>
-            <button><a type="button" href="/login">Login</a></button>
-          </div>
+      <main>
+        <div>
+          <h2>This is Ryan Reddy.</h2>
+          <div id="app"></div>
+          <button><a type="button" href="/login">Login</a></button>
+        </div>
 
-          <div class="side-by-side">
+        <div class="side-by-side">
 
-            <img src="IMG_7430.JPG" height="845" width="590"
-                 alt="harry clarke faust illustration of witch-queen and young prince with elegant fingers, full moon in the background"/>
-          </div>
+          <img src="IMG_7430.JPG" height="845" width="590"
+               alt="harry clarke faust illustration of witch-queen and young prince with elegant fingers, full moon in the background"/>
+        </div>
 
-          <simple-greeting name="World">Get Reddy world!</simple-greeting>
+        <simple-greeting name="World">Get Reddy world!</simple-greeting>
 
-    </main>
+      </main>
       </body>
     `;
   }
