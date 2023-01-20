@@ -7,7 +7,7 @@ import { LitElement, html, customElement, property, css } from 'lit-element';
  * @csspart button - The button
  */
 @customElement('nav-menu')
-export class NavMenu extends LitElement {
+export class MenuNav extends LitElement {
   @property() naamGebruiker = 'Hans Fumphriehd';
   // @property() kpnLogo = '/public/branding/kpn-logo2-jpeg.jpg';
   @property() kpnLogo = '/kpn-logo2-jpeg.jpg';

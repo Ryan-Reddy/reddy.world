@@ -1,10 +1,19 @@
 {
   "name": "reddy.world",
-  "version": "0.0.1",
-  "description": "Ryan Reddy's World",
-  "keywords": ["Ryan","van Lil","Reddy","computer","science","engineer","cv","developer"],
-  "license": "Pirate License",
+  "version": "0.0.3",
   "author": "Ryan Reddy",
+  "description": "Ryan Reddy's World",
+  "keywords": [
+    "Ryan",
+    "van Lil",
+    "Reddy",
+    "computer",
+    "science",
+    "engineer",
+    "cv",
+    "developer"
+  ],
+  "license": "SEE LICENSE IN LICENSE.md",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -18,5 +27,14 @@
     "@vaadin/router": "^1.7.4",
     "vite": "^4.0.4",
     "lit": "^2.6.1"
-  }
+  },
+  "main": "vite.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ryan-Reddy/reddy.world.webApp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Ryan-Reddy/reddy.world.webApp/issues"
+  },
+  "homepage": "https://github.com/Ryan-Reddy/reddy.world.webApp#readme"
 }
