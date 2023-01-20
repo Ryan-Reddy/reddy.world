@@ -1,5 +1,5 @@
 import { css, html, LitElement } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { customElement } from 'lit/decorators.js';
 
 /**
  * An example element.
@@ -80,46 +80,28 @@ export class HomePage extends LitElement {
 
   render() {
     return html`
-      <header>
+        <meta name="description" content="KNP medewerkers mobiliteits APP landing page.">
+        <header>
         <h1 class="header">Welkom bij de KNP medewerkers mobiliteits APP!</h1>
-      </header>
+        </header>
         <body>
+
         <main>
-        <ul>
-            // FOR TEST PURPOSE ONLY:
-            <li>
-                <label for="registreerReis" hidden>Log out</label>
-                <input id="registreerReis" onclick="window.open('/v2fe-v2a-2/src/main/webapp/formulier-reizen','_self')"
-                       type="button" value="registreerReis">
-            </li>
+          <div>
+            <h1>Get Reddy world!</h1>
+            <h2>This is Ryan Reddy.</h2>
+            <div id="app"></div>
+            <button><a type="button" href="/login">Login</a></button>
+          </div>
 
-        <h2>wiki and info/</h2>
-        <ul class="externallinks">
-            <li>
-                <a href="https://github.com/orgs/HU-SD-SV2FE-studenten-2022/projects/23">Github Project Management</a>
-            </li>
-            <li>
-                <a href="https://github.com/HU-SD-SV2FE-studenten-2022/v2fe-v2a-2">HU repo</a>
-            </li>
-            <li>
-                <a href="https://ryan-reddy.github.io/src/main/webapp/wiki/">wiki</a>
-            </li>
-        </ul>
-        <h2>Github.io/</h2>
-        <ul class="externallinks">
-            <li>
-                <a href="https://hu-sd-sv2fe-studenten-2022.github.io/v2fe-v2a-2/">live PAGES</a>
-            </li>
-            <li>
-                <a href="https://hu-sd-sv2fe-studenten-2022.github.io/src/main/webapp/formulier-reizen">Formulier reizen</a>
-            </li>
-            <li>
-                <a href="https://hu-sd-sv2fe-studenten-2022.github.io/src/main/webapp/overzicht-reizen/">overzicht
-                    reizen</a>
-            </li>
-        </ul>
+          <div class="side-by-side">
+            <img src="../public/unicorn-break-chains.jpg"
+                 alt="Unicorn gold crown breaking free from a golden chain by whyn lewis flower oil on panel">
+            <img src="../public/IMG_7430.JPG" height="845" width="590"
+                 alt="harry clarke faust illustration of witch-queen and young prince with elegant fingers, full moon in the background"/>
+          </div>
 
-        <simple-greeting name="World"></simple-greeting>
+          <simple-greeting name="World">Get Reddy world!</simple-greeting>
 
     </main>
       </body>

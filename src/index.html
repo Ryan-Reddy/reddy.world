@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <script type="module" defer src="vaadin-routing.js" ></script>
-  <script type="module" defer src="components/menu-nav.ts" ></script>
-  <script type="module" defer src="components/menu-footer.ts" ></script>
+  <script type="module" defer src="vaadin-routing.js"></script>
+  <script type="module" defer src="components/menu-nav.ts"></script>
+  <script type="module" defer src="components/menu-footer.ts"></script>
 
   <title>Ryan Reddy</title>
 
@@ -29,26 +29,10 @@
 </head>
 
 <body>
-<main>
-  <!-- Add your site or application content here -->
   <menu-nav-element></menu-nav-element>
-
-  <div>
-    <h1>Get Reddy world!</h1>
-    <h2>This is Ryan Reddy.</h2>
-    <div id="app"></div>
-    <button><a type="button" href="/login">Login</a></button>
-  </div>
-
-  <div class="side-by-side">
-    <img src="../public/unicorn-break-chains.jpg"
-         alt="Unicorn gold crown breaking free from a golden chain by whyn lewis flower oil on panel">
-    <img src="../public/IMG_7430.JPG" height="845" width="590"
-         alt="harry clarke faust illustration of witch-queen and young prince with elegant fingers, full moon in the background"/>
-  </div>
-  <footer-menu></footer-menu>
-
-
+<main>
+  <!-- Vaadin will add element based on urlhere -->
+  <div id="app"></div>
 
 <!--  DELETEABLE? inserted from boilerplate -->
   <script src="js/vendor/modernizr-3.11.2.min.js" type="module"></script>
@@ -56,6 +40,7 @@
   <script src="js/main.js" type="module"></script>
 <!--  DELETEABLE? inserted from boilerplate -->
 </main>
+  <footer-menu></footer-menu>
 
 
 <!-- Google Analytics: change G-12SFENLZLH to be your site's ID. -->
