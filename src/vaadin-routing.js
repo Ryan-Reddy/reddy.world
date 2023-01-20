@@ -7,7 +7,6 @@ import './components/menu-footer';
 import './components/menu-nav';
 import './components/new-account';
 import './components/not-found';
-import './components/not-found';
 import './components/readme';
 import './components/reset-password';
 import './components/support';
@@ -19,48 +18,53 @@ export const router = new Router(app);
 // noinspection JSIgnoredPromiseFromCall
 router.setRoutes([
   {
-    name: 'login', // doet niks impliciet
+    name: 'login-element', // doet niks impliciet
     path: '/login',
-    component: 'login',
+    component: 'login-element',
   },
   {
-    name: 'reset-password', // doet niks impliciet
+    name: 'reset-password-element', // doet niks impliciet
     path: '/reset-password',
-    component: 'reset-password',
+    component: 'reset-password-element',
   },
   {
-    name: 'support', // doet niks impliciet
+    name: 'support-element', // doet niks impliciet
     path: '/support',
-    component: 'support',
+    component: 'support-element',
   },
   {
-    name: 'new-account', // doet niks impliciet
+    name: 'new-account-element', // doet niks impliciet
     path: '/new-account',
-    component: 'new-account',
+    component: 'new-account-element',
   },
   {
-    name: 'readme', // doet niks impliciet
+    name: 'readme-element', // doet niks impliciet
     path: '/readme',
-    component: 'readme',
+    component: 'readme-element',
   },
   {
-    name: 'reset-password', // doet niks impliciet
+    name: 'reset-password-element', // doet niks impliciet
     path: '/reset-password',
-    component: 'reset-password',
+    component: 'reset-password-element',
   },
   {
-    name: 'account-info', // doet niks impliciet
+    name: 'account-info-element', // doet niks impliciet
     path: '/account-info',
-    component: 'account-info',
+    component: 'account-info-element',
   },
   {
-    name: 'readme', // doet niks impliciet
-    path: '/readme',
-    component: 'readme',
+    name: 'menu-nav-element', // doet niks impliciet
+    path: '/menu-nav',
+    component: 'menu-nav-element',
   },
   {
-    name: '404-catchall', // doet niks impliciet
+    name: 'home-page-element', // doet niks impliciet
+    path: '/home-page',
+    component: 'home-page-element',
+  },
+  {
+    name: 'not-found-element', // doet niks impliciet
     path: '(.*)',           // 404 must be last in this file
-    component: 'not-found',
+    component: 'not-found-element',
   },
 ]);

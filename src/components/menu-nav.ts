@@ -7,7 +7,7 @@ import { customElement, property } from 'lit/decorators.js';
  * @slot - This element has a slot
  * @csspart button - The button
  */
-@customElement('nav-menu')
+@customElement('menu-nav-element')
 export class MenuNav extends LitElement {
   @property() naamGebruiker = 'Hans Fumphriehd';
   // @property() kpnLogo = '/public/branding/kpn-logo2-jpeg.jpg';

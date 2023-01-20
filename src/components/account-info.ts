@@ -8,9 +8,9 @@ import { customElement, property } from 'lit/decorators.js';
  * @csspart button - The button
  */
 
-@customElement('account-element')
-export class Login extends LitElement {
-  @property() currentPage = 'Reis Registreren';
+@customElement('account-info-element')
+export class Accountinfo extends LitElement {
+  @property() currentPage = 'account info';
 
   constructor() {
     super();

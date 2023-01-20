@@ -1,5 +1,5 @@
 import { css, html, LitElement } from 'lit';
-import { customElement, property } from 'lit-element';
+import { customElement, property } from 'lit/decorators.js';
 
 /**
  * A support page element.
@@ -7,8 +7,8 @@ import { customElement, property } from 'lit-element';
  * @slot - This element has a slot
  * @csspart button - The button
  */
-@customElement('support-element')
-export class SupportElement extends LitElement {
+@customElement('not-found-element')
+export class NotFound extends LitElement {
   @property() _hiddenElement = 'hidden';
   constructor() {
     super();
@@ -29,9 +29,9 @@ export class SupportElement extends LitElement {
         display: none;
         pointer-events: none;
         color: lightgray;
-        foreground-color: var(--kpn-grijs);
         background-color: var(--kpn-grijs);
       }
+
       button {
         width: 66%;
         height: 2em;

@@ -6,7 +6,7 @@ import { customElement, property } from 'lit/decorators.js';
  * @slot - This element has a slot
  * @csspart button - The button
  */
-@customElement('reset-password')
+@customElement('reset-password-element')
 export class ResetPassword extends LitElement {
   @property() _hiddenElement = 'hidden';
   @property() currentPage: string | undefined;

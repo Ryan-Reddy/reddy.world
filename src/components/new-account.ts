@@ -7,14 +7,13 @@ import { customElement, property } from 'lit/decorators.js';
  * @slot - This element has a slot
  * @csspart button - The button
  */
-@customElement('new-account')
+@customElement('new-account-element')
 export class NewAccount extends LitElement {
   @property() _hiddenElement = 'hidden';
   @property() currentPage: string | undefined;
   constructor() {
     super();
   }
-  // TODO: style page new-account.ts
   static get styles() {
     return css`
       * {

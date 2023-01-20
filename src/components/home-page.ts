@@ -7,7 +7,7 @@ import { customElement, property } from 'lit/decorators.js';
  * @slot - This element has a slot
  * @csspart button - The button
  */
-@customElement('home-page')
+@customElement('home-page-element')
 export class HomePage extends LitElement {
   constructor() {
     super();
