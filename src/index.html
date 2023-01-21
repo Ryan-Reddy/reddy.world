@@ -2,26 +2,18 @@
 <html lang="en">
 
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-12SFENLZLH"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-12SFENLZLH');
-  </script>
-
+  <title>Ryan Reddy</title>
+  <meta content="Ryan Reddy's Personal site" property="og:title">
+  <meta content="Come see my latest exploits, resume, social media accounts, and get into contact with me."
+        name="description">
+  <meta content="unicorn-break-chains.jpg" property="og:image">
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1" name="viewport">
-
-  <meta content="Ryan Reddy's Personal site" name="description">
-  <meta content="" property="og:title">
-  <meta content="" property="og:type">
   <meta content="" property="og:url">
-  <meta content="" property="og:image">
   <!-- the above page related information should be within first 200-250 characters of the page to improve SEO-->
-  <link type="text/plain" rel="author" href="humans.txt"/>
+
+  <link href="humans.txt" rel="author" type="text/plain"/>
+  <meta content="" property="og:type">
 
   <link href="site.webmanifest" rel="manifest">
   <link href="icon.png" rel="apple-touch-icon">
@@ -30,14 +22,22 @@
   <link href="css/index.css" rel="stylesheet">
   <meta content="#fafafa" name="theme-color">
 
-
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-12SFENLZLH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-12SFENLZLH');
+  </script>
   <script defer src="vaadin-routing.js" type="module"></script>
   <script defer src="components/generic/menu-nav.ts" type="module"></script>
   <script defer src="components/generic/menu-footer.ts" type="module"></script>
 
-  <script type="module" src="components/generic/my-listener.ts"></script>
-  <script type="module" src="components/generic/my-dispatcher.ts"></script>
-  <title>Ryan Reddy</title>
+  <script src="components/generic/my-listener.ts" type="module"></script>
+  <script src="components/generic/my-dispatcher.ts" type="module"></script>
 </head>
 
 <body>
