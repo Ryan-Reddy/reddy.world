@@ -49,12 +49,12 @@ router.setRoutes([
   },
   {
     name: 'account-info-element', // doet niks impliciet
-    path: '/account-info',
+    path: '/account',
     component: 'account-info-element',
   },
   {
     name: 'home-page-element', // doet niks impliciet
-    path: '/home-page',
+    path: '/home',
     component: 'home-page-element',
   },
   {

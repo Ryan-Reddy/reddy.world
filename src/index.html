@@ -2,35 +2,40 @@
 <html lang="en">
 
 <head>
-  <link type="text/plain" rel="author" href="humans.txt"/>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1" name="viewport">
 
-  <script defer src="vaadin-routing.js" type="module"></script>
-  <script defer src="components/generic/menu-nav.ts" type="module"></script>
-  <script defer src="components/generic/menu-footer.ts" type="module"></script>
-
-<!--  <title>Ryan Reddy</title>-->
-
-  <meta content="" name="description">
+  <meta content="Ryan Reddy's Personal site" name="description">
   <meta content="" property="og:title">
   <meta content="" property="og:type">
   <meta content="" property="og:url">
   <meta content="" property="og:image">
+  <!-- the above page related information should be within first 200-250 characters of the page to improve SEO-->
+  <link type="text/plain" rel="author" href="humans.txt"/>
 
   <link href="site.webmanifest" rel="manifest">
   <link href="icon.png" rel="apple-touch-icon">
   <!-- Place favicon.ico in the root directory -->
 
   <link href="css/index.css" rel="stylesheet">
-
   <meta content="#fafafa" name="theme-color">
+
+
+  <script defer src="vaadin-routing.js" type="module"></script>
+  <script defer src="components/generic/menu-nav.ts" type="module"></script>
+  <script defer src="components/generic/menu-footer.ts" type="module"></script>
+
+  <script type="module" src="components/generic/my-listener.ts"></script>
+  <script type="module" src="components/generic/my-dispatcher.ts"></script>
 </head>
 
 <body>
 <menu-nav-element></menu-nav-element>
 <main>
   <!-- Vaadin will add element based on urlhere -->
+  <my-listener>
+    <my-dispatcher></my-dispatcher>
+  </my-listener>
   <div id="app"></div>
 
   <!--  DELETEABLE? inserted from boilerplate -->

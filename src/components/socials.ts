@@ -7,8 +7,8 @@ import {customElement, property} from 'lit/decorators.js';
  * @slot - This element has a slot
  * @csspart button - The button
  */
-@customElement('friends-element')
-export class FriendsElement extends LitElement {
+@customElement('socials-element')
+export class SocialsElement extends LitElement {
 
   constructor() {
     super();
@@ -38,20 +38,18 @@ export class FriendsElement extends LitElement {
       }
     `;
   }
-
-  //TODO properly import /node_modules/zero-md:
   render() {
     return html`
       <head>
         <meta charset="UTF-8">
-        <title>Friends</title>
+        <title>Socials</title>
 
       </head>
       <body>
 
       <main>
         <div>
-        <h1>Friends</h1>
+        <h1>Socials</h1>
         <br>
 
         <ul>

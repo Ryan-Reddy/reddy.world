@@ -203,8 +203,8 @@ export class MenuNav extends LitElement {
             <i class="fas fa-bars"></i>
           </label>
           <ul>
-            <li><a class="nav-button" href="home-page" id="home-page">Home</a></li>
-            <li><a class="nav-button" href="account-info" id="account-info">Account</a></li>
+            <li><a class="nav-button" href="home" id="home">Home</a></li>
+            <li><a class="nav-button" href="account" id="account">Account</a></li>
             <li><a class="nav-button" href="support" id="support">Support</a></li>
             <li>
               <a class="nav-button" href="#" id="Uitloggen">Uitloggen</a>

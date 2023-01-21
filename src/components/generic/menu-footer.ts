@@ -1,5 +1,5 @@
 import {css, html, LitElement} from 'lit';
-import {customElement} from 'lit/decorators.js';
+import {customElement, query} from 'lit/decorators.js';
 
 /**
  * An example element.
@@ -30,25 +30,6 @@ export class MenuFooter extends LitElement {
       }
 
 
-      footer {
-        /*width: 100%;*/
-        /*height: 8em;*/
-        /*bottom: 0;*/
-        /*position: fixed;*/
-        padding: 1rem 1.5rem;
-
-        overflow: hidden;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        position: relative;
-        /* negative value of footer height */
-        height: 180px;
-
-        background-color: var(--zwart);
-        opacity: 1;
-      }
 
       input {
         width: 176px;
@@ -175,26 +156,27 @@ export class MenuFooter extends LitElement {
       }
     `;
   }
+  @query('a', true) _input!: HTMLInputElement;
 
   render() {
     return html`
       <footer>
         <nav>
-          <ul>
+          <ul @click="${this._clickMenu}">
             <li>
-              <a class="nav-button" href="login" id="Login">Log in</a>
+              <a class="nav-button" href="login" id="Login" value="Log in"">Log in</a>
             </li>
             <li>
-              <a class="nav-button" href="support" id="support">Support</a>
+              <a class="nav-button" href="support" id="support" value="Support">Support</a>
             </li>
             <li>
-              <a class="nav-button" href="readme" id="Readme">Readme</a>
+              <a class="nav-button" href="readme" id="Readme" value="Readme">Readme</a>
             </li>
             <li>
-              <a class="friends-button" href="friends" id="friends-button">Friends</a>
+              <a class="friends-button" href="friends" id="friends-button" value="Friends">Friends</a>
             </li>
             <li>
-              <a class="nav-button" href="#" id="Logout">Log out</a>
+              <a class="nav-button" href="#" id="Logout" value="Log out">Log out</a>
             </li>
           </ul>
         </nav>
@@ -202,19 +184,29 @@ export class MenuFooter extends LitElement {
     `;
   }
 
-  _clickMenu(e: Event) {
-    console.log('_dispatchPageLink() need to write funcion clickmenu in menu-footer');
-    //   // @ts-ignore
-    //   const id = e.target.id;
-    //   console.log('id= ' + id);
-    //
-    //   const hasChanged = this.currentPage !== id;
-    //
-    //   if (hasChanged) {
-    //     this.currentPage = id;
-    //
-    //     //notify parent:
-    //     this.dispatchEvent(new Event('page-chosen'));
-    //   }
+  _clickMenu() {
+    const name = this._input.value.trim();
+    if (name) {
+      const options = {
+        detail: {name},
+        bubbles: true,
+        composed: true
+      };
+      this.dispatchEvent(new CustomEvent('pageChoice', options));
+
+      console.log('_dispatchPageLink() need to write funcion clickmenu in menu-footer');
+      //   // @ts-ignore
+      //   const id = e.target.id;
+      //   console.log('id= ' + id);
+      //
+      //   const hasChanged = this.currentPage !== id;
+      //
+      //   if (hasChanged) {
+      //     this.currentPage = id;
+      //
+      //     //notify parent:
+      this.dispatchEvent(new Event('page-chosen'));
+      //   }
+    }
   }
 }
