@@ -43,6 +43,8 @@ export class SupportElement extends LitElement {
 
   render() {
     return html`
+      <meta name="description" content="Ryan Reddy's world.">
+      <meta title="Support page">
       <body>
       <main>
         <label hidden for="support"></label>

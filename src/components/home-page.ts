@@ -88,6 +88,7 @@ export class HomePage extends LitElement {
 
   render() {
     return html`
+      <title>HomeTITLER</title>
       <meta name="description" content="Ryan Reddy's world.">
       <meta title="Home Page">
       <header>
