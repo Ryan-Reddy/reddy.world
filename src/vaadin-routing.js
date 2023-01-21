@@ -10,6 +10,7 @@ import './components/readme';
 import './components/reset-password';
 import './components/support';
 import './components/friends';
+import './components/socials';
 
 
 const app = document.querySelector('#app');
@@ -53,6 +54,21 @@ router.setRoutes([
     component: 'account-info-element',
   },
   {
+    name: 'friends-element', // doet niks impliciet
+    path: '/friends',
+    component: 'friends-element',
+  },
+  {
+    name: 'socials-element', // doet niks impliciet
+    path: '/socials',
+    component: 'socials-element',
+  },
+
+  ////////////////////////////////////////////////////////////////////////
+  //    THE CATCH ALL:                                                  //
+  ////////////////////////////////////////////////////////////////////////
+
+  {
     name: 'home-page-element', // doet niks impliciet
     path: '/home',
     component: 'home-page-element',
@@ -61,11 +77,6 @@ router.setRoutes([
     name: 'home-page-element', // doet niks impliciet
     path: '/',                  // standaard landingspage
     component: 'home-page-element',
-  },
-  {
-    name: 'friends-element', // doet niks impliciet
-    path: '/friends',                  // standaard landingspage
-    component: 'friends-element',
   },
   {
     name: 'not-found-element', // doet niks impliciet

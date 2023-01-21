@@ -36,10 +36,8 @@ export class MenuNav extends LitElement {
       }
 
       .entire_menu_bar {
-        height: 8em;
         position: relative;
         overflow: hidden;
-        padding: 1rem 1.5rem;
 
         display: flex;
         justify-content: space-between;
@@ -113,11 +111,7 @@ export class MenuNav extends LitElement {
       }
 
       @media (max-width: 952px) {
-            .entire_menu_bar {
-          height: 100%;
-          font-size: 1vw;
 
-      }
         .nav-logo {
           height: 100%;
           // padding-left: 50px;
@@ -138,24 +132,16 @@ export class MenuNav extends LitElement {
         u: {
           position: fixed;
           width: 100%;
-          // height: 100vh;
           // top: 80px;
           // left: -100%;
           text-align: center;
-          transition: var(--transitionInSeconds);
         } nav ul li {
-          // display: block;
+          display: block;
         } nav ul li a {
-          font-size: 20px;
-        };
-
-        a:hover, a.active {
-          background: none;
+          font-size: 4vw;
         }
+        ;
 
-        #check:checked ~ ul {
-          left: 0;
-        }
       }
 
       @media (prefers-color-scheme: light) {
@@ -206,9 +192,6 @@ export class MenuNav extends LitElement {
             <li><a class="nav-button" href="home" id="home">Home</a></li>
             <li><a class="nav-button" href="account" id="account">Account</a></li>
             <li><a class="nav-button" href="support" id="support">Support</a></li>
-            <li>
-              <a class="nav-button" href="#" id="Uitloggen">Uitloggen</a>
-            </li>
           </ul>
         </nav>
       </div>

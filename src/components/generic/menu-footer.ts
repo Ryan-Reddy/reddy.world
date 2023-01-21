@@ -43,13 +43,10 @@ export class MenuFooter extends LitElement {
 
       nav ul {
         float: right;
-        margin-right: 8em;
-        padding-right: 8em;
       }
 
       nav ul li {
         display: inline-block;
-        line-height: 8em;
         margin: 0 5px;
       }
 
@@ -81,7 +78,7 @@ export class MenuFooter extends LitElement {
 
       @media (max-width: 952px) {
       a {
-                font-size: 10vw;
+                /* font-size: 10vw;*/
       }
 
             input {
@@ -96,8 +93,6 @@ export class MenuFooter extends LitElement {
 
         nav ul li a {
           display: inline-block;
-          line-height: 3em;
-          margin: 0 1em;
         }
 
       }
@@ -174,6 +169,9 @@ export class MenuFooter extends LitElement {
             </li>
             <li>
               <a class="friends-button" href="friends" id="friends-button" value="Friends">Friends</a>
+            </li>
+            <li>
+              <a class="socials-button" href="socials" id="socials-button" value="Socials">Socials</a>
             </li>
             <li>
               <a class="nav-button" href="#" id="Logout" value="Log out">Log out</a>

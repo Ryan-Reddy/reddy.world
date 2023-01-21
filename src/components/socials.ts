@@ -53,10 +53,10 @@ export class SocialsElement extends LitElement {
         <br>
 
         <ul>
-        <li><a href="https://www.noordermeer.tech">Martijn Noordermeer</a></li>
-        <li><a href="https://kingeve.nl/">King Eve</a></li>
-        <li><a href="https://www.studiobinnenstad.com/">Studio Binnenstad</a></li>
-        <li><a href="https://amsterdamsefrisdrankfabriek.nl/">Amsterdamse Frisdrank Fabriek</a></li>
+        <li><a href="https://www.linkedin.com/in/ryan-reddy-productions/">LinkedIn</a></li>
+        <li><a href="https://www.facebook.com/klugook/">Facebook</a></li>
+        <li><a href="https://www.instagram.com/so_fluffy_ill_die/">Facebook</a></li>
+
         </ul>
         </div>
       </main>
