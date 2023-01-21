@@ -180,14 +180,12 @@ export class MenuFooter extends LitElement {
     return html`
       <footer>
         <nav>
-          <ul
-            @click=${this._clickMenu}
-            id="nope">
+          <ul>
             <li>
               <a class="nav-button" href="login" id="Login">Log in</a>
             </li>
             <li>
-              <a class="nav-button" href="support" id="Support">Support</a>
+              <a class="nav-button" href="support" id="support">Support</a>
             </li>
             <li>
               <a class="nav-button" href="readme" id="Readme">Readme</a>

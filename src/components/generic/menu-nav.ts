@@ -202,10 +202,10 @@ export class MenuNav extends LitElement {
           <label for="check">
             <i class="fas fa-bars"></i>
           </label>
-          <ul @click=${this._clickMenu} id="nope">
+          <ul>
             <li><a class="nav-button" href="home-page" id="home-page">Home</a></li>
-            <li><a class="nav-button" href="account-info" id="Account">Account</a></li>
-            <li><a class="nav-button" href="support" id="Support">Support</a></li>
+            <li><a class="nav-button" href="account-info" id="account-info">Account</a></li>
+            <li><a class="nav-button" href="support" id="support">Support</a></li>
             <li>
               <a class="nav-button" href="#" id="Uitloggen">Uitloggen</a>
             </li>
