@@ -28,6 +28,11 @@ export class HomePage extends LitElement {
       ul {
         list-style: none;
       }
+      img {
+        max-width: 100%;
+        height: auto;
+        width: auto\\9; /* ie8 */
+      }
 
       .card {
         padding: 2em;
@@ -98,7 +103,7 @@ export class HomePage extends LitElement {
 
         <div class="side-by-side">
 
-          <img class="moonimage" src="IMG_7430.JPG" height="845" width="590"
+          <img class="moonimage" src="IMG_7430.JPG"
                alt="harry clarke faust illustration of witch-queen and young prince with elegant fingers, full moon in the background"/>
         </div>
 

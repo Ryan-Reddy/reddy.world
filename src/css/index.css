@@ -1,6 +1,8 @@
+
+
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 1vw;
   line-height: 24px;
   font-weight: 400;
 
@@ -12,7 +14,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  webkit-text-size-adjust: 100%;
 
   --silver: #cccccc;
   --gold: #ffcc00;
@@ -28,11 +30,15 @@
   --transitionInSeconds: 0.6s;
 
 }
+main {
+  color: var(--wit);
+  background-color: var(--zwart);
+  margin: 3vh;
+}
 
 body {
   height: 100%;
 
-  margin: 0;
   /*display: flex;*/
   place-items: center;
   min-width: 320px;
@@ -64,6 +70,7 @@ body {
   main {
     color: var(--wit);
     background-color: var(--zwart);
+
   }
 
   table {
@@ -87,7 +94,12 @@ body {
   }
 
 }
+@media (max-width: 952px) {
+  main {
+    font-size: 4vw;
 
+  }
+}
 @media (prefers-color-scheme: light) {
   :root {
     color: var(--zwart);

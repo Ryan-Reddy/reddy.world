@@ -23,7 +23,6 @@ export class MenuFooter extends LitElement {
       }
 
       body {
-        font-size: 14px;
         font-family: Montserrat;
         color: white;
         font-size: 1em;
@@ -100,24 +99,48 @@ export class MenuFooter extends LitElement {
       }
 
       @media (max-width: 952px) {
+      a {
+                font-size: 10vw;
+      }
+
+            input {
+        max-width: 100%;
+        height: auto;
+        width: auto\\9; /* ie8 */
+      }
         .nav-logo {
           height: 3em;
           padding-left: 50px;
         }
 
         nav ul li a {
-          font-size: 10px;
           display: inline-block;
-          line-height: 8em;
+          line-height: 3em;
           margin: 0 1em;
         }
+
       }
 
       @media (max-width: 858px) {
         .checkbtn {
           display: block;
         }
+      footer {
+        /*width: 100%;*/
+        height: 100%;
+        /*bottom: 0;*/
+        /*position: fixed;*/
+        margin-top: 100%;
 
+
+        position: relative;
+        /* negative value of footer height makes it possible for menu to show on mobile*/
+        height: -180px;
+
+
+        background-color: var(--zwart);
+        opacity: 1;
+      }
         u: {
           position: fixed;
           width: 100%;
@@ -128,9 +151,6 @@ export class MenuFooter extends LitElement {
           transition: all .5s;
         } nav ul li {
           display: block;
-        } nav ul li a {
-          font-size: 20px;
-        };
 
         a:hover, a.active {
           background: none;

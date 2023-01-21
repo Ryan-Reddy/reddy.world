@@ -26,7 +26,7 @@ export class MenuNav extends LitElement {
       * {
         margin: 0;
         padding: 0;
-        box-sizing: border-box;
+        // box-sizing: border-box;
         text-decoration: none;
       }
 
@@ -113,16 +113,20 @@ export class MenuNav extends LitElement {
       }
 
       @media (max-width: 952px) {
+            .entire_menu_bar {
+          height: 100%;
+          font-size: 1vw;
+
+      }
         .nav-logo {
-          height: 3em;
-          padding-left: 50px;
+          height: 100%;
+          // padding-left: 50px;
         }
 
         nav ul li a {
-          font-size: 10px;
-          display: inline-block;
-          line-height: 8em;
-          margin: 0 1em;
+          display: inline-flex;
+          // line-height: 8em;
+          // margin: 0 1em;
         }
       }
 
@@ -134,13 +138,13 @@ export class MenuNav extends LitElement {
         u: {
           position: fixed;
           width: 100%;
-          height: 100vh;
-          top: 80px;
-          left: -100%;
+          // height: 100vh;
+          // top: 80px;
+          // left: -100%;
           text-align: center;
           transition: var(--transitionInSeconds);
         } nav ul li {
-          display: block;
+          // display: block;
         } nav ul li a {
           font-size: 20px;
         };
