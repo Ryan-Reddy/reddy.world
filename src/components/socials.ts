@@ -55,8 +55,9 @@ export class SocialsElement extends LitElement {
         <ul>
         <li><a href="https://www.linkedin.com/in/ryan-reddy-productions/">LinkedIn</a></li>
         <li><a href="https://github.com/Ryan-Reddy">Github</a></li>
+
         <li><a href="https://www.facebook.com/klugook/">Facebook</a></li>
-        <li><a href="https://www.instagram.com/so_fluffy_ill_die/">Facebook</a></li>
+        <li><a href="https://www.instagram.com/so_fluffy_ill_die/">Instagram</a></li>
 
         </ul>
         </div>
