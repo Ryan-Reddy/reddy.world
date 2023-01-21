@@ -3,11 +3,11 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Ryan Reddy -- Creator -- https://www.linkedin.com/in/ryan-reddy-productions/
 
-# THANKS
+# LOVE,
 
-    <name>
+    Ryan Reddy
 
 # TECHNOLOGY COLOPHON
 

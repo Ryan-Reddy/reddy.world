@@ -86,7 +86,6 @@ export class HomePage extends LitElement {
       <meta name="description" content="Ryan Reddy's world.">
       <meta title="Home Page">
       <header>
-        <h1 class="header">Get Reddy world!</h1>
       </header>
       <body>
 
@@ -99,11 +98,11 @@ export class HomePage extends LitElement {
 
         <div class="side-by-side">
 
-          <img src="IMG_7430.JPG" height="845" width="590"
+          <img class="moonimage" src="IMG_7430.JPG" height="845" width="590"
                alt="harry clarke faust illustration of witch-queen and young prince with elegant fingers, full moon in the background"/>
         </div>
 
-        <simple-greeting name="World">Here stands Ryan Reddy.</simple-greeting>
+        <h1 class="header">Here stands Ryan Reddy.</h1>
 
       </main>
       </body>
