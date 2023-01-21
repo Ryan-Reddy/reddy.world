@@ -57,6 +57,7 @@ export class FriendsElement extends LitElement {
         <ul>
         <li><a href="https://www.noordermeer.tech">Martijn Noordermeer</a></li>
         <li><a href="https://kingeve.nl/">King Eve</a></li>
+        <li><a href="https://www.flegmagallery.com/">Flegma Gallery</a></li>
         <li><a href="https://www.studiobinnenstad.com/">Studio Binnenstad</a></li>
         <li><a href="https://amsterdamsefrisdrankfabriek.nl/">Amsterdamse Frisdrank Fabriek</a></li>
         </ul>
