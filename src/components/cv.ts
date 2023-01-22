@@ -7,8 +7,8 @@ import {customElement, property} from 'lit/decorators.js';
  * @slot - This element has a slot
  * @csspart button - The button
  */
-@customElement('socials-element')
-export class SocialsElement extends LitElement {
+@customElement('cv-element')
+export class CVElement extends LitElement {
 
   constructor() {
     super();
@@ -42,23 +42,19 @@ export class SocialsElement extends LitElement {
     return html`
       <head>
         <meta charset="UTF-8">
-        <title>Socials</title>
+        <title>CV</title>
 
       </head>
       <body>
 
       <main>
         <div>
-        <h1>Socials</h1>
+        <h1>CV</h1>
         <br>
 
         <ul>
         <li><a href="https://www.linkedin.com/in/ryan-reddy-productions/">LinkedIn</a></li>
         <li><a href="https://github.com/Ryan-Reddy">Github</a></li>
-
-        <li><a href="https://www.facebook.com/klugook/">Facebook</a></li>
-        <li><a href="https://www.instagram.com/so_fluffy_ill_die/">Instagram</a></li>
-
         </ul>
         </div>
       </main>

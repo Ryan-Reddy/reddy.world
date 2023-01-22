@@ -10,7 +10,7 @@ import './components/readme';
 import './components/reset-password';
 import './components/support';
 import './components/friends';
-import './components/socials';
+import './components/cv';
 
 
 const app = document.querySelector('#app');
@@ -59,9 +59,9 @@ router.setRoutes([
     component: 'friends-element',
   },
   {
-    name: 'socials-element', // doet niks impliciet
-    path: '/socials',
-    component: 'socials-element',
+    name: 'cv-element', // doet niks impliciet
+    path: '/cv',
+    component: 'cv-element',
   },
 
   ////////////////////////////////////////////////////////////////////////

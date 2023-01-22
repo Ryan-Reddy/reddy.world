@@ -101,22 +101,24 @@ export class MenuFooter extends LitElement {
         .checkbtn {
           display: block;
         }
-      footer {
-        /*width: 100%;*/
-        height: 100%;
-        /*bottom: 0;*/
-        /*position: fixed;*/
-        margin-top: 100%;
+
+        footer {
+          /*width: 100%;*/
+          height: 100%;
+          /*bottom: 0;*/
+          /*position: fixed;*/
+          margin-top: 100%;
 
 
-        position: relative;
-        /* negative value of footer height makes it possible for menu to show on mobile*/
-        height: -180px;
+          position: relative;
+          /* negative value of footer height makes it possible for menu to show on mobile*/
+          height: -180px;
 
 
-        background-color: var(--zwart);
-        opacity: 1;
-      }
+          background-color: var(--zwart);
+          opacity: 1;
+        }
+
         u: {
           position: fixed;
           width: 100%;
@@ -128,12 +130,13 @@ export class MenuFooter extends LitElement {
         } nav ul li {
           display: block;
 
-        a:hover, a.active {
-          background: none;
-        }
+          a:hover, a.active {
+            background: none;
+          }
 
-        #check:checked ~ ul {
-          left: 0;
+          #check:checked ~ ul {
+            left: 0;
+          }
         }
       }
 
@@ -158,24 +161,12 @@ export class MenuFooter extends LitElement {
       <footer>
         <nav>
           <ul @click="${this._clickMenu}">
-            <li>
-              <a class="nav-button" href="login" id="Login" value="Log in"">Log in</a>
-            </li>
-            <li>
-              <a class="nav-button" href="support" id="support" value="Support">Support</a>
-            </li>
-            <li>
-              <a class="nav-button" href="readme" id="Readme" value="Readme">Readme</a>
-            </li>
-            <li>
-              <a class="friends-button" href="friends" id="friends-button" value="Friends">Friends</a>
-            </li>
-            <li>
-              <a class="socials-button" href="socials" id="socials-button" value="Socials">Socials</a>
-            </li>
-            <li>
-              <a class="nav-button" href="#" id="Logout" value="Log out">Log out</a>
-            </li>
+            <li><a class="nav-button" href="login" id="Login" value="Log in"">Log in</a></li>
+            <li><a class="nav-button" href="support" id="support" value="Support">Support</a></li>
+            <li><a class="nav-button" href="readme" id="Readme" value="Readme">Readme</a></li>
+            <li><a class="nav-button" href="friends" id="friends-button" value="Friends">Friends</a></li>
+            <li><a class="nav-button" href="cv" id="socials-button" value="CV">CV</a></li>
+            <li><a class="nav-button" href="#" id="Logout" value="Log out">Log out</a></li>
           </ul>
         </nav>
       </footer>

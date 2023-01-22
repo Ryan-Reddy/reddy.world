@@ -11,7 +11,6 @@ import {customElement, property} from 'lit/decorators.js';
 @customElement('menu-nav-element')
 export class MenuNav extends LitElement {
   @property() naamGebruiker = 'Hans Fumphriehd';
-  // @property() kpnLogo = '/public/branding/kpn-logo2-jpeg.jpg';
   @property() siteLogo = 'unicorn-break-chains.jpg';
   @property() currentPage: string = '';
   @property() _logoBarClickedLink = 'mailto:klugook@gmail.com?subject=Hello fellow wanderer!';
@@ -190,8 +189,7 @@ export class MenuNav extends LitElement {
           </label>
           <ul>
             <li><a class="nav-button" href="home" id="home">Home</a></li>
-            <li><a class="nav-button" href="account" id="account">Account</a></li>
-            <li><a class="nav-button" href="support" id="support">Support</a></li>
+            <li><a class="nav-button" href="cv" id="cv">CV</a></li>
           </ul>
         </nav>
       </div>
