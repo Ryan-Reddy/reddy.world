@@ -24,14 +24,17 @@ export class ReadmeElement extends LitElement {
         box-sizing: border-box;
         text-decoration: none;
       }
+      main {
+        display: flex;
+        align-items: center;
+      }
+
 
       .hidden {
         display: none;
         pointer-events: none;
         color: lightgrey;
-        foreground-color: grey;
         background-color: var(--grijs);
-        required: invalid;
       }
 
       button {
@@ -51,11 +54,20 @@ export class ReadmeElement extends LitElement {
           type="module"
           src="zero-md"
         ></script>
+
+
       </head>
       <body>
       <main>
-        <h1>README FILE</h1>
-        <zero-md src="README.md"></zero-md>
+        <h1 hidden>README FILE</h1>
+        <zero-md src="README.md">  <!-- Wrap with a <template> tag -->
+          <template>
+            <!-- Define your own styles inside a \`<style>\` tag -->
+            <style>
+              ;
+            </style>
+          </template>
+        </zero-md>
 
       </main>
 
