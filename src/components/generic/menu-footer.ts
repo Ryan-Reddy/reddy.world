@@ -167,7 +167,6 @@ export class MenuFooter extends LitElement {
         <nav>
           <ul @click="${this._clickMenu}">
 <!--            <li><a class="nav-button" href="login" id="Login" value="Log in"">Log in</a></li>-->
-            <li><a class="nav-button" href="cv" id="cv-button" value="CV">CV</a></li>
             <li><a class="nav-button" href="friends" id="friends-button" value="Friends">Friends</a></li>
             <li><a class="nav-button" href="readme" id="readme-button" value="Readme">Readme</a></li>
             <li><a class="nav-button" href="support" id="support-button" value="Support">Support</a></li>
