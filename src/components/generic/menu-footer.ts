@@ -29,8 +29,6 @@ export class MenuFooter extends LitElement {
         opacity: 1;
       }
 
-
-
       input {
         width: 176px;
         position: relative;

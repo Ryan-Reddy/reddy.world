@@ -191,8 +191,8 @@ footer {
   /*!*background-color: var(--zwart);*!*/
   /*background-color: var(--gold);*/
   /*opacity: 1;*/
-  background-color: orange;
   position: absolute;
+
   left: 0;
   bottom: 0;
   height: 100px;
