@@ -107,23 +107,23 @@ export class MenuFooter extends LitElement {
         .checkbtn {
           display: block;
         }
-
-        footer {
-          /*width: 100%;*/
-          height: 100%;
-          /*bottom: 0;*/
-          /*position: fixed;*/
-          margin-top: 100%;
-
-
-          position: relative;
-          /* negative value of footer height makes it possible for menu to show on mobile*/
-          height: -180px;
-
-
-          background-color: var(--zwart);
-          opacity: 1;
-        }
+        //
+        //footer {
+        //  /*width: 100%;*/
+        //  height: 100%;
+        //  /*bottom: 0;*/
+        //  /*position: fixed;*/
+        //  margin-top: 100%;
+        //
+        //
+        //  position: relative;
+        //  /* negative value of footer height makes it possible for menu to show on mobile*/
+        //  height: -180px;
+        //
+        //
+        //  background-color: var(--zwart);
+        //  opacity: 1;
+        //}
 
         u: {
           position: fixed;
@@ -166,11 +166,9 @@ export class MenuFooter extends LitElement {
     return html`
         <nav>
           <ul @click="${this._clickMenu}">
-<!--            <li><a class="nav-button" href="login" id="Login" value="Log in"">Log in</a></li>-->
             <li><a class="nav-button" href="friends" id="friends-button" value="Friends">Friends</a></li>
             <li><a class="nav-button" href="readme" id="readme-button" value="Readme">Readme</a></li>
             <li><a class="nav-button" href="support" id="support-button" value="Support">Support</a></li>
-<!--            <li><a class="nav-button" href="#" id="Logout" value="Log out">Log out</a></li>-->
           </ul>
         </nav>
     `;
