@@ -11,6 +11,7 @@ import './components/reset-password';
 import './components/support';
 import './components/friends';
 import './components/cv';
+import './components/cvFromLinkedin';
 
 
 const app = document.querySelector('#app');
@@ -59,9 +60,9 @@ router.setRoutes([
     component: 'friends-element',
   },
   {
-    name: 'cv-element', // doet niks impliciet
+    name: 'cv-linkedin-element', // doet niks impliciet
     path: '/cv',
-    component: 'cv-element',
+    component: 'cv-linkedin-element',
   },
 
   ////////////////////////////////////////////////////////////////////////
