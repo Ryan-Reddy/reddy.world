@@ -164,7 +164,6 @@ export class MenuFooter extends LitElement {
 
   render() {
     return html`
-      <footer>
         <nav>
           <ul @click="${this._clickMenu}">
 <!--            <li><a class="nav-button" href="login" id="Login" value="Log in"">Log in</a></li>-->
@@ -175,7 +174,6 @@ export class MenuFooter extends LitElement {
 <!--            <li><a class="nav-button" href="#" id="Logout" value="Log out">Log out</a></li>-->
           </ul>
         </nav>
-      </footer>
     `;
   }
 
