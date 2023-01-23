@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="">
 
 <head>
   <!-- HTML Meta Tags -->
@@ -7,7 +7,8 @@
   <meta property="og:title" content="A little corner of the internet Ryan Reddy calls his home.">
   <meta name="description" content="  Ryan's portfolio, cv and contact info.
   Also a place where project I work on get hosted.
-  Come see my latest exploits, resume, and get into contact with me.">
+  Come see my latest exploits, resume, and contact me.">
+  <meta property="og:locale:alternate" content="nl_NL" />
 
   <!-- Facebook Meta Tags -->
   <meta property="og:url" content="https://reddy.world/">
@@ -54,12 +55,13 @@
   <script defer src="components/generic/menu-nav.ts" type="module"></script>
   <script defer src="components/generic/menu-footer.ts" type="module"></script>
 
-  <script src="components/generic/my-listener.ts" type="module"></script>
-  <script src="components/generic/my-dispatcher.ts" type="module"></script>
+  <script defer src="components/generic/my-listener.ts" type="module"></script>
+  <script defer src="components/generic/my-dispatcher.ts" type="module"></script>
 </head>
 
 <body>
 <menu-nav-element></menu-nav-element>
+
 <main>
   <!-- Vaadin will add element based on urlhere -->
   <div id="app"></div>
