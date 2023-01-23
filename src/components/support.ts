@@ -11,7 +11,7 @@ import {customElement, property} from 'lit/decorators.js';
 export class SupportElement extends LitElement {
   @property() _hiddenElement = 'hidden';
   @property() currentPage: string | undefined;
-  @property() _supportClicked = 'mailto:klugook@gmail.com?subject=Hello fellow wanderer! I have turned it on and off again!';
+  @property() _supportClicked = 'mailto:ryanreddy@hotmail.com?subject=Hello friend! I have turned it on and off again!';
 
   constructor() {
     super();
@@ -29,10 +29,8 @@ export class SupportElement extends LitElement {
       .hidden {
         display: none;
         pointer-events: none;
-        color: lightgray;
-        foreground-color: var(--grijs);
+        color: var(--grijs);
         background-color: var(--grijs);
-        required: invalid;
       }
 
       button {
@@ -58,7 +56,7 @@ export class SupportElement extends LitElement {
                alt="Hello IT... Have you tried turning it off and on again?"/>
           <br/>
           <br/>
-          <button>if so, call us on 69-420-420-69</button>
+          <button @click="${this._contact}">if so, call us on 69-420-420-69</button>
         </div>
       </main>
       </body>
@@ -69,6 +67,8 @@ export class SupportElement extends LitElement {
     console.log('Click for support');
     console.log(this._hiddenElement);
     this._hiddenElement = this._hiddenElement == 'hidden' ? '' : 'hidden';
+  }
+  _contact() {
     window.open(this._supportClicked);
   }
 }

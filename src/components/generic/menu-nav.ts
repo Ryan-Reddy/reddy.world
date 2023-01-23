@@ -13,7 +13,7 @@ export class MenuNav extends LitElement {
   @property() naamGebruiker = 'Hans Fumphriehd';
   @property() siteLogo = 'unicorn-break-chains.jpg';
   @property() currentPage: string = '';
-  @property() _logoBarClickedLink = 'mailto:klugook@gmail.com?subject=Hello fellow wanderer!';
+  @property() _logoBarClickedLink = 'mailto:ryanreddy@hotmail.com?subject=Hello I licked the unicorn!';
 
   constructor() {
     super();

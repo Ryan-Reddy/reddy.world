@@ -1,5 +1,6 @@
 import {css, html, LitElement} from 'lit';
 import {customElement, query} from 'lit/decorators.js';
+import {property} from "lit/decorators";
 
 /**
  * An example element.
@@ -9,6 +10,8 @@ import {customElement, query} from 'lit/decorators.js';
  */
 @customElement('footer-menu')
 export class MenuFooter extends LitElement {
+  @property() _contactClicked = 'mailto:ryanreddy@hotmail.com?subject=Hello friend!';
+
   constructor() {
     super();
   }
@@ -170,6 +173,7 @@ export class MenuFooter extends LitElement {
             <li><a class="nav-button" href="friends" id="friends-button" aria-label="Friends">Friends</a></li>
             <li><a class="nav-button" href="readme" id="readme-button" aria-label="Readme">Readme</a></li>
             <li><a class="nav-button" href="support" id="support-button" aria-label="Support">Support</a></li>
+            <li><a class="nav-button" href="${this._contactClicked}" id="contact-button" aria-label="Contact">Contact</a></li>
           </ul>
         </nav>
     `;
