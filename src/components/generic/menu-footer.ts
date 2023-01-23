@@ -20,6 +20,13 @@ export class MenuFooter extends LitElement {
         padding: 0;
         box-sizing: border-box;
         text-decoration: none;
+        justify-content: space-between;
+
+        overflow: hidden;
+        float: right;
+
+        display: flex;
+        align-items: center;
       }
 
       body {
@@ -28,6 +35,7 @@ export class MenuFooter extends LitElement {
         font-size: 1em;
         opacity: 1;
       }
+
 
       input {
         width: 176px;
