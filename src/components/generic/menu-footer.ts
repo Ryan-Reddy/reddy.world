@@ -1,5 +1,5 @@
 import {css, html, LitElement} from 'lit';
-import {customElement, query, property} from 'lit/decorators.js';
+import {customElement, property, query} from 'lit/decorators.js';
 
 /**
  * An example element.
@@ -10,6 +10,7 @@ import {customElement, query, property} from 'lit/decorators.js';
 @customElement('footer-menu')
 export class MenuFooter extends LitElement {
   @property() _contactClicked = 'mailto:ryanreddy@hotmail.com?subject=Hello friend!';
+  @query('a', true) _input!: HTMLInputElement;
 
   constructor() {
     super();
@@ -30,15 +31,12 @@ export class MenuFooter extends LitElement {
         display: flex;
         align-items: center;
       }
-
       body {
         font-family: Montserrat;
         color: white;
         font-size: 1em;
         opacity: 1;
       }
-
-
       input {
         width: 176px;
         position: relative;
@@ -48,52 +46,46 @@ export class MenuFooter extends LitElement {
         opacity: 1;
         text-align: left;
       }
-
       nav ul {
         float: right;
       }
-
       nav ul li {
         display: inline-block;
         margin: 0 5px;
       }
-
       nav ul li a {
         color: var(--wit);
         border-radius: 3px;
         text-transform: uppercase;
         padding: 5px;
       }
-
       a.active, a:hover {
         background: var(--silver);
         transition: var(--transitionInSeconds);
         color: var(--zwart);
       }
-
       .nav-button {
         opacity: 1;
         text-align: center;
       }
-
       li {
         list-style: none;
       }
-
       #check {
         display: none;
       }
 
       @media (max-width: 952px) {
-      a {
-                /* font-size: 10vw;*/
-      }
+        a {
+          /* font-size: 10vw;*/
+        }
 
-            input {
-        max-width: 100%;
-        height: auto;
-        width: auto\\9; /* ie8 */
-      }
+        input {
+          max-width: 100%;
+          height: auto;
+          width: auto \\9; /* ie8 */
+        }
+
         .nav-logo {
           height: 3em;
           padding-left: 50px;
@@ -109,7 +101,6 @@ export class MenuFooter extends LitElement {
         .checkbtn {
           display: block;
         }
-
         footer {
           /*width: 100%;*/
           height: 100%;
@@ -126,7 +117,6 @@ export class MenuFooter extends LitElement {
           background-color: var(--zwart);
           opacity: 1;
         }
-
         u: {
           position: fixed;
           width: 100%;
@@ -135,14 +125,15 @@ export class MenuFooter extends LitElement {
           left: -100%;
           text-align: center;
           transition: all .5s;
-        } nav ul li {
+        }
+        nav ul li {
           display: block;
 
           a:hover, a.active {
             background: none;
           }
 
-          #check:checked ~ ul {
+          #check:checked {
             left: 0;
           }
         }
@@ -162,20 +153,21 @@ export class MenuFooter extends LitElement {
       }
     `;
   }
-  @query('a', true) _input!: HTMLInputElement;
 
   render() {
     return html`
-        <nav>
-          <ul>
-            <li><a class="nav-button" href="https://github.com/Ryan-Reddy" id="github-button" aria-label="github">Github</a></li>
-            <li><a class="nav-button" href="friends" id="friends-button" aria-label="Friends">Friends</a></li>
-            <li><a class="nav-button" href="cv" id="portfolio-button" aria-label="Friends">Portfolio</a></li>
-            <li><a class="nav-button" href="readme" id="readme-button" aria-label="Readme">Readme</a></li>
-            <li><a class="nav-button" href="support" id="support-button" aria-label="Support">Support</a></li>
-            <li><a class="nav-button" href="${this._contactClicked}" id="contact-button" aria-label="Contact">Contact</a></li>
-          </ul>
-        </nav>
+      <nav>
+        <ul>
+          <li><a class="nav-button" href="https://github.com/Ryan-Reddy" id="github-button"
+                 aria-label="github">Github</a></li>
+          <li><a class="nav-button" href="friends" id="friends-button" aria-label="Friends">Friends</a></li>
+          <li><a class="nav-button" href="cv" id="portfolio-button" aria-label="Friends">Portfolio</a></li>
+          <li><a class="nav-button" href="readme" id="readme-button" aria-label="Readme">Readme</a></li>
+          <li><a class="nav-button" href="support" id="support-button" aria-label="Support">Support</a></li>
+          <li><a class="nav-button" href="${this._contactClicked}" id="contact-button" aria-label="Contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
     `;
   }
 

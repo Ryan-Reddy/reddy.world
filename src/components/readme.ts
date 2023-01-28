@@ -1,5 +1,6 @@
 import {css, html, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
+import "https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js";
 
 /**
  * An example element.
@@ -11,6 +12,7 @@ import {customElement, property} from 'lit/decorators.js';
 export class ReadmeElement extends LitElement {
   @property() _hiddenElement = 'hidden';
   @property() currentPage: string | undefined;
+  @property() _readmeFile = "README.md";
 
   constructor() {
     super();
@@ -50,29 +52,19 @@ export class ReadmeElement extends LitElement {
       <head>
         <meta charset="UTF-8">
         <title>README</title>
-        <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@1/src/zero-md.min.js"></script>
-        <script
-          type="module"
-          src="zero-md"
-        ></script>
-
-
       </head>
-      <body>
-      <main>
+
         <h1 hidden>README FILE</h1>
-        <zero-md src="README.md">  <!-- Wrap with a <template> tag -->
+        <zero-md src="${this._readmeFile}">  <!-- Wrap with a <template> tag -->
           <template>
             <!-- Define your own styles inside a \`<style>\` tag -->
             <style>
-              ;
+              h1 {
+                color: red;
+              }
             </style>
           </template>
         </zero-md>
-
-      </main>
-
-      </body>
       </html>
     `;
   }
