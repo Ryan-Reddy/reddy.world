@@ -7,8 +7,8 @@ import {customElement, property} from 'lit/decorators.js';
  * @slot - This element has a slot
  * @csspart button - The button
  */
-@customElement('cv-element')
-export class CVElement extends LitElement {
+@customElement('portfolio-element')
+export class PortfolioElement extends LitElement {
 
   constructor() {
     super();

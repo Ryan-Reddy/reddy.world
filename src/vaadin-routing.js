@@ -10,7 +10,7 @@ import './components/readme';
 import './components/reset-password';
 import './components/support';
 import './components/friends';
-import './components/cv';
+import './components/portfolio';
 import './components/cvFromLinkedin';
 
 
@@ -63,6 +63,11 @@ router.setRoutes([
     name: 'cv-linkedin-element', // doet niks impliciet
     path: '/cv',
     component: 'cv-linkedin-element',
+  },
+  {
+    name: 'portfolio-element', // doet niks impliciet
+    path: '/portfolio',
+    component: 'portfolio-element',
   },
 
   ////////////////////////////////////////////////////////////////////////

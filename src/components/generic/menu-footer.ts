@@ -1,6 +1,5 @@
 import {css, html, LitElement} from 'lit';
-import {customElement, query} from 'lit/decorators.js';
-import {property} from "lit/decorators";
+import {customElement, query, property} from 'lit/decorators.js';
 
 /**
  * An example element.
@@ -110,23 +109,23 @@ export class MenuFooter extends LitElement {
         .checkbtn {
           display: block;
         }
-        //
-        //footer {
-        //  /*width: 100%;*/
-        //  height: 100%;
-        //  /*bottom: 0;*/
-        //  /*position: fixed;*/
-        //  margin-top: 100%;
-        //
-        //
-        //  position: relative;
-        //  /* negative value of footer height makes it possible for menu to show on mobile*/
-        //  height: -180px;
-        //
-        //
-        //  background-color: var(--zwart);
-        //  opacity: 1;
-        //}
+
+        footer {
+          /*width: 100%;*/
+          height: 100%;
+          /*bottom: 0;*/
+          /*position: fixed;*/
+          margin-top: 100%;
+
+
+          position: relative;
+          /* negative value of footer height makes it possible for menu to show on mobile*/
+          height: -180px;
+
+
+          background-color: var(--zwart);
+          opacity: 1;
+        }
 
         u: {
           position: fixed;
@@ -168,9 +167,10 @@ export class MenuFooter extends LitElement {
   render() {
     return html`
         <nav>
-          <ul @click="${this._clickMenu}">
+          <ul>
             <li><a class="nav-button" href="https://github.com/Ryan-Reddy" id="github-button" aria-label="github">Github</a></li>
             <li><a class="nav-button" href="friends" id="friends-button" aria-label="Friends">Friends</a></li>
+            <li><a class="nav-button" href="cv" id="portfolio-button" aria-label="Friends">Portfolio</a></li>
             <li><a class="nav-button" href="readme" id="readme-button" aria-label="Readme">Readme</a></li>
             <li><a class="nav-button" href="support" id="support-button" aria-label="Support">Support</a></li>
             <li><a class="nav-button" href="${this._contactClicked}" id="contact-button" aria-label="Contact">Contact</a></li>
@@ -179,29 +179,5 @@ export class MenuFooter extends LitElement {
     `;
   }
 
-  _clickMenu() {
-    const name = this._input.value.trim();
-    if (name) {
-      const options = {
-        detail: {name},
-        bubbles: true,
-        composed: true
-      };
-      this.dispatchEvent(new CustomEvent('pageChoice', options));
 
-      console.log('_dispatchPageLink() need to write funcion clickmenu in menu-footer');
-      //   // @ts-ignore
-      //   const id = e.target.id;
-      //   console.log('id= ' + id);
-      //
-      //   const hasChanged = this.currentPage !== id;
-      //
-      //   if (hasChanged) {
-      //     this.currentPage = id;
-      //
-      //     //notify parent:
-      this.dispatchEvent(new Event('page-chosen'));
-      //   }
-    }
-  }
 }
