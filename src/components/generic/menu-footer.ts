@@ -18,17 +18,17 @@ export class MenuFooter extends LitElement {
 
   static get styles() {
     return css`
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        text-decoration: none;
-        justify-content: space-between;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      justify-content: space-between;
 
-        overflow: hidden;
-        float: right;
+      overflow: hidden;
+      float: right;
 
-        display: flex;
-        align-items: center;
+      display: flex;
+      align-items: center;
 
       body {
         font-family: Montserrat;
@@ -36,6 +36,7 @@ export class MenuFooter extends LitElement {
         font-size: 1em;
         opacity: 1;
       }
+
       input {
         width: 176px;
         position: relative;
@@ -45,31 +46,38 @@ export class MenuFooter extends LitElement {
         opacity: 1;
         text-align: left;
       }
+
       nav ul {
         float: right;
       }
+
       nav ul li {
         display: inline-block;
         margin: 0 5px;
       }
+
       nav ul li a {
         color: var(--wit);
         border-radius: 3px;
         text-transform: uppercase;
         padding: 5px;
       }
+
       a.active, a:hover {
         background: var(--silver);
         transition: var(--transitionInSeconds);
         color: var(--zwart);
       }
+
       .nav-button {
         opacity: 1;
         text-align: center;
       }
+
       li {
         list-style: none;
       }
+
       #check {
         display: none;
       }
@@ -97,7 +105,7 @@ export class MenuFooter extends LitElement {
           display: block;
         }
 
-        u: {
+        u {
           position: fixed;
           width: 100%;
           height: 100vh;
@@ -106,16 +114,17 @@ export class MenuFooter extends LitElement {
           text-align: center;
           transition: all .5s;
         }
+
         nav ul li {
-          display: block;
+          //display: block;
+        }
 
-          a:hover, a.active {
-            background: none;
-          }
+        a:hover, a.active {
+          background: none;
+        }
 
-          #check:checked {
-            left: 0;
-          }
+        #check:checked {
+          left: 0;
         }
       }
 
@@ -125,6 +134,7 @@ export class MenuFooter extends LitElement {
           background-color: var(--wit);
           border-color: var(--wit);
         }
+
         a.active, a:hover {
           background: var(--gold);
           transition: var(--transitionInSeconds);

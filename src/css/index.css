@@ -173,24 +173,6 @@ body {
 
 
 footer-menu {
-  /*width: 100%;*/
-  /*height: 8em;*/
-  /*bottom: 0;*/
-  /*position: fixed;*/
-  /*padding: 1rem 1.5rem;*/
-
-  /*overflow: hidden;*/
-  /*display: flex;*/
-  /*justify-content: space-between;*/
-  /*align-items: center;*/
-
-  /*position: absolute;*/
-  /*!* negative value of footer height *!*/
-  /*height: 180px;*/
-
-  /*!*background-color: var(--zwart);*!*/
-  /*background-color: var(--gold);*/
-  /*opacity: 1;*/
   position: absolute;
 
   left: 0;
