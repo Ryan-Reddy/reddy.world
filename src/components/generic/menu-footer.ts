@@ -18,17 +18,18 @@ export class MenuFooter extends LitElement {
 
   static get styles() {
     return css`
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      text-decoration: none;
-      justify-content: space-between;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        justify-content: space-between;
 
-      overflow: hidden;
-      float: right;
+        float: right;
 
-      display: flex;
-      align-items: center;
+        display: flex;
+        align-items: center;
+      }
 
       body {
         font-family: Montserrat;
@@ -47,6 +48,8 @@ export class MenuFooter extends LitElement {
       }
       nav ul {
         float: right;
+        overflow: hidden;
+
       }
       nav ul li {
         display: inline-block;
@@ -86,33 +89,29 @@ export class MenuFooter extends LitElement {
           padding-left: 50px;
         }
 
-        nav ul li a {
-          display: inline-block;
-        }
-
       }
 
       @media (max-width: 858px) {
+        * {          display: inline-block;
+        }
+
         .checkbtn {
-          display: block;
+          display: inline-block;
         }
 
         u {
           position: fixed;
-          width: 100%;
+          width: auto;
           height: 100vh;
           top: 80px;
-          left: -100%;
+          //left: -100%;
           text-align: center;
           transition: all .5s;
-        }
-        nav ul li {
-          //display: block;
 
         }
+        nav ul li a {
+          font-size: 4vw;
 
-        a:hover, a.active {
-          background: none;
         }
 
         #check:checked {
@@ -137,12 +136,12 @@ export class MenuFooter extends LitElement {
 
   render() {
     return html`
+
       <nav>
         <ul>
           <li><a class="nav-button" href="https://github.com/Ryan-Reddy" id="github-button"
                  aria-label="github">Github</a></li>
           <li><a class="nav-button" href="friends" id="friends-button" aria-label="Friends">Friends</a></li>
-          <li><a class="nav-button" href="cv" id="portfolio-button" aria-label="Friends">Portfolio</a></li>
           <li><a class="nav-button" href="readme" id="readme-button" aria-label="Readme">Readme</a></li>
           <li><a class="nav-button" href="support" id="support-button" aria-label="Support">Support</a></li>
           <li><a class="nav-button" href="${this._contactClicked}" id="contact-button" aria-label="Contact">Contact</a>
