@@ -108,19 +108,11 @@ export class MenuFooter extends LitElement {
         u {
           position: fixed;
           width: 100%;
-          height: 100vh;
+          //height: 100vh;
           top: 80px;
           left: -100%;
           text-align: center;
           transition: all .5s;
-        }
-
-        nav ul li {
-          //display: block;
-        }
-
-        a:hover, a.active {
-          background: none;
         }
 
         #check:checked {
