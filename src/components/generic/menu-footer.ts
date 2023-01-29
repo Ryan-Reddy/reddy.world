@@ -18,7 +18,6 @@ export class MenuFooter extends LitElement {
 
   static get styles() {
     return css`
-      * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -30,7 +29,6 @@ export class MenuFooter extends LitElement {
 
       display: flex;
       align-items: center;
-    }
 
       body {
         font-family: Montserrat;
