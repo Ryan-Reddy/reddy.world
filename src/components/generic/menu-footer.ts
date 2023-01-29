@@ -18,6 +18,7 @@ export class MenuFooter extends LitElement {
 
   static get styles() {
     return css`
+      * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -29,6 +30,7 @@ export class MenuFooter extends LitElement {
 
       display: flex;
       align-items: center;
+    }
 
       body {
         font-family: Montserrat;
@@ -36,7 +38,6 @@ export class MenuFooter extends LitElement {
         font-size: 1em;
         opacity: 1;
       }
-
       input {
         width: 176px;
         position: relative;
@@ -46,38 +47,31 @@ export class MenuFooter extends LitElement {
         opacity: 1;
         text-align: left;
       }
-
       nav ul {
         float: right;
       }
-
       nav ul li {
         display: inline-block;
         margin: 0 5px;
       }
-
       nav ul li a {
         color: var(--wit);
         border-radius: 3px;
         text-transform: uppercase;
         padding: 5px;
       }
-
       a.active, a:hover {
         background: var(--silver);
         transition: var(--transitionInSeconds);
         color: var(--zwart);
       }
-
       .nav-button {
         opacity: 1;
         text-align: center;
       }
-
       li {
         list-style: none;
       }
-
       #check {
         display: none;
       }
@@ -108,11 +102,19 @@ export class MenuFooter extends LitElement {
         u {
           position: fixed;
           width: 100%;
-          //height: 100vh;
+          height: 100vh;
           top: 80px;
           left: -100%;
           text-align: center;
           transition: all .5s;
+        }
+        nav ul li {
+          //display: block;
+
+        }
+
+        a:hover, a.active {
+          background: none;
         }
 
         #check:checked {
@@ -126,7 +128,6 @@ export class MenuFooter extends LitElement {
           background-color: var(--wit);
           border-color: var(--wit);
         }
-
         a.active, a:hover {
           background: var(--gold);
           transition: var(--transitionInSeconds);
