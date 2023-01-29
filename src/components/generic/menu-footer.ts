@@ -18,7 +18,7 @@ export class MenuFooter extends LitElement {
 
   static get styles() {
     return css`
-      * {
+      nav {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
@@ -60,7 +60,10 @@ export class MenuFooter extends LitElement {
         border-radius: 3px;
         text-transform: uppercase;
         padding: 5px;
+        text-decoration: none;
+
       }
+
       a.active, a:hover {
         background: var(--silver);
         transition: var(--transitionInSeconds);
@@ -92,8 +95,7 @@ export class MenuFooter extends LitElement {
       }
 
       @media (max-width: 858px) {
-        * {          display: inline-block;
-        }
+        display: inline-block;
 
         .checkbtn {
           display: inline-block;
@@ -117,6 +119,7 @@ export class MenuFooter extends LitElement {
         #check:checked {
           left: 0;
         }
+
       }
 
       @media (prefers-color-scheme: light) {
