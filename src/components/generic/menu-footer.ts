@@ -18,7 +18,6 @@ export class MenuFooter extends LitElement {
 
   static get styles() {
     return css`
-      * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
@@ -30,7 +29,7 @@ export class MenuFooter extends LitElement {
 
         display: flex;
         align-items: center;
-      }
+
       body {
         font-family: Montserrat;
         color: white;
@@ -76,10 +75,6 @@ export class MenuFooter extends LitElement {
       }
 
       @media (max-width: 952px) {
-        a {
-          /* font-size: 10vw;*/
-        }
-
         input {
           max-width: 100%;
           height: auto;
@@ -101,22 +96,7 @@ export class MenuFooter extends LitElement {
         .checkbtn {
           display: block;
         }
-        footer {
-          /*width: 100%;*/
-          height: 100%;
-          /*bottom: 0;*/
-          /*position: fixed;*/
-          margin-top: 100%;
 
-
-          position: relative;
-          /* negative value of footer height makes it possible for menu to show on mobile*/
-          height: -180px;
-
-
-          background-color: var(--zwart);
-          opacity: 1;
-        }
         u: {
           position: fixed;
           width: 100%;
