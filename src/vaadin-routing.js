@@ -3,9 +3,7 @@ import {Router} from '@vaadin/router';
 import './components/account-info';
 import './components/home-page';
 import './components/login';
-import './components/generic/menu-footer';
 import './components/new-account';
-import './components/generic/not-found';
 import './components/readme';
 import './components/reset-password';
 import './components/support';
@@ -13,12 +11,20 @@ import './components/friends';
 import './components/portfolio';
 import './components/cvFromLinkedin';
 
+// import './components/generic/menu-footer';
+import './components/generic/not-found';
+import './components/generic/lang-picker';
 
 const app = document.querySelector('#app');
 export const router = new Router(app);
 
 // noinspection JSIgnoredPromiseFromCall
 router.setRoutes([
+  {
+    name: 'lang-picker-element', // doet niks impliciet
+    path: '/lang',
+    component: 'lang-picker-element',
+  },
   {
     name: 'login-element', // doet niks impliciet
     path: '/login',
