@@ -1,6 +1,7 @@
 import {css, html, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 
+import { LangElement } from './lang-picker';
 
 /**
  * An example element.
@@ -190,7 +191,11 @@ export class MenuNav extends LitElement {
           <ul>
             <li><a class="nav-button" href="home" id="home">Home</a></li>
             <li><a class="nav-button" href="cv" id="cv">CV</a></li>
+            <li>
+              <lang-element></lang-element>
+            </li>
           </ul>
+
         </nav>
       </div>
       </body>

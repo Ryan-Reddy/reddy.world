@@ -7,8 +7,8 @@ import {customElement, property, query} from 'lit/decorators.js';
  * @slot - This element has a slot
  * @csspart button - The button
  */
-@customElement('lang-picker-element')
-export class SupportElement extends LitElement {
+@customElement('lang-element')
+export class LangElement extends LitElement {
   @query('.dropdown-menu-items') _dropdownMenuItems!: HTMLUListElement;
   constructor() {
     super();
@@ -31,7 +31,7 @@ export class SupportElement extends LitElement {
       }
 
       button {
-        width: 20%;
+        //width: 20%; /* goveerned by parent */
         height: 2em;
       }
       .dropdown-menu-items {
