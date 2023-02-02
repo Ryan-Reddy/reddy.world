@@ -35,12 +35,13 @@ export class LangElement extends LitElement {
         height: 2em;
       }
       .dropdown-menu-items {
+        list-style-image: none;
         position: fixed; /* Sit on top of the page content */
         display: none; /* Hidden by default */
         width: 30%; /* 100% = Full width (cover the whole page) */
         height: 100%; /* Full height (cover the whole page) */
         top: 0;
-        left: 0;
+        left: 3em;
         right: 0;
         bottom: 0;
         background-color: rgba(0,0,0,0.5); /* Black background with opacity */
@@ -101,7 +102,6 @@ export class LangElement extends LitElement {
   _showDropDown() {
     console.log('_showDropDown')
     this._dropdownMenuItems.style.display = 'inline';
-    this._dropdownMenuItems.style.position = 'fixed';
   };
   _hideDropDown() {
     console.log('_hideDropDown')
@@ -114,6 +114,8 @@ export class LangElement extends LitElement {
     console.log('_languageChosen ' + language)
     sessionStorage.setItem('languageChoiceUser', language)
     // TODO implement language chosen to represent language parts
+
+
   }
 
 }

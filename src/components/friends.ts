@@ -48,20 +48,17 @@ export class FriendsElement extends LitElement {
       <head>
         <meta charset="UTF-8">
         <title>Friends</title>
-
       </head>
       <body>
-
-      <main >
+      <main>
         <div>
+          <span lang="nl">Nederlandse span</span>
+          <br>
 
-          <div lang="en">
+          <span lang="en">Engelse span</span>
+
+
             <h1 >Friends</h1>
-          </div>
-
-          <div lang="nl">
-            <h1>Vrienden</h1>
-          </div>
 
         <br>
 

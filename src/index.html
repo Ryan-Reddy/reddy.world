@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="en">
+<html lang="en" xmlns="">
 
 <head>
   <!-- HTML Meta Tags -->
@@ -64,9 +64,12 @@
 <!--  font awesome 5:       -->
   <script src="https://kit.fontawesome.com/4252d6aa3b.js" crossorigin="anonymous"></script>
   <script>
-    let language = navigator.language;
-    console.log('sessionStorage.setItem ("languageChoiceUser", \'' + language + '\')')
-    sessionStorage.setItem('languageChoiceUser', language)
+    let language = self.navigator.language;
+    console.log('browser preferred language, \'' + language + '\' from navigator.language)')
+
+    let languages = self.navigator.languages;
+    console.log('sessionStorage.setItem ("languageChoiceUser", \'' + languages + '\' from navigator.language)')
+    sessionStorage.setItem('languagesSystemUser', languages)
   </script>
 
 </head>
