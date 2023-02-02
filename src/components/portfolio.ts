@@ -60,7 +60,6 @@ export class PortfolioElement extends LitElement {
       </main>
 
       </body>
-      </html>
     `;
   }
 }

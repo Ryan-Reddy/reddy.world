@@ -108,7 +108,6 @@ export class NotFound extends LitElement {
       }
     </script>
 
-    </html>
     <!-- IE needs 512+ bytes: https://docs.microsoft.com/archive/blogs/ieinternals/friendly-http-error-pages -->
     `;
   }

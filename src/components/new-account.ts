@@ -147,7 +147,6 @@ export class NewAccount extends LitElement {
         <footer id="footer"></footer>
       </div>
       </body>
-      </html>
     `;
   }
 

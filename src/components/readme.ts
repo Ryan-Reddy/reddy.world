@@ -65,7 +65,6 @@ export class ReadmeElement extends LitElement {
             </style>
           </template>
         </zero-md>
-      </html>
     `;
   }
 

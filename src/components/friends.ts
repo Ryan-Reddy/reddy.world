@@ -71,7 +71,6 @@ export class FriendsElement extends LitElement {
       </main>
 
       </body>
-      </html>
     `;
   }
 }
