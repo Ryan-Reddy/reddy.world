@@ -188,7 +188,7 @@ export class MenuNav extends LitElement {
           <label for="check">
             <i class="fas fa-bars"></i>
           </label>
-          <ul>
+          <ul name="top-nav-menu">
             <li><a class="nav-button" href="home" id="home">Home</a></li>
             <li><a class="nav-button" href="cv" id="cv">CV</a></li>
             <li>

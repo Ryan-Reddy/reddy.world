@@ -1,5 +1,6 @@
 import {css, html, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
+import langCSS from '../css/langCSS';
 
 /**
  * An example element.
@@ -15,7 +16,9 @@ export class FriendsElement extends LitElement {
   }
 
   static get styles() {
-    return css`
+    return [
+      langCSS,
+      css`
       * {
         margin: 0;
         padding: 0;
@@ -36,7 +39,7 @@ export class FriendsElement extends LitElement {
         width: 66%;
         height: 2em;
       }
-    `;
+    `];
   }
 
   //TODO properly import /node_modules/zero-md:
@@ -49,7 +52,7 @@ export class FriendsElement extends LitElement {
       </head>
       <body>
 
-      <main>
+      <main >
         <div>
 
         <h1 Lang="en">Friends</h1>

@@ -1,0 +1,190 @@
+  :root {
+    font-family: "Adobe Garamond Pro", Garamond, Inter, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 1vw;
+    line-height: 24px;
+    font-weight: 300;
+
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    webkit-text-size-adjust: 100%;
+
+    --silver: #cccccc;
+    --gold: #ffcc00;
+
+    --groen: #00c300;
+    --blauw: #00aaff;
+    --wit: #ffffff;
+    --grijs: #e2e2e2;
+    --zwart: #1e1e1e;
+    --warning-red: red;
+    --fullwidth: 100%;
+
+    --transitionInSeconds: 0.6s;
+
+  }
+
+
+
+  html {
+    position: relative;
+    min-height: 100%;
+  }
+
+  main {
+    color: var(--wit);
+    background-color: var(--zwart);
+    margin: 3vh;
+
+  }
+
+  body {
+    height: 100%;
+
+    /*display: flex;*/
+    place-items: center;
+    min-width: 320px;
+    min-height: 100%;
+
+    /*background-image: url('achtergrondshapes.webp');*/
+    background-repeat: no-repeat;
+    background-size: 100%;
+    /*background-position: top;*/
+
+    /*overflow: auto;*/
+    /*padding-bottom: 180px;*/
+    /* must be same height as the footer */
+
+    margin: 0 0 100px;
+    /* bottom = footer height */
+    padding: 25px;
+  }
+
+  .side-by-side {
+    margin-left: auto;
+    margin-right: 0;
+    place-items: center;
+  }
+
+  @media (max-width: 952px) {
+    main {
+      font-size: 4vw;
+    }
+
+    nav {
+      height: 100%;
+      /*font-size: 1vw;*/
+    }
+
+    nav ul li a {
+      display: inline-block;
+      line-height: 3em;
+      margin: 0 1em;
+      font-size: 4vw;
+      line-height: 2em;
+
+    }
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      color: var(--zwart);
+      background-color: var(--wit);
+    }
+
+    main {
+      color: var(--zwart);
+      background-color: var(--wit);
+    }
+
+    table {
+      color: var(--wit);
+      background: var(--wit);
+    }
+
+    :root .entire_menu_bar {
+      color: var(--wit);
+      background-color: var(--wit);
+    }
+
+    nav ul li a {
+      color: var(--wit);
+      background-color: var(--zwart);
+    }
+
+    nav ul li a.active, a:hover {
+      background: var(--silver);
+      transition: var(--transitionInSeconds);
+      color: var(--zwart) !important;
+    }
+
+    nav ul li a {
+      background-color: var(--wit);
+      border-bottom-color: var(--gold);
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color: var(--wit);
+      background-color: var(--zwart);
+    }
+
+    main {
+      color: var(--wit);
+      background-color: var(--zwart);
+
+    }
+
+    table {
+      color: var(--wit);
+      background: var(--zwart);
+    }
+
+    :root .entire_menu_bar {
+      color: var(--wit);
+      background-color: var(--zwart);
+    }
+
+    nav ul li a {
+      color: var(--wit);
+      background-color: var(--zwart);
+    }
+
+    nav ul li a.active, a:hover {
+      background: var(--silver);
+      transition: var(--transitionInSeconds);
+      color: var(--zwart) !important;
+    }
+
+  }
+
+  .entire_menu_bar {
+    height: 8em;
+    border: 1px solid;
+    background-color: #151617;
+
+    position: relative;
+    overflow: hidden;
+    padding: 1rem 1.5rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+  footer-menu {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+  }
+
