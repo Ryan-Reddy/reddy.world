@@ -79,7 +79,7 @@ export class LangElement extends LitElement {
           aria-expanded="true"
           role="menu">
           <li lang="en" role="menuitem">
-            <a href="" title="English"
+            <a href="" title="English" value="en"
                @click="${this._languageChosen}"
             >
               <bdi>English</bdi>
@@ -87,7 +87,7 @@ export class LangElement extends LitElement {
           </li>
 
           <li lang="nl" role="menuitem">
-            <a href="" title="Dutch"
+            <a href="" title="Dutch" value="nl"
                @click="${this._languageChosen}"
             >
               <bdi>Nederlands</bdi>
@@ -108,11 +108,12 @@ export class LangElement extends LitElement {
     this._dropdownMenuItems.style.display = 'none';
   }
   _languageChosen(e: Event) {
-    const language = e.currentTarget.getAttribute('title');
+    const language = e.currentTarget.getAttribute('value');
     alert('You chose: ' + language +
       '\nWARNING: - under construction')
     console.log('_languageChosen ' + language)
-
+    sessionStorage.setItem('languageChoiceUser', language)
+    // TODO implement language chosen to represent language parts
   }
 
 }

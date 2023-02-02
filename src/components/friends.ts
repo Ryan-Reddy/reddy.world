@@ -55,8 +55,14 @@ export class FriendsElement extends LitElement {
       <main >
         <div>
 
-        <h1 Lang="en">Friends</h1>
-        <h1 Lang="nl">Vrienden</h1>
+          <div lang="en">
+            <h1 >Friends</h1>
+          </div>
+
+          <div lang="nl">
+            <h1>Vrienden</h1>
+          </div>
+
         <br>
 
         <ul>
@@ -69,6 +75,9 @@ export class FriendsElement extends LitElement {
         </ul>
         </div>
       </main>
+
+
+
 
       </body>
     `;

@@ -63,6 +63,11 @@
 
 <!--  font awesome 5:       -->
   <script src="https://kit.fontawesome.com/4252d6aa3b.js" crossorigin="anonymous"></script>
+  <script>
+    let language = navigator.language;
+    console.log('sessionStorage.setItem ("languageChoiceUser", \'' + language + '\')')
+    sessionStorage.setItem('languageChoiceUser', language)
+  </script>
 
 </head>
 
