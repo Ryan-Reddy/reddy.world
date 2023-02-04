@@ -1,6 +1,7 @@
 import {css, html, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import "https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js";
+import "https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"
 
 /**
  * An example element.
@@ -42,6 +43,13 @@ export class ReadmeElement extends LitElement {
       button {
         width: 66%;
         height: 2em;
+      }
+
+      zero-md {
+        margin: auto;
+        width: 50%;
+        border: 3px solid green;
+        padding: 10px;
       }
     `;
   }
