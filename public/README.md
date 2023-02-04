@@ -25,17 +25,12 @@ o888o  o888o     .8'     `Y888""8o o888o o888o      o888o  o888o `Y8bod8P' `Y8bo
                   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ █ █  ▓ ▓▀   █  ▓ ▀▀▀█ ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
                                            ▀ ▀    ▀     ▀▀   ▀▀
 
-                                Repo for Github Pages:
-                                ***********
 
                                 Project Management:
-                                ***********
-
-                                Organisation repo:
-                                ***********
+                                http://github.com/users/Ryan-Reddy/projects/1
 
                                 Wiki:
-                                ***********
+                                http://github.com/Ryan-Reddy/reddy.world/wiki
 
 
                              ▀ ▄▀▀▄ ▄▀   ▓▄▄  ▄▀▀▄ ▓   ▓   ▄▀▀▄ ▄▀▀▄ ▓▄▄  ▄▀▀  ▄▀
