@@ -1,12 +1,17 @@
 {
-  "short_name": "",
-  "name": "",
-  "icons": [{
-    "src": "icon.png",
-    "type": "image/png",
-    "sizes": "192x192"
-  }],
-  "start_url": "/?utm_source=homescreen",
+  "name": "reddy.world",
+  "short_name": "reddy.world",
+  "theme_color": "#fafafa",
   "background_color": "#fafafa",
-  "theme_color": "#fafafa"
+  "display": "browser",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "icon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ]
 }
