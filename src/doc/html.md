@@ -116,7 +116,8 @@ control over the UI of a saved site or web app on a mobile device.
 It's linked to from the HTML as follows:
 
 ```html
-<link rel="manifest" href="site.webmanifest">
+
+<link rel="manifest" href="../site.webmanifest">
 ```
 
 Our

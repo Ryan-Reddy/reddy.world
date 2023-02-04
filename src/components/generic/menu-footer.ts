@@ -20,8 +20,14 @@ export class MenuFooter extends LitElement {
   constructor() {
     super();
     this._language = navigator.language;
-  }
 
+  }
+  protected createRenderRoot() {
+    const root = super.createRenderRoot();
+    root.addEventListener('click',
+      (e: Event) => this.shadowName = (e.target as Element).localName);
+    return root;
+  }
   static get styles() {
     return [
       langCSS,
@@ -173,7 +179,6 @@ export class MenuFooter extends LitElement {
             </li>
           </ul>
         </div>
-
         <div lang="nl">
           <ul>
             <li><a class="nav-button" href="https://github.com/Ryan-Reddy" id="github-button"
