@@ -1,5 +1,5 @@
 import {css, html, LitElement} from 'lit';
-import {customElement, property, query} from 'lit/decorators.js';
+import {customElement, query} from 'lit/decorators.js';
 
 /**
  * An example element.
@@ -10,6 +10,7 @@ import {customElement, property, query} from 'lit/decorators.js';
 @customElement('lang-element')
 export class LangElement extends LitElement {
   @query('.dropdown-menu-items') _dropdownMenuItems!: HTMLUListElement;
+
   constructor() {
     super();
   }
@@ -34,6 +35,7 @@ export class LangElement extends LitElement {
         //width: 20%; /* goveerned by parent */
         height: 2em;
       }
+
       .dropdown-menu-items {
         list-style-image: none;
         position: fixed; /* Sit on top of the page content */
@@ -44,7 +46,7 @@ export class LangElement extends LitElement {
         left: 3em;
         right: 0;
         bottom: 0;
-        background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+        background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
         z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
       }
     `;
@@ -52,8 +54,8 @@ export class LangElement extends LitElement {
 
   render() {
     return html`
-      <font-awesome-icon icon="fa-solid fa-language" />
-      <FontAwesomeIcon icon="fa-solid fa-language" />
+      <font-awesome-icon icon="fa-solid fa-language"/>
+      <FontAwesomeIcon icon="fa-solid fa-language"/>
       <i class="fa-solid fa-language"></i>
 
       <div class="language-menu"
@@ -99,23 +101,24 @@ export class LangElement extends LitElement {
       </div>
     `;
   }
+
   _showDropDown() {
     console.log('_showDropDown')
     this._dropdownMenuItems.style.display = 'inline';
   };
+
   _hideDropDown() {
     console.log('_hideDropDown')
     this._dropdownMenuItems.style.display = 'none';
   }
+
   _languageChosen(e: Event) {
     const language = e.currentTarget.getAttribute('value');
-    alert('You chose: ' + language +
-      '\nWARNING: - under construction')
-    console.log('_languageChosen ' + language)
-    sessionStorage.setItem('languageChoiceUser', language)
-    // TODO implement language chosen to represent language parts
 
+    console.log('lang ' + language)
+    sessionStorage.setItem('lang', language)
 
+    // TODO make entire component tree re-render
   }
 
 }

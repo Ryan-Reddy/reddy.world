@@ -1,8 +1,6 @@
 import {css, html, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 
-import { LangElement } from './lang-picker';
-
 /**
  * An example element.
  *
@@ -48,7 +46,7 @@ export class MenuNav extends LitElement {
         width: 176px;
         position: relative;
         left: 1em;
-        font-family: Fira Code,serif;
+        font-family: Fira Code, serif;
         font-size: 12px;
         text-align: left;
       }
@@ -140,7 +138,7 @@ export class MenuNav extends LitElement {
         } nav ul li a {
           font-size: 4vw;
         }
-        ;
+      ;
 
       }
 
@@ -150,6 +148,7 @@ export class MenuNav extends LitElement {
           background-color: var(--wit);
           border-color: var(--wit);
         }
+
         a.active, a:hover {
           background: var(--gold);
           transition: var(--transitionInSeconds);
@@ -174,7 +173,6 @@ export class MenuNav extends LitElement {
     // TODO create response menu with: https://www.codingnepalweb.com/responsive-dropdown-menu-bar-html-css/
     return html`
       <body id="bodyofmenubar">
-      <!--      <a href="#" class="ingelogd_als">ingelogd als ${this.naamGebruiker}</a>-->
       <div class="entire_menu_bar">
         <img
           @click=${this.logoClicked}

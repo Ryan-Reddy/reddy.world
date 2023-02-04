@@ -1,5 +1,5 @@
 import {css, html, LitElement} from 'lit';
-import {customElement, property} from 'lit/decorators.js';
+import {customElement} from 'lit/decorators.js';
 
 /**
  * An example element.
@@ -27,7 +27,6 @@ export class PortfolioElement extends LitElement {
         display: none;
         pointer-events: none;
         color: lightgrey;
-        foreground-color: grey;
         background-color: var(--grijs);
         required: invalid;
       }
@@ -38,6 +37,7 @@ export class PortfolioElement extends LitElement {
       }
     `;
   }
+
   render() {
     return html`
       <head>
