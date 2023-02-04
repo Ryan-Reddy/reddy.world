@@ -192,14 +192,14 @@ export class MenuFooter extends LitElement {
 
   connectedCallback() {
     super.connectedCallback()
-    this._addLangMatch_classname()
+    this._setLanguage()
   }
   protected createRenderRoot() {
     return super.createRenderRoot();
   }
   firstUpdated() {
     console.log(this._containers)
-    this._addLangMatch_classname()
+    this._setLanguage()
     this._containers.forEach(value => {
       if (value.lang == this._language) {
         value.className = "lang-match"
@@ -208,22 +208,13 @@ export class MenuFooter extends LitElement {
     })
   }
 
-  _addLangMatch_classname() {
-    this._language = sessionStorage.getItem('lang') || '';
-    if (this._language == '') {
-      this._language = navigator.language;
+  _setLanguage() {
+    this._language = navigator.language;
       console.log(this._language)
-      if (this._language == '') {
-        this._language = 'en';
-      }
+      this._language = this._language.split('-')[0]
+    if (this._language != 'nl' || 'en' ) {
+      this._language = 'en'; // set default english if no other lang found
     }
-    this._language = this._language.split('-')[0]
     console.log(this._language)
-
-    // Array.prototype.forEach.call(this._containers, function (node) {
-    //     console.log('adding class lang-match to ' + node)
-    //     node.className = 'lang-match';
-    //   }
-    // )
   }
 }
