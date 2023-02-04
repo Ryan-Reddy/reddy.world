@@ -1,25 +1,11 @@
 import { css } from 'lit-element';
 
 export default css `
-
-  //TODO read from
-  //  https://stackoverflow.com/questions/64469775/hide-a-div-when-html-lang-is-detected
-  //  implement https://developer.mozilla.org/en-US/docs/Web/API/Navigator/language
-
-  [lang^='en']::before {
-    content: '(from index.css; In English) ';
+  div[lang] {
+    display: none;
   }
 
-  [lang^='en'] {
-    color: green;
+  div[lang].lang-match {
+    display: block;
   }
-
-  [lang^='nl']::before {
-    content: '(from index.css; In het Nederlands) ';
-  }
-  //div div:not([lang^='nl']) {
-  //  display: none;
-  //}
-
-
 `;

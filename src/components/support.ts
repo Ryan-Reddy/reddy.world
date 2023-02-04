@@ -68,6 +68,7 @@ export class SupportElement extends LitElement {
     console.log(this._hiddenElement);
     this._hiddenElement = this._hiddenElement == 'hidden' ? '' : 'hidden';
   }
+
   _contact() {
     window.open(this._supportClicked);
   }
