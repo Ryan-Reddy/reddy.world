@@ -15,18 +15,10 @@ export class MenuFooter extends LitElement {
   @query('a', true) _input!: HTMLInputElement;
   @property() _language: string;
   @queryAll('[lang]') _containers!: NodeListOf<HTMLElement>
-  @property() staticNode: NodeListOf<Element>;
+  private _shadow: ShadowRoot;
 
   constructor() {
     super();
-    this._language = navigator.language;
-
-  }
-  protected createRenderRoot() {
-    const root = super.createRenderRoot();
-    root.addEventListener('click',
-      (e: Event) => this.shadowName = (e.target as Element).localName);
-    return root;
   }
   static get styles() {
     return [
@@ -202,26 +194,36 @@ export class MenuFooter extends LitElement {
     super.connectedCallback()
     this._addLangMatch_classname()
   }
-
+  protected createRenderRoot() {
+    return super.createRenderRoot();
+  }
   firstUpdated() {
-    let navigatorlanguage = sessionStorage.getItem('lang');
-    if (navigatorlanguage == null) navigatorlanguage = navigator.language;
-    this.staticNode = this.renderRoot.querySelectorAll("[lang=" + navigatorlanguage + "]");
-    console.log(this.staticNode)
-    let element: (value: Element, key: number, parent: NodeListOf<Element>) => void;
-    this.staticNode.forEach(value => {
-      console.log(value)
-      value.className = "lang-match"
+    console.log(this._containers)
+    this._addLangMatch_classname()
+    this._containers.forEach(value => {
+      if (value.lang == this._language) {
+        value.className = "lang-match"
+        console.log(value)
+      }
     })
   }
 
   _addLangMatch_classname() {
-    console.log(this._language)
-    console.log(this._containers)
-    Array.prototype.forEach.call(this._containers, function (node) {
-        console.log('adding class lang-match to ' + node)
-        node.className = 'lang-match';
+    this._language = sessionStorage.getItem('lang') || '';
+    if (this._language == '') {
+      this._language = navigator.language;
+      console.log(this._language)
+      if (this._language == '') {
+        this._language = 'en';
       }
-    )
+    }
+    this._language = this._language.split('-')[0]
+    console.log(this._language)
+
+    // Array.prototype.forEach.call(this._containers, function (node) {
+    //     console.log('adding class lang-match to ' + node)
+    //     node.className = 'lang-match';
+    //   }
+    // )
   }
 }
