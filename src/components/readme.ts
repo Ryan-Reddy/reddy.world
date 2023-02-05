@@ -48,7 +48,7 @@ export class ReadmeElement extends LitElement {
 
       zero-md {
         margin: auto;
-        width: 50%;
+        width: 60%;
         border: 3px solid green;
         padding: 3em;
       }
@@ -56,6 +56,7 @@ export class ReadmeElement extends LitElement {
       @media (max-width: 952px) {
         zero-md {
           display: none;
+          align-content: center;
         }
 
         div.readme:after {
