@@ -10,12 +10,11 @@ import langCSS from "../../css/langCSS";
  */
 @customElement('footer-menu')
 export class MenuFooter extends LitElement {
-  @property() _contactClickedEnglish = 'mailto:ryanreddy@hotmail.com?subject=Hello friend!';
-  @property() _contactClickedDutch = 'mailto:ryanreddy@hotmail.com?subject=Hallo vriend!';
+  @property() _contactClickedEnglish = 'mailto:ryan@reddy.world?subject=Hello friend!';
+  @property() _contactClickedDutch = 'mailto:ryan@reddy.world?subject=Hallo vriend!';
   @query('a', true) _input!: HTMLInputElement;
-  @property() _language: string;
+  @property() _language: string | undefined;
   @queryAll('[lang]') _containers!: NodeListOf<HTMLElement>
-  private _shadow: ShadowRoot;
 
   constructor() {
     super();

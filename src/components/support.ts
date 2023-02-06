@@ -11,7 +11,7 @@ import {customElement, property} from 'lit/decorators.js';
 export class SupportElement extends LitElement {
   @property() _hiddenElement = 'hidden';
   @property() currentPage: string | undefined;
-  @property() _supportClicked = 'mailto:ryanreddy@hotmail.com?subject=Hello friend! I have turned it on and off again!';
+  @property() _supportClicked = 'mailto:ryan@reddy.world?subject=Hello friend! I have turned it on and off again!';
 
   constructor() {
     super();
