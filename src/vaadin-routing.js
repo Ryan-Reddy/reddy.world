@@ -9,6 +9,7 @@ import './components/reset-password';
 import './components/support';
 import './components/friends';
 import './components/portfolio';
+import './components/about';
 import './components/cvFromLinkedin';
 
 // import './components/generic/menu-footer';
@@ -24,6 +25,11 @@ router.setRoutes([
     name: 'lang-picker-element', // doet niks impliciet
     path: '/lang',
     component: 'lang-picker-element',
+  },
+  {
+    name: 'about-element', // doet niks impliciet
+    path: '/about',
+    component: 'about-element',
   },
   {
     name: 'login-element', // doet niks impliciet
