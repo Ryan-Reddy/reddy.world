@@ -51,10 +51,10 @@ export class FriendsElement extends LitElement {
       <body>
       <main>
         <div>
-          <span lang="nl">Nederlandse span</span>
-          <br>
+          <!--          <span lang="nl">Nederlandse span</span>-->
+          <!--          <br>-->
 
-          <span lang="en">Engelse span</span>
+          <!--          <span lang="en">Engelse span</span>-->
 
 
           <h1>Friends</h1>

@@ -188,8 +188,9 @@ export class MenuNav extends LitElement {
           </label>
           <ul name="top-nav-menu">
             <li><a class="nav-button" href="home" id="home">Home</a></li>
+            <li><a class="nav-button" href="about" id="about">About</a></li>
             <li><a class="nav-button" href="cv" id="cv">CV</a></li>
-<!--            <li><lang-element></lang-element></li> lang picked from browser lang-->
+            <!--            <li><lang-element></lang-element></li> lang picked from browser lang-->
           </ul>
 
         </nav>
