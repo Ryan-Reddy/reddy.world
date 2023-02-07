@@ -10,9 +10,16 @@ import {customElement, property} from 'lit/decorators.js';
 @customElement('about-element')
 export class SupportElement extends LitElement {
   @property() _contact = 'mailto:ryan@reddy.world?subject=Hello friend! I wish to speak to you!';
+  constructor() { super(); }
 
-  constructor() {
-    super();
+  firstUpdated(changedProperties) {
+    let titleEvent = new CustomEvent('title-change', {
+      detail: {
+        message: 'About'
+      }
+    });
+    console.log('dispatching event:' + titleEvent.detail.message)
+    this.dispatchEvent(titleEvent);
   }
 
   static get styles() {
@@ -47,7 +54,6 @@ export class SupportElement extends LitElement {
       }
     `;
   }
-
   render() {
     return html`
       <meta name="description" content="Ryan Reddy's world.">

@@ -3,7 +3,6 @@
 
 <head>
   <!-- HTML Meta Tags -->
-  <title>A little corner of the internet Ryan Reddy calls his home.</title>
   <meta content="A little corner of the internet Ryan Reddy calls his home." property="og:title">
   <meta content="  Ryan's portfolio, cv and contact info.
   Also a place where project I work on get hosted.
@@ -63,6 +62,14 @@
 
   <!--  font awesome 5:       -->
   <script crossorigin="anonymous" src="https://kit.fontawesome.com/4252d6aa3b.js"></script>
+
+  <title>A little corner of the internet Ryan Reddy calls his home.</title>
+  <!--This sets title based upon event thrown from element-->
+  <script>
+    window.addEventListener('title-change', (e) => {
+      console.log('gathering from the ether... :' + e.detail.message)
+      this.document.title = e.detail.message;
+    }, true) </script>
 
 </head>
 

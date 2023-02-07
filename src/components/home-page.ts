@@ -10,7 +10,10 @@ import {customElement} from 'lit/decorators.js';
 @customElement('home-page-element')
 export class HomePage extends LitElement {
   constructor() {
+    sessionStorage.setItem('pageTitle','A little corner of the internet Ryan Reddy calls his home.')
+
     super();
+
   }
 
   static get styles() {
