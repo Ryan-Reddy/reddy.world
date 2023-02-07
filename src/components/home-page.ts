@@ -29,9 +29,8 @@ export class HomePage extends LitElement {
         list-style: none;
       }
       img {
-        max-width: 100%;
+        max-width: 66vw;
         height: auto;
-        width: auto\\9; /* ie8 */
       }
 
       .card {
