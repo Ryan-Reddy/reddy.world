@@ -232,7 +232,7 @@ export class MenuNav extends LitElement {
           </ul>
 
           <div id='smallmenuicon'>
-            <img src="three-bars.png" width="40em"
+            <img src="three-bars.png" width="32"
                  alt="three-bars img"
                  type="button"
                  class="dropdown-menu-label"
