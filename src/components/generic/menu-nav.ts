@@ -14,13 +14,13 @@ export class MenuNav extends LitElement {
   @property() currentPage: string = '';
   @property() _logoBarClickedLink = 'mailto:ryan@reddy.world?subject=Hello I licked the unicorn!';
 
-
+  @query('.dropdown-menu-div') _dropDownMenuDiv!: HTMLDivElement;
   @query('.dropdown-menu-items') _dropdownMenuItems!: HTMLUListElement;
 
 
   constructor() {
     super();
-    this.onLoad();
+    this.addEventListener('onChange',this._hideDropDown)
   }
 
   static get styles() {
@@ -186,10 +186,6 @@ export class MenuNav extends LitElement {
     return script;
   }
 
-  onLoad() {
-    // alert('loaded nav-menu');
-  }
-
   render() {
     // TODO create response menu with: https://www.codingnepalweb.com/responsive-dropdown-menu-bar-html-css/
     return html`
@@ -211,10 +207,10 @@ export class MenuNav extends LitElement {
                  aria-haspopup="true"
                  aria-owns="language-menu"
                  aria-label="Current language is English. Choose your preferred language."
-                 @click="${this._showDropDown}">
+                 @click="${this._showDropDown}"
+            >
           </div>
 
-<!--          <input type="checkbox" id="check"/>-->
           <ul name="top-nav-menu">
             <li><a class="nav-button" href="home" id="home">Home</a></li>
             <li><a class="nav-button" href="about" id="about">About</a></li>
@@ -222,14 +218,16 @@ export class MenuNav extends LitElement {
             <!--            <li><lang-element></lang-element></li> lang picked from browser lang-->
           </ul>
 
-          <div class="language-menu"
-               @mouseleave="${this._hideDropDown}">
+          <div class="dropdown-menu-div"
+               @mouseleave="${this._hideDropDown}"
+          >
 
             <ul
               id="language-menu"
               class="dropdown-menu-items right show"
               aria-expanded="true"
-              role="menu">
+              role="menu"
+            >
               <li><a class="nav-button-dropdown" href="home" id="home">Home</a></li>
               <li><a class="nav-button-dropdown" href="about" id="about">About</a></li>
               <li><a class="nav-button-dropdown" href="cv" id="cv">CV</a></li>
@@ -239,23 +237,6 @@ export class MenuNav extends LitElement {
       </div>
       </body>
     `;
-  }
-
-  _clickMenu(e: Event) {
-    console.log('_dispatchPageLink()');
-    // @ts-ignore
-    const id = e.target.id;
-    console.log('id= ' + id);
-
-    const hasChanged = this.currentPage !== id;
-
-    if (hasChanged) {
-      this.currentPage = id;
-      window.open(id);
-
-      //notify parent:
-      // this.dispatchEvent(new Event('page-chosen'));
-    }
   }
 
   logoClicked() {
