@@ -10,8 +10,6 @@ import langCSS from "../../css/langCSS";
  */
 @customElement('footer-menu')
 export class MenuFooter extends LitElement {
-  @property() _contactClickedEnglish = 'mailto:ryan@reddy.world?subject=Hello friend!';
-  @property() _contactClickedDutch = 'mailto:ryan@reddy.world?subject=Hallo vriend!';
   @query('a', true) _input!: HTMLInputElement;
   @property() _language: string | undefined;
   @queryAll('[lang]') _containers!: NodeListOf<HTMLElement>
@@ -166,7 +164,7 @@ export class MenuFooter extends LitElement {
             </li>
             <li><a class="nav-button" data-key="nav-btn-friends" href="support" id="support-button"
                    aria-label="Support">Support</a></li>
-            <li><a class="nav-button" href="${this._contactClickedEnglish}" id="contact-button" aria-label="Contact">Contact</a>
+            <li><a class="nav-button" href="contact" id="contact-button" aria-label="Contact">Contact</a>
             </li>
           </ul>
         </div>
