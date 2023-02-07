@@ -181,7 +181,7 @@ export class MenuNav extends LitElement {
 
   script() {
     let script = document.createElement('script');
-    script.onload = this.onLoad.bind(this);
+    script.onload = this.onload.bind(this);
     script.src = 'https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.js';
     return script;
   }
