@@ -16,21 +16,22 @@ export class CVElement extends LitElement {
 
   static get styles() {
     return css`
-      iframe {
-        height: 80vh;
-        width: 100%;
+      #wrapper {
+        width: 100vw;
       }
 
     `;
   }
   render() {
     return html`
+      <div id="wrapper">
       <iframe id="iframe-cv"
-        src="Resume-Ryan-van-Lil-Reddy.pdf#page=1&view=FitB"
+        src="Resume-Ryan-van-Lil-Reddy.pdf#view=FitH"
               title="Resume-Ryan-van-Lil-Reddy.pdf"
-              height="80vh"
+              height="100%" width="100%"
       >
       </iframe>
+      </div>
     `;
   }
 }
