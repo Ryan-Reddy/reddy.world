@@ -1,5 +1,5 @@
 import {css, html, LitElement} from 'lit';
-import {customElement, property} from 'lit/decorators.js';
+import {customElement} from 'lit/decorators.js';
 
 /**
  * An example element.
@@ -17,15 +17,19 @@ export class CVElement extends LitElement {
   static get styles() {
     return css`
       iframe {
+        height: 80vh;
         width: 100%;
-        height: 700px;
-
       }
+
     `;
   }
   render() {
     return html`
-      <iframe src="Resume-Ryan-van-Lil-Reddy.pdf#toolbar=0">
+      <iframe id="iframe-cv"
+        src="Resume-Ryan-van-Lil-Reddy.pdf#page=1&view=FitB"
+              title="Resume-Ryan-van-Lil-Reddy.pdf"
+              height="80vh"
+      >
       </iframe>
     `;
   }
