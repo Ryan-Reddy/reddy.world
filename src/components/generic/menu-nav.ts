@@ -20,7 +20,7 @@ export class MenuNav extends LitElement {
 
   constructor() {
     super();
-    this.addEventListener('onChange',this._hideDropDown)
+    this.addEventListener('onChange', this._hideDropDown)
   }
 
   static get styles() {
@@ -31,10 +31,12 @@ export class MenuNav extends LitElement {
         // box-sizing: border-box;
         text-decoration: none;
       }
+
       body {
         font-size: 1em;
         opacity: 1;
       }
+
       .entire_menu_bar {
         position: relative;
         overflow: hidden;
@@ -43,6 +45,7 @@ export class MenuNav extends LitElement {
         justify-content: space-between;
         align-items: center;
       }
+
       .ingelogd_als {
         width: 176px;
         position: relative;
@@ -51,37 +54,45 @@ export class MenuNav extends LitElement {
         font-size: 12px;
         text-align: left;
       }
+
       nav ul {
         float: right;
         margin-right: 8em;
         padding-right: 8em;
       }
+
       nav ul li {
         display: inline-block;
         line-height: 8em;
         margin: 0 5px;
       }
+
       nav ul li a {
         color: var(--wit);
         border-radius: 3px;
         text-transform: uppercase;
         padding: 5px;
       }
+
       a.active, a:hover {
         background: var(--silver);
         transition: var(--transitionInSeconds);
         color: var(--zwart);
       }
+
       div #smallmenuicon {
         display: none;
       }
+
       .nav-button {
         opacity: 1;
         text-align: center;
       }
+
       li {
         list-style: none;
       }
+
       .nav-logo {
         object-fit: cover;
         height: 5em;
@@ -91,20 +102,25 @@ export class MenuNav extends LitElement {
         overflow: hidden;
         padding: 0 2em;
       }
+
       .nav-logo:hover {
         height: 7.5em;
         transition: var(--transitionInSeconds);
       }
+
       #check {
         display: none;
       }
+
       #check:checked ~ ul {
         left: 0;
       }
+
       #smallmenuicon {
         -webkit-filter: invert(100%);
         filter: invert(100%);
       }
+
       .dropdown-menu-items {
         list-style-image: none;
         position: fixed; /* Sit on top of the page content */
@@ -118,24 +134,28 @@ export class MenuNav extends LitElement {
         background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
         z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
       }
+
       @media (max-width: 952px) {
         div #smallmenuicon {
           display: inline-block;
         }
+
         .nav-logo {
           //height: 100%;
           display: none;
           // padding-left: 50px;
         }
+
         nav ul li a {
           display: none;
           // line-height: 8em;
           // margin: 0 1em;
         }
-        .nav-button-dropdown{
+
+        .nav-button-dropdown {
           display: flex;
-           line-height: 4em;
-           margin: 0 1em;
+          line-height: 4em;
+          margin: 0 1em;
         }
       }
 
@@ -151,11 +171,15 @@ export class MenuNav extends LitElement {
         //  // left: -100%;
         //  text-align: center;
         //}
-      nav ul li {
+        nav ul li {
           display: block;
-        } nav ul li a {
+        }
+
+        nav ul li a {
           //font-size: 4vw;
-        };
+        }
+
+      ;
       }
 
       @media (prefers-color-scheme: light) {
@@ -170,6 +194,7 @@ export class MenuNav extends LitElement {
           transition: var(--transitionInSeconds);
           color: var(--zwart);
         }
+
         #smallmenuicon {
           -webkit-filter: invert(0%);
           filter: invert(0%);
@@ -198,18 +223,6 @@ export class MenuNav extends LitElement {
           class="nav-logo"
         />
         <nav>
-          <div id='smallmenuicon'
-          >
-            <img src="three-bars.png" width="40em"
-                 alt="three-bars img"
-                 type="button"
-                 class="dropdown-menu-label"
-                 aria-haspopup="true"
-                 aria-owns="language-menu"
-                 aria-label="Current language is English. Choose your preferred language."
-                 @click="${this._showDropDown}"
-            >
-          </div>
 
           <ul name="top-nav-menu">
             <li><a class="nav-button" href="home" id="home">Home</a></li>
@@ -218,16 +231,25 @@ export class MenuNav extends LitElement {
             <!--            <li><lang-element></lang-element></li> lang picked from browser lang-->
           </ul>
 
-          <div class="dropdown-menu-div"
-               @mouseleave="${this._hideDropDown}"
-          >
+          <div id='smallmenuicon'>
+            <img src="three-bars.png" width="40em"
+                 alt="three-bars img"
+                 type="button"
+                 class="dropdown-menu-label"
+                 aria-haspopup="true"
+                 aria-owns="language-menu"
+                 aria-label="Current language is English. Choose your preferred language."
+                 @click="${this._showDropDown}">
+          </div>
 
+          <div class="dropdown-menu-div" @mouseleave="${this._hideDropDown}"
+          >
             <ul
               id="language-menu"
               class="dropdown-menu-items right show"
               aria-expanded="true"
               role="menu"
-            >
+              @click="${this._hideDropDown}">
               <li><a class="nav-button-dropdown" href="home" id="home">Home</a></li>
               <li><a class="nav-button-dropdown" href="about" id="about">About</a></li>
               <li><a class="nav-button-dropdown" href="cv" id="cv">CV</a></li>
@@ -242,6 +264,7 @@ export class MenuNav extends LitElement {
   logoClicked() {
     window.open(this._logoBarClickedLink);
   }
+
   _showDropDown() {
     console.log('_showDropDown')
     console.log(this._dropdownMenuItems.innerText)
