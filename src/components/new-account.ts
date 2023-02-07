@@ -10,10 +10,17 @@ import {customElement, property} from 'lit/decorators.js';
 @customElement('new-account-element')
 export class NewAccount extends LitElement {
   @property() _hiddenElement = 'hidden';
-  @property() currentPage: string | undefined;
-
   constructor() {
     super();
+  }
+  firstUpdated(changedProperties) {
+    let titleEvent = new CustomEvent('title-change', {
+      detail: {
+        message: 'New Account'
+      }
+    });
+    console.log('dispatching event:' + titleEvent.detail.message)
+    this.dispatchEvent(titleEvent);
   }
 
   static get styles() {

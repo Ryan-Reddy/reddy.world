@@ -13,6 +13,15 @@ export class PortfolioElement extends LitElement {
   constructor() {
     super();
   }
+  firstUpdated(changedProperties) {
+    let titleEvent = new CustomEvent('title-change', {
+      detail: {
+        message: 'Portfolio'
+      }
+    });
+    console.log('dispatching event:' + titleEvent.detail.message)
+    this.dispatchEvent(titleEvent);
+  }
 
   static get styles() {
     return css`

@@ -9,11 +9,15 @@ import {customElement} from 'lit/decorators.js';
  */
 @customElement('home-page-element')
 export class HomePage extends LitElement {
-  constructor() {
-    sessionStorage.setItem('pageTitle','A little corner of the internet Ryan Reddy calls his home.')
-
-    super();
-
+  constructor() {    super();  }
+  firstUpdated(changedProperties) {
+    let titleEvent = new CustomEvent('title-change', {
+      detail: {
+        message: 'A little corner of the internet Ryan Reddy calls his home.'
+      }
+    });
+    console.log('dispatching event:' + titleEvent.detail.message)
+    this.dispatchEvent(titleEvent);
   }
 
   static get styles() {

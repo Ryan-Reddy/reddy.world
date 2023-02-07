@@ -10,10 +10,17 @@ import {customElement} from 'lit/decorators.js';
 
 @customElement('login-element')
 export class Login extends LitElement {
-  // @property() currentPage: string;
-
   constructor() {
     super();
+  }
+  firstUpdated(changedProperties) {
+    let titleEvent = new CustomEvent('title-change', {
+      detail: {
+        message: 'Login'
+      }
+    });
+    console.log('dispatching event:' + titleEvent.detail.message)
+    this.dispatchEvent(titleEvent);
   }
 
   static get styles() {

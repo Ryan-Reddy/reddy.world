@@ -14,6 +14,15 @@ export class NotFound extends LitElement {
   constructor() {
     super();
   }
+  firstUpdated(changedProperties) {
+    let titleEvent = new CustomEvent('title-change', {
+      detail: {
+        message: 'Page Not Found'
+      }
+    });
+    console.log('dispatching event:' + titleEvent.detail.message)
+    this.dispatchEvent(titleEvent);
+  }
 
   static get styles() {
     return css`

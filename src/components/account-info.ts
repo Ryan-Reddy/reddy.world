@@ -10,12 +10,20 @@ import {customElement, property} from 'lit/decorators.js';
 
 @customElement('account-info-element')
 export class Accountinfo extends LitElement {
-  @property() currentPage = 'account info';
+  @property() currentPage = '';
 
   constructor() {
     super();
   }
-
+  firstUpdated(changedProperties) {
+    let titleEvent = new CustomEvent('title-change', {
+      detail: {
+        message: 'Account info'
+      }
+    });
+    console.log('dispatching event:' + titleEvent.detail.message)
+    this.dispatchEvent(titleEvent);
+  }
   static get styles() {
     return css`
       * {

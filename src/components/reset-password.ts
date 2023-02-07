@@ -10,10 +10,17 @@ import {customElement, property} from 'lit/decorators.js';
 @customElement('reset-password-element')
 export class ResetPassword extends LitElement {
   @property() _hiddenElement = 'hidden';
-  @property() currentPage: string | undefined;
-
   constructor() {
     super();
+  }
+  firstUpdated(changedProperties) {
+    let titleEvent = new CustomEvent('title-change', {
+      detail: {
+        message: 'Reset password'
+      }
+    });
+    console.log('dispatching event:' + titleEvent.detail.message)
+    this.dispatchEvent(titleEvent);
   }
 
   // TODO: style page reset-password.ts
