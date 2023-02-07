@@ -1,5 +1,6 @@
 import {css, html, LitElement} from 'lit';
 import {customElement, property, query} from 'lit/decorators.js';
+import {ContactForm} from "../data/contactform"
 
 /**
  * An example element.
@@ -12,8 +13,10 @@ export class ContactElement extends LitElement {
   @property() _hiddenElement = 'hidden';
   @property() _supportClicked = 'mailto:ryan@reddy.world?subject=Hello friend! I have turned it on and off again!';
   @property() _shadowRoot!: ShadowRoot;
-  @query('#name') _name: any ;
-
+  @query('#name') _name!: any;
+  @query('#email') _email!: any;
+  @query('#subject') _subject!: any;
+  @query('#message') _message!: any;
   constructor() {
     super();
   }
@@ -95,7 +98,18 @@ export class ContactElement extends LitElement {
     `;
   }
   _sendForm() {
-      localStorage.setItem(this._name.id, this._name.value);
     console.log("mailto:ryan@reddy.world");
+    const formdata = new ContactForm(
+      this._name.value,
+      this._email.value,
+      this._subject.value,
+      this._message.value,
+      )
+    window.open('mailto:ryan@reddy.world?subject='
+      + formdata.subject
+      + '&body=' + formdata.message + ' sender: ' + formdata.name
+    )
+    alert(formdata.name + ", thanks for your message!")
+
   }
 }
