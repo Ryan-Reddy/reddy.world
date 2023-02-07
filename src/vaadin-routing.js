@@ -11,6 +11,7 @@ import './components/friends';
 import './components/portfolio';
 import './components/about';
 import './components/cvFromLinkedin';
+import './components/contact';
 
 // import './components/generic/menu-footer';
 import './components/generic/not-found';
@@ -25,6 +26,11 @@ router.setRoutes([
     name: 'lang-picker-element', // doet niks impliciet
     path: '/lang',
     component: 'lang-picker-element',
+  },
+  {
+    name: 'contact-element', // doet niks impliciet
+    path: '/contact',
+    component: 'contact-element',
   },
   {
     name: 'about-element', // doet niks impliciet
