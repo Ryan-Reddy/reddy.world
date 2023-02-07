@@ -134,7 +134,7 @@ export class MenuNav extends LitElement {
         }
         .nav-button-dropdown{
           display: flex;
-           //line-height: 8em;
+           line-height: 4em;
            margin: 0 1em;
         }
       }
