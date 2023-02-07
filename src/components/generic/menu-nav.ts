@@ -1,6 +1,5 @@
 import {css, html, LitElement} from 'lit';
 import {customElement, property, query} from 'lit/decorators.js';
-
 /**
  * An example element.
  *
@@ -13,16 +12,12 @@ export class MenuNav extends LitElement {
   @property() siteLogo = 'unicorn-break-chains.jpg';
   @property() currentPage: string = '';
   @property() _logoBarClickedLink = 'mailto:ryan@reddy.world?subject=Hello I licked the unicorn!';
-
   @query('.dropdown-menu-div') _dropDownMenuDiv!: HTMLDivElement;
   @query('.dropdown-menu-items') _dropdownMenuItems!: HTMLUListElement;
-
-
   constructor() {
     super();
     this.addEventListener('onChange', this._hideDropDown)
   }
-
   static get styles() {
     return css`
       * {
@@ -204,12 +199,12 @@ export class MenuNav extends LitElement {
     `;
   }
 
-  script() {
-    let script = document.createElement('script');
-    script.onload = this.onload.bind(this);
-    script.src = 'https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.js';
-    return script;
-  }
+  // script() {
+  //   let script = document.createElement('script');
+  //   script.onload = this.onload.bind(this);
+  //   script.src = 'https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.js';
+  //   return script;
+  // }
 
   render() {
     // TODO create response menu with: https://www.codingnepalweb.com/responsive-dropdown-menu-bar-html-css/
