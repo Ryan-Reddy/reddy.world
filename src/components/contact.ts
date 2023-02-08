@@ -2,6 +2,7 @@ import {css, html, LitElement} from 'lit';
 import {customElement, property, query} from 'lit/decorators.js';
 import {ContactformDTO} from "../data/contactformDTO"
 import {firebaseService} from "../services/firebaseService";
+import {sendmail} from "../services/email/emailClient";
 
 /**
  * An example element.
@@ -98,10 +99,14 @@ export class ContactElement extends LitElement {
         </div>
       <button @click="${this._getAllDataFromFirebase}">_getAllDataFromFirebase</button>
       <button @click="${this._getSingleDataFromFirebase}">_getSingleDataFromFirebase</button>
+      <button @click="${this._sendMail}">_sendMail</button>
       </main>
 
       </body>
     `;
+  }
+  _sendMail() {
+    sendmail();
   }
   _submitFormToFirebase() {
     console.log('_submitFormToFirebase')
