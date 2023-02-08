@@ -1,0 +1,25 @@
+[debug] [2023-02-08T23:20:54.880Z] ----------------------------------------------------------------------
+[debug] [2023-02-08T23:20:54.883Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ryanv\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init firestore
+[debug] [2023-02-08T23:20:54.884Z] CLI Version:   11.22.0
+[debug] [2023-02-08T23:20:54.884Z] Platform:      win32
+[debug] [2023-02-08T23:20:54.884Z] Node Version:  v18.14.0
+[debug] [2023-02-08T23:20:54.886Z] Time:          Thu Feb 09 2023 00:20:54 GMT+0100 (Central European Standard Time)
+[debug] [2023-02-08T23:20:54.886Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-02-08T23:20:54.989Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-02-08T23:20:54.990Z] > authorizing via signed-in user (klugook@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\ryanv\WebstormProjects\reddy.world
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+

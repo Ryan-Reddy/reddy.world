@@ -2,7 +2,6 @@ import {css, html, LitElement} from 'lit';
 import {customElement, property, query} from 'lit/decorators.js';
 import {ContactformDTO} from "../data/contactformDTO"
 import {firebaseService} from "../services/firebaseService";
-import {sendmail} from "../services/email/emailClient";
 
 /**
  * An example element.
@@ -92,31 +91,22 @@ export class ContactElement extends LitElement {
           <textarea aria-label="message" id="message" name="message" placeholder="Message..."></textarea>
             </li>
           </ul>
-<!--          <input @click="${this._submitFormToFirebase}" type="Submit" value="Submit" aria-label="submit form">-->
-
         </form>
           <input type="button" @click="${this._submitFormToFirebase}" value="Submit" aria-label="submit form">
         </div>
       <button @click="${this._getAllDataFromFirebase}">_getAllDataFromFirebase</button>
       <button @click="${this._getSingleDataFromFirebase}">_getSingleDataFromFirebase</button>
-      <button @click="${this._sendMail}">_sendMail</button>
       </main>
-
       </body>
     `;
   }
-  _sendMail() {
-    sendmail();
-  }
   _submitFormToFirebase() {
     console.log('_submitFormToFirebase')
-    const formdata = new ContactformDTO(
-      this._name.value,
+
+    firebaseService.writeContactFormToFirestore(      this._name.value,
       this._email.value,
       this._subject.value,
-      this._message.value,
-    )
-    firebaseService.writeContactFormDataToFirebase(formdata)
+      this._message.value)
   }
   _getSingleDataFromFirebase() {
     console.log('_getSingleDataFromFirebase');
