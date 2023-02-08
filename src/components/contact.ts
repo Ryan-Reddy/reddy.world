@@ -1,6 +1,6 @@
 import {css, html, LitElement} from 'lit';
 import {customElement, property, query} from 'lit/decorators.js';
-import {ContactForm} from "../data/contactform"
+import {ContactformDTO} from "../data/contactformDTO"
 import {firebaseService} from "../services/firebaseService";
 
 /**
@@ -79,13 +79,13 @@ export class ContactElement extends LitElement {
         <form>
           <ul>
             <li>
-          <input aria-label="name" type="text" id="name" name="name" placeholder="Name">
+          <input aria-label="name" type="text" id="name" name="name" placeholder="Name" maxlength="254">
             </li>
             <li>
-          <input aria-label="email" type="text" id="email" name="email" placeholder="Email">
+          <input aria-label="email" type="text" id="email" name="email" placeholder="Email" maxlength="254">
             </li>
             <li>
-          <input aria-label="subject" type="text" id="subject" name="subject" placeholder="Subject">
+          <input aria-label="subject" type="text" id="subject" name="subject" placeholder="Subject" maxlength="254">
             </li>
             <li>
           <textarea aria-label="message" id="message" name="message" placeholder="Message..."></textarea>
@@ -104,7 +104,7 @@ export class ContactElement extends LitElement {
   }
   _submitFormToFirebase() {
     console.log('_submitFormToFirebase')
-    const formdata = new ContactForm(
+    const formdata = new ContactformDTO(
       this._name.value,
       this._email.value,
       this._subject.value,
@@ -117,8 +117,6 @@ export class ContactElement extends LitElement {
   }
   _getAllDataFromFirebase() {
     console.log('_getAllDataFromFirebase')
-    let data = firebaseService.readAllContactFormDataToFirebase();
-    return data;
+    return firebaseService.readAllContactFormDataToFirebase();
   }
-
 }

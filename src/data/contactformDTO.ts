@@ -1,4 +1,4 @@
-export class ContactForm {
+export class ContactformDTO {
   private _name: string;
   private _email: string;
   private _subject: string;

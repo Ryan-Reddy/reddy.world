@@ -1,12 +1,12 @@
 // Your web app's Firebase configuration
 import {child, get, push, ref} from "@firebase/database";
 import StartFirebase from "./firebaseConfig/firebase-config";
-import {ContactForm} from "../data/contactform";
+import {ContactformDTO} from "../data/contactformDTO";
 
 const _db = StartFirebase();
 
 export class firebaseService {
-  static writeContactFormDataToFirebase(contactform: ContactForm) {
+  static writeContactFormDataToFirebase(contactform: ContactformDTO) {
     push(ref(_db,
       ("/contact-requests/"
       )), {
@@ -64,6 +64,7 @@ export class firebaseService {
       // let newData = data.stream.foreach((line: { constructor: reisDTO; }) => line.constructor)
     }).catch((error) => {
       alert('datastore unsuccesfull, error: ' + error)
+      return null;
     })
   }
 
