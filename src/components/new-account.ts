@@ -13,7 +13,7 @@ export class NewAccount extends LitElement {
   constructor() {
     super();
   }
-  firstUpdated(changedProperties) {
+  firstUpdated(changedProperties: any) {
     let titleEvent = new CustomEvent('title-change', {
       detail: {
         message: 'New Account'
@@ -35,10 +35,8 @@ export class NewAccount extends LitElement {
       .hidden {
         display: none;
         pointer-events: none;
-        color: lightgrey;
-        foreground-color: var(--grijs);
+        color: var(--grijs);
         background-color: var(--grijs);
-        required: invalid;
       }
 
       button {

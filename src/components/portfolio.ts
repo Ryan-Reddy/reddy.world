@@ -13,7 +13,7 @@ export class PortfolioElement extends LitElement {
   constructor() {
     super();
   }
-  firstUpdated(changedProperties) {
+  firstUpdated(changedProperties: any) {
     let titleEvent = new CustomEvent('title-change', {
       detail: {
         message: 'Portfolio'
@@ -37,7 +37,6 @@ export class PortfolioElement extends LitElement {
         pointer-events: none;
         color: lightgrey;
         background-color: var(--grijs);
-        required: invalid;
       }
 
       button {

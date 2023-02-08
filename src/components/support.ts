@@ -15,7 +15,7 @@ export class SupportElement extends LitElement {
   constructor() {
     super();
   }
-  firstUpdated(changedProperties) {
+  firstUpdated(changedProperties: any) {
     let titleEvent = new CustomEvent('title-change', {
       detail: {
         message: 'Support'

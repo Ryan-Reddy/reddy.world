@@ -15,7 +15,7 @@ export class Accountinfo extends LitElement {
   constructor() {
     super();
   }
-  firstUpdated(changedProperties) {
+  firstUpdated(changedProperties: any) {
     let titleEvent = new CustomEvent('title-change', {
       detail: {
         message: 'Account info'
@@ -104,7 +104,7 @@ export class Accountinfo extends LitElement {
       fieldset {
         padding-left: 1em;
         padding-right: 1em;
-        font-color: var(--zwart);
+        color: var(--zwart);
       }
 
       .inputfield {
@@ -125,7 +125,7 @@ export class Accountinfo extends LitElement {
         background-color: var(--wit);
         border: none;
         color: var(--wit);
-        padding: 1em 0px;
+        padding: 1em 0;
         text-decoration: none;
         margin: 4px 2px;
         cursor: pointer;
@@ -134,10 +134,8 @@ export class Accountinfo extends LitElement {
       .visibility-hidden {
         display: none;
         pointer-events: none;
-        color: lightgrey;
-        foreground-color: var(--grijs);
+        color: var(--grijs);
         background-color: var(--grijs);
-        required: invalid;
       }
 
       @media (max-width: 858px) {

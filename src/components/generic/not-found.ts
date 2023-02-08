@@ -14,7 +14,7 @@ export class NotFound extends LitElement {
   constructor() {
     super();
   }
-  firstUpdated(changedProperties) {
+  firstUpdated(changedProperties: any) {
     let titleEvent = new CustomEvent('title-change', {
       detail: {
         message: 'Page Not Found'
@@ -107,8 +107,8 @@ export class NotFound extends LitElement {
       But sometimes that's when you find something you didn't know you where looking for.
     </p>
     <br>
-    <audio id="my_audio" src="../../yosemitebear_nountain_double_rainbow.mp3" loop="loop"></audio>
-    <img src="../../double_rainbow.png" height="533" width="800" alt="double rainbow all the way meme beautiful"/>
+    <audio id="my_audio" src="yosemitebear_nountain_double_rainbow.mp3" loop="loop"></audio>
+    <img src="double_rainbow.png" height="533" width="800" alt="double rainbow all the way meme beautiful"/>
 
     </body>
     <script>

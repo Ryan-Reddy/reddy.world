@@ -13,7 +13,7 @@ export class Login extends LitElement {
   constructor() {
     super();
   }
-  firstUpdated(changedProperties) {
+  firstUpdated(changedProperties: any) {
     let titleEvent = new CustomEvent('title-change', {
       detail: {
         message: 'Login'
@@ -84,7 +84,7 @@ export class Login extends LitElement {
       fieldset {
         padding-left: 1em;
         padding-right: 1em;
-        font-color: var(--zwart);
+        color: var(--zwart);
       }
 
       #vervoerstype {
@@ -97,7 +97,6 @@ export class Login extends LitElement {
         /*margin: 0.1em;*/
         border: none;
         border-radius: 4px;
-        background-color: var(--wit);
         color: var(--zwart);
         background-color: var(--grijs);
         vertical-align: middle;
@@ -113,7 +112,7 @@ export class Login extends LitElement {
         background-color: #00c300;
         border: none;
         color: white;
-        padding: 1em 0px;
+        padding: 1em 0;
         text-decoration: none;
         margin: 4px 2px;
         cursor: pointer;
@@ -122,10 +121,8 @@ export class Login extends LitElement {
       .visibility-hidden {
         display: none;
         pointer-events: none;
-        color: lightgrey;
-        foreground-color: var(--grijs);
+        color: var(--grijs);
         background-color: var(--grijs);
-        required: invalid;
       }
     `;
   }

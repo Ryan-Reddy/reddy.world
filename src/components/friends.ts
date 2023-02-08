@@ -14,7 +14,7 @@ export class FriendsElement extends LitElement {
   constructor() {
     super();
   }
-  firstUpdated(changedProperties) {
+  firstUpdated(changedProperties: any) {
     let titleEvent = new CustomEvent('title-change', {
       detail: {
         message: 'Friends'
@@ -38,9 +38,7 @@ export class FriendsElement extends LitElement {
         .hidden {
           display: none;
           pointer-events: none;
-          color: lightgrey;
-          foreground-color: grey;
-          required: invalid;
+          color: var(--grijs);
         }
 
         button {

@@ -13,7 +13,7 @@ export class ResetPassword extends LitElement {
   constructor() {
     super();
   }
-  firstUpdated(changedProperties) {
+  firstUpdated(changedProperties: any) {
     let titleEvent = new CustomEvent('title-change', {
       detail: {
         message: 'Reset password'
@@ -36,10 +36,8 @@ export class ResetPassword extends LitElement {
       .hidden {
         display: none;
         pointer-events: none;
-        color: lightgrey;
-        foreground-color: var(--grijs);
+        color: var(--grijs);
         background-color: var(--grijs);
-        required: invalid;
       }
 
       button {

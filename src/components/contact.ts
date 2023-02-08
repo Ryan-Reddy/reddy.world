@@ -21,10 +21,10 @@ export class ContactElement extends LitElement {
   constructor() {
     super();
   }
-  firstUpdated(changedProperties) {
+  firstUpdated(changedProperties: any) {
     let titleEvent = new CustomEvent('title-change', {
       detail: {
-        message: 'Support'
+        message: 'Contact'
       }
     });
     console.log('dispatching event:' + titleEvent.detail.message)
@@ -96,7 +96,7 @@ export class ContactElement extends LitElement {
         </form>
           <input type="button" @click="${this._submitFormToFirebase}" value="Submit" aria-label="submit form">
         </div>
-<!--      <button @click="${this._getSingleDataFromFirebase}"></button>-->
+      <button @click="${this._getSingleDataFromFirebase}"></button>
       </main>
 
       </body>
@@ -111,15 +111,14 @@ export class ContactElement extends LitElement {
       this._message.value,
     )
     firebaseService.writeContactFormDataToFirebase(formdata)
-    alert(formdata.name + ", thanks for your message!")
-
   }
-  // _getSingleDataFromFirebase() {
-  //   console.log(this._getAllDataFromFirebase());
-  // }
-  // async _getAllDataFromFirebase() {
-  //   console.log('_getAllDataFromFirebase')
-  //   return firebaseService.readAllContactFormDataToFirebase();
-  // }
+  _getSingleDataFromFirebase() {
+    console.log('_getSingleDataFromFirebase');
+  }
+  _getAllDataFromFirebase() {
+    console.log('_getAllDataFromFirebase')
+    let data = firebaseService.readAllContactFormDataToFirebase();
+    return data;
+  }
 
 }

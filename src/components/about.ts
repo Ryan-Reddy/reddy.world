@@ -12,7 +12,7 @@ export class SupportElement extends LitElement {
   @property() _contact = 'mailto:ryan@reddy.world?subject=Hello friend! I wish to speak to you!';
   constructor() { super(); }
 
-  firstUpdated(changedProperties) {
+  firstUpdated(changedProperties: any) {
     let titleEvent = new CustomEvent('title-change', {
       detail: {
         message: 'About'
