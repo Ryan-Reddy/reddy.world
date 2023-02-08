@@ -1,6 +1,7 @@
 import {css, html, LitElement} from 'lit';
 import {customElement, property, query} from 'lit/decorators.js';
 import {ContactForm} from "../data/contactform"
+import {firebaseService} from "../services/firebaseService";
 
 /**
  * An example element.
@@ -90,26 +91,35 @@ export class ContactElement extends LitElement {
           <textarea aria-label="message" id="message" name="message" placeholder="Message..."></textarea>
             </li>
           </ul>
-          <input @click="${this._sendForm}" type="Submit" value="Submit" aria-label="submit form">
+<!--          <input @click="${this._submitFormToFirebase}" type="Submit" value="Submit" aria-label="submit form">-->
+
         </form>
+          <input type="button" @click="${this._submitFormToFirebase}" value="Submit" aria-label="submit form">
         </div>
+<!--      <button @click="${this._getSingleDataFromFirebase}"></button>-->
       </main>
+
       </body>
     `;
   }
-  _sendForm() {
-    console.log("mailto:ryan@reddy.world");
+  _submitFormToFirebase() {
+    console.log('_submitFormToFirebase')
     const formdata = new ContactForm(
       this._name.value,
       this._email.value,
       this._subject.value,
       this._message.value,
-      )
-    window.open('mailto:ryan@reddy.world?subject='
-      + formdata.subject
-      + '&body=' + formdata.message + ' sender: ' + formdata.name
     )
+    firebaseService.writeContactFormDataToFirebase(formdata)
     alert(formdata.name + ", thanks for your message!")
 
   }
+  // _getSingleDataFromFirebase() {
+  //   console.log(this._getAllDataFromFirebase());
+  // }
+  // async _getAllDataFromFirebase() {
+  //   console.log('_getAllDataFromFirebase')
+  //   return firebaseService.readAllContactFormDataToFirebase();
+  // }
+
 }
