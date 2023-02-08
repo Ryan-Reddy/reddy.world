@@ -96,7 +96,8 @@ export class ContactElement extends LitElement {
         </form>
           <input type="button" @click="${this._submitFormToFirebase}" value="Submit" aria-label="submit form">
         </div>
-      <button @click="${this._getSingleDataFromFirebase}"></button>
+      <button @click="${this._getAllDataFromFirebase}">_getAllDataFromFirebase</button>
+      <button @click="${this._getSingleDataFromFirebase}">_getSingleDataFromFirebase</button>
       </main>
 
       </body>
@@ -114,6 +115,7 @@ export class ContactElement extends LitElement {
   }
   _getSingleDataFromFirebase() {
     console.log('_getSingleDataFromFirebase');
+    return firebaseService.readAllContactFormDataToFirebase();
   }
   _getAllDataFromFirebase() {
     console.log('_getAllDataFromFirebase')
