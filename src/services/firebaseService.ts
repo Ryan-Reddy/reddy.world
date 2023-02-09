@@ -17,7 +17,7 @@ export class firebaseService {
     message: any
   ) {
 
-    const ref = doc(_db_firestore, 'contactform','entry').withConverter(contactFormConvertor);
+    const ref = doc(_db_firestore, 'contactform',Date.now().toString()).withConverter(contactFormConvertor);
     const data = new ContactformDTO(
       name,
       email,
