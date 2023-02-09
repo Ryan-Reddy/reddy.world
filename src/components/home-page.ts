@@ -28,16 +28,9 @@ export class HomePage extends LitElement {
         padding: 2rem;
         text-align: center;
       }
-
-      main {
-      }
-
-      ul {
-        list-style: none;
-      }
       img {
-        max-width: 66vw;
-        height: auto;
+        width: auto;
+        max-height: 60svh;
       }
 
       .card {
@@ -47,14 +40,9 @@ export class HomePage extends LitElement {
       a {
         font-weight: 500;
       }
-
-      a:hover {
-        color: var(--groen);
-      }
-
       h1 {
-        font-size: 3.2em;
-        line-height: 1.1;
+        font-size: 5lvb;
+        line-height: 1.5;
       }
 
       button {
