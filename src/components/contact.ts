@@ -49,23 +49,23 @@ export class ContactElement extends LitElement {
         color: var(--grijs);
         background-color: var(--grijs);
       }
-
-      button {
-        width: 66%;
-        height: 2em;
-      }
       ul {
         list-style: none;
         width: 100%
 
       }
-      input, textarea {
+      input, textarea, button {
+        padding: 5px;
         width: 100%;
         margin: 12px;
         height: 32px;
       }
       textarea {
         height: 256px;
+      }
+      #submitBtn {
+        background: rgba(250,235,215,0.7);
+        color: rgba(21,23,21,1);
       }
 
     `;
@@ -76,13 +76,13 @@ export class ContactElement extends LitElement {
       <meta title="Contact page">
       <body>
       <main>
-        <form>
+        <form onsubmit="preventDefault()">
           <ul>
             <li>
           <input aria-label="name" type="text" id="name" name="name" placeholder="Name" maxlength="254">
             </li>
             <li>
-          <input aria-label="email" type="text" id="email" name="email" placeholder="Email" maxlength="254">
+          <input aria-label="email" type="email" id="email" name="email" placeholder="Email" maxlength="254" required>
             </li>
             <li>
           <input aria-label="subject" type="text" id="subject" name="subject" placeholder="Subject" maxlength="254">
@@ -92,7 +92,7 @@ export class ContactElement extends LitElement {
             </li>
           </ul>
         </form>
-          <input type="button" @click="${this._submitFormToFirebase}" value="Submit" aria-label="submit form">
+        <button id="submitBtn" type="submit" @click="${this._submitFormToFirebase}" value="Submit" aria-label="submit form"><strong>Submit</strong></button>
         </div>
 <!--      <button @click="${this._getAllDataFromFirebase}">_getAllDataFromFirebase</button>-->
 <!--      <button @click="${this._getSingleDataFromFirebase}">_getSingleDataFromFirebase</button>-->
@@ -101,6 +101,7 @@ export class ContactElement extends LitElement {
     `;
   }
   _submitFormToFirebase() {
+
     console.log('_submitFormToFirebase')
 
     firebaseService.writeContactFormToFirestore(      this._name.value,
