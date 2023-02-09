@@ -57,21 +57,28 @@ export class ReadmeElement extends LitElement {
 
       zero-md {
         margin: auto;
-        width: 60%;
+        width: 63%;
         border: 3px solid green;
         padding: 3em;
+        font-size: .82vw;
+        line-height: 1.3vw;
+        color: rgb(0, 255, 0);
+        //background: #00ff00;
       }
 
       @media (max-width: 952px) {
         zero-md {
-          display: none;
-          align-content: center;
+          width: 100%;
+          font-size: 29.94%;
+          line-height: 125%;
+          //display: none;
+          //align-content: center;
         }
 
         div.readme:after {
           top: 0;
           left: 0;
-          content: 'This is not visible on a small screen, please view on a larger screen.'
+          //content: 'This is not visible on a small screen, please view on a larger screen.'
         }
       }
 
@@ -91,11 +98,6 @@ export class ReadmeElement extends LitElement {
         <zero-md src="${this._readmeFile}">  <!-- Wrap with a <template> tag -->
           <template>
             <!-- Define your own styles inside a \`<style>\` tag -->
-            <style>
-              h1 {
-                color: red;
-              }
-            </style>
           </template>
         </zero-md>
       </div>

@@ -1,12 +1,12 @@
 {
-  "short_name": "",
-  "name": "",
+  "short_name": "Ryan's world",
+  "name": "Ryan Reddy's World, a place ",
   "icons": [{
     "src": "icon.png",
     "type": "image/png",
     "sizes": "192x192"
   }],
-  "start_url": "/?utm_source=homescreen",
+  "start_url": "/?utm_source=home",
   "background_color": "#fafafa",
   "theme_color": "#fafafa"
 }
