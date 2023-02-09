@@ -10,14 +10,14 @@ const _db_firestore = StartFirebaseFirestore();
 
 export class firebaseService {
 
-  static writeContactFormToFirestore(
+  static async writeContactFormToFirestore(
     name: any,
     email: any,
     subject: any,
     message: any
   ) {
 
-    const ref = doc(_db_firestore, 'contactform',Date.now().toString()).withConverter(contactFormConvertor);
+    // const ref = doc(_db_firestore, 'contactform',Date.now().toString()).withConverter(contactFormConvertor);
     const data = new ContactformDTO(
       name,
       email,
@@ -25,15 +25,14 @@ export class firebaseService {
       message
     )
     console.log(data)
-    setDoc(ref, data)
-      alert(data._name + ", thanks for your message!")
-
-    // .then(() => {
-    //   alert(contactform._name + ", thanks for your message!")
-    // }).catch((error) => {
-    //   alert('datastore unsuccesfull, error: ' + error)
-    // })
-
+    let docRef;
+    addDoc(collection(_db_firestore, 'mail').withConverter(contactFormConvertor), data)
+      .then((docRef) => {
+        alert(data._name + ", thanks for your message!")
+        console.log("Document written with ID: ", docRef.id); // auto generated id, could be returned and saved!
+      }).catch((error) => {
+        alert('datastore unsuccesfull, error: ' + error)
+      })
   }
 
   static readAllContactFormDataToFirebase() {

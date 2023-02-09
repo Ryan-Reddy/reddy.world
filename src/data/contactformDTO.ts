@@ -18,10 +18,12 @@ export class ContactformDTO {
 export const contactFormConvertor = {
   toFirestore: (contactform: ContactformDTO) => {
     return {
+      to: 'ryan@reddy.world',
       name: contactform._name,
-      email: contactform._email,
-      subject: contactform._subject,
-      message: contactform._message
+      from: 'ryan@reddy.world',
+      replyTo: contactform._email,
+      message: {text: contactform._message + '\n\nkind regards, ' + contactform._name,
+        subject: contactform._subject}
     };
   },
   fromFirestore: (snapshot: { data: (arg0: any) => any; }, options: any) => {
