@@ -144,6 +144,8 @@ export class MailElement extends LitElement {
       <main>
 
         <hr/>
+<!--            //https://vaadin.com/docs/latest/components/grid/#item-details-->
+<!-- grid too SLOW?????                https://vaadin.com/blog/using-the-right-r-->
         <div class="tablecontainer">
           <vaadin-grid
             theme="row-stripes"
@@ -153,26 +155,8 @@ export class MailElement extends LitElement {
               const item = e.detail.value;
               this.detailsOpenedItem = item ? [item] : [];
             }}"
-            ${gridRowDetailsRenderer<ContactFormDTO>(
-              (item) => html`
-                <vaadin-form-layout .responsiveSteps="${[{minWidth: '0', columns: 3}]}">
-                  <vaadin-text-field
-                    label="Email address"
-                    .value="${item._message}"
-                    colspan="3"
-                    readonly
-                  ></vaadin-text-field>
-                  <vaadin-text-field
-                    label="Email address"
-                    .value="${item._email}"
-                    colspan="3"
-                    readonly
-                  ></vaadin-text-field>
-                </vaadin-form-layout>
-              `,
-              []
-            )}
           >
+
             <vaadin-grid-column path="id" auto-width flex-grow="0"></vaadin-grid-column>
             <vaadin-grid-column path="date" auto-width flex-grow="0"></vaadin-grid-column>
             <vaadin-grid-column path="replyTo" auto-width></vaadin-grid-column>
