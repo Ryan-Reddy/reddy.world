@@ -3,8 +3,11 @@ import {customElement, property, state} from 'lit/decorators.js';
 import {ContactFormDTO} from "../data/ContactFormDTO";
 import {firebaseService} from "../services/firebaseService";
 
-import type {GridActiveItemChangedEvent} from '@vaadin/grid';
-import '@vaadin/vaadin'
+import '@vaadin/grid';
+import { gridRowDetailsRenderer } from '@vaadin/grid/lit.js';
+import type { GridActiveItemChangedEvent } from '@vaadin/grid';
+import '@vaadin/form-layout';
+import '@vaadin/text-field';
 
 /**
  * An example element.
@@ -14,11 +17,15 @@ import '@vaadin/vaadin'
  */
 @customElement('mail-element')
 export class MailElement extends LitElement {
-  @state() private selectedItems: ContactFormDTO[] | undefined;
-  @property() _mailsMap: unknown;
+  @state() private detailsOpenedItem: ContactFormDTO[] = [];
+  @state() private selectedMessage: any[] | undefined;
+  @state() private items: any[] = [];
+  @property() _mailsMap: ContactFormDTO[] = [];
+
   constructor() {
     super();
   }
+
   async firstUpdated(changedProperties: any) {
     this.setTitle();
     await this.fillTableWithMails();
@@ -33,6 +40,7 @@ export class MailElement extends LitElement {
     console.log('dispatching event:' + titleEvent.detail.message)
     this.dispatchEvent(titleEvent);
   }
+
   private async fillTableWithMails() {
     const allDocs = await firebaseService.getAllDocs()
     let items = [];
@@ -47,8 +55,10 @@ export class MailElement extends LitElement {
         message: value.message,
       })
     }
+    // @ts-ignore
     this._mailsMap = items; // set grid items
   }
+
   static get styles() {
     return css`
       * {
@@ -57,8 +67,75 @@ export class MailElement extends LitElement {
         box-sizing: border-box;
         text-decoration: none;
       }
+
+      .full {
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+      }
+
+      H1 {
+        padding-top: 1em;
+        font-size: 2em;
+        padding-bottom: 0.5em;
+      }
+
+      header p {
+        font-size: 1em;
+      }
+
+      main {
+        align-content: center;
+      }
+
+      .tablecontainer {
+        height: 70vh;
+        overflow: auto;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 10px;
+      }
+
+      table {
+        background: var(--zwart);
+      }
+
+      th {
+        padding: 0.6em;
+        border-bottom: 1px dotted #ddd;
+        border-collapse: collapse;
+      }
+
+      .columnHeads {
+        background: var(--groen);
+        cursor: pointer;
+      }
+
+      @media (max-width: 858px) {
+        .hiddensmolscreen {
+          display: none;
+        }
+      }
+      @media (prefers-color-scheme: light) {
+        :root {
+          color: var(--zwart);
+          background-color: var(--wit);
+        }
+
+        table {
+          background: var(--wit);
+          border: 1px solid var(--zwart);
+          border-color: var(--wit);
+        }
+
+        th {
+          border-bottom: 1px dotted var(--zwart);
+        }
+      }
     `;
   }
+
   render() {
     return html`
       <meta name="description" content="Ryan Reddy's world.">
@@ -69,15 +146,32 @@ export class MailElement extends LitElement {
         <hr/>
         <div class="tablecontainer">
           <vaadin-grid
+            theme="row-stripes"
             .items="${this._mailsMap}"
-            .selectedItems="${this.selectedItems}"
+            .detailsOpenedItem="${this.detailsOpenedItem}"
             @active-item-changed="${(e: GridActiveItemChangedEvent<ContactFormDTO>) => {
               const item = e.detail.value;
-              this.selectedItems = item ? [item] : [];
-              console.log(this.selectedItems)
+              this.detailsOpenedItem = item ? [item] : [];
             }}"
-            theme="wrap-cell-content"
-            all-rows-visible
+            ${gridRowDetailsRenderer<ContactFormDTO>(
+              (item) => html`
+                <vaadin-form-layout .responsiveSteps="${[{minWidth: '0', columns: 3}]}">
+                  <vaadin-text-field
+                    label="Email address"
+                    .value="${item._message}"
+                    colspan="3"
+                    readonly
+                  ></vaadin-text-field>
+                  <vaadin-text-field
+                    label="Email address"
+                    .value="${item._email}"
+                    colspan="3"
+                    readonly
+                  ></vaadin-text-field>
+                </vaadin-form-layout>
+              `,
+              []
+            )}
           >
             <vaadin-grid-column path="id" auto-width flex-grow="0"></vaadin-grid-column>
             <vaadin-grid-column path="date" auto-width flex-grow="0"></vaadin-grid-column>
@@ -88,8 +182,10 @@ export class MailElement extends LitElement {
           </vaadin-grid>
         </div>
         <p>Selected row:
-          ${JSON.stringify(this.selectedItems)}
-          ${this.selectedItems}</p>
+          ${JSON.stringify(this.detailsOpenedItem)}
+          <br>
+          ${JSON.stringify(this.selectedMessage)}
+        </p>
         <button>Edit geselecteerde rij</button>
         <button>Exporteren als..</button>
 
