@@ -68,6 +68,16 @@ export class MailElement extends LitElement {
         text-decoration: none;
       }
 
+      main {
+        color: var(--wit);
+        /* These edit the vaadin grid colors: */
+        background-color: var(--red);
+        margin: 3vh;
+        --lumo-base-color: var(--zwart);
+        --lumo-body-text-color: var(--wit);
+      }
+
+
       .full {
         width: 100%;
         height: 100%;
@@ -82,10 +92,6 @@ export class MailElement extends LitElement {
 
       header p {
         font-size: 1em;
-      }
-
-      main {
-        align-content: center;
       }
 
       .tablecontainer {
