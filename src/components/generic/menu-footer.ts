@@ -158,6 +158,8 @@ export class MenuFooter extends LitElement {
           <ul>
             <li><a class="nav-button" href="https://github.com/Ryan-Reddy" id="github-button"
                    aria-label="github">Github</a></li>
+            <li><a class="nav-button" href="https://www.linkedin.com/in/ryan-reddy-productions/" id="linkedin-button"
+                   aria-label="linkedin">Linkedin</a></li>
             <li><a class="nav-button" data-key="nav-btn-friends" href="friends" id="friends-button"
                    aria-label="Friends">Friends</a></li>
             <li><a class="nav-button" data-key="nav-btn-readme" href="readme" id="readme-button" aria-label="Readme">Readme</a>
@@ -172,6 +174,8 @@ export class MenuFooter extends LitElement {
           <ul>
             <li><a class="nav-button" href="https://github.com/Ryan-Reddy" id="github-button"
                    aria-label="github">Github</a></li>
+            <li><a class="nav-button" href="https://www.linkedin.com/in/ryan-reddy-productions/" id="linkedin-button"
+                   aria-label="linkedin">Linkedin</a></li>
             <li><a class="nav-button" data-key="nav-btn-friends" href="friends" id="friends-button"
                    aria-label="Vrienden">Vrienden</a></li>
             <li><a class="nav-button" data-key="nav-btn-readme" href="readme" id="readme-button" aria-label="Leesmij">Leesmij</a>
