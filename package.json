@@ -21,6 +21,8 @@
     "test": "npx cucumber-js"
   },
   "devDependencies": {
+    "@types/cucumber": "^7.0.0",
+    "cucumber": "^6.0.7",
     "vite": "^4.0.4"
   },
   "dependencies": {
