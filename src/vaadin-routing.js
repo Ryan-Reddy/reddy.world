@@ -12,6 +12,8 @@ import './components/portfolio';
 import './components/about';
 import './components/cvFromLinkedin';
 import './components/contact';
+// admin:
+import './components/all-mails';
 
 // import './components/generic/menu-footer';
 import './components/generic/not-found';
@@ -31,6 +33,11 @@ router.setRoutes([
     name: 'contact-element', // doet niks impliciet
     path: '/contact',
     component: 'contact-element',
+  },
+  {
+    name: 'mail-element', // doet niks impliciet
+    path: '/mail',
+    component: 'mail-element',
   },
   {
     name: 'about-element', // doet niks impliciet

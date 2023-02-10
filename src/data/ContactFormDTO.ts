@@ -1,24 +1,24 @@
-export class ContactformDTO {
+export class ContactFormDTO {
   public _name: string;
   public _email: string;
   public _subject: string;
   public _message: string;
- constructor(name: string, email: string, subject: string, message: string) {
+  public _date: number;
+ constructor(name: string, email: string, subject: string, message: string, date: number) {
  this._name = name;
  this._email = email;
  this._subject = subject;
  this._message = message;
+ this._date = date;
  }
-  toString() {
-    return this._name + ', ' + this._email + ', ' + this._subject + ', ' + this._message;
-  }
 }
 
 // Firestore data converter
 export const contactFormConvertor = {
-  toFirestore: (contactform: ContactformDTO) => {
+  toFirestore: (contactform: ContactFormDTO) => {
     return {
       to: 'ryan@reddy.world',
+      date: Date.now(),
       name: contactform._name,
       from: 'ryan@reddy.world',
       replyTo: contactform._email,
@@ -28,6 +28,6 @@ export const contactFormConvertor = {
   },
   fromFirestore: (snapshot: { data: (arg0: any) => any; }, options: any) => {
     const data = snapshot.data(options);
-    return new ContactformDTO(data.name, data.email, data.subject, data.message);
+    return new ContactFormDTO(data.name, data.email, data.subject, data.message, data.date);
   }
 };

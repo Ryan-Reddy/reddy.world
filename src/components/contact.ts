@@ -1,6 +1,6 @@
 import {css, html, LitElement} from 'lit';
 import {customElement, property, query} from 'lit/decorators.js';
-import {ContactformDTO} from "../data/contactformDTO"
+import {ContactFormDTO} from "../data/ContactFormDTO"
 import {firebaseService} from "../services/firebaseService";
 
 /**
@@ -94,8 +94,8 @@ export class ContactElement extends LitElement {
         </form>
         <button id="submitBtn" type="submit" @click="${this._submitFormToFirebase}" value="Submit" aria-label="submit form"><strong>Submit</strong></button>
         </div>
-<!--      <button @click="${this._getAllDataFromFirebase}">_getAllDataFromFirebase</button>-->
-<!--      <button @click="${this._getSingleDataFromFirebase}">_getSingleDataFromFirebase</button>-->
+      <button @click="${this._getAllDataFromFirebase}">_getAllDataFromFirebase</button>
+      <button @click="${this._getSingleDataFromFirebase}">_getSingleDataFromFirebase</button>
       </main>
       </body>
     `;
@@ -104,17 +104,20 @@ export class ContactElement extends LitElement {
 
     console.log('_submitFormToFirebase')
 
-    firebaseService.writeContactFormToFirestore(      this._name.value,
+    firebaseService.writeContactFormToFirestore(
+      this._name.value,
       this._email.value,
       this._subject.value,
       this._message.value)
   }
   _getSingleDataFromFirebase() {
-    console.log('_getSingleDataFromFirebase');
-    return firebaseService.readAllContactFormDataToFirebase();
+    console.log(this._getSingleDataFromFirebase)
+    return firebaseService.readSingleContactFromDatabase();
   }
   _getAllDataFromFirebase() {
-    console.log('_getAllDataFromFirebase')
-    return firebaseService.readAllContactFormDataToFirebase();
+    console.log(this._getAllDataFromFirebase)
+    const data = firebaseService.getAllDocs();
+    console.log(data)
+    return data;
   }
 }

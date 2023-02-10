@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@vaadin/router": "^1.7.4",
+    "@vaadin/vaadin": "^23.3.6",
     "@webcomponents/webcomponentsjs": "^2.7.0",
     "firebase": "^9.17.1",
     "lit": "^2.6.1",
