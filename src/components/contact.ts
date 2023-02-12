@@ -1,6 +1,5 @@
 import {css, html, LitElement} from 'lit';
 import {customElement, property, query} from 'lit/decorators.js';
-import {ContactFormDTO} from "../data/ContactFormDTO"
 import {firebaseService} from "../services/firebaseService";
 
 /**
@@ -108,11 +107,12 @@ export class ContactElement extends LitElement {
       this._name.value,
       this._email.value,
       this._subject.value,
-      this._message.value)
+      this._message.value,
+      Date.now())
   }
   _getSingleDataFromFirebase() {
     console.log(this._getSingleDataFromFirebase)
-    return firebaseService.readSingleContactFromDatabase();
+    return firebaseService.readSingleContactFromDatabase('insertId');
   }
   _getAllDataFromFirebase() {
     console.log(this._getAllDataFromFirebase)

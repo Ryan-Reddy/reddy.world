@@ -21,7 +21,9 @@
     "test": "npx cucumber-js"
   },
   "devDependencies": {
+    "@types/chai": "^4.3.4",
     "@types/cucumber": "^7.0.0",
+    "@types/selenium-webdriver": "^4.1.10",
     "cucumber": "^6.0.7",
     "vite": "^4.0.4"
   },
@@ -30,8 +32,11 @@
     "@vaadin/router": "^1.7.4",
     "@vaadin/vaadin": "^23.3.6",
     "@webcomponents/webcomponentsjs": "^2.7.0",
+    "chai": "^4.3.7",
     "firebase": "^9.17.1",
     "lit": "^2.6.1",
+    "openai": "^3.1.0",
+    "selenium-webdriver": "^4.8.0",
     "zero-md": "^2.4.0"
   },
   "main": "vite.config.js",

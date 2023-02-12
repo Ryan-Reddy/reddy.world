@@ -14,6 +14,7 @@ import './components/cvFromLinkedin';
 import './components/contact';
 // admin:
 import './components/all-mails';
+import './components/openai';
 
 // import './components/generic/menu-footer';
 import './components/generic/not-found';
@@ -24,6 +25,11 @@ export const router = new Router(app);
 
 // noinspection JSIgnoredPromiseFromCall
 router.setRoutes([
+  {
+    name: 'open-ai-element', // doet niks impliciet
+    path: '/openai',
+    component: 'open-ai-element',
+  },
   {
     name: 'lang-picker-element', // doet niks impliciet
     path: '/lang',

@@ -1,10 +1,8 @@
 // Your web app's Firebase configuration
-import StartFirebaseRealtimeDb from "./firebaseConfig/firebase-config";
 import {contactFormConvertor, ContactFormDTO} from "../data/ContactFormDTO";
 import StartFirebaseFirestore from "./firebaseConfig/firebase-config";
 import { collection, addDoc, doc, getDoc, getDocs } from "firebase/firestore";
 
-const _db_realtime = StartFirebaseRealtimeDb();
 const _db_firestore = StartFirebaseFirestore();
 
 export class firebaseService {
@@ -22,7 +20,8 @@ export class firebaseService {
       name,
       email,
       subject,
-      message
+      message,
+      date
     )
     console.log(data)
     addDoc(collection(_db_firestore, 'mail').withConverter(contactFormConvertor), data)
