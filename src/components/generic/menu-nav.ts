@@ -16,7 +16,6 @@ export class MenuNav extends LitElement {
   @query('.dropdown-menu-items') _dropdownMenuItems!: HTMLUListElement;
   constructor() {
     super();
-    this.addEventListener('onChange', this._hideDropDown)
   }
   static get styles() {
     return css`

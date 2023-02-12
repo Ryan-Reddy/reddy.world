@@ -1,8 +1,5 @@
 import {css, html, LitElement} from 'lit';
-import {customElement, property} from 'lit/decorators.js';
-import { Configuration, OpenAIApi } from "openai";
-
-
+import {customElement, property, query} from 'lit/decorators.js';
 
 /**
  * An example element.
@@ -12,25 +9,11 @@ import { Configuration, OpenAIApi } from "openai";
  */
 @customElement('open-ai-element')
 export class OpenAIElement extends LitElement {
-
-  private configuration = new Configuration({
-    apiKey: process.env.OPENAI_API_KEY,
-  });
-  private openai = new OpenAIApi(this.configuration);
-  private image: any;
+  @query('#animalInput') animalInput!: HTMLInputElement;
+  @property() result!: unknown;
   constructor() {
     super();
   }
-  firstUpdated(changedProperties: any) {
-    let titleEvent = new CustomEvent('title-change', {
-      detail: {
-        message: 'OpenAi'
-      }
-    });
-    console.log('dispatching event:' + titleEvent.detail.message)
-    this.dispatchEvent(titleEvent);
-  }
-
   static get styles() {
     return css`
       * {
@@ -40,50 +23,136 @@ export class OpenAIElement extends LitElement {
         text-decoration: none;
       }
 
-      .hidden {
-        display: none;
-        pointer-events: none;
-        color: var(--grijs);
-        background-color: var(--grijs);
+      @font-face {
+        font-family: "ColfaxAI";
+        src: url(https://cdn.openai.com/API/fonts/ColfaxAIRegular.woff2) format("woff2"),
+        url(https://cdn.openai.com/API/fonts/ColfaxAIRegular.woff) format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "ColfaxAI";
+        src: url(https://cdn.openai.com/API/fonts/ColfaxAIBold.woff2) format("woff2"),
+        url(https://cdn.openai.com/API/fonts/ColfaxAIBold.woff) format("woff");
+        font-weight: bold;
+        font-style: normal;
       }
 
-      button {
-        width: 66%;
-        height: 2em;
+      .main,
+      .main input {
+        font-size: 16px;
+        line-height: 24px;
+        color: #353740;
+        font-family: "ColfaxAI", Helvetica, sans-serif;
       }
+
+      .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 60px;
+      }
+
+      .main .icon {
+        width: 34px;
+      }
+
+      .main h3 {
+        font-size: 32px;
+        line-height: 40px;
+        font-weight: bold;
+        color: #202123;
+        margin: 16px 0 40px;
+      }
+
+      .main form {
+        display: flex;
+        flex-direction: column;
+        width: 320px;
+      }
+
+      .main input[type="text"] {
+        padding: 12px 16px;
+        border: 1px solid #10a37f;
+        border-radius: 4px;
+        margin-bottom: 24px;
+        outline-color: #10a37f;
+      }
+
+      .main ::placeholder {
+        color: #8e8ea0;
+        opacity: 1;
+      }
+
+      .main input[type="submit"] {
+        padding: 12px 0;
+        color: #fff;
+        background-color: #10a37f;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .main .result {
+        font-weight: bold;
+        margin-top: 40px;
+      }
+
     `;
   }
-
+  firstUpdated(changedProperties: any) {
+    let titleEvent = new CustomEvent('title-change', {
+      detail: {
+        message: 'OpenAi',
+      }
+    });
+    console.log('dispatching event:' + titleEvent.detail.message)
+    this.dispatchEvent(titleEvent);
+  }
   render() {
     return html`
-      <meta name="description" content="Ryan Reddy's world.">
-      <meta title="Support page">
-      <body>
       <main>
-
-          <img src="/Have-you-tried-turning-it-off-and-on-again.jpg"
-               alt="Hello IT... Have you tried turning it off and on again?"/>
-        <input>
-        <openAi
-
+        <img src="/dog.png" class="icon" alt="dog-img"/>
+        <h4>Name my pet</h4>
+        <form onSubmit=${this.onSubmit}>
+          <input
+            type="text"
+            name="animal"
+            id="animalInputId"
+            placeholder="Enter an animal"
+          />
+          <input type="submit" value="Generate names"/>
+        </form>
+        <div class="result"></div>
       </main>
-      </body>
     `;
   }
 
-  // async _clickForSupport (req: undefined, res: { status: (arg0: number) => { (): any; new(): any; json: { (arg0: { result: any; }): void; new(): any; }; }; } | undefined) {
-  // console.log(this.openai);
-  //   const response = await this.openai.createImage({
-  //     prompt: "a white siamese cat",
-  //     n: 1,
-  //     size: "1024x1024",
-  //   });
-  //   res.status(200).json({ result: this.image.data.choices[0].text });
-  //   let image_url = response.data.data[0].url;
-  //   console.log(image_url)
-  // }
+  async onSubmit(event: Event) {
+    event.preventDefault();
+    console.log("input retrieved: " + this.animalInput.valueOf());
+    try {
+      const response = await fetch("/api/generate", {
+        method: "POST", headers: {
+          "Content-Type": "application/json",
+        }, body: JSON.stringify({animal: this.animalInput.valueOf(),},),
+      });
 
-  generatePrompt(title: any) {
-    return `${title} in the style of high-quality food photography`;
+      const data = await response.json();
+      if (response.status !== 200) {
+        throw data.error || new Error("Request failed with status"+ response.status)
+      }
+
+      this.result = data.result;
+      console.log(this.result)
+      // this.animalInput = '';
+    } catch (error) {
+      // Consider implementing your own error handling logic here
+      console.error(error);
+      console.error(error.message);
+      alert(error.message);
+    }
   }
+
 }
