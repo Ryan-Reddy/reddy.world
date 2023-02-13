@@ -9,7 +9,7 @@ import {customElement, property, query} from 'lit/decorators.js';
  */
 @customElement('open-ai-element')
 export class OpenAIElement extends LitElement {
-  @query('#animalInput') animalInput!: HTMLInputElement;
+  @query('#animalInputID') animalInput!: HTMLInputElement;
   @property() result!: unknown;
   constructor() {
     super();
@@ -115,14 +115,14 @@ export class OpenAIElement extends LitElement {
       <main>
         <img src="/dog.png" class="icon" alt="dog-img"/>
         <h4>Name my pet</h4>
-        <form onSubmit=${this.onSubmit}>
+        <form >
           <input
             type="text"
             name="animal"
-            id="animalInputId"
+            id="animalInputID"
             placeholder="Enter an animal"
           />
-          <input type="submit" value="Generate names"/>
+          <input type="button" value="Generate names" @click=${this.onSubmit}/>
         </form>
         <div class="result"></div>
       </main>
@@ -130,14 +130,17 @@ export class OpenAIElement extends LitElement {
   }
 
   async onSubmit(event: Event) {
-    event.preventDefault();
-    console.log("input retrieved: " + this.animalInput.valueOf());
+    // event.preventDefault();
+    console.log("input retrieved: " + this.animalInput.value);
     try {
-      const response = await fetch("/api/generate", {
-        method: "POST", headers: {
+      const response = await fetch("api/generate", {
+        method: "POST",
+        headers: {
           "Content-Type": "application/json",
-        }, body: JSON.stringify({animal: this.animalInput.valueOf(),},),
+        },
+        body: JSON.stringify({ animal: this.animalInput.value }),
       });
+      console.log(response.status)
 
       const data = await response.json();
       if (response.status !== 200) {
@@ -150,6 +153,7 @@ export class OpenAIElement extends LitElement {
     } catch (error) {
       // Consider implementing your own error handling logic here
       console.error(error);
+      console.error(error.message);
       console.error(error.message);
       alert(error.message);
     }
