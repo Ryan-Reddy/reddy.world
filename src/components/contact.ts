@@ -87,18 +87,22 @@ export class ContactElement extends LitElement {
           <input aria-label="subject" type="text" id="subject" name="subject" placeholder="Subject" maxlength="254">
             </li>
             <li>
-          <textarea aria-label="message" id="message" name="message" placeholder="Message..."></textarea>
+              <textarea aria-label="message" id="message" name="message" placeholder="Message..."></textarea>
             </li>
           </ul>
         </form>
-        <button id="submitBtn" type="submit" @click="${this._submitFormToFirebase}" value="Submit" aria-label="submit form"><strong>Submit</strong></button>
+        <button id="submitBtn" type="submit" @click="${this._submitFormToFirebase}" value="Submit"
+                aria-label="submit form"><strong>Submit</strong></button>
         </div>
-      <button @click="${this._getAllDataFromFirebase}">_getAllDataFromFirebase</button>
-      <button @click="${this._getSingleDataFromFirebase}">_getSingleDataFromFirebase</button>
       </main>
       </body>
     `;
   }
+
+// <!--
+// <button @click="${this._getAllDataFromFirebase}">_getAllDataFromFirebase</button>
+// <button @click="${this._getSingleDataFromFirebase}">_getSingleDataFromFirebase</button>
+// -->
   _submitFormToFirebase() {
 
     console.log('_submitFormToFirebase')
