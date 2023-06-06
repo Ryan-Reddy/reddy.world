@@ -25,7 +25,7 @@
     "@types/cucumber": "^7.0.0",
     "@types/selenium-webdriver": "^4.1.10",
     "cucumber": "^6.0.7",
-    "vite": "^4.0.4"
+    "vite": "^4.0.5"
   },
   "dependencies": {
     "@cucumber/cucumber": "^8.10.0",
