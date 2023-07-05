@@ -48,7 +48,6 @@ export class RalContrastElement extends LitElement {
         }
 
         .iframe-container {
-
           width: 100%;
           height: 750px;
           border: none;
@@ -74,7 +73,7 @@ export class RalContrastElement extends LitElement {
           <!--          <span lang="en">Engelse span</span>-->
           <div>
             <iframe
-              src="dist/index.html"
+              src="/dist/index.html"
               class="iframe-container"
             ></iframe>
           </div>
