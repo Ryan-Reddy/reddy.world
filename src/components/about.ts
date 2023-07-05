@@ -66,17 +66,25 @@ export class SupportElement extends LitElement {
           <br>
           <p>I’m a software developer, from Amsterdam in the Netherlands.
             <br>
-            <br>
-            I started coding when I was 8 when I built a "Harry Potter"-based Hogwarts website.
-            <br>
 
-          Since then, I have toyed with automation of theatre and club special effects,
-            and have started a study in Computer Science Engineering in Utrecht.
+            Welcome to reddy.world, your go-to destination for innovative and visually stunning web development
+            solutions.
+            We are a team of experienced professionals with a background in art, design, special effects, and computer
+            science engineering.
+            Our expertise allows us to create websites that are both aesthetically pleasing and technically sound.
+
+            At reddy.world, we believe in combining our artistic and technical skills to create websites that are not
+            only beautiful but also functional. Our team has years of experience in managing teams and delivering
+            successful projects to clients from different industries.
+
+            We pride ourselves on our attention to detail and our ability to deliver projects on time and within budget.
+            Our goal is to provide you with a website that showcases your brand and helps you stand out from the
+            competition.
           <hr>
           <p>Beyond programming, I have a keen interest in everything and I love learning.
             I have run multiple companies, among which:</p>
           <ul>
-            <li><a href="https://https://nepco.nl/">Costumes for theatre</a></li>
+            <li><a href="https://nepco.nl/">Costumes for theatre</a></li>
             <li><a href="https://reddymaekersproductions.wordpress.com/">A decor/props company</a></li>
             <li><a href="https://www.facebook.com/HouseofGentleFrequencies/">Hosted a space for women's health</a></li>
             <li><a href="https://amsterdamsefrisdrankfabriek.nl/">Produced sodas</a></li>
@@ -86,7 +94,7 @@ export class SupportElement extends LitElement {
           <hr>
           <p>Take a look at my <a href="cv">CV</a> for more details about my professional accomplishments.
             <br>
-          <a>You can email me at <a href="${this._contact}">ryan@reddy.world</a>.
+            <a>You can email me at <a href="${this._contact}">ryan@reddy.world</a>.
           </p>
         </div>
       </main>
