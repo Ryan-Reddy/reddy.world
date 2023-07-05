@@ -27,6 +27,12 @@ export class CVElement extends LitElement {
       #wrapper {
         width: 100vw;
       }
+
+      #iframe-cv {
+        height: 750px;
+        width: 100%;
+      }
+
     `;
   }
   render() {
@@ -35,7 +41,6 @@ export class CVElement extends LitElement {
       <iframe id="iframe-cv"
         src="Resume-Ryan-van-Lil-Reddy.pdf#view=FitH"
               title="Resume-Ryan-van-Lil-Reddy.pdf"
-              height="100%" width="100%"
       >
       </iframe>
       </div>
