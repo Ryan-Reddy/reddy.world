@@ -57,14 +57,42 @@ export class PortfolioElement extends LitElement {
 
       <main>
         <div>
-        <h1>CV</h1>
-        <br>
+          <h1 lang="en">Software projects</h1>
+          <br>
+          <ul>
+            <li><a class="nav-button" href="/ral-contrast-checker" id="contrast-checker-button"
+                   aria-label="art">RAL-contrast-checker</a></li>
+          </ul>
 
-        <ul>
-        <li><a href="https://www.linkedin.com/in/ryan-reddy-productions/">LinkedIn</a></li>
-        <li><a href="https://github.com/Ryan-Reddy">Github</a></li>
-        </ul>
+          <br>
+          <h1 lang="en">Work portfolios</h1>
+          <br>
+
+          <ul>
+
+            <li><a href="https://www.linkedin.com/in/ryan-reddy-productions/">LinkedIn</a></li>
+            <li><a href="https://github.com/Ryan-Reddy">Github</a></li>
+          </ul>
+
+          <br>
+          <hr>
+          <br>
+          <h1>Art</h1>
+
+          <br>
+          These are design and art companies that I have managed and made many things for:
+          <ul>
+            <li><a href="http://www.nepco.nl/">Costumes for theatre</a></li>
+            <li><a href="http://www.reddymaekersproductions.wordpress.com/">A decor/props company</a></li>
+            <li><a href="http://www.ryanvanlil.wordpress.com">My old personal portfolio</a></li>
+          </ul>
+          And below are ones where I worked in assignment of:
+          <ul>
+            <li><a href="www.nepco.nl/">Costumes for theatre</a></li>
+            <li><a href="www.reddymaekersproductions.wordpress.com/">A decor/props company</a></li>
+          </ul>
         </div>
+
       </main>
 
       </body>

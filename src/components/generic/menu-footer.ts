@@ -156,8 +156,10 @@ export class MenuFooter extends LitElement {
       <nav>
         <div lang="en">
           <ul>
-            <li><a class="nav-button" href="art" id="art-button"
-                   aria-label="art">Art</a></li>
+            <li><a class="nav-button" href="/ral-contrast-checker" id="contrast-checker-button"
+                   aria-label="art">RAL-contrast-checker</a></li>
+            <li><a class="nav-button" href="/portfolio" id="portfolio-button"
+                   aria-label="art">Portfolio</a></li>
             <li><a class="nav-button" href="https://github.com/Ryan-Reddy" id="github-button"
                    aria-label="github">Github</a></li>
             <li><a class="nav-button" href="https://www.linkedin.com/in/ryan-reddy-productions/" id="linkedin-button"
@@ -174,8 +176,10 @@ export class MenuFooter extends LitElement {
         </div>
         <div lang="nl">
           <ul>
-            <li><a class="nav-button" href="art" id="art-button"
-                   aria-label="art">Kunst</a></li>
+            <li><a class="nav-button" href="/ral-contrast-checker" id="contrast-checker-button"
+                   aria-label="art">RAL-contrast-checker</a></li>
+            <li><a class="nav-button" href="/portfolio" id="portfolio-button"
+                   aria-label="art">Portfolio</a></li>
             <li><a class="nav-button" href="https://github.com/Ryan-Reddy" id="github-button"
                    aria-label="github">Github</a></li>
             <li><a class="nav-button" href="https://www.linkedin.com/in/ryan-reddy-productions/" id="linkedin-button"
