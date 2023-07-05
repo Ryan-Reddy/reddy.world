@@ -2,7 +2,7 @@
   "short_name": "Ryan's world",
   "name": "Ryan Reddy's World, a place ",
   "icons": [{
-    "src": "icon.png",
+    "src": "favicon.png",
     "type": "image/png",
     "sizes": "192x192"
   }],
