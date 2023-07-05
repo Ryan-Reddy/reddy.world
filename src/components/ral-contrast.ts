@@ -73,7 +73,7 @@ export class RalContrastElement extends LitElement {
           <!--          <span lang="en">Engelse span</span>-->
           <div>
             <iframe
-              src="/dist/index.html"
+              src="/ralcontrast/index.html"
               class="iframe-container"
             ></iframe>
           </div>
