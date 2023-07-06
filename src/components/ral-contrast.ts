@@ -15,7 +15,7 @@ export class RalContrastElement extends LitElement {
     link: 'https://www.linkedin.com/in/hind-baroudi-097a33225'
   }, {name: 'Mehmet Ali Bayram', link: 'https://www.linkedin.com/in/mehmet-ali-bayram-20201010/'}, {
     name: 'Jan de Graaf',
-    link: 'mailto:jan.degraaf@student.hu.nl'
+    link: 'mailto:jt.graaf@gmail.com'
   }, {name: 'Ryan', link: 'https://www.reddy.world'}, // Add more credits as needed
   ];
 
