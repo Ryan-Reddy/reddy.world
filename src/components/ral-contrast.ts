@@ -103,12 +103,12 @@ export class RalContrastElement extends LitElement {
           </div>
           <div class="credit-box">
             <h3>Credits:</h3>
-            <p>This project was created by an excellent team of Software Engineers for Stichting Accessibility as
-              students from Hogeschool
-              Utrecht in 2023 in the Netherlands.</p>
+            <p>This project was created as a team assignment for Stichting Accessibility by students from Hogeschool
+              Utrecht in 2023.</p>
             ${this.sortedCredits.map(credit => html`
               <p><a href=${credit.link} target="_blank">${credit.name}</a></p>
             `)}
+            <p>&copy; ${new Date().getFullYear()} Stichting Accessibility. All rights reserved.</p>
           </div>
         </div>
       </main>
