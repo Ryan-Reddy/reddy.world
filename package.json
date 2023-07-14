@@ -28,7 +28,7 @@
     "vite": "4.0.5"
   },
   "dependencies": {
-    "@cucumber/cucumber": "^8.10.0",
+    "@cucumber/cucumber": "^9.3.0",
     "@vaadin/router": "^1.7.4",
     "@vaadin/vaadin": "^23.3.6",
     "@webcomponents/webcomponentsjs": "^2.7.0",
