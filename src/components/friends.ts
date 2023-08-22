@@ -71,6 +71,7 @@ export class FriendsElement extends LitElement {
             <li><a href="https://lourenslente.nl/">Lourens Lente</a></li>
             <li><a href="https://teaanddragons.art/">Tea & Dragons</a></li>
             <li><a href="https://teaanddragons.art/about-loki/">Loki Project</a></li>
+            <li><a href="https://latolab.com/">Lato Kombucha Amsterdam</a></li>
             <li><a href="https://www.wettenvanleila.com">Leila van Wetten</a></li>
             <li><a href="https://nepco.nl/">Studio Nepco</a></li>
             <li><a href="https://kingeve.nl/">King Eve</a></li>
@@ -78,7 +79,8 @@ export class FriendsElement extends LitElement {
             <li><a href="https://www.studiobinnenstad.com/">Studio Binnenstad</a></li>
             <li><a href="https://www.noordermeer.tech">Martijn Noordermeer</a></li>
             <li><a href="https://mpdesteur.wixsite.com/salon1">Salon Ruigoord</a></li>
-            <li><a href="https://hetkleinetheater.nl/over-ons/nina-van-koppen/">Het kleine theater / Nina van Koppen</a>
+            <li><a href="https://hetkleinetheater.nl/over-ons/nina-van-koppen/">Het kleine theater /
+              Nina van Koppen</a>
             </li>
 
           </ul>
