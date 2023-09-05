@@ -29,6 +29,9 @@ export class SupportElement extends LitElement {
         padding: 0;
         box-sizing: border-box;
         text-decoration: none;
+
+        text-align: center;
+
       }
 
       .hidden {
@@ -42,12 +45,21 @@ export class SupportElement extends LitElement {
         width: 66%;
         height: 2em;
       }
+
       ul {
         list-style: none;
+
       }
+
+      li {
+        text-align: left;
+        margin-left: 5rem;
+      }
+
       li::before {
         content: '- ';
       }
+
       p {
         padding-bottom: 10px;
         padding-top: 10px;

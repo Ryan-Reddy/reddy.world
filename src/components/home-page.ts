@@ -28,9 +28,11 @@ export class HomePage extends LitElement {
         padding: 2rem;
         text-align: center;
       }
+
       img {
         width: auto;
         max-height: 60svh;
+        max-width: 90%;
       }
 
       .card {
@@ -40,6 +42,7 @@ export class HomePage extends LitElement {
       a {
         font-weight: 500;
       }
+
       h1 {
         font-size: 5lvb;
         line-height: 1.5;
@@ -98,7 +101,7 @@ export class HomePage extends LitElement {
         </div>
         <img src="ryan_images/IMG_6869.png" class="landingImage"
              alt="Ryan Reddy profile image, black and white, straw hat"
-             style="max-width: 90%"/>
+        />
       </main>
       </body>
     `;
