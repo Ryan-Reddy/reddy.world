@@ -62,18 +62,26 @@ export class SupportElement extends LitElement {
       <body>
       <main>
         <div>
-          <h1>Hi, I’m Ryan Reddy.</h1>
+          <h1>Hello, I’m Ryan Reddy.</h1>
           <br>
+          <div class="landingImage">
+            <img src="ryan_images/IMG_6869.png"
+                 alt="Ryan Reddy profile image, black and white, straw hat"/>
+          </div>
           <p>I’m a software developer, from Amsterdam in the Netherlands.
             <br>
 
-            Welcome to reddy.world, your go-to destination for innovative and visually stunning web development
+            Welcome to reddy.world, your go-to destination for innovative and visually stunning web
+            development
             solutions.
-            We are a team of experienced professionals with a background in art, design, special effects, and computer
+            We are a team of experienced professionals with a background in art, design, special
+            effects, and computer
             science engineering.
-            Our expertise allows us to create websites that are both aesthetically pleasing and technically sound.
+            Our expertise allows us to create websites that are both aesthetically pleasing and
+            technically sound.
 
-            At reddy.world, we believe in combining our artistic and technical skills to create websites that are not
+            At reddy.world, we believe in combining our artistic and technical skills to create
+            websites that are not
             only beautiful but also functional. Our team has years of experience in managing teams and delivering
             successful projects to clients from different industries.
 

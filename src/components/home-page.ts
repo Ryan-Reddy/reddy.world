@@ -90,19 +90,15 @@ export class HomePage extends LitElement {
       <body>
 
       <main>
-        <div class="side-by-side">
-          <div>
-            <h1 class="header">Ryan Reddy</h1>
-            <h3>is an artist,
-              <br> designer &
-              <br> an aspiring Computer Science Engineer.
-            </h3>
-          </div>
-          <div class="landingImage">
-            <img src="ryan_images/IMG_6869.png"
-                 alt="Ryan Reddy profile image, black and white, straw hat"/>
-          </div>
+        <div>
+          <h1 class="header">Ryan Reddy,</h1>
+          <p class="undertitle">Artist,
+            <br>Product Designer,
+            <br> and Aspiring Computer Science Engineer.</p>
         </div>
+        <img src="ryan_images/IMG_6869.png" class="landingImage"
+             alt="Ryan Reddy profile image, black and white, straw hat"
+             style="max-width: 90%"/>
       </main>
       </body>
     `;
