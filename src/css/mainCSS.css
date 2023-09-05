@@ -80,7 +80,6 @@
 
   footer-menu {
     position: absolute;
-
     left: 0;
     bottom: 0;
     height: 100px;
@@ -88,16 +87,11 @@
     overflow: hidden;
   }
 
-  .float-container {
-    border: 3px solid #fff;
-    padding: 20px;
-  }
+  .landingImage {
+    border: 15px solid red;
+    padding: 3px;
+    margin: 5px
 
-  .float-child {
-    width: 50%;
-    float: left;
-    padding: 20px;
-    border: 2px solid red;
   }
 
   .side-by-side {
@@ -108,12 +102,6 @@
     padding: 20px;
   }
 
-  .side-by-side-child {
-    width: 30%;
-    float: left;
-    /*padding: 20px;*/
-    border: 2px solid red;
-  }
 
   @media (max-width: 952px) {
     main {
