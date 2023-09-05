@@ -71,38 +71,64 @@ export class SupportElement extends LitElement {
           <p>I’m a software developer, from Amsterdam in the Netherlands.
             <br>
 
-            Welcome to reddy.world, your go-to destination for innovative and visually stunning web
-            development
-            solutions.
-            We are a team of experienced professionals with a background in art, design, special
-            effects, and computer
-            science engineering.
-            Our expertise allows us to create websites that are both aesthetically pleasing and
-            technically sound.
-
-            At reddy.world, we believe in combining our artistic and technical skills to create
-            websites that are not
-            only beautiful but also functional. Our team has years of experience in managing teams and delivering
-            successful projects to clients from different industries.
-
-            We pride ourselves on our attention to detail and our ability to deliver projects on time and within budget.
-            Our goal is to provide you with a website that showcases your brand and helps you stand out from the
-            competition.
-          <hr>
-          <p>Beyond programming, I have a keen interest in everything and I love learning.
-            I have run multiple companies, among which:</p>
-          <ul>
-            <li><a href="https://nepco.nl/">Costumes for theatre</a></li>
-            <li><a href="https://reddymaekersproductions.wordpress.com/">A decor/props company</a></li>
-            <li><a href="https://www.facebook.com/HouseofGentleFrequencies/">Hosted a space for women's health</a></li>
-            <li><a href="https://amsterdamsefrisdrankfabriek.nl/">Produced sodas</a></li>
-            <li><a href="http://resethealthbar.nl/">Managed a food stand</a></li>
-          </ul>
-          <p>But I keep returning to product design and have found my love for coding is never-ending.</p>
-          <hr>
-          <p>Take a look at my <a href="cv">CV</a> for more details about my professional accomplishments.
+            I'm a passionate software developer proudly based in the vibrant city of<br>
+            Amsterdam, Netherlands.<br>
             <br>
-            <a>You can email me at <a href="${this._contact}">ryan@reddy.world</a>.
+            reddy.world is my creative space, where I offer cutting-edge web development <br>
+            solutions that seamlessly merge innovation with captivating visual design. My <br>
+            background combines a love for coding with an artistic touch. With a diverse <br>
+            skill set encompassing art, design, special effects, and computer science <br>
+            engineering, I craft websites that not only catch the eye but also excel in <br>
+            technical performance. <br>
+            <br>
+            My firm belief is in the perfect synergy of artistic creativity and technical<br>
+            precision. My extensive experience in project management across various<br>
+            industries enables me to consistently achieve successful outcomes. I take great<br>
+            pride in my meticulous attention to detail, ensuring every project is completed<br>
+            on time and within budget. My ultimate goal is to provide you with a website<br>
+            that not only represents your brand but also sets you apart from the<br>
+            competition.<br>
+          <hr>
+          <p>Beyond my dedication to programming, my interests are as diverse as my
+            professional journey. <br>
+            I've ventured into several entrepreneurial endeavors,
+            including:</p>
+          <ul>
+            <li><a href="https://nepco.nl/">Theater Costumes:</a>: Bringing characters to
+              life on stage with unique and captivating costumes.
+            </li>
+            <li><a href="https://reddymaekersproductions.wordpress.com/">Decor and Props</a>:
+              Crafting immersive environments and captivating props for various creative
+              projects.
+            </li>
+            <li><a href="https://www.facebook.com/HouseofGentleFrequencies/">Women's Health
+              Advocacy</a>: Hosting a platform dedicated to women's health, where
+              knowledge and support meet.
+            </li>
+            <li><a href="https://amsterdamsefrisdrankfabriek.nl/">Artisanal Soda
+              Production</a>: Creating delightful, handcrafted sodas that tickle the taste
+              buds.
+            </li>
+            <li><a href="http://resethealthbar.nl/">Food Stand Management</a>: Serving up
+              culinary delights to satisfy hungry appetites.
+            </li>
+          </ul>
+          <p>Amidst this colorful array of experiences, my heart always leads me back to my
+            true passion: product design.<br>
+            My unwavering love for improving the way we live is the driving force behind all
+            my work.</p>
+
+          <hr>
+          <p>If you're interested in delving deeper into my professional journey, please
+            explore my <a href="cv">CV</a><br>
+            for a comprehensive overview of my accomplishments.
+            <br>
+
+            For inquiries, potential collaborations, or even just a friendly chat, <br>
+            don't hesitate to reach out to me at <a
+              href="${this._contact}">ryan@reddy.world</a>.<br>
+            I'm constantly excited to connect with fellow enthusiasts, creators, and
+            innovators like yourself.<br>
           </p>
         </div>
       </main>
