@@ -90,22 +90,44 @@ export class HomePage extends LitElement {
       <body>
 
       <main>
-        <div>
-          <h2></h2>
-          <div id="app"></div>
+        <!--            <div>-->
+        <!--                <h2></h2>-->
+        <!--                <div id="app"></div>-->
 
-        </div>
+        <!--            </div>-->
 
         <div class="side-by-side">
 
-          <img class="moonimage" src="ryan_images/IMG_6869.jpg"
-               alt="Ryan Reddy profile image, black and white, straw hat"/>
+          <div class="side-by-side-child">
+            <div>
+              <h1 class="header">Ryan van Lil - Reddy</h1>
+              <h3>is a designer &
+                <br> aspiring Computer Science Engineer.
+              </h3>
+            </div>
+          </div>
+          <div class="side-by-side-child">
+            <div>
+              <img class="moonimage" src="ryan_images/IMG_6869.jpg"
+                   alt="Ryan Reddy profile image, black and white, straw hat"/>
+            </div>
+          </div>
+
           <!--        <img class="moonimage" src="IMG_7430.JPG"-->
           <!--               alt="harry clarke faust illustration of witch-queen and young prince
           with elegant fingers, full moon in the background"/>-->
         </div>
+        <!--          <div class="float-container">-->
 
-        <h1 class="header">Here stands Ryan Reddy.</h1>
+        <!--            <div class="float-child">-->
+        <!--              <div class="green">Float Column 1</div>-->
+        <!--            </div>-->
+
+        <!--            <div class="float-child">-->
+        <!--              <div class="blue">Float Column 2</div>-->
+        <!--            </div>-->
+
+        <!--          </div>-->
 
       </main>
       </body>
