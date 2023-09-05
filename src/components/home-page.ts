@@ -98,9 +98,11 @@ export class HomePage extends LitElement {
 
         <div class="side-by-side">
 
-
-        <img class="moonimage" src="IMG_7430.JPG"
-               alt="harry clarke faust illustration of witch-queen and young prince with elegant fingers, full moon in the background"/>
+          <img class="moonimage" src="ryan_images/IMG_6869.jpg"
+               alt="Ryan Reddy profile image, black and white, straw hat"/>
+          <!--        <img class="moonimage" src="IMG_7430.JPG"-->
+          <!--               alt="harry clarke faust illustration of witch-queen and young prince
+          with elegant fingers, full moon in the background"/>-->
         </div>
 
         <h1 class="header">Here stands Ryan Reddy.</h1>
