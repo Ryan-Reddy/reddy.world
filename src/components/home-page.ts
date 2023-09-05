@@ -98,7 +98,8 @@ export class HomePage extends LitElement {
 
         <div class="side-by-side">
 
-          <img class="moonimage" src="IMG_7430.JPG"
+
+        <img class="moonimage" src="IMG_7430.JPG"
                alt="harry clarke faust illustration of witch-queen and young prince with elegant fingers, full moon in the background"/>
         </div>
 

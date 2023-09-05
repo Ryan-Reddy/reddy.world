@@ -18,8 +18,8 @@ import './components/openai';
 import './components/livestream';
 import './components/art';
 import './components/ral-contrast';
-import './components/generic/not-found';
-import './components/generic/lang-picker';
+import './components/global/not-found';
+import './components/global/lang-picker';
 
 const app = document.querySelector('#app');
 export const router = new Router(app);
