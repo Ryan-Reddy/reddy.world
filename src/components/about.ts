@@ -77,7 +77,7 @@ export class SupportElement extends LitElement {
           <h1>Hello, I’m Ryan Reddy.</h1>
           <br>
           <div class="landingImage">
-            <img src="ryan_images/IMG_6869.png"
+            <img src="ryan_images/IMG_6869-color-cropped.png"
                  alt="Ryan Reddy profile image, black and white, straw hat"/>
           </div>
           <p>I’m a software developer, from Amsterdam in the Netherlands.

@@ -94,7 +94,7 @@ export class HomePage extends LitElement {
 
       <main>
         <div>
-          <h1 class="header">Ryan Reddy,</h1>
+          <h1 class="header">Ryan Reddy</h1>
           <p class="undertitle">Artist,
             <br>Product Designer,
             <br> and Aspiring Computer Science Engineer.</p>
