@@ -10,16 +10,9 @@ import {customElement, property} from 'lit/decorators.js';
 @customElement('about-element')
 export class SupportElement extends LitElement {
   @property() _contact = 'mailto:ryan@reddy.world?subject=Hello friend! I wish to speak to you!';
-  constructor() { super(); }
 
-  firstUpdated(changedProperties: any) {
-    let titleEvent = new CustomEvent('title-change', {
-      detail: {
-        message: 'About'
-      }
-    });
-    console.log('dispatching event:' + titleEvent.detail.message)
-    this.dispatchEvent(titleEvent);
+  constructor() {
+    super();
   }
 
   static get styles() {
@@ -32,6 +25,12 @@ export class SupportElement extends LitElement {
 
         text-align: center;
 
+      }
+
+      img {
+        width: auto;
+        max-height: 60svh;
+        max-width: 90%;
       }
 
       .hidden {
@@ -66,6 +65,17 @@ export class SupportElement extends LitElement {
       }
     `;
   }
+
+  firstUpdated(changedProperties: any) {
+    let titleEvent = new CustomEvent('title-change', {
+      detail: {
+        message: 'About'
+      }
+    });
+    console.log('dispatching event:' + titleEvent.detail.message)
+    this.dispatchEvent(titleEvent);
+  }
+
   render() {
     return html`
       <meta name="description" content="Ryan Reddy's world.">
@@ -76,10 +86,12 @@ export class SupportElement extends LitElement {
         <div>
           <h1>Hello, I’m Ryan Reddy.</h1>
           <br>
-          <div class="landingImage">
-            <img src="ryan_images/IMG_6869-color-cropped.png"
-                 alt="Ryan Reddy profile image, black and white, straw hat"/>
-          </div>
+        </div>
+
+        <img class="landingImage" src="ryan_images/IMG_6869-color-cropped.png"
+             alt="Ryan Reddy profile image, black and white, straw hat"/>
+
+        <div>
           <p>I’m a software developer, from Amsterdam in the Netherlands.
             <br>
 
