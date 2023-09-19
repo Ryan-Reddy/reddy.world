@@ -1,7 +1,7 @@
 :root {
   font-family: "Adobe Garamond Pro", Garamond, Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
-  line-height: 24px;
+  line-height: normal;
   font-weight: 300;
 
   color-scheme: light dark;
@@ -9,6 +9,7 @@
   background-color: #242424;
 
   font-synthesis: none;
+
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -27,7 +28,6 @@
   --transitionInSeconds: 0.6s;
 }
 
-
 html {
   position: relative;
   min-height: 100%;
@@ -37,6 +37,7 @@ main {
   color: var(--wit);
   background-color: var(--zwart);
   margin: 3vh;
+  line-height: normal;
 }
 
 body {
