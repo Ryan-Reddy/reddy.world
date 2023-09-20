@@ -8,7 +8,7 @@ import {customElement, property, query} from 'lit/decorators.js';
  * @csspart button - The button
  */
 @customElement('header-menu')
-export class MenuNav extends LitElement {
+export class MenuHeader extends LitElement {
   @property() naamGebruiker = 'Hans Fumphriehd';
   @property() siteLogo = 'be_here_now/be_here_now-no_outside.png';
   // @property() siteLogo = 'be_here_now/be_here_now-color_corrected.png';
@@ -137,6 +137,10 @@ export class MenuNav extends LitElement {
       }
 
       @media (max-width: 952px) {
+        //.nav-logo {
+        //  height: 3em;
+        //  padding-left: 50px;
+        //}
         .header_bar {
           //position: relative;
           //overflow: hidden;

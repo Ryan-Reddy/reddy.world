@@ -56,9 +56,7 @@ export class MenuFooter extends LitElement {
         }
 
         nav ul {
-          float: right;
           overflow: hidden;
-
         }
 
         nav ul li {
@@ -95,17 +93,22 @@ export class MenuFooter extends LitElement {
         }
 
         @media (max-width: 952px) {
+          nav {
+            float: none;
+
+          }
+
           input {
             max-width: 100%;
             height: auto;
             width: auto \\9; /* ie8 */
           }
 
-          .nav-logo {
-            height: 3em;
-            padding-left: 50px;
+          nav ul li {
+            display: block;
+            margin: .0rem;
+            line-height: 1.3em;
           }
-
         }
 
         @media (max-width: 858px) {
@@ -123,18 +126,15 @@ export class MenuFooter extends LitElement {
             //left: -100%;
             text-align: center;
             transition: all .5s;
-
           }
 
           nav ul li a {
             font-size: 4vw;
-
           }
 
           #check:checked {
             left: 0;
           }
-
         }
 
         @media (prefers-color-scheme: light) {
@@ -160,7 +160,7 @@ export class MenuFooter extends LitElement {
         <div lang="en">
           <ul>
             <li><a class="nav-button" href="/ral-contrast-checker" id="contrast-checker-button"
-                   aria-label="art">RAL-contrast-checker</a></li>
+                   aria-label="art">RAL-contrast</a></li>
             <li><a class="nav-button" href="/portfolio" id="portfolio-button"
                    aria-label="art">Portfolio</a></li>
             <li><a class="nav-button" href="https://github.com/Ryan-Reddy" id="github-button"
@@ -180,7 +180,7 @@ export class MenuFooter extends LitElement {
         <div lang="nl">
           <ul>
             <li><a class="nav-button" href="/ral-contrast-checker" id="contrast-checker-button"
-                   aria-label="art">RAL-contrast-checker</a></li>
+                   aria-label="art">RAL-contrast</a></li>
             <li><a class="nav-button" href="/portfolio" id="portfolio-button"
                    aria-label="art">Portfolio</a></li>
             <li><a class="nav-button" href="https://github.com/Ryan-Reddy" id="github-button"
