@@ -22,8 +22,7 @@ export class MenuFooter extends LitElement {
       langCSS,
       css`
         nav {
-          margin: 0;
-          padding: 0;
+          padding: .5rem;
           box-sizing: border-box;
           text-decoration: none;
           justify-content: space-between;
@@ -32,6 +31,10 @@ export class MenuFooter extends LitElement {
 
           display: flex;
           align-items: center;
+
+          margin: .5rem;
+          line-height: 1.5em;
+
         }
 
         body {
@@ -39,6 +42,7 @@ export class MenuFooter extends LitElement {
           color: white;
           font-size: 1em;
           opacity: 1;
+
         }
 
         input {
@@ -59,14 +63,14 @@ export class MenuFooter extends LitElement {
 
         nav ul li {
           display: inline-block;
-          margin: 0 5px;
+          margin: .5rem;
         }
 
         nav ul li a {
           color: var(--wit);
-          border-radius: 3px;
+          border-radius: 8px;
           text-transform: uppercase;
-          padding: 5px;
+          padding: .8rem;
           text-decoration: none;
 
         }
@@ -152,7 +156,6 @@ export class MenuFooter extends LitElement {
 
   render() {
     return html`
-
       <nav>
         <div lang="en">
           <ul>

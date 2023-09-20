@@ -6,7 +6,7 @@ import {customElement, property, query} from 'lit/decorators.js';
  * @slot - This element has a slot
  * @csspart button - The button
  */
-@customElement('menu-nav-element')
+@customElement('header-menu')
 export class MenuNav extends LitElement {
   @property() naamGebruiker = 'Hans Fumphriehd';
   @property() siteLogo = 'unicorn-break-chains.jpg';
@@ -31,13 +31,14 @@ export class MenuNav extends LitElement {
         opacity: 1;
       }
 
-      .entire_menu_bar {
+      .header_bar {
         position: relative;
         overflow: hidden;
 
         display: flex;
         justify-content: space-between;
         align-items: center;
+        min-height: 150px;
       }
 
       .ingelogd_als {
@@ -57,15 +58,16 @@ export class MenuNav extends LitElement {
 
       nav ul li {
         display: inline-block;
-        line-height: 8em;
-        margin: 0 5px;
+        line-height: 1.5rem;
+        margin: 1rem;
+
       }
 
       nav ul li a {
         color: var(--wit);
-        border-radius: 3px;
+        border-radius: 8px;
         text-transform: uppercase;
-        padding: 5px;
+        padding: 1rem;
       }
 
       a.active, a:hover {
@@ -119,7 +121,7 @@ export class MenuNav extends LitElement {
         list-style-image: none;
         position: fixed; /* Sit on top of the page content */
         display: none; /* Hidden by default */
-        width: 30%; /* 100% = Full width (cover the whole page) */
+        width: 50%; /* 100% = Full width (cover the whole page) */
         height: 100%; /* Full height (cover the whole page) */
         top: 0;
         left: 3em;
@@ -140,6 +142,10 @@ export class MenuNav extends LitElement {
           // padding-left: 50px;
         }
 
+        nav ul li {
+          height: auto;
+        }
+
         nav ul li a {
           display: none;
           // line-height: 8em;
@@ -148,8 +154,9 @@ export class MenuNav extends LitElement {
 
         .nav-button-dropdown {
           display: flex;
-          line-height: 4em;
-          margin: 0 1em;
+          //line-height: 4em;
+          //margin: 0 1em;
+          //padding: 0 100px;
         }
       }
 
@@ -209,7 +216,7 @@ export class MenuNav extends LitElement {
     // TODO create response menu with: https://www.codingnepalweb.com/responsive-dropdown-menu-bar-html-css/
     return html`
       <body id="bodyofmenubar">
-      <div class="entire_menu_bar">
+      <div class="header_bar">
         <img
           @click=${this.logoClicked}
           src="${this.siteLogo}"
