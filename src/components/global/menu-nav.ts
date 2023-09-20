@@ -43,7 +43,7 @@ export class MenuNav extends LitElement {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        min-height: 150px;
+        min-height: 5.25rem;
       }
 
       .ingelogd_als {
@@ -137,6 +137,16 @@ export class MenuNav extends LitElement {
       }
 
       @media (max-width: 952px) {
+        .header_bar {
+          //position: relative;
+          //overflow: hidden;
+          //
+          //display: flex;
+          //justify-content: space-between;
+          //align-items: center;
+          min-height: 1.5rem;
+        }
+
         div #smallmenuicon {
           display: inline-block;
         }
