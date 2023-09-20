@@ -27,6 +27,10 @@ export class SupportElement extends LitElement {
 
       }
 
+      hr {
+        margin: 1rem;
+      }
+
       img {
         width: auto;
         max-height: 60svh;
@@ -47,6 +51,8 @@ export class SupportElement extends LitElement {
 
       ul {
         list-style: none;
+        //margin-left: 10vw;
+        //align-content: space-evenly;
 
       }
 
@@ -91,34 +97,28 @@ export class SupportElement extends LitElement {
         <img class="landingImage" src="ryan_images/IMG_6869-color-cropped.png"
              alt="Ryan Reddy profile image, black and white, straw hat"/>
 
-        <div>
-          <p>I’m a software developer, from Amsterdam in the Netherlands.
-            <br>
+        <div><br>
 
-            I'm a passionate software developer proudly based in the vibrant city of<br>
-            Amsterdam, Netherlands.<br>
+          <p>I'm a software developer based in Amsterdam, Netherlands.<br>
+            Welcome to reddy.world, where I specialize in web <br>
+            development that combines innovation with design excellence. <br>
+            My background encompasses website building, art, design, special effects, and computer science engineering.
             <br>
-            reddy.world is my creative space, where I offer cutting-edge web development <br>
-            solutions that seamlessly merge innovation with captivating visual design. My <br>
-            background combines a love for coding with an artistic touch. With a diverse <br>
-            skill set encompassing art, design, special effects, and computer science <br>
-            engineering, I craft websites that not only catch the eye but also excel in <br>
-            technical performance. <br>
+            I create websites that not only look impressive but also perform exceptionally well. <br>
             <br>
-            My firm belief is in the perfect synergy of artistic creativity and technical<br>
-            precision. My extensive experience in project management across various<br>
-            industries enables me to consistently achieve successful outcomes. I take great<br>
-            pride in my meticulous attention to detail, ensuring every project is completed<br>
-            on time and within budget. My ultimate goal is to provide you with a website<br>
-            that not only represents your brand but also sets you apart from the<br>
-            competition.<br>
+            I prioritize the perfect balance between artistic creativity and technical precision. <br>
+            With extensive project management experience in various industries, <br>
+            I consistently deliver on time and within budget. <br>
+            My goal is to
+            provide you with a distinctive website that represents your brand and outshines the competition.</p>
+
           <hr>
           <p>Beyond my dedication to programming, my interests are as diverse as my
             professional journey. <br>
             I've ventured into several entrepreneurial endeavors,
             including:</p>
           <ul>
-            <li><a href="https://nepco.nl/">Theater Costumes:</a>: Bringing characters to
+            <li><a href="https://nepco.nl/">Theater Costumes:</a> Bringing characters to
               life on stage with unique and captivating costumes.
             </li>
             <li><a href="https://reddymaekersproductions.wordpress.com/">Decor and Props</a>:
@@ -151,11 +151,10 @@ export class SupportElement extends LitElement {
             For inquiries, potential collaborations, or even just a friendly chat, <br>
             don't hesitate to reach out to me at <a
               href="${this._contact}">ryan@reddy.world</a>.<br>
-            I'm constantly excited to connect with fellow enthusiasts, creators, and
-            innovators like yourself.<br>
+
             <br>
             Thank you for visiting reddy.world,<br> where the possibilities are endless, and
-            creativity knows no bounds.<br>
+            creativity knows no bounds.
           </p>
         </div>
       </main>
