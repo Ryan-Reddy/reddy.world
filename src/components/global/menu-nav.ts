@@ -1,5 +1,6 @@
 import {css, html, LitElement} from 'lit';
 import {customElement, property, query} from 'lit/decorators.js';
+
 /**
  * An example element.
  *
@@ -9,14 +10,18 @@ import {customElement, property, query} from 'lit/decorators.js';
 @customElement('header-menu')
 export class MenuNav extends LitElement {
   @property() naamGebruiker = 'Hans Fumphriehd';
-  @property() siteLogo = 'unicorn-break-chains.jpg';
+  @property() siteLogo = 'be_here_now/be_here_now-no_outside.png';
+  // @property() siteLogo = 'be_here_now/be_here_now-color_corrected.png';
+  @property() siteLogoDescription = 'Be Here Now. - Ram Dass';
   @property() currentPage: string = '';
-  @property() _logoBarClickedLink = 'mailto:ryan@reddy.world?subject=Hello I licked the unicorn!';
+  @property() _logoBarClickedLink = 'mailto:ryan@reddy.world?subject=Hello, I am here now!';
   @query('.dropdown-menu-div') _dropDownMenuDiv!: HTMLDivElement;
   @query('.dropdown-menu-items') _dropdownMenuItems!: HTMLUListElement;
+
   constructor() {
     super();
   }
+
   static get styles() {
     return css`
       * {
@@ -97,11 +102,11 @@ export class MenuNav extends LitElement {
         right: 2em;
         overflow: hidden;
         padding: 0 2em;
+        transition: var(--logoTransitionInSeconds);
       }
 
       .nav-logo:hover {
-        height: 7.5em;
-        transition: var(--transitionInSeconds);
+        height: 12em;
       }
 
       #check {
@@ -205,13 +210,6 @@ export class MenuNav extends LitElement {
     `;
   }
 
-  // script() {
-  //   let script = document.createElement('script');
-  //   script.onload = this.onload.bind(this);
-  //   script.src = 'https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.js';
-  //   return script;
-  // }
-
   render() {
     // TODO create response menu with: https://www.codingnepalweb.com/responsive-dropdown-menu-bar-html-css/
     return html`
@@ -220,7 +218,7 @@ export class MenuNav extends LitElement {
         <img
           @click=${this.logoClicked}
           src="${this.siteLogo}"
-          alt="Unicorn gold crown breaking free from a golden chain by whyn lewis flower oil on panel"
+          alt="${this.siteLogoDescription}"
           class="nav-logo"
         />
         <nav>
