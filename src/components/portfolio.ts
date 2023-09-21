@@ -50,7 +50,9 @@ export class PortfolioElement extends LitElement {
     return html`
       <head>
         <meta charset="UTF-8">
-        <title>CV</title>
+        <meta name="description" content="Ryan Reddy's portfolio.">
+        <meta title="Portfolio">
+        <title>Portfolio</title>
 
       </head>
       <body>

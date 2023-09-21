@@ -86,6 +86,9 @@ export class RalContrastElement extends LitElement {
     return html`
       <head>
         <meta charset="UTF-8">
+        <meta name="description"
+              content="A RAL color based contrast checker, for use in fysical accessiblity designing processes.">
+        <meta title="RAL CONTRAST CHECKER">
         <title>RAL CONTRAST CHECKER</title>
       </head>
       <body>
