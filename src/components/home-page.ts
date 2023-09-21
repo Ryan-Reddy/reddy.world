@@ -89,6 +89,7 @@ export class HomePage extends LitElement {
       <title>HomeTITLER</title>
       <meta name="description" content="Ryan Reddy's world.">
       <meta title="Home Page">
+
       <header>
       </header>
       <body>
@@ -105,7 +106,9 @@ export class HomePage extends LitElement {
              loading="eager"
         />
         <source srcset="ryan_images/IMG_6869-scaled.webp" type="image/webp"
-                alt="Ryan Reddy profile image, black and white, straw hat">
+                alt="Ryan Reddy profile image, black and white, straw hat"
+                loading="eager"
+        >
       </main>
       </body>
     `;
