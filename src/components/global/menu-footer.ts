@@ -22,18 +22,26 @@ export class MenuFooter extends LitElement {
       langCSS,
       css`
         nav {
-          padding: .5rem;
+          width: 100%;
+
           box-sizing: border-box;
           text-decoration: none;
           justify-content: space-between;
+          text-align: center; /* center the child */
+          align-content: center;
 
-          float: right;
+
+          //float: right;
 
           display: flex;
           align-items: center;
 
           margin: .5rem;
           line-height: 1.5em;
+        }
+
+        .lang-match {
+          width: 100%;
 
         }
 
@@ -42,7 +50,6 @@ export class MenuFooter extends LitElement {
           color: white;
           font-size: 1em;
           opacity: 1;
-
         }
 
         input {
@@ -53,15 +60,19 @@ export class MenuFooter extends LitElement {
           font-size: 12px;
           opacity: 1;
           text-align: left;
+
         }
 
         nav ul {
           overflow: hidden;
+          align-items: center;
+
         }
 
         nav ul li {
           display: inline-block;
           margin: .5rem;
+
         }
 
         nav ul li a {
@@ -84,18 +95,27 @@ export class MenuFooter extends LitElement {
           text-align: center;
         }
 
-        li {
-          list-style: none;
-        }
-
-        #check {
-          display: none;
-        }
-
         @media (max-width: 952px) {
           nav {
-            float: none;
+            //float: none;
+            position: absolute;
 
+
+          }
+
+          nav ul {
+            margin-left: auto;
+            margin-right: auto;
+            padding-inline-start: 0;
+
+          }
+
+          nav ul li {
+
+            display: block;
+            margin: .0rem;
+
+            line-height: 1.5rem;
           }
 
           input {
@@ -104,11 +124,6 @@ export class MenuFooter extends LitElement {
             width: auto \\9; /* ie8 */
           }
 
-          nav ul li {
-            display: block;
-            margin: .0rem;
-            line-height: 1.3em;
-          }
         }
 
         @media (max-width: 858px) {
@@ -129,7 +144,7 @@ export class MenuFooter extends LitElement {
           }
 
           nav ul li a {
-            font-size: 4vw;
+            font-size: 11vw;
           }
 
           #check:checked {
