@@ -16,7 +16,6 @@ import './components/contact';
 import './components/all-mails';
 import './components/openai';
 import './components/livestream';
-import './components/art';
 import './components/ral-contrast';
 import './components/global/not-found';
 import './components/global/lang-picker';

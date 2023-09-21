@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Homepage -->
   <url>
     <loc>https://www.reddy.world/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <lastmod>2023-09-21</lastmod>
   </url>
 
   <!-- About Page -->
@@ -12,6 +13,7 @@
     <loc>https://www.reddy.world/about</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2023-09-21</lastmod>
   </url>
 
   <!-- Portfolio Page -->
@@ -19,6 +21,7 @@
     <loc>https://www.reddy.world/portfolio</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <lastmod>2023-09-21</lastmod>
   </url>
 
   <!-- CV Page -->
@@ -26,6 +29,7 @@
     <loc>https://www.reddy.world/cv</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <lastmod>2023-07-05</lastmod>
   </url>
 
   <!-- Contact Page -->
@@ -33,34 +37,7 @@
     <loc>https://www.reddy.world/contact</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-  </url>
-
-  <!-- Login Page -->
-  <url>
-    <loc>https://www.reddy.world/login</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- Reset Password Page -->
-  <url>
-    <loc>https://www.reddy.world/reset-password</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- Support Page -->
-  <url>
-    <loc>https://www.reddy.world/support</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- New Account Page -->
-  <url>
-    <loc>https://www.reddy.world/new-account</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2023-02-25</lastmod>
   </url>
 
   <!-- Readme Page -->
@@ -68,13 +45,7 @@
     <loc>https://www.reddy.world/readme</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
-  </url>
-
-  <!-- Account Info Page -->
-  <url>
-    <loc>https://www.reddy.world/account-info</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2023-02-09</lastmod>
   </url>
 
   <!-- Friends Page -->
@@ -82,21 +53,14 @@
     <loc>https://www.reddy.world/friends</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
+    <lastmod>2023-08-22</lastmod>
   </url>
-
-  <!-- CV from LinkedIn Page -->
-  <url>
-    <loc>https://www.reddy.world/cv-linkedin</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- Admin Pages (Add more pages based on your routing configuration) -->
 
   <!-- 404 Page -->
   <url>
     <loc>https://www.reddy.world/404</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+    <lastmod>2023-01-20</lastmod>
   </url>
 </urlset>
