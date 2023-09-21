@@ -95,8 +95,10 @@ export class SupportElement extends LitElement {
           <br>
         </div>
 
-        <img fetchpriority="high" class="landingImage" src="ryan_images/IMG_6869-color-cropped.png"
-             alt="Ryan Reddy profile image, black and white, straw hat"/>
+        <img class="landingImage" src="ryan_images/IMG_6869-color-cropped.png"
+             alt="Ryan Reddy profile image, black and white, straw hat"
+             loading="eager"
+        />
 
         <div><br>
           <h2>Bio</h2>
