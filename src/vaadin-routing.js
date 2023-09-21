@@ -12,6 +12,7 @@ import './components/portfolio';
 import './components/about';
 import './components/cvFromLinkedin';
 import './components/contact';
+import './components/one-third';
 // admin:
 import './components/all-mails';
 import './components/openai';
@@ -30,6 +31,9 @@ router.setRoutes([{
 }, {
   name: 'open-ai-element', // doet niks impliciet
   path: '/openai', component: 'open-ai-element',
+}, {
+  name: 'one-third-element', // doet niks impliciet
+  path: '/one-third', component: 'one-third-element',
 }, {
   name: 'stream-element', // doet niks impliciet
   path: '/stream', component: 'stream-element',
