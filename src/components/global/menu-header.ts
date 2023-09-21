@@ -10,7 +10,7 @@ import {customElement, property, query} from 'lit/decorators.js';
 @customElement('header-menu')
 export class MenuHeader extends LitElement {
   @property() naamGebruiker = 'Hans Fumphriehd';
-  @property() siteLogo = 'be_here_now/be_here_now-no_outside.png';
+  @property() siteLogo = 'be_here_now/be_here_now-no_outside-SCALED.png';
   // @property() siteLogo = 'be_here_now/be_here_now-color_corrected.png';
   @property() siteLogoDescription = 'Be Here Now. - Ram Dass';
   @property() currentPage: string = '';

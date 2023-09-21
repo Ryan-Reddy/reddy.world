@@ -46,6 +46,7 @@ export class HomePage extends LitElement {
       h1 {
         font-size: 5lvb;
         line-height: 1.5;
+        font-weight: 450;
       }
 
       button {
@@ -97,11 +98,13 @@ export class HomePage extends LitElement {
           <h1 class="header">Ryan Reddy</h1>
           <p class="undertitle">Artist,
             <br>Product Designer,
-            <br> and Aspiring Computer Science Engineer.</p>
+            <br> and aspiring Computer Science Engineer.</p>
         </div>
         <img src="ryan_images/IMG_6869.png" class="landingImage"
              alt="Ryan Reddy profile image, black and white, straw hat"
         />
+        <source srcset="ryan_images/IMG_6869-scaled.webp" type="image/webp"
+                alt="Ryan Reddy profile image, black and white, straw hat">
       </main>
       </body>
     `;
