@@ -95,7 +95,7 @@ export class SupportElement extends LitElement {
           <br>
         </div>
 
-        <img class="landingImage" src="ryan_images/IMG_6869-color-cropped.png"
+        <img fetchpriority="high" class="landingImage" src="ryan_images/IMG_6869-color-cropped.png"
              alt="Ryan Reddy profile image, black and white, straw hat"/>
 
         <div><br>

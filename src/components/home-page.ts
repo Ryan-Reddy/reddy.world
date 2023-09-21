@@ -100,7 +100,7 @@ export class HomePage extends LitElement {
             <br>Product Designer,
             <br> and aspiring Computer Science Engineer.</p>
         </div>
-        <img src="ryan_images/IMG_6869.png" class="landingImage"
+        <img fetchpriority="high" src="ryan_images/IMG_6869.png" class="landingImage"
              alt="Ryan Reddy profile image, black and white, straw hat"
         />
         <source srcset="ryan_images/IMG_6869-scaled.webp" type="image/webp"
