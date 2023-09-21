@@ -156,9 +156,13 @@ export class MenuHeader extends LitElement {
         }
 
         .nav-logo {
-          //height: 100%;
-          display: none;
-          // padding-left: 50px;
+          height: 100%;
+          //display: none;
+          padding-right: 0;
+        }
+
+        .nav-logo:hover {
+          height: 150%;
         }
 
         nav ul li {
@@ -225,7 +229,7 @@ export class MenuHeader extends LitElement {
   }
 
   render() {
-    // TODO create response menu with: https://www.codingnepalweb.com/responsive-dropdown-menu-bar-html-css/
+    // create response menu with: https://www.codingnepalweb.com/responsive-dropdown-menu-bar-html-css/
     return html`
       <body id="bodyofmenubar">
       <div class="header_bar">

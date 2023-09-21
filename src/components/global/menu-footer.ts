@@ -68,8 +68,7 @@ export class MenuFooter extends LitElement {
           margin: 0.5rem; // needed for the spacing on desktop of footer buttons
         }
 
-        nav ul li a {
-          // shape of the buttons in the footer
+        nav a {
           color: var(--wit);
           border-radius: 8px;
           text-transform: uppercase;
@@ -101,7 +100,7 @@ export class MenuFooter extends LitElement {
             padding-inline-start: 0;
           }
 
-          nav ul li {
+          nav li {
             display: block;
             margin: 0;
             line-height: 1.5em; // height of buttons -> stops overlap
