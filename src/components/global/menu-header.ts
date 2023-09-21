@@ -87,6 +87,10 @@ export class MenuHeader extends LitElement {
         display: none;
       }
 
+      .dropdown-menu-label {
+        visibility: hidden;
+      }
+
       .nav-button {
         opacity: 1;
         text-align: center;
@@ -151,6 +155,10 @@ export class MenuHeader extends LitElement {
           //justify-content: space-between;
           //align-items: center;
           min-height: 1.5rem;
+        }
+
+        .dropdown-menu-label {
+          visibility: visible;
         }
 
         div #smallmenuicon {
