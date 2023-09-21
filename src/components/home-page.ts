@@ -102,6 +102,7 @@ export class HomePage extends LitElement {
         </div>
         <img src="ryan_images/IMG_6869.png" class="landingImage"
              alt="Ryan Reddy profile image, black and white, straw hat"
+             loading="eager"
         />
         <source srcset="ryan_images/IMG_6869-scaled.webp" type="image/webp"
                 alt="Ryan Reddy profile image, black and white, straw hat">

@@ -62,9 +62,6 @@ router.setRoutes([{
   name: 'readme-element', // doet niks impliciet
   path: '/readme', component: 'readme-element',
 }, {
-  name: 'reset-password-element', // doet niks impliciet
-  path: '/reset-password', component: 'reset-password-element',
-}, {
   name: 'account-info-element', // doet niks impliciet
   path: '/account', component: 'account-info-element',
 }, {
