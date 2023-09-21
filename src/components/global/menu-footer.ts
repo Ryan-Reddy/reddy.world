@@ -74,6 +74,8 @@ export class MenuFooter extends LitElement {
           text-transform: uppercase;
           padding: 0.8rem;
           text-decoration: none;
+          padding-bottom: 0.4rem; /* Adjust the margin-bottom value as needed */
+
         }
 
         a.active,

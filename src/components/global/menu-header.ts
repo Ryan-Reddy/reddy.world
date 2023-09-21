@@ -73,6 +73,8 @@ export class MenuHeader extends LitElement {
         border-radius: 8px;
         text-transform: uppercase;
         padding: 1rem;
+        padding-bottom: 0.75rem; /* Adjust the margin-bottom value as needed */
+
       }
 
       a.active, a:hover {
@@ -188,19 +190,11 @@ export class MenuHeader extends LitElement {
           display: block;
         }
 
-        //u: {
-        //  position: fixed;
-        //  width: 100%;
-        //  // top: 80px;
-        //  // left: -100%;
-        //  text-align: center;
-        //}
         nav ul li {
           display: block;
         }
 
         nav ul li a {
-          //font-size: 4vw;
         }
 
       ;
@@ -249,7 +243,7 @@ export class MenuHeader extends LitElement {
           </ul>
 
           <div id='smallmenuicon'>
-            <img src="three-bars.png" width="32"
+            <img src="icons/three-bars_32.png" width="32"
                  alt="three-bars img"
                  type="button"
                  class="dropdown-menu-label"
