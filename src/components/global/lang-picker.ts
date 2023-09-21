@@ -54,9 +54,6 @@ export class LangElement extends LitElement {
 
   render() {
     return html`
-      <font-awesome-icon icon="fa-solid fa-language"/>
-      <FontAwesomeIcon icon="fa-solid fa-language"/>
-      <i class="fa-solid fa-language"></i>
 
       <div class="language-menu"
            @mouseleave="${this._hideDropDown}">
