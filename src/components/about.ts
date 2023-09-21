@@ -24,7 +24,6 @@ export class SupportElement extends LitElement {
         text-decoration: none;
 
         text-align: center;
-
       }
 
       hr {
@@ -35,6 +34,8 @@ export class SupportElement extends LitElement {
         width: auto;
         max-height: 60svh;
         max-width: 90%;
+        -webkit-filter: sepia(27%); /* Safari 6.0 - 9.0 */
+        filter: sepia(27%);
       }
 
       .hidden {
@@ -51,18 +52,18 @@ export class SupportElement extends LitElement {
 
       ul {
         list-style: none;
-        //margin-left: 10vw;
-        //align-content: space-evenly;
+        margin-left: 10vw;
+        align-content: space-evenly;
+      }
 
+      h3 {
+        text-align: left;
       }
 
       li {
         text-align: left;
-        margin-left: 5rem;
-      }
-
-      li::before {
-        content: '- ';
+        //margin-left: 5rem;
+        margin-top: 0.5rem;
       }
 
       p {
@@ -98,7 +99,7 @@ export class SupportElement extends LitElement {
              alt="Ryan Reddy profile image, black and white, straw hat"/>
 
         <div><br>
-
+          <h2>Bio</h2>
           <p>I'm a software developer based in Amsterdam, Netherlands.<br>
             Welcome to reddy.world, where I specialize in web <br>
             development that combines innovation with design excellence. <br>
@@ -113,36 +114,44 @@ export class SupportElement extends LitElement {
             provide you with a distinctive website that represents your brand and outshines the competition.</p>
 
           <hr>
+          <h2>Side ventures</h2>
+
           <p>Beyond my dedication to programming, my interests are as diverse as my
             professional journey. <br>
             I've ventured into several entrepreneurial endeavors,
             including:</p>
           <ul>
-            <li><a href="https://nepco.nl/">Theater Costumes:</a> Bringing characters to
+            <li><a href="https://nepco.nl/"><h3>Theater Costumes:</h3></a>Bringing characters to
               life on stage with unique and captivating costumes.
             </li>
-            <li><a href="https://reddymaekersproductions.wordpress.com/">Decor and Props</a>:
+            <li><a href="https://reddymaekersproductions.wordpress.com/"><h3>Decor and Props</h3></a>
               Crafting immersive environments and captivating props for various creative
               projects.
             </li>
-            <li><a href="https://www.facebook.com/HouseofGentleFrequencies/">Women's Health
-              Advocacy</a>: Hosting a platform dedicated to women's health, where
+            <li><a href="https://www.facebook.com/HouseofGentleFrequencies/"><h3>Women's Health
+              Advocacy</h3></a> Hosting a platform dedicated to women's health, where
               knowledge and support meet.
             </li>
-            <li><a href="https://amsterdamsefrisdrankfabriek.nl/">Artisanal Soda
-              Production</a>: Creating delightful, handcrafted sodas that tickle the taste
+            <li><a href="https://amsterdamsefrisdrankfabriek.nl/"><h3>Artisanal Soda
+              Production</h3></a> Creating delightful, handcrafted sodas that tickle the taste
               buds.
             </li>
-            <li><a href="http://resethealthbar.nl/">Food Stand Management</a>: Serving up
+            <li><a href="http://resethealthbar.nl/"><h3>Food Stand Management</h3></a> Serving up
               culinary delights to satisfy hungry appetites.
             </li>
           </ul>
-          <p>Amidst this colorful array of experiences, my heart always leads me back to my
-            true passion: product design.<br>
-            My unwavering love for improving the way we live is the driving force behind all
-            my work.</p>
+          <p>
+            <br>
+            Amidst this colorful array of experiences, my heart always leads me back to my
+            true passion:
+            <br><br>
+          <h4>Design.</h4>
+          <br>
+          My unwavering love for improving the way we live is the driving force behind all
+          my work.</p>
 
           <hr>
+          <h2>Be here, with me, now.</h2>
           <p>If you're interested in delving deeper into my professional journey, please
             explore my <a href="cv">CV</a><br>
             for a comprehensive overview of my accomplishments.
