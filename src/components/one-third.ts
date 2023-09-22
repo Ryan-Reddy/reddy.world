@@ -18,6 +18,10 @@ export class ContactElement extends LitElement {
   static get styles() {
     return css`
 
+      main {
+        min-width: 550px !important;
+      }
+
       .paragraph {
         margin-top: 5vh;
         margin-bottom: 20vh;

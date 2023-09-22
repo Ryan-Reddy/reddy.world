@@ -81,7 +81,7 @@ a::after {
 main {
   /*color: var(--wit);*/
   /*background-color: var(--zwart);*/
-  margin: 1vh;
+  margin: 1rem;
   line-height: normal;
 }
 
@@ -169,10 +169,11 @@ img {
 }
 
 @media (max-width: 952px) {
+
   main {
     /*color: var(--wit);*/
     /*background-color: var(--zwart);*/
-    margin: .1vh;
+    margin: .1rem;
     line-height: normal;
   }
 
