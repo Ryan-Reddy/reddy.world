@@ -136,12 +136,14 @@ export class ContactElement extends LitElement {
 
   render() {
     return html`
-      <!-- Open Graph Protocol meta tags -->
-      <meta property="og:title" content="A Cosmic Celebration">
-      <meta property="og:description"
-            content="Join me for a gathering beneath the starlit tapestry. As the clock ticks toward my 🌌 33,333rd orbit, we'll come together.">
-      <meta property="og:image" content="cloudwalker.jpg">
-      <meta property="og:url" content="https://reddy.world/one-third">
+      <head>
+        <!-- Open Graph Protocol meta tags -->
+        <meta property="og:title" content="A Cosmic Celebration">
+        <meta property="og:description"
+              content="Join me for a gathering beneath the starlit tapestry. As the clock ticks toward my 🌌 33,333rd orbit, we'll come together.">
+        <meta property="og:image" content="cloudwalker.jpg">
+        <meta property="og:url" content="https://reddy.world/one-third">
+      </head>
 
       <link rel="stylesheet" href="/css/mainCSS.css">
       <meta name="description" content="Ryan Reddy cordially invites you to join him.">
