@@ -54,6 +54,7 @@ export class LangElement extends LitElement {
 
   render() {
     return html`
+      <link rel="stylesheet" href="/css/mainCSS.css">
 
       <div class="language-menu"
            @mouseleave="${this._hideDropDown}">

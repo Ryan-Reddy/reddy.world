@@ -1,5 +1,6 @@
 import {css, html, LitElement} from 'lit';
 import {customElement, property, query} from 'lit/decorators.js';
+import '/css/mainCSS.css';
 
 /**
  * An example element.
@@ -79,6 +80,12 @@ export class ContactElement extends LitElement {
         color: rgba(21, 23, 21, 1);
       }
 
+    ,
+    css \`
+        /* Include your external CSS file here */
+        @import url('./path-to-external.css'); /* Replace 'path-to-external.css' with the actual path to your CSS file */
+         \`,
+
     `;
   }
 
@@ -98,6 +105,7 @@ export class ContactElement extends LitElement {
 
   render() {
     return html`
+      <link rel="stylesheet" href="/css/mainCSS.css">
       <meta name="description" content="Ryan Reddy's world contact page.">
       <meta title="one third ">
       <body>
@@ -118,6 +126,9 @@ export class ContactElement extends LitElement {
           <br>
           <p>* Born amidst the stars on <i>21-09-1991</i></p>
 
+          <br>
+          <br>
+          <h3>More t.b.a. in due course.</h3>
 
         </div>
 

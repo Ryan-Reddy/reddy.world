@@ -50,6 +50,7 @@ export class FriendsElement extends LitElement {
 
   render() {
     return html`
+      <link rel="stylesheet" href="/css/mainCSS.css">
       <head>
         <meta charset="UTF-8">
         <title>Friends</title>

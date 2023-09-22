@@ -37,13 +37,16 @@ export class MenuHeader extends LitElement {
       }
 
       .header_bar {
-        position: relative;
-        overflow: hidden;
+        //position: relative;
+        //overflow: hidden;
 
         display: flex;
         justify-content: space-between;
         align-items: center;
-        min-height: 5.25rem;
+        //min-height: 5.25rem;
+        height: auto;
+        padding: 1rem
+
       }
 
       .ingelogd_als {
@@ -100,6 +103,17 @@ export class MenuHeader extends LitElement {
         list-style: none;
       }
 
+      @keyframes smoothMove {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(2em);
+          height: 8em;
+
+        }
+      }
+
       .nav-logo {
         object-fit: cover;
         height: 5em;
@@ -108,11 +122,10 @@ export class MenuHeader extends LitElement {
         right: 2em;
         overflow: hidden;
         padding: 0 2em;
-        transition: var(--logoTransitionInSeconds);
       }
 
       .nav-logo:hover {
-        height: 12em;
+        animation: smoothMove var(--logoTransitionInSeconds) ease; /* Use ease timing function for a smooth transition */
       }
 
       #check {
@@ -167,7 +180,7 @@ export class MenuHeader extends LitElement {
 
         .nav-logo {
           height: 100%;
-          //display: none;
+          display: none;
           padding-right: 0;
         }
 

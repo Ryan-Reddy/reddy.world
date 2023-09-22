@@ -50,6 +50,7 @@ export class SupportElement extends LitElement {
 
   render() {
     return html`
+      <link rel="stylesheet" href="/css/mainCSS.css">
       <meta name="description" content="Ryan Reddy's world.">
       <meta title="Support page">
       <body>

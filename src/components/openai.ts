@@ -112,6 +112,7 @@ export class OpenAIElement extends LitElement {
   }
   render() {
     return html`
+      <link rel="stylesheet" href="/css/mainCSS.css">
       <main>
         <img src="/dog.png" class="icon" alt="dog-img"/>
         <h4>Name my pet</h4>

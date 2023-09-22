@@ -70,7 +70,6 @@ export class Accountinfo extends LitElement {
         background-color: red;
       }
 
-
       label {
         /*font-size: 2em;*/
         /*visibility: hidden;*/
@@ -147,6 +146,7 @@ export class Accountinfo extends LitElement {
 
   render() {
     return html`
+      <link rel="stylesheet" href="/css/mainCSS.css">
       <header>
         <h1 class="header">Account info</h1>
         <p>Breng hieronder wijzigingen in uw gegevens.</p>

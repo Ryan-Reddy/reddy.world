@@ -31,11 +31,14 @@ export class ReadmeElement extends LitElement {
   static get styles() {
     return css`
       * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+        //  margin: 0;
+        //  padding: 0;
+        //  box-sizing: border-box;
+        text-align: left;
         text-decoration: none;
+        margin-left: 16%;
       }
+
       main {
         display: flex;
         align-items: center;
@@ -88,6 +91,7 @@ export class ReadmeElement extends LitElement {
   //TODO properly import /node_modules/zero-md:
   render() {
     return html`
+      <link rel="stylesheet" href="/css/mainCSS.css">
       <head>
         <meta charset="UTF-8">
         <title>README</title>

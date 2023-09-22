@@ -36,6 +36,11 @@ export class MenuFooter extends LitElement {
           line-height: 2em; // height of buttons -> stops overlap
         }
 
+        .nav-button {
+          font-size: 1.7rem;
+          line-height: 2em;
+        }
+
         //.lang-match {
         //  //width: 100%;
         //
@@ -162,6 +167,7 @@ export class MenuFooter extends LitElement {
 
   render() {
     return html`
+      <link rel="stylesheet" href="/css/mainCSS.css">
       <nav>
         <div lang="en">
           <ul>

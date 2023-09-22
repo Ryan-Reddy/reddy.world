@@ -48,6 +48,7 @@ export class NewAccount extends LitElement {
 
   render() {
     return html`
+      <link rel="stylesheet" href="/css/mainCSS.css">
       <!DOCTYPE html>
       <html lang="en">
       <head>

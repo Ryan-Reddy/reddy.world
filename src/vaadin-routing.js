@@ -1,7 +1,7 @@
 import {Router} from '@vaadin/router';
 
 import './components/account-info';
-import './components/home-page';
+import './components/home';
 import './components/login';
 import './components/new-account';
 import './components/readme';
@@ -14,7 +14,6 @@ import './components/cvFromLinkedin';
 import './components/contact';
 import './components/one-third';
 // admin:
-import './components/all-mails';
 import './components/openai';
 import './components/livestream';
 import './components/ral-contrast';
@@ -45,7 +44,10 @@ router.setRoutes([{
   path: '/contact', component: 'contact-element',
 }, {
   name: 'mail-element', // doet niks impliciet
-  path: '/mail', component: 'mail-element',
+  path: '/mail', component:
+  // 'mail-element'
+    ''
+  ,
 }, {
   name: 'about-element', // doet niks impliciet
   path: '/about', component: 'about-element',

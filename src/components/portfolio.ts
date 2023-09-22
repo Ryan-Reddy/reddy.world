@@ -48,6 +48,7 @@ export class PortfolioElement extends LitElement {
 
   render() {
     return html`
+      <link rel="stylesheet" href="/css/mainCSS.css">
       <head>
         <meta charset="UTF-8">
         <meta name="description" content="Ryan Reddy's portfolio.">
@@ -59,15 +60,18 @@ export class PortfolioElement extends LitElement {
 
       <main>
         <div>
-          <h1 lang="en">Software projects</h1>
+          <h1>Portfolio</h1>
+          <hr>
+
+          <h2 lang="en">Software projects</h2>
           <br>
           <ul>
             <li><a class="nav-button" href="/ral-contrast-checker" id="contrast-checker-button"
                    aria-label="art">RAL-contrast-checker</a></li>
           </ul>
 
-          <br>
-          <h1 lang="en">Work portfolios</h1>
+          <hr>
+          <h2 lang="en">Work portfolios</h2>
           <br>
 
           <ul>
@@ -76,10 +80,8 @@ export class PortfolioElement extends LitElement {
             <li><a href="https://github.com/Ryan-Reddy">Github</a></li>
           </ul>
 
-          <br>
           <hr>
-          <br>
-          <h1>Art</h1>
+          <h2>Art</h2>
 
           <br>
           These are design and art companies that I have managed and made many things for:

@@ -26,17 +26,6 @@ export class SupportElement extends LitElement {
         text-align: center;
       }
 
-      hr {
-        margin: 1rem;
-      }
-
-      img {
-        width: auto;
-        max-height: 60svh;
-        max-width: 90%;
-        -webkit-filter: sepia(27%); /* Safari 6.0 - 9.0 */
-        filter: sepia(27%);
-      }
 
       .hidden {
         display: none;
@@ -70,6 +59,9 @@ export class SupportElement extends LitElement {
         padding-bottom: 10px;
         padding-top: 10px;
       }
+
+    ,
+
     `;
   }
 
@@ -85,9 +77,13 @@ export class SupportElement extends LitElement {
 
   render() {
     return html`
+      <link rel="stylesheet" href="/css/mainCSS.css">
+      <link rel="stylesheet"
+            href="/css/mainCSS.css"> <!-- Replace '/path-to-mainCSS.css' with the actual path to your CSS file -->
       <meta name="description" content="About Ryan Reddy.">
       <meta title="About me">
       <title>About me</title>
+
       <body>
       <main>
         <div>
@@ -153,7 +149,7 @@ export class SupportElement extends LitElement {
           my work.</p>
 
           <hr>
-          <h2>Be here, with me, now.</h2>
+          <h2>Be here, now.</h2>
           <p>If you're interested in delving deeper into my professional journey, please
             explore my <a href="cv">CV</a><br>
             for a comprehensive overview of my accomplishments.

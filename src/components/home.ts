@@ -8,8 +8,11 @@ import {customElement} from 'lit/decorators.js';
  * @csspart button - The button
  */
 @customElement('home-page-element')
-export class HomePage extends LitElement {
-  constructor() {    super();  }
+export class Home extends LitElement {
+  constructor() {
+    super();
+  }
+
   firstUpdated(changedProperties: any) {
     let titleEvent = new CustomEvent('title-change', {
       detail: {
@@ -86,6 +89,7 @@ export class HomePage extends LitElement {
 
   render() {
     return html`
+      <link rel="stylesheet" href="/css/mainCSS.css">
       <title>Home</title>
       <meta name="description" content="Ryan Reddy's landing page.">
       <meta title="Home Page">

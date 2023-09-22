@@ -129,6 +129,7 @@ export class Login extends LitElement {
 
   render() {
     return html`
+      <link rel="stylesheet" href="/css/mainCSS.css">
       <body>
       <div id="page-container">
         <main>

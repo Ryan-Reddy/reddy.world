@@ -71,6 +71,7 @@ export class ContactElement extends LitElement {
   }
   render() {
     return html`
+      <link rel="stylesheet" href="/css/mainCSS.css">
       <meta name="description" content="Ryan Reddy's world contact page.">
       <meta title="Contact page">
       <body>

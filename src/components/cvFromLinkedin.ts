@@ -37,6 +37,7 @@ export class CVElement extends LitElement {
   }
   render() {
     return html`
+      <link rel="stylesheet" href="/css/mainCSS.css">
       <div id="wrapper">
       <iframe id="iframe-cv"
         src="Resume-Ryan-van-Lil-Reddy.pdf#view=FitH"
