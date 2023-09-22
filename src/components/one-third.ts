@@ -5,7 +5,6 @@ import '/css/mainCSS.css';
 @customElement('one-third-element')
 export class ContactElement extends LitElement {
   @property() _hiddenElement = 'hidden';
-  @property() _supportClicked = 'mailto:ryan@reddy.world?subject=Hello friend! I have turned it on and off again!';
   @property() _shadowRoot!: ShadowRoot;
   @query('#name') _name!: any;
   @query('#email') _email!: any;
@@ -18,7 +17,6 @@ export class ContactElement extends LitElement {
 
   static get styles() {
     return css`
-
 
       .paragraph {
         margin-top: 20vh;
@@ -49,7 +47,7 @@ export class ContactElement extends LitElement {
         display: inline-block;
         background: var(--primary-color);
         color: white;
-        font-size: 18px;
+        font-size: 2.5rem;
         border: none;
         border-radius: 5px;
         padding: 10px 20px;
@@ -57,17 +55,30 @@ export class ContactElement extends LitElement {
         transition: background 0.3s ease;
       }
 
-      .invitation a.button:hover {
-        background: var(--secondary-color);
-        height: 2rem;
+      .invitation a.button:hover a.button:active {
+        background-color: var(--wit);
+        //height: 2rem;
       }
+
+      @media (prefers-color-scheme: light) {
+        footer, nav ul li a {
+          color: var(--zwart);
+          background-color: var(--wit);
+          border-color: var(--wit);
+        }
+
+        .invitation a.active, a:hover {
+          background: var(--gold);
+          transition: var(--transitionInSeconds);
+          color: var(--zwart);
+        }
     `;
   }
 
   firstUpdated(changedProperties: any) {
     let titleEvent = new CustomEvent('title-change', {
       detail: {
-        message: 'Contact',
+        message: 'A Cosmic Celebration',
       },
     });
     console.log('dispatching event:' + titleEvent.detail.message);
@@ -105,6 +116,7 @@ export class ContactElement extends LitElement {
 
             <a href="mailto:ryan@reddy.world?subject=RSVP for Cosmic Celebration" class="button">RSVP Now</a>
 
+            <hr>
             <h3>Stay tuned for more details in due course.</h3>
           </div>
         </div>
