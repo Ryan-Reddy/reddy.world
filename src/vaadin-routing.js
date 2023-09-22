@@ -91,8 +91,10 @@ router.setRoutes([{
     name: 'home-page-element-catchall', // doet niks impliciet
     path: '/',                  // standaard landingspage
     component: 'home-page-element',
-  }, {
-    name: 'not-found-element', // doet niks impliciet
-    path: '(.*)',           // 404 must be last in this file
-    component: 'not-found-element',
-  },]);
+  }
+  // , {
+  //   name: 'not-found-element', // doet niks impliciet
+  //   path: '(.*)',           // 404 must be last in this file
+  //   component: 'not-found-element',
+  // },
+]);
