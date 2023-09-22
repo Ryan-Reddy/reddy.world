@@ -186,6 +186,7 @@ export class MenuHeader extends LitElement {
           height: 100%;
           display: none;
           padding-right: 0;
+          border-width: 10px;
         }
 
         .nav-logo:hover {

@@ -157,12 +157,12 @@ ul {
 
 img {
   width: auto;
-  max-height: 60svh;
+  max-height: 50svh;
   max-width: 90% !important;
   padding: 0px !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  border: 3rem solid #ffffff !important;
+  border: 0rem solid #ffffff !important;
   -webkit-filter: sepia(27%); /* Safari 6.0 - 9.0 */
   filter: sepia(27%);
   display: block !important;
