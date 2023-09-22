@@ -45,7 +45,7 @@ export class MenuHeader extends LitElement {
         align-items: center;
         //min-height: 5.25rem;
         height: auto;
-        padding: 1rem;
+        padding: 2rem;
         margin-bottom: 1rem;
       }
 
