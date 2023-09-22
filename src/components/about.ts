@@ -22,10 +22,8 @@ export class SupportElement extends LitElement {
         padding: 0;
         box-sizing: border-box;
         text-decoration: none;
-
         text-align: center;
       }
-
 
       .hidden {
         display: none;
@@ -48,7 +46,7 @@ export class SupportElement extends LitElement {
       h2 {
         text-align: left;
         margin-bottom: .8em;
-        margin-left: 2em;
+        margin-left: 3em;
       }
 
       h3 {
@@ -67,7 +65,6 @@ export class SupportElement extends LitElement {
       }
 
     ,
-
     `;
   }
 
@@ -94,14 +91,15 @@ export class SupportElement extends LitElement {
       <main>
         <div>
           <h1>Hello, I’m Ryan Reddy.</h1>
-          <br>
+          <br><br>
         </div>
 
         <img class="landingImage" src="ryan_images/IMG_6869-color-cropped.png"
              alt="Ryan Reddy profile image, black and white, straw hat"
              loading="eager"
         />
-
+        <br>
+        <hr>
         <div><br>
           <h2>Bio</h2>
           <p>I'm a software developer based in Amsterdam, Netherlands.<br>

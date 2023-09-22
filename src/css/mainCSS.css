@@ -87,9 +87,10 @@ img {
   margin-left: auto !important;
   margin-right: auto !important;
   border: 0rem solid #ffffff !important;
-  -webkit-filter: sepia(27%); /* Safari 6.0 - 9.0 */
-  filter: sepia(27%);
+  -webkit-filter: sepia(7%); /* Safari 6.0 - 9.0 */
+  filter: sepia(7%);
   display: block !important;
+  margin-bottom: 3rem !important;
 }
 
 @media (max-width: 952px) {
