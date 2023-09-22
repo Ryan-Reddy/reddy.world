@@ -31,7 +31,11 @@ export class ContactElement extends LitElement {
         text-decoration: none;
       }
 
-      h1, h2 {
+      h1 {
+        padding-top: 20vh;
+      }
+
+      h1, h2, h3 {
         align-items: center;
         text-align: center;
         margin-right: auto;
@@ -41,6 +45,7 @@ export class ContactElement extends LitElement {
 
       .paragraph {
         padding-top: 20vh;
+        padding-bottom: 20vh;
       }
 
       p {
@@ -97,6 +102,16 @@ export class ContactElement extends LitElement {
     });
     console.log('dispatching event:' + titleEvent.detail.message)
     this.dispatchEvent(titleEvent);
+
+    // Wait for DOMContentLoaded event to ensure the DOM is ready
+    window.addEventListener('DOMContentLoaded', () => {
+      // Log a message to verify if this code is executed
+      console.log('DOMContentLoaded event fired');
+
+      // Scroll down 200 pixels from the top
+      window.scrollTo(0, 0)
+      window.scrollBy(0, 200);
+    });
   }
 
   connectedCallback() {
@@ -106,7 +121,7 @@ export class ContactElement extends LitElement {
   render() {
     return html`
       <link rel="stylesheet" href="/css/mainCSS.css">
-      <meta name="description" content="Ryan Reddy's world contact page.">
+      <meta name="description" content="Ryan Reddy cordially invites you to join him.">
       <meta title="one third ">
       <body>
       <main>
