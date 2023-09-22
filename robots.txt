@@ -1,7 +1,7 @@
 # www.robotstxt.org/
 
 # locate sitemap for trawlers
-Sitemap: http://www.reddy.world/sitemap.xml
+Sitemap: https://www.reddy.world/sitemap.xml
 
 
 # Allow crawling of all content
