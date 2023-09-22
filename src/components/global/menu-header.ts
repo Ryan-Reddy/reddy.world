@@ -45,8 +45,8 @@ export class MenuHeader extends LitElement {
         align-items: center;
         //min-height: 5.25rem;
         height: auto;
-        padding: 1rem
-
+        padding: 1rem;
+        margin-bottom: 1rem;
       }
 
       .ingelogd_als {
@@ -68,7 +68,6 @@ export class MenuHeader extends LitElement {
         display: inline-block;
         line-height: 1.5rem;
         margin: 1rem;
-
       }
 
       nav ul li a {
@@ -156,18 +155,10 @@ export class MenuHeader extends LitElement {
 
       @media (max-width: 952px) {
         .header_bar {
-
-          margin-top: 1rem;
-          padding-top: 1rem;
-
-          //position: relative;
-          //overflow: hidden;
-          //
-          //display: flex;
-          //justify-content: space-between;
-          //align-items: center;
-          min-height: 1.5rem;
-
+          min-height: auto; /* Adjust the height as needed */
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
         }
 
         .dropdown-menu-label {
@@ -178,10 +169,10 @@ export class MenuHeader extends LitElement {
           display: inline-block;
         }
 
-        //.nav-logo {
-        //  height: 3em;
-        //  padding-left: 50px;
-        //}
+        nav ul[name="top-nav-menu"] {
+          display: none; /* Hide the top-nav-menu */
+        }
+
         .nav-logo {
           height: 100%;
           display: none;
@@ -193,23 +184,31 @@ export class MenuHeader extends LitElement {
           height: 150%;
         }
 
+        nav ul {
+          flex-direction: column; /* Stack the menu items vertically */
+          align-items: center; /* Center align the menu items */
+          margin-right: 0; /* Remove margin-right */
+          padding-right: 0; /* Remove padding-right */
+        }
+
         nav ul li {
           height: auto;
+          margin: 0; /* Remove margin */
         }
 
         nav ul li a {
-          display: none;
-          // line-height: 8em;
-          // margin: 0 1em;
+          display: block; /* Display the links as blocks */
+          line-height: 2; /* Adjust the line height as needed */
+          margin: 0.5em 0; /* Add some vertical spacing */
+          padding: 1rem; /* Adjust padding as needed */
+          padding-bottom: 0.75rem; /* Adjust the margin-bottom value as needed */
         }
 
         .nav-button-dropdown {
           display: flex;
-          //line-height: 4em;
-          //margin: 0 1em;
-          //padding: 0 100px;
         }
       }
+
 
       @media (max-width: 858px) {
         .checkbtn {

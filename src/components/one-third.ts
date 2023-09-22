@@ -17,15 +17,14 @@ export class ContactElement extends LitElement {
 
   static get styles() {
     return css`
-
       main {
         min-width: 550px !important;
       }
 
-      .paragraph {
-        margin-top: 5vh;
-        margin-bottom: 20vh;
-      }
+      //.paragraph {
+      //  margin-top: 5vh;
+      //  margin-bottom: 20vh;
+      //}
 
       .invitation {
         background-color: var(--background-color);
@@ -40,12 +39,10 @@ export class ContactElement extends LitElement {
         font-size: 24px;
         color: var(--primary-color);
       }
-
       .invitation p {
         font-size: 18px;
         margin-top: 10px;
       }
-
       .invitation a.button {
         text-decoration: none;
         display: inline-block;
@@ -59,11 +56,33 @@ export class ContactElement extends LitElement {
         transition: background 0.3s ease;
       }
 
-
       a.active, a:hover {
         background: var(--silver);
         transition: var(--transitionInSeconds);
         //color: #8e8e8e !important
+      }
+
+      @media (max-width: 952px) {
+        main {
+          min-width: 0% !important; /* Remove min-width for main */
+        }
+
+        .invitation {
+          max-width: 90%; /* Adjust the max-width for scaling */
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          text-align: center;
+          margin-bottom: 20px;
+        }
+
+        #centered_image {
+          width: 100%;
+          max-width: 80% !important;
+          margin-left: auto;
+          margin-right: auto;
+          display: block; /* This helps with centering block-level elements like images */
+        }
       }
 
       @media (prefers-color-scheme: light) {
@@ -119,11 +138,12 @@ export class ContactElement extends LitElement {
         <div class="invitation">
           <h1>A Cosmic Celebration</h1>
 
-          <img src="cloudwalker.jpg"
-               alt="long foothpath wide ridge, with green grass on top, very curvy and tricky looking. A female dances on the edge of it, clearly making her way in one direction toward the horizon. "
-               loading="eager"
-          />
-
+          <div id="centered_image">
+            <img src="cloudwalker.jpg"
+                 alt="long foothpath wide ridge, with green grass on top, very curvy and tricky looking. A female dances on the edge of it, clearly making her way in one direction toward the horizon. "
+                 loading="eager"
+            />
+          </div>
           <div class="paragraph">
             <h2>Join me for a gathering beneath the starlit tapestry.</h2>
             <p>As the clock ticks toward my 🌌 <i>33,333rd</i> orbit, we'll come together for a celestial soirée.</p>
@@ -135,10 +155,13 @@ export class ContactElement extends LitElement {
             <p>A celestial moment etched in the heavens. 🌠🌌</p>
             <p>* Born amidst the stars on <i>21-09-1991.</i></a></p>
 
-            <a href="mailto:ryan@reddy.world?subject=RSVP for Cosmic Celebration" class="button">RSVP Now</a>
+            <a
+              href="mailto:ryan@reddy.world?subject=RSVP for Cosmic Celebration&body=Dear Ryan,%0D%0A%0D%0AI would like to RSVP for the Cosmic Celebration on December 24, 2024, from 3:00 PM to 6:00 PM.%0D%0A%0D%0A [ ] I wish to bring a partner. %0D%0A%0D%0AThank you,%0D%0A[Your Name]">
+              <h3>RSVP Now!</h3></a>
 
             <hr>
-            <h3>Stay tuned for more details in due course.</h3>
+            <p>"Kindly note that attendance is limited, so we encourage you to RSVP early. <br>
+              Stay tuned for further updates in the near future."</p>
           </div>
         </div>
 
