@@ -39,21 +39,27 @@ export class ContactElement extends LitElement {
         font-size: 24px;
         color: var(--primary-color);
       }
+
       .invitation p {
         font-size: 18px;
         margin-top: 10px;
       }
+
       .invitation a.button {
         text-decoration: none;
         display: inline-block;
         background: var(--primary-color);
         color: white;
         font-size: 2.5rem;
-        border: none;
+        border: 10px;
         border-radius: 5px;
         padding: 10px 20px;
         cursor: pointer;
         transition: background 0.3s ease;
+      }
+
+      a {
+        text-decoration: underline;
       }
 
       a.active, a:hover {
@@ -155,8 +161,8 @@ export class ContactElement extends LitElement {
             <p>A celestial moment etched in the heavens. 🌠🌌</p>
             <p>* Born amidst the stars on <i>21-09-1991.</i></a></p>
 
-            <a
-              href="mailto:ryan@reddy.world?subject=RSVP for Cosmic Celebration&body=Dear Ryan,%0D%0A%0D%0AI would like to RSVP for the Cosmic Celebration on December 24, 2024, from 3:00 PM to 6:00 PM.%0D%0A%0D%0A [ ] I wish to bring a partner. %0D%0A%0D%0AThank you,%0D%0A[Your Name]">
+            <a id="rsvp_button"
+               href="mailto:ryan@reddy.world?subject=RSVP for Cosmic Celebration&body=Dear Ryan,%0D%0A%0D%0AI would like to RSVP for the Cosmic Celebration on December 24, 2024, from 3:00 PM to 6:00 PM.%0D%0A%0D%0A [ ] I wish to bring a partner. %0D%0A%0D%0AThank you,%0D%0A[Your Name]">
               <h3>RSVP Now!</h3></a>
 
             <hr>
