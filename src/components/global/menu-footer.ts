@@ -99,6 +99,7 @@ export class MenuFooter extends LitElement {
           nav {
             float: none;
             position: absolute;
+            text-align: center; /* Add this line */
           }
 
           nav ul {
@@ -109,8 +110,8 @@ export class MenuFooter extends LitElement {
 
           nav li {
             display: block;
-            margin: 0;
-            line-height: 1.5em; // height of buttons -> stops overlap
+            margin: 0.5rem; /* Adjust the margin as needed */
+            line-height: 1.5em; /* Adjust the line-height as needed */
           }
 
           input {
@@ -119,6 +120,7 @@ export class MenuFooter extends LitElement {
             width: auto \\9; /* ie8 */
           }
         }
+
 
         @media (max-width: 858px) {
           display: inline-block;
