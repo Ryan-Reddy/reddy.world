@@ -77,7 +77,6 @@ export class MenuHeader extends LitElement {
         text-transform: uppercase;
         padding: 1rem;
         padding-bottom: 0.75rem; /* Adjust the margin-bottom value as needed */
-
       }
 
       a.active, a:hover {
@@ -115,13 +114,13 @@ export class MenuHeader extends LitElement {
       }
 
       .nav-logo {
-        object-fit: cover;
-        height: 5em;
-        opacity: 1;
-        position: absolute;
-        right: 2em;
-        overflow: hidden;
-        padding: 0 2em;
+        object-fit: cover !important;
+        height: 5em !important;
+        opacity: 1 !important;
+        position: absolute !important;
+        right: 2em !important;
+        //top: -1em !important;
+        //margin-top: 1rem;
       }
 
       .nav-logo:hover {
@@ -156,11 +155,11 @@ export class MenuHeader extends LitElement {
       }
 
       @media (max-width: 952px) {
-        //.nav-logo {
-        //  height: 3em;
-        //  padding-left: 50px;
-        //}
         .header_bar {
+
+          margin-top: 1rem;
+          padding-top: 1rem;
+
           //position: relative;
           //overflow: hidden;
           //
@@ -168,6 +167,7 @@ export class MenuHeader extends LitElement {
           //justify-content: space-between;
           //align-items: center;
           min-height: 1.5rem;
+
         }
 
         .dropdown-menu-label {
@@ -178,6 +178,10 @@ export class MenuHeader extends LitElement {
           display: inline-block;
         }
 
+        //.nav-logo {
+        //  height: 3em;
+        //  padding-left: 50px;
+        //}
         .nav-logo {
           height: 100%;
           display: none;
@@ -214,10 +218,6 @@ export class MenuHeader extends LitElement {
         nav ul li {
           display: block;
         }
-
-        nav ul li a {
-        }
-
       ;
       }
 
@@ -246,6 +246,7 @@ export class MenuHeader extends LitElement {
   render() {
     // create response menu with: https://www.codingnepalweb.com/responsive-dropdown-menu-bar-html-css/
     return html`
+      <link rel="stylesheet" href="/css/mainCSS.css">
       <body id="bodyofmenubar">
       <div class="header_bar">
         <img

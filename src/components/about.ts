@@ -30,8 +30,8 @@ export class SupportElement extends LitElement {
       .hidden {
         display: none;
         pointer-events: none;
-        color: var(--grijs);
-        background-color: var(--grijs);
+        color: var(--silver);
+        background-color: var(--silver);
       }
 
       button {
@@ -43,6 +43,12 @@ export class SupportElement extends LitElement {
         list-style: none;
         margin-left: 10vw;
         align-content: space-evenly;
+      }
+
+      h2 {
+        text-align: left;
+        margin-bottom: .8em;
+        margin-left: 2em;
       }
 
       h3 {
@@ -119,43 +125,61 @@ export class SupportElement extends LitElement {
             I've ventured into several entrepreneurial endeavors,
             including:</p>
           <ul>
-            <li><a href="https://nepco.nl/"><h3>Theater Costumes:</h3></a>Bringing characters to
+            <li>
+              <h3>
+                <a href="https://nepco.nl/">Theater Costumes:</a>
+              </h3>
+              Bringing characters to
               life on stage with unique and captivating costumes.
             </li>
-            <li><a href="https://reddymaekersproductions.wordpress.com/"><h3>Decor and Props</h3></a>
+            <li>
+              <h3>
+                <a href="https://reddymaekersproductions.wordpress.com/">Decor and Props</a>
+              </h3>
               Crafting immersive environments and captivating props for various creative
               projects.
             </li>
-            <li><a href="https://www.facebook.com/HouseofGentleFrequencies/"><h3>Women's Health
-              Advocacy</h3></a> Hosting a platform dedicated to women's health, where
+            <li>
+              <h3>
+                <a href="https://www.facebook.com/HouseofGentleFrequencies/">
+                  Women's Health
+                  Advocacy
+                </a></h3>Hosting a platform dedicated to women's health, where
               knowledge and support meet.
             </li>
-            <li><a href="https://amsterdamsefrisdrankfabriek.nl/"><h3>Artisanal Soda
-              Production</h3></a> Creating delightful, handcrafted sodas that tickle the taste
+            <li>
+              <h3>
+                <a href="https://amsterdamsefrisdrankfabriek.nl/">Artisanal Soda
+                  Production</a>
+              </h3>Creating delightful, handcrafted sodas that tickle the taste
               buds.
             </li>
-            <li><a href="http://resethealthbar.nl/"><h3>Food Stand Management</h3></a> Serving up
+            <li>
+              <h3>
+                <a href="http://resethealthbar.nl/">
+                  Food Stand Management</a>
+              </h3>
+              Serving up
               culinary delights to satisfy hungry appetites.
             </li>
           </ul>
           <p>
             <br>
-            Amidst this colorful array of experiences, my heart always leads me back to my
+            Amidst this colorful array of experiences, I allways circle back to my
             true passion:
             <br><br>
-          <h4>Design.</h4>
-          <br>
-          My unwavering love for improving the way we live is the driving force behind all
-          my work.</p>
-
+            Design.
+            <br>
+            My lust for improving the human experience is the driving force behind all my work.</p>
           <hr>
           <h2>Be here, now.</h2>
-          <p>If you're interested in delving deeper into my professional journey, please
-            explore my <a href="cv">CV</a><br>
+          <p>If you're interested in delving deeper, please explore my <br>
+            <a href="cv">CV</a> <br>
             for a comprehensive overview of my accomplishments.
             <br>
 
-            For inquiries, potential collaborations, or even just a friendly chat, <br>
+            For inquiries, potential collaborations, <br>
+            or even just a friendly chat, <br>
             don't hesitate to reach out to me at <a
               href="${this._contact}">ryan@reddy.world</a>.<br>
 

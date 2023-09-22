@@ -35,7 +35,7 @@ export class RalContrastElement extends LitElement {
       .hidden {
         display: none;
         pointer-events: none;
-        color: var(--grijs);
+        color: var(--silver);
       }
 
       button {

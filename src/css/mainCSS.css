@@ -22,7 +22,7 @@
   --groen: #00c300;
   --blauw: #00aaff;
   --wit: #fff;
-  --grijs: #e2e2e2;
+  --silver: #81a3a7;
   --zwart: #000;
   --warning-red: red;
   --fullwidth: 100%;
@@ -41,16 +41,49 @@
 /*  min-height: 100%;*/
 /*}*/
 
-main {
-  /*  color: var(--wit);*/
-  /*  background-color: var(--zwart);*/
-  margin: 4vh;
-  line-height: normal;
+
+li {
+  position: relative;
+  padding: 30px;
 }
 
-/*a {*/
-/*  color: var(--groen)*/
-/*}*/
+a {
+  color: #fff;
+  border-radius: 8px;
+
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: .25em;
+  display: inline-block;
+  padding: 15px;
+  position: relative;
+}
+
+a:hover::after {
+  width: 100%;
+  right: 0;
+}
+
+a::after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 4px;
+  right: 0;
+  position: absolute;
+  background: linear-gradient(to left, #f69ec4, #f9dd94 100%);
+  transition: width .5s ease 0s, right .5s ease 0s;
+  width: 0;
+}
+
+
+main {
+  /*color: var(--wit);*/
+  /*background-color: var(--zwart);*/
+  margin: 1vh;
+  line-height: normal;
+}
 
 body {
   height: 100%;
@@ -60,7 +93,7 @@ body {
   /*  min-width: 320px;*/
   /*  min-height: 100%;*/
 
-  /*  !*background-image: url('achtergrondshapes.webp');*!*/
+  /*background-image: url('achtergrondshapes.webp');*/
   /*  background-repeat: no-repeat;*/
   /*  background-size: 100%;*/
 
@@ -136,6 +169,13 @@ img {
 }
 
 @media (max-width: 952px) {
+  main {
+    /*color: var(--wit);*/
+    /*background-color: var(--zwart);*/
+    margin: .1vh;
+    line-height: normal;
+  }
+
   footer-menu {
     width: 100%;
     font-size: 2.1rem;
@@ -181,7 +221,7 @@ img {
   }
   main {
     color: var(--zwart);
-    background-color: transparent;
+    /* background-color: transparent; */
   }
 
   table {
@@ -194,15 +234,19 @@ img {
     background-color: var(--wit);
   }
 
-  nav ul li a.active, a:hover {
-    background: var(--silver);
-    transition: var(--transitionInSeconds);
-    color: var(--zwart) !important;
+  a {
+    color: midnightblue;
   }
 
   nav ul li a {
     background-color: var(--wit);
     border-bottom-color: var(--gold);
+  }
+
+  nav ul li a.active, a:hover {
+    /* background: var(--silver); */
+    transition: var(--transitionInSeconds);
+    color: var(--zwart) !important;
   }
 }
 

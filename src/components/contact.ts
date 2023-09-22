@@ -45,26 +45,30 @@ export class ContactElement extends LitElement {
       .hidden {
         display: none;
         pointer-events: none;
-        color: var(--grijs);
-        background-color: var(--grijs);
+        color: var(--silver);
+        background-color: var(--silver);
       }
+
       ul {
         list-style: none;
         width: 100%
 
       }
+
       input, textarea, button {
         padding: 5px;
         width: 100%;
         margin: 12px;
         height: 32px;
       }
+
       textarea {
         height: 256px;
       }
+
       #submitBtn {
-        background: rgba(250,235,215,0.7);
-        color: rgba(21,23,21,1);
+        background: rgba(250, 235, 215, 0.7);
+        color: rgba(21, 23, 21, 1);
       }
 
     `;

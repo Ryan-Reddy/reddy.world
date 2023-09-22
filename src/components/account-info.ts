@@ -133,8 +133,8 @@ export class Accountinfo extends LitElement {
       .visibility-hidden {
         display: none;
         pointer-events: none;
-        color: var(--grijs);
-        background-color: var(--grijs);
+        color: var(--silver);
+        background-color: var(--silver);
       }
 
       @media (max-width: 858px) {

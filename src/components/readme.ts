@@ -49,7 +49,7 @@ export class ReadmeElement extends LitElement {
         display: none;
         pointer-events: none;
         color: lightgrey;
-        background-color: var(--grijs);
+        background-color: var(--silver);
       }
 
       button {

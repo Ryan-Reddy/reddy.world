@@ -98,7 +98,7 @@ export class Login extends LitElement {
         border: none;
         border-radius: 4px;
         color: var(--zwart);
-        background-color: var(--grijs);
+        background-color: var(--silver);
         vertical-align: middle;
         text-indent: 0.7em;
       }
@@ -121,8 +121,8 @@ export class Login extends LitElement {
       .visibility-hidden {
         display: none;
         pointer-events: none;
-        color: var(--grijs);
-        background-color: var(--grijs);
+        color: var(--silver);
+        background-color: var(--silver);
       }
     `;
   }

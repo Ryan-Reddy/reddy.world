@@ -19,7 +19,7 @@ export class ContactElement extends LitElement {
     return css`
 
       .paragraph {
-        margin-top: 20vh;
+        margin-top: 5vh;
         margin-bottom: 20vh;
       }
 
@@ -55,23 +55,30 @@ export class ContactElement extends LitElement {
         transition: background 0.3s ease;
       }
 
-      .invitation a.button:hover a.button:active {
-        background-color: var(--wit);
-        //height: 2rem;
+
+      a.active, a:hover {
+        background: var(--silver);
+        transition: var(--transitionInSeconds);
+        //color: #8e8e8e !important
       }
 
       @media (prefers-color-scheme: light) {
+
+        .invitation a.button {
+          color: var(--zwart);
+        }
+
         footer, nav ul li a {
           color: var(--zwart);
           background-color: var(--wit);
           border-color: var(--wit);
         }
 
-        .invitation a.active, a:hover {
-          background: var(--gold);
+        a.active, a:hover {
+          color: var(--wit);
           transition: var(--transitionInSeconds);
-          color: var(--zwart);
         }
+
     `;
   }
 
@@ -107,12 +114,22 @@ export class ContactElement extends LitElement {
       <main>
         <div class="invitation">
           <h1>A Cosmic Celebration</h1>
+
+          <img src="cloudwalker.jpg"
+               alt="long foothpath wide ridge, with green grass on top, very curvy and tricky looking. A female dances on the edge of it, clearly making her way in one direction toward the horizon. "
+               loading="eager"
+          />
+
           <div class="paragraph">
             <h2>Join me for a gathering beneath the starlit tapestry.</h2>
             <p>As the clock ticks toward my 🌌 <i>33,333rd</i> orbit, we'll come together for a celestial soirée.</p>
-            <p>Save the date: <i>December 24, 2024</i>, from <i>3:00 PM to 6:00 PM</i>.</p>
+            <p>Save the date:
+              <a
+                href="https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MDNrM3NjcmRhcHMwY2JvamoyY2JlZWUzMDAga2x1Z29va0Bt&tmsrc=klugook%40gmail.com">
+                <i>December 24, 2024</i>, from <i>3:00 PM to 6:00 PM.</i></a>
+            </p>
             <p>A celestial moment etched in the heavens. 🌠🌌</p>
-            <p>* Born amidst the stars on <i>21-09-1991</i>.</p>
+            <p>* Born amidst the stars on <i>21-09-1991.</i></a></p>
 
             <a href="mailto:ryan@reddy.world?subject=RSVP for Cosmic Celebration" class="button">RSVP Now</a>
 

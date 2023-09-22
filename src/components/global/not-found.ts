@@ -42,7 +42,7 @@ export class NotFound extends LitElement {
         display: none;
         pointer-events: none;
         color: lightgray;
-        background-color: var(--grijs);
+        background-color: var(--silver);
       }
 
       button {

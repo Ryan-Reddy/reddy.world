@@ -38,7 +38,7 @@ export class FriendsElement extends LitElement {
         .hidden {
           display: none;
           pointer-events: none;
-          color: var(--grijs);
+          color: var(--silver);
         }
 
         button {

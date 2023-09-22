@@ -35,8 +35,8 @@ export class NewAccount extends LitElement {
       .hidden {
         display: none;
         pointer-events: none;
-        color: var(--grijs);
-        background-color: var(--grijs);
+        color: var(--silver);
+        background-color: var(--silver);
       }
 
       button {
