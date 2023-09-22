@@ -101,17 +101,6 @@ export class MenuHeader extends LitElement {
         list-style: none;
       }
 
-      @keyframes smoothMove {
-        0% {
-          transform: translateY(0);
-        }
-        100% {
-          transform: translateY(2em);
-          height: 8em;
-
-        }
-      }
-
       .nav-logo {
         object-fit: cover !important;
         height: 5em !important;
@@ -120,6 +109,15 @@ export class MenuHeader extends LitElement {
         right: 2em !important;
         //top: -1em !important;
         //margin-top: 1rem;
+      }
+
+      @keyframes smoothMove {
+        0% {
+          transform: translateY(0) scale(1); /* Initial size and position */
+        }
+        100% {
+          transform: translateY(1em) scale(1.6); /* Move down 1em and increase size by 20% */
+        }
       }
 
       .nav-logo:hover {

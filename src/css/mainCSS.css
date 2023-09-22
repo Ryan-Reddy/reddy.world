@@ -12,8 +12,8 @@
   -moz-osx-font-smoothing: grayscale;
 
   --silver: #cccccc;
-  --gold: #ffcc00;
-  --groen: #00c300;
+  --gold: #876618;
+  --groen: #398718;
   --blauw: #00aaff;
   --wit: #fff;
   --silver: #81a3a7;
@@ -22,6 +22,7 @@
   --fullwidth: 100%;
   --transitionInSeconds: 0.6s;
   --logoTransitionInSeconds: 0.8s;
+  --be_here_now_blue: #301987;
 }
 
 * {
@@ -71,8 +72,8 @@ body {
   height: 100%;
 }
 hr {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   width: 100%;
 }
 ul {
@@ -86,7 +87,7 @@ img {
   padding: 0px !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  border: 0rem solid #ffffff !important;
+  border: 1.5rem solid #f6f6dc !important;
   -webkit-filter: sepia(7%); /* Safari 6.0 - 9.0 */
   filter: sepia(7%);
   display: block !important;

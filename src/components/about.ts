@@ -46,6 +46,7 @@ export class SupportElement extends LitElement {
       h2 {
         text-align: left;
         margin-bottom: .8em;
+        margin-top: .8em;
         margin-left: 3em;
       }
 
