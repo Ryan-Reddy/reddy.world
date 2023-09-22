@@ -1,6 +1,5 @@
 import {css, html, LitElement} from 'lit';
 import {customElement, property, query} from 'lit/decorators.js';
-import {firebaseService} from "../services/firebaseService";
 
 /**
  * An example element.
@@ -22,20 +21,6 @@ export class ContactElement extends LitElement {
     super();
   }
 
-  firstUpdated(changedProperties: any) {
-    let titleEvent = new CustomEvent('title-change', {
-      detail: {
-        message: 'Contact'
-      }
-    });
-    console.log('dispatching event:' + titleEvent.detail.message)
-    this.dispatchEvent(titleEvent);
-  }
-
-  connectedCallback() {
-    super.connectedCallback();
-  }
-
   static get styles() {
     return css`
       * {
@@ -45,7 +30,19 @@ export class ContactElement extends LitElement {
         text-decoration: none;
       }
 
-      h1 {
+      h1, h2 {
+        align-items: center;
+        text-align: center;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: auto;
+      }
+
+      .paragraph {
+        padding-top: 20vh;
+      }
+
+      p {
         align-items: center;
         text-align: center;
         margin-right: auto;
@@ -85,13 +82,44 @@ export class ContactElement extends LitElement {
     `;
   }
 
+  firstUpdated(changedProperties: any) {
+    let titleEvent = new CustomEvent('title-change', {
+      detail: {
+        message: 'Contact'
+      }
+    });
+    console.log('dispatching event:' + titleEvent.detail.message)
+    this.dispatchEvent(titleEvent);
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+  }
+
   render() {
     return html`
       <meta name="description" content="Ryan Reddy's world contact page.">
       <meta title="one third ">
       <body>
       <main>
-        <h1>one third</h1>
+        <h1>A Cosmic Celebration</h1>
+
+        <div class="paragraph">
+          <h2>Join me for a clandestine gathering beneath the starlit tapestry.</h2>
+          <br>
+          <p>As the clock ticks toward my 🌌 <i>33,333rd</i> orbit,</p>
+          <br>
+
+          <p> we'll gather for a cosmic little celebration. </p>
+          <p>Save the date: <i>December 24, 2024</i>,
+            <br>
+
+            a celestial moment marked in the heavens. 🌠🌌</p>
+          <br>
+          <p>* Born amidst the stars on <i>21-09-1991</i></p>
+
+
+        </div>
 
       </main>
       </body>
