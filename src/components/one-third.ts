@@ -112,10 +112,15 @@ export class OneThirdElement extends LitElement {
 
         #centered_image {
           width: 100%;
-          max-width: 80% !important;
+          max-width: 100% !important;
           margin-left: auto;
           margin-right: auto;
           display: block; /* This helps with centering block-level elements like images */
+        }
+
+        img {
+          max-width: 80% !important;
+
         }
       }
 
