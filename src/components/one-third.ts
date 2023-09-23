@@ -217,23 +217,18 @@ export class OneThirdElement extends LitElement {
 
   render() {
     return html`
-      <head>
-        <link rel="stylesheet" href="/css/mainCSS.css">
-        <link rel="stylesheet"
-              href="/css/mainCSS.css"> <!-- Replace '/path-to-mainCSS.css' with the actual path to your CSS file -->
-        <title>A Cosmic Celebration</title>
-        <!-- Open Graph Protocol meta tags -->
-        <meta property="og:title" content="A Cosmic Celebration">
-        <meta property="og:description"
-              content="Join me for a gathering beneath the starlit tapestry.
-              As the clock ticks toward my 🌌 33,333rd orbit, we'll come together.">
-        <meta property="og:image" content="cloudwalker.jpg">
-        <meta property="og:url" content="https://reddy.world/one-third">
-      </head>
-
       <link rel="stylesheet" href="/css/mainCSS.css">
+      <title>A Cosmic Celebration</title>
+      <!-- Open Graph Protocol meta tags -->
+      <meta property="og:title" content="A Cosmic Celebration">
+      <meta property="og:description"
+            content="Join me for a gathering beneath the starlit tapestry.
+              As the clock ticks toward my 🌌 33,333rd orbit, we'll come together.">
+      <meta property="og:image" content="cloudwalker.jpg">
+      <meta property="og:url" content="https://reddy.world/one-third">
       <meta name="description" content="Ryan Reddy cordially invites you to join him.">
       <meta title="one third ">
+
       <body>
       <main>
         <div class="invitation">
