@@ -314,17 +314,6 @@ export class OneThirdElement extends LitElement {
           <div>
             <div id="mc_embed_shell">
               <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
-              <style>
-                #mc_embed_signup {
-                  background: #fff;
-                  false;
-                  clear: left;
-                  font: 14px Helvetica, Arial, sans-serif;
-                }
-
-                /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
-                   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-              </style>
               <div id="mc_embed_signup">
                 <form
                   action="https://world.us8.list-manage.com/subscribe/post?u=431ab43581c4e5868f605646f&amp;id=2b149a018a&amp;f_id=00c011e0f0"
@@ -333,22 +322,22 @@ export class OneThirdElement extends LitElement {
                   <div id="mc_embed_signup_scroll">
                     <a href="" id="rsvp_button">
                       <h3>RSVP FORM</h3></a>
-                    <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-                    <div class="mc-field-group"><label for="mce-EMAIL"> <span
+                    <div class="indicates-required"><span class="asterisk">*</span> Required fields</div>
+                    <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span
                       class="asterisk">*</span></label><input type="email" name="EMAIL" class="required email"
                                                               id="mce-EMAIL" required="" value=""
-                                                              placeholder="Email Address"></div>
-                    <div class="mc-field-group"><label for="mce-FNAME"> <span
+                                                              placeholder="Enter your email"></div>
+                    <div class="mc-field-group"><label for="mce-FNAME">Full Name <span
                       class="asterisk">*</span></label><input type="text" name="FNAME" class="required text"
                                                               id="mce-FNAME" required="" value="" spellcheck="false"
-                                                              data-ms-editor="true" placeholder="Name"
+                                                              data-ms-editor="true" placeholder="Enter your full name"
                     ></div>
-                    <div class="mc-field-group"><label for="mce-LNAME"> <span
+                    <div class="mc-field-group"><label for="mce-LNAME">Party Size <span
                       class="asterisk">*</span></label><input type="text" name="LNAME" class="required text"
                                                               id="mce-LNAME" value="" spellcheck="false"
                                                               data-ms-editor="true" required=""
-                                                              placeholder="How large is your party?"><span
-                      id="mce-LNAME-HELPERTEXT" class="helper_text">is it just you, or are your bringing others?</span>
+                                                              placeholder="Number of attendees"><span
+                      id="mce-LNAME-HELPERTEXT" class="helper_text">Are you coming alone or with others?</span>
                     </div>
                     <div class="mc-field-group size1of2"><label for="mce-BIRTHDAY-month">Birthday </label>
                       <div class="datefield"><span class="subfield monthfield"><input class="birthday REQ_CSS"
@@ -363,15 +352,15 @@ export class OneThirdElement extends LitElement {
                                                                 placeholder="DD" size="2" maxlength="2"
                                                                 name="BIRTHDAY[day]" id="mce-BIRTHDAY-day" value=""
                                                                 spellcheck="false" data-ms-editor="true"></span><span
-                          class="small-meta nowrap">( mm / dd ) (yes I don't need to know your age haha!)</span></div>
+                          class="small-meta nowrap">( MM / DD )</span></div>
                     </div>
                     <div id="mce-responses" class="clear foot">
                       <div class="response" id="mce-error-response" style="display: none;"></div>
                       <div class="response" id="mce-success-response" style="display: none;"></div>
                     </div>
                     <div aria-hidden="true" style="position: absolute; left: -5000px;">
-                      /* real people should not fill this in and expect good things - do not remove this or risk form
-                      bot signups */
+                      <!-- Real people should not fill this in and expect good things - do not remove this or risk form
+                      bot signups -->
                       <input type="text" name="b_431ab43581c4e5868f605646f_2b149a018a" tabindex="-1" value=""
                              spellcheck="false" data-ms-editor="true">
                     </div>
@@ -379,29 +368,18 @@ export class OneThirdElement extends LitElement {
                       <div class="clear foot">
                         <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button"
                                value="Submit">
-                        <!--                        <p style="margin: 0px auto;"><a href="http://eepurl.com/iAgxTQ"-->
-                        <!--                                                        title="Mailchimp - email marketing made easy and fun"><span-->
-                        <!--                          style="display: inline-block; background-color: transparent; border-radius: 4px;"><img-->
-                        <!--                          class="refferal_badge"-->
-                        <!--                          src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg"-->
-                        <!--                          alt="Intuit Mailchimp"-->
-                        <!--                          style="width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;"></span></a>-->
-                        </p>
                       </div>
                     </div>
                   </div>
                 </form>
               </div>
-
             </div>
 
             <a id="rsvp_button"
                href="mailto:ryan@reddy.world?subject=RSVP for Cosmic Celebration&body=Dear Ryan,%0D%0A%0D%0AI would like to RSVP for the Cosmic Celebration on December 24, 2024, from 3:00 PM to 6:00 PM.%0D%0A%0D%0A [ ] I wish to bring a partner. %0D%0A%0D%0AThank you,%0D%0A[Your Name]">
-              <h3>RSVP through e-mail</h3></a>
-
-
+              <h3>RSVP through e-mail</h3>
+            </a>
           </div>
-        </div>
       </main>
       </body>
     `;
