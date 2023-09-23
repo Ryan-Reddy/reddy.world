@@ -90,6 +90,8 @@ export class Home extends LitElement {
   render() {
     return html`
       <link rel="stylesheet" href="/css/mainCSS.css">
+      <link rel="preload" href="ryan_images/IMG_6869.png" as="image">
+
       <title>Home</title>
       <meta name="description" content="Ryan Reddy's landing page.">
       <meta title="Home Page">

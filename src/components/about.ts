@@ -81,6 +81,8 @@ export class SupportElement extends LitElement {
 
   render() {
     return html`
+      <link rel="preload" href="ryan_images/IMG_6869-color-cropped.png" as="image">
+
       <link rel="stylesheet" href="/css/mainCSS.css">
       <link rel="stylesheet"
             href="/css/mainCSS.css"> <!-- Replace '/path-to-mainCSS.css' with the actual path to your CSS file -->
