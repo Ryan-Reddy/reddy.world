@@ -100,7 +100,6 @@ export class OneThirdElement extends LitElement {
         main {
           min-width: 0 !important; /* Remove min-width for main */
         }
-
         .invitation {
           max-width: 90%; /* Adjust the max-width for scaling */
           padding: 20px;
@@ -120,7 +119,10 @@ export class OneThirdElement extends LitElement {
 
         img {
           max-width: 80% !important;
+        }
 
+        .countup span {
+          display: block;
         }
       }
 
@@ -179,18 +181,18 @@ export class OneThirdElement extends LitElement {
         secs.toString();
     }
 
-    if (this.countDownContainer) {
-      this.countDownContainer.querySelector(".years")!.textContent =
-        (33 - years).toString();
-      this.countDownContainer.querySelector(".days")!.textContent =
-        (7 - days).toString();
-      this.countDownContainer.querySelector(".hours")!.textContent =
-        (24 - hours).toString();
-      this.countDownContainer.querySelector(".minutes")!.textContent =
-        (60 - mins).toString();
-      this.countDownContainer.querySelector(".seconds")!.textContent =
-        (60 - secs).toString();
-    }
+    // if (this.countDownContainer) {
+    //   this.countDownContainer.querySelector(".years")!.textContent =
+    //     (33 - years).toString();
+    //   this.countDownContainer.querySelector(".days")!.textContent =
+    //     (7 - days).toString();
+    //   this.countDownContainer.querySelector(".hours")!.textContent =
+    //     (24 - hours).toString();
+    //   this.countDownContainer.querySelector(".minutes")!.textContent =
+    //     (60 - mins).toString();
+    //   this.countDownContainer.querySelector(".seconds")!.textContent =
+    //     (60 - secs).toString();
+    // }
 
     clearTimeout(OneThirdElement.interval); // Use the static property
     OneThirdElement.interval = setTimeout(() => {
@@ -290,20 +292,20 @@ export class OneThirdElement extends LitElement {
               <span class="timeel seconds">03</span>
               <span class="timeel timeRefSeconds">seconds</span>
             </div>
-            <!--            // Countdown clock:-->
-            <div class="countup" id="countdown1">
-              <h3>The portal starts opening at: </h3>
-              <span class="timeel years">33</span>
-              <span class="timeel timeRefYears">years</span>
-              <span class="timeel days">03</span>
-              <span class="timeel timeRefDays">days</span>
-              <span class="timeel hours">03</span>
-              <span class="timeel timeRefHours">hours</span>
-              <span class="timeel minutes">03</span>
-              <span class="timeel timeRefMinutes">minutes</span>
-              <span class="timeel seconds">03</span>
-              <span class="timeel timeRefSeconds">seconds</span>
-            </div>
+            <!--            &lt;!&ndash;            // Countdown clock:&ndash;&gt;-->
+            <!--            <div class="countup" id="countdown1">-->
+            <!--              <h3>The portal starts opening at: </h3>-->
+            <!--              <span class="timeel years">33</span>-->
+            <!--              <span class="timeel timeRefYears">years</span>-->
+            <!--              <span class="timeel days">03</span>-->
+            <!--              <span class="timeel timeRefDays">days</span>-->
+            <!--              <span class="timeel hours">03</span>-->
+            <!--              <span class="timeel timeRefHours">hours</span>-->
+            <!--              <span class="timeel minutes">03</span>-->
+            <!--              <span class="timeel timeRefMinutes">minutes</span>-->
+            <!--              <span class="timeel seconds">03</span>-->
+            <!--              <span class="timeel timeRefSeconds">seconds</span>-->
+            <!--            </div>-->
             <hr>
 
             <p>"Kindly note that attendance is limited, so we encourage you to RSVP early. <br>
