@@ -299,9 +299,6 @@ export class OneThirdElement extends LitElement {
               <!--              <span class="timeel timeRefSeconds">seconds</span>-->
             </div>
 
-
-            <p>"Kindly note that attendance is limited, so we encourage you to RSVP early. <br>
-              Stay tuned for further updates in the near future."</p>
           </div>
           <hr>
 
@@ -314,8 +311,10 @@ export class OneThirdElement extends LitElement {
                   method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
                   target="_blank">
                   <div id="mc_embed_signup_scroll">
-                    <a href="" id="rsvp_button">
+                    <a id="rsvp_button">
                       <h3>RSVP FORM</h3></a>
+                    <p>"Note that attendance is limited, so we encourage you to RSVP early. <br>
+                      Stay tuned for further updates in the near future."</p>
                     <div class="indicates-required"><span class="asterisk">*</span> Required fields</div>
                     <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span
                       class="asterisk">*</span></label><input type="email" name="EMAIL" class="required email"
