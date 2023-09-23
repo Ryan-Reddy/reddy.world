@@ -218,6 +218,9 @@ export class OneThirdElement extends LitElement {
   render() {
     return html`
       <head>
+        <link rel="stylesheet" href="/css/mainCSS.css">
+        <link rel="stylesheet"
+              href="/css/mainCSS.css"> <!-- Replace '/path-to-mainCSS.css' with the actual path to your CSS file -->
         <title>A Cosmic Celebration</title>
         <!-- Open Graph Protocol meta tags -->
         <meta property="og:title" content="A Cosmic Celebration">
