@@ -96,6 +96,12 @@ export class OneThirdElement extends LitElement {
         color: black;
       }
 
+      hr {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        width: 100%;
+      }
+
       @media (max-width: 952px) {
         main {
           min-width: 0 !important; /* Remove min-width for main */
