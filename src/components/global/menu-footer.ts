@@ -100,6 +100,11 @@ export class MenuFooter extends LitElement {
             float: none;
             position: absolute;
             text-align: center; /* Add this line */
+
+            /* This will center the child elements horizontally */
+            display: flex;
+            justify-content: center;
+            align-items: center;
           }
 
           nav ul {

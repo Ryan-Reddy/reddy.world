@@ -46,7 +46,6 @@ export class MenuHeader extends LitElement {
         //min-height: 5.25rem;
         height: auto;
         padding: 2rem;
-        margin-bottom: 1rem;
       }
 
       .ingelogd_als {

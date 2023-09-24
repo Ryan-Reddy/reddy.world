@@ -99,8 +99,15 @@ img {
   main {
     /*color: var(--wit);*/
     /*background-color: var(--zwart);*/
-    margin: .1rem;
+    margin: 0;
     line-height: normal;
+  }
+
+  ul {
+    /* This will center the child elements horizontally */
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
   }
 
   footer-menu {
@@ -124,7 +131,9 @@ img {
     padding: 0;
   }
 
-  header
+  header {
+
+  }
 }
 
 @media (prefers-color-scheme: light) {
