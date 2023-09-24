@@ -120,12 +120,6 @@ export class CVElement extends LitElement {
         grid-template-columns: 1fr;
       }
 
-      /* Style list items within the experience section */
-
-      #experience-list li {
-        width: 80%;
-      }
-
       /* Style the skills section */
 
       skills {
@@ -614,7 +608,7 @@ export class CVElement extends LitElement {
 
             <h2>Education</h2>
             <div class="experience">
-              <ul id="experience-list">
+              <ul class="timeline" id="experience-list">
                 <!-- Education Item 1 -->
                 <li>
                   <div class="direction-l">
