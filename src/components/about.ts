@@ -42,27 +42,39 @@ export class SupportElement extends LitElement {
         margin-left: 10vw;
         align-content: space-evenly;
       }
+    }
 
-      h2 {
-        text-align: left;
-        margin-bottom: .8em;
-        margin-top: .8em;
-        margin-left: 3em;
-      }
+    p {
+      padding-bottom: 1rem;
+      padding-top: 1rem;
+    }
 
-      h3 {
-        text-align: left;
-      }
+    h1 {
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+    }
 
-      li {
-        text-align: left;
-        //margin-left: 5rem;
-        margin-top: 0.5rem;
-      }
+    h2 {
+      text-align: left;
+      margin-bottom: .8em;
+      margin-top: .8em;
+      margin-left: 3em;
+    }
 
-      p {
-        padding-bottom: 10px;
-        padding-top: 10px;
+    h3 {
+      text-align: left;
+    }
+
+
+    li {
+      text-align: left;
+      //margin-left: 5rem;
+      margin-top: 0.5rem;
+
+
+      fr {
+        margin-bottom: 1rem;
+        margin-top: 1rem;
       }
 
     ,
@@ -92,7 +104,6 @@ export class SupportElement extends LitElement {
       <main>
         <div>
           <h1>Hello, I’m Ryan Reddy.</h1>
-          <br><br>
         </div>
 
         <img class="landingImage" src="ryan_images/IMG_6869-color-cropped.png"
@@ -101,7 +112,7 @@ export class SupportElement extends LitElement {
         />
         <br>
         <hr>
-        <div><br>
+        <div>
           <h2>Bio</h2>
           <p>I'm a software developer based in Amsterdam, Netherlands.<br>
             Welcome to reddy.world, where I specialize in web <br>
@@ -167,7 +178,7 @@ export class SupportElement extends LitElement {
             Amidst this colorful array of experiences, I allways circle back to my
             true passion:
             <br><br>
-            Design.
+            Product Design.
             <br>
             My lust for improving the human experience is the driving force behind all my work.</p>
           <hr>
