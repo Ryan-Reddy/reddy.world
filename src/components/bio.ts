@@ -7,8 +7,8 @@ import {customElement, property} from 'lit/decorators.js';
  * @slot - This element has a slot
  * @csspart button - The button
  */
-@customElement('about-element')
-export class SupportElement extends LitElement {
+@customElement('bio-element')
+export class BioElement extends LitElement {
   @property() _contact = 'mailto:ryan@reddy.world?subject=Hello friend! I wish to speak to you!';
 
   constructor() {
@@ -84,7 +84,7 @@ export class SupportElement extends LitElement {
   firstUpdated(changedProperties: any) {
     let titleEvent = new CustomEvent('title-change', {
       detail: {
-        message: 'About'
+        message: 'Ryan Reddy Biography'
       }
     });
     console.log('dispatching event:' + titleEvent.detail.message)
@@ -97,8 +97,8 @@ export class SupportElement extends LitElement {
 
       <link rel="stylesheet" href="css/mainCSS.css">
       <meta name="description" content="About Ryan Reddy.">
-      <meta title="About me">
-      <title>About me</title>
+      <meta title="Ryan Reddy Biography">
+      <title>Ryan Reddy Biography</title>
 
       <body>
       <main>

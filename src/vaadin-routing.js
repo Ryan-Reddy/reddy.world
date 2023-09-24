@@ -49,8 +49,8 @@ router.setRoutes([{
     ''
   ,
 }, {
-  name: 'about-element', // doet niks impliciet
-  path: '/about', component: 'about-element',
+  name: 'bio-element', // doet niks impliciet
+  path: '/bio', component: 'bio-element',
 }, {
   name: 'login-element', // doet niks impliciet
   path: '/login', component: 'login-element',
