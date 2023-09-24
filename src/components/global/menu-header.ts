@@ -75,7 +75,7 @@ export class MenuHeader extends LitElement {
         color: var(--wit);
         border-radius: 8px;
         text-transform: uppercase;
-        padding: 1rem;
+        padding: 3vw;
         padding-bottom: 0.75rem; /* Adjust the margin-bottom value as needed */
       }
 
@@ -194,8 +194,9 @@ export class MenuHeader extends LitElement {
           flex-direction: column; /* Stack the menu items vertically */
           align-items: center; /* Center align the menu items */
           margin: 1rem; /* Remove margin-right */
-          padding: 1rem; /* Remove padding-right */
+          padding: 1.5rem; /* Remove padding-right */
           float: none; /* Remove padding-right */
+          font-size: 1.5rem;
         }
 
         nav ul li {
