@@ -18,11 +18,21 @@ export class CVElement extends LitElement {
     return css`
       #cv {
         width: 100vw;
+        list-style-type: none; /* Remove default list bullets */
+        padding: 0; /* Remove default padding */
+      }
+
+      experience {
+        //color: blue;
+
       }
 
       skills {
-        list-style-type: georgian; /* Remove default list bullets */
-        padding: 0; /* Remove default padding */
+        //color: blue;
+      }
+
+      bio {
+        //color: blue;
       }
 
     `;
@@ -50,23 +60,16 @@ export class CVElement extends LitElement {
         </header>
         <main>
           <h1>Ryan van Lil-Reddy</h1>
-          <!--          <h2>bio</h2>-->
-          <!--          <p>-->
-          <!--            I have long searched for what I want to do to make this world a better-->
-          <!--          place, I have attempted-->
-          <!--          Direct-sales of good causes, Journalism, management, i’ve been a-->
-          <!--          chef, sidestepped into modelling and acting, the list goes on-and-on,-->
-          <!--          you can check the rest of my linkedin for more.-->
-          <!--          Alan Watts once inspired me to just go and do that which really-->
-          <!--          makes me happy.-->
-          <!--          And warned me to do it so much, i could get really really good at it.-->
-          <!--          and here I am.-->
-          <!--          Currently hacking away at a bachelor of Computer Science-->
-          <!--          Engineering.-->
-          <!--          <p>-->
 
-          <h2>Experience</h2>
-          <skills>
+          <bio>
+            "Driven by a passion for making a positive impact, I've ventured through various fields—from direct sales to
+            journalism, management, and even modeling and acting. Inspired by Alan Watts, I've embarked on a journey to
+            pursue what truly makes me happy, leading me to excel in the world of Computer Science Engineering."
+            - Ryan
+          </bio>
+
+          <experience>
+            <h2>Experience</h2>
             <ul>
               <li>
                 <h3>Tom Crown Live Crypto Trading on Youtube</h3>
@@ -155,37 +158,62 @@ export class CVElement extends LitElement {
                 <timeframe>1995 - 2003</timeframe>
               </li>
             </ul>
+          </experience>
+
+          <skills>
+            <h2>Skills</h2>
+            <h3>Computer Skills</h3>
             <!-- Skill Badges - Computer Skills -->
-            <div class="skill-badges computer-skills">
+            <div class="computer-skills">
               <div class="skill-badge">
-                <span class="skill-name">PostgreSQL</span>
+                <span class="skill-name">Frameworks (e.g., JUnit, Cucumber)</span>
               </div>
               <div class="skill-badge">
-                <span class="skill-name">Cascading Style Sheets (CSS)</span>
+                <span class="skill-name">Object-Oriented Programming (OOP)</span>
               </div>
               <div class="skill-badge">
-                <span class="skill-name">HTML</span>
+                <span class="skill-name">CAD DESIGN (3D Modeling, Rhino 3D)</span>
               </div>
+            </div>
+
+            <h3>Programming Languages</h3>
+            <!-- Skill Badges - Programming Languages -->
+            <div class="programming-languages">
               <div class="skill-badge">
-                <span class="skill-name">JavaScript</span>
+                <span class="skill-name">Python</span>
               </div>
               <div class="skill-badge">
                 <span class="skill-name">Java</span>
               </div>
               <div class="skill-badge">
-                <span class="skill-name">Python (Programming Language)</span>
+                <span class="skill-name">Html, css, javascript, typescript</span>
               </div>
               <div class="skill-badge">
-                <span class="skill-name">3D Modeling</span>
+                <span class="skill-name">JUnit</span>
               </div>
               <div class="skill-badge">
-                <span class="skill-name">Rhino 3D</span>
+                <span class="skill-name">Cucumber</span>
               </div>
-              <!-- Add more computer skills here -->
+              <div class="skill-badge">
+                <span class="skill-name">PostgreSQL</span>
+              </div>
             </div>
 
+
+            <h3>Real-Life Languages</h3>
+            <!-- Skill Badges - Real-Life Languages -->
+            <div class="real-life-languages">
+              <div class="skill-badge">
+                <span class="skill-name">English</span>
+              </div>
+              <div class="skill-badge">
+                <span class="skill-name">Dutch</span>
+              </div>
+            </div>
+
+            <h3>Other Skills</h3>
             <!-- Skill Badges - Other Skills -->
-            <div class="skill-badges other-skills">
+            <div class="other-skills">
               <div class="skill-badge">
                 <span class="skill-name">Team Leadership</span>
               </div>
@@ -210,33 +238,8 @@ export class CVElement extends LitElement {
               <div class="skill-badge">
                 <span class="skill-name">Photoshop</span>
               </div>
-              <!-- Add more other skills here -->
             </div>
 
-            <!-- Skill Badges - Programming Languages -->
-            <div class="skill-badges programming-languages">
-              <div class="skill-badge">
-                <span class="skill-name">PHP</span>
-              </div>
-              <div class="skill-badge">
-                <span class="skill-name">Ruby</span>
-              </div>
-              <div class="skill-badge">
-                <span class="skill-name">Swift</span>
-              </div>
-              <!-- Add more programming languages here -->
-            </div>
-
-            <!-- Skill Badges - Real-Life Languages -->
-            < class="skill-badges real-life-languages">
-            <div class="skill-badge">
-              <span class="skill-name">English</span>
-            </div>
-            <div class="skill-badge">
-              <span class="skill-name">Dutch</span>
-            </div>
-            <!-- Add more real-life languages here -->
-            <ul>
           </skills>
       </div>
     `;
