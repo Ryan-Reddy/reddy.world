@@ -24,7 +24,7 @@ export class CVElement extends LitElement {
 
       li, ul {
         padding: 0;
-        margin-left: 1rem;
+        //margin-left: 1rem;
       }
 
       .experience-title {
@@ -140,6 +140,313 @@ export class CVElement extends LitElement {
         padding: 1rem;
       }
 
+      body {
+        margin: 0;
+        padding: 0;
+        background: rgb(230, 230, 230);
+
+        color: rgb(50, 50, 50);
+        font-family: 'Open Sans', sans-serif;
+        font-size: 112.5%;
+        line-height: 1.6em;
+      }
+
+      /* ================ The Timeline ================ */
+      /* Reset some default styles for better alignment */
+
+      ul.timeline {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        background: rgb(230, 230, 230);
+
+        color: rgb(50, 50, 50);
+        font-family: 'Open Sans', sans-serif;
+        font-size: 112.5%;
+        line-height: 1.6em;
+      }
+
+      .timeline {
+        position: relative;
+        width: 660px;
+        margin: 0 auto;
+        margin-top: 20px;
+        padding: 1em 0;
+        list-style-type: none;
+      }
+
+      .timeline:before {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        content: ' ';
+        display: block;
+        width: 6px;
+        height: 100%;
+        margin-left: -3px;
+        background: rgb(80, 80, 80);
+        background: -moz-linear-gradient(top, rgba(80, 80, 80, 0) 0%, rgb(80, 80, 80) 8%, rgb(80, 80, 80) 92%, rgba(80, 80, 80, 0) 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(30, 87, 153, 1)), color-stop(100%, rgba(125, 185, 232, 1)));
+        background: -webkit-linear-gradient(top, rgba(80, 80, 80, 0) 0%, rgb(80, 80, 80) 8%, rgb(80, 80, 80) 92%, rgba(80, 80, 80, 0) 100%);
+        background: -o-linear-gradient(top, rgba(80, 80, 80, 0) 0%, rgb(80, 80, 80) 8%, rgb(80, 80, 80) 92%, rgba(80, 80, 80, 0) 100%);
+        background: -ms-linear-gradient(top, rgba(80, 80, 80, 0) 0%, rgb(80, 80, 80) 8%, rgb(80, 80, 80) 92%, rgba(80, 80, 80, 0) 100%);
+        background: linear-gradient(to bottom, rgba(80, 80, 80, 0) 0%, rgb(80, 80, 80) 8%, rgb(80, 80, 80) 92%, rgba(80, 80, 80, 0) 100%);
+
+        z-index: 5;
+      }
+
+      .timeline li {
+        padding: 1em 0;
+      }
+
+      .timeline li:after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+      }
+
+      .direction-l {
+        position: relative;
+        width: 300px;
+        float: left;
+        text-align: right;
+      }
+
+      .direction-r {
+        position: relative;
+        width: 300px;
+        float: right;
+      }
+
+      .flag-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .flag {
+        //position: relative;
+        display: inline;
+        background: rgb(248, 248, 248, 0.12);
+        padding: 6px 10px;
+        border-radius: 5px;
+
+        font-weight: 600;
+        text-align: left;
+      }
+
+      .direction-l .flag {
+        -webkit-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
+        box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
+      }
+
+      .direction-r .flag {
+        -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
+      }
+
+      .direction-l .flag:before,
+      .direction-r .flag:before {
+        position: absolute;
+        top: 50%;
+        right: -40px;
+        content: ' ';
+        display: block;
+        width: 12px;
+        height: 12px;
+        margin-top: -10px;
+        background: #fff;
+        border-radius: 10px;
+        border: 4px solid rgb(255, 80, 80);
+        z-index: 10;
+      }
+
+      .direction-r .flag:before {
+        left: -40px;
+      }
+
+      .direction-l .flag:after {
+        content: "";
+        position: absolute;
+        left: 100%;
+        top: 50%;
+        height: 0;
+        width: 0;
+        margin-top: -8px;
+        border: solid transparent;
+        border-left-color: rgb(248, 248, 248);
+        border-width: 8px;
+        pointer-events: none;
+      }
+
+      .direction-r .flag:after {
+        content: "";
+        position: absolute;
+        right: 100%;
+        top: 50%;
+        height: 0;
+        width: 0;
+        margin-top: -8px;
+        border: solid transparent;
+        border-right-color: rgb(248, 248, 248);
+        border-width: 8px;
+        pointer-events: none;
+      }
+
+      .time-wrapper {
+        display: inline;
+
+        line-height: 1em;
+        font-size: 0.66666em;
+        color: rgb(250, 80, 80);
+        vertical-align: middle;
+      }
+
+      .direction-l .time-wrapper {
+        float: left;
+      }
+
+      .direction-r .time-wrapper {
+        float: right;
+      }
+
+      .time {
+        display: inline-block;
+        padding: 4px 6px;
+        background: rgb(248, 248, 248);
+      }
+
+      .desc {
+        margin: 1em 0.75em 0 0;
+
+        font-size: 0.77777em;
+        font-style: italic;
+        line-height: 1.5em;
+      }
+
+      .direction-r .desc {
+        margin: 1em 0 0 0.75em;
+      }
+
+      /* ================ Timeline Media Queries ================ */
+
+      @media screen and (max-width: 660px) {
+
+        .timeline {
+          width: 100%;
+          padding: 4em 0 1em 0;
+        }
+
+        .timeline li {
+          padding: 2em 0;
+        }
+
+        .direction-l,
+        .direction-r {
+          float: none;
+          width: 100%;
+
+          text-align: center;
+        }
+
+        .flag-wrapper {
+          text-align: center;
+        }
+
+        .flag {
+          background: rgb(255, 255, 255);
+          z-index: 15;
+        }
+
+        .direction-l .flag:before,
+        .direction-r .flag:before {
+          position: absolute;
+          top: -30px;
+          left: 50%;
+          content: ' ';
+          display: block;
+          width: 12px;
+          height: 12px;
+          margin-left: -9px;
+          background: #fff;
+          border-radius: 10px;
+          border: 4px solid rgb(255, 80, 80);
+          z-index: 10;
+        }
+
+        .direction-l .flag:after,
+        .direction-r .flag:after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          top: -8px;
+          height: 0;
+          width: 0;
+          margin-left: -8px;
+          border: solid transparent;
+          border-bottom-color: rgb(255, 255, 255);
+          border-width: 8px;
+          pointer-events: none;
+        }
+
+        .time-wrapper {
+          display: block;
+          position: relative;
+          margin: 4px 0 0 0;
+          z-index: 14;
+        }
+
+        .direction-l .time-wrapper {
+          float: none;
+        }
+
+        .direction-r .time-wrapper {
+          float: none;
+        }
+
+        .desc {
+          position: relative;
+          margin: 1em 0 0 0;
+          padding: 1em;
+          background: rgb(245, 245, 245);
+          -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.20);
+          -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.20);
+          box-shadow: 0 0 1px rgba(0, 0, 0, 0.20);
+
+          z-index: 15;
+        }
+
+        .direction-l .desc,
+        .direction-r .desc {
+          position: relative;
+          margin: 1em 1em 0 1em;
+          padding: 1em;
+
+          z-index: 15;
+        }
+
+      }
+
+      @media screen and (min-width: 400px ? ? max-width: 660 px) {
+
+      .direction-l .desc,
+      .direction-r .desc {
+        margin: 1em 4em 0 4em;
+      }
+
+    }
+
+
       @media (max-width: 952px) {
         /* Adjust styles for smaller screens */
         skillsgrid {
@@ -208,104 +515,143 @@ export class CVElement extends LitElement {
 
             <h2>Experience</h2>
             <div class="experience">
+              <ul class="timeline">
+                <!-- Experience Item 1 -->
+                <li>
+                  <div class="direction-r">
+                    <div class="flag-wrapper">
+                      <span class="flag">Tom Crown: Youtube</span>
+                      <span class="time-wrapper"><span class="time">2020 - 2022</span>
+                    </div>
+                    <div class="desc">
+                      Video Editing, content creation, image design, moderation, audience management.
+                    </div>
+                  </div>
+                </li>
+
+                <!-- Experience Item 2 -->
+                <li>
+                  <div class="direction-l">
+                    <div class="flag-wrapper">
+                      <span class="flag">Amsterdamse Frisdrank Fabriek</span>
+                      <span class="time-wrapper"><span class="time">2020 - 2021</span>
+                    </div>
+                    <div class="desc">
+                      Business-to-business sales of craft lemonades in the Benelux area.
+                    </div>
+                  </div>
+                </li>
+
+                <!-- Experience Item 3 -->
+                <li>
+                  <div class="direction-r">
+                    <div class="flag-wrapper">
+                      <span class="flag">ReddyMaekers</span>
+                      <span class="time-wrapper"><span class="time">2014 - 2019</span>
+                    </div>
+                    <div class="desc">
+                      Festival/filmset decors and props, and other customized building assignments/brand activations.
+                    </div>
+                  </div>
+                </li>
+
+                <!-- Experience Item 4 -->
+                <li>
+                  <div class="direction-l">
+                    <div class="flag-wrapper">
+                      <span class="flag">Studio Nepco</span>
+                      <span class="time-wrapper"><span class="time">2015 - 2018</span>
+                    </div>
+                    <div class="desc">
+                      Pattern design, Foam Modulation, painting, Robotics, Sewing, Film/theatre Production, Acting.
+                    </div>
+                  </div>
+                </li>
+
+                <!-- Experience Item 5 -->
+                <li>
+                  <div class="direction-r">
+                    <div class="flag-wrapper">
+                      <span class="flag">Ryan Reddy Productions</span>
+                      <span class="time-wrapper"><span class="time">2015 - 2017</span>
+                    </div>
+                    <div class="desc">
+                      Making things, of metals, wood, plastics, fabrics, and everything in between.
+                    </div>
+                  </div>
+                </li>
+
+                <!-- Experience Item 6 -->
+                <li>
+                  <div class="direction-l">
+                    <div class="flag-wrapper">
+                      <span class="flag">Joris Laarman Lab</span>
+                      <span class="time-wrapper"><span class="time">2014 - 2015</span>
+                    </div>
+                    <div class="desc">
+                      Cutting-edge technique, combined with old lore crafts.
+                      CAD design, 3D manufacturing techniques.
+                      The renowned Joris Laarman furniture is shown in galleries and museums all over the world.
+                    </div>
+                  </div>
+                </li>
+
+                <!-- Experience Item 7 -->
+                <li>
+                  <div class="direction-r">
+                    <div class="flag-wrapper">
+                      <span class="flag">Pepperminds</span>
+                      <span class="time-wrapper"><span class="time">2009 - 2011</span>
+                    </div>
+                    <div class="desc">
+                      Door-to-door sales,
+                      coaching and training new staff, management.
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <h2>Education</h2>
+            <div class="experience">
               <ul id="experience-list">
+                <!-- Education Item 1 -->
                 <li>
-                  <h3 class="experience-title">Tom Crown on Youtube</h3>
-                  <div class="undertitle">Editor In Chief</div>
-                  <div class="timeframe">November 2020 - September 2021 (11 months)</div>
-                  <p class="location">
-                    Remote: USA
-                  </p>
-                  <p class="experience_description">
-                    Video Editing, content creation, image design, moderation, audience management.
-                  </p>
+                  <div class="direction-l">
+                    <div class="flag-wrapper">
+                      <span class="flag">Utrecht University of Applied Sciences</span>
+                      <span class="time-wrapper"><span class="time">2021 - 2025</span>
+                    </div>
+                    <div class="desc">
+                      Bachelor of Applied Science - BASc, Software Development
+                    </div>
+                  </div>
                 </li>
+
+                <!-- Education Item 2 -->
                 <li>
-                  <h3 class="experience-title">Amsterdamse Frisdrank Fabriek</h3>
-                  <div class="undertitle">B-2-B Sales</div>
-                  <div class="timeframe">June 2020 - June 2021 (1 year 1 month)</div>
-                  <p class="location">
-                    Amsterdam, North Holland, Netherlands
-                  </p>
-                  <p class="experience_description">
-                    Business-to-business sales of craft lemonades in the Benelux area.
-                  </p>
+                  <div class="direction-r">
+                    <div class="flag-wrapper">
+                      <span class="flag">Hout- en Meubileringscollege</span>
+                      <span class="time-wrapper"><span class="time">2013 - 2017</span>
+                    </div>
+                    <div class="desc">
+                      Higher Vocational College, Furniture Design and Manufacturing
+                    </div>
+                  </div>
                 </li>
+
+                <!-- Education Item 3 -->
                 <li>
-                  <h3 class="experience-title">ReddyMaekers</h3>
-                  <div class="undertitle">Co-Founder, CAD Designer, Art Direction</div>
-                  <div class="timeframe">September 2014 - July 2019 (4 years 11 months)</div>
-                  <p class="location">
-                    Netherlands
-                  </p>
-                  <p class="experience_description">
-                    Festival/filmset decors and props, and other customized building assignments/brand activations.
-                    See <a href="https://www.ReddyMaekers.com">www.ReddyMaekers.com</a> and <a
-                    href="https://www.instagram.com/reddymaekers/">Instagram</a> for more info!
-                  </p>
-                </li>
-                <li>
-                  <h3 class="experience-title">Studio Nepco</h3>
-                  <div class="undertitle">Art Director/Designer</div>
-                  <div class="timeframe">October 2015 - September 2018 (3 years)</div>
-                  <p class="location">
-                    Amsterdam Area, Netherlands
-                  </p>
-                  <p class="experience_description">
-                    Pattern design, Foam Modulation, painting, Robotics, Sewing, Film/theatre Production, Acting.
-                  </p>
-                </li>
-                <li>
-                  <h3 class="experience-title">Ryan Reddy Productions</h3>
-                  <div class="undertitle">Creative Art Director, Founder</div>
-                  <div class="timeframe">September 2015 - September 2017 (2 years 1 month)</div>
-                  <p class="location">
-                    Amsterdam Area, Netherlands
-                  </p>
-                  <p class="experience_description">
-                    Making things, of metals, wood, plastics, fabrics, and everything in between.
-                  </p>
-                </li>
-                <li>
-                  <h3 class="experience-title">Joris Laarman Lab</h3>
-                  <div class="undertitle">Furniture Maker Internship</div>
-                  <div class="timeframe">November 2014 - March 2015 (5 months)</div>
-                  <p class="location">
-                    Amsterdam Area, Netherlands
-                  </p>
-                  <p class="experience_description">
-                    Cutting-edge technique, combined with old lore crafts.
-                    CAD design, 3D manufacturing techniques.
-                    The renowned Joris Laarman furniture is shown in galleries and museums all over the world.
-                  </p>
-                </li>
-                <li>
-                  <h3 class="experience-title">Pepperminds</h3>
-                  <div class="undertitle">Acquisition of funding for good causes</div>
-                  <div class="timeframe">May 2009 - August 2011 (2 years 4 months)</div>
-                  <p class="location">
-                    Amsterdam Area, Netherlands
-                  </p>
-                  <p class="experience_description">
-                    Door-to-door sales,
-                    coaching and training new staff, management.
-                  </p>
-                </li>
-                <h2>EDUCATION</h2>
-                <li>
-                  <h3>Utrecht University of Applied Sciences</h3>
-                  <div class="undertitle">Bachelor of Applied Science - BASc, Software Development</div>
-                  <div class="timeframe">September 2021 - August 2025</div>
-                </li>
-                <li>
-                  <h3>Hout- en Meubileringscollege</h3>
-                  <div class="undertitle">Higher Vocational College, Furniture Design and Manufacturing</div>
-                  <div class="timeframe">September 2013 - July 2017</div>
-                </li>
-                <li>
-                  <h3>Eerste Christelijke Lyceum Haarlem</h3>
-                  <div class="undertitle">HAVO Nature+Technique, Nature, Physics, Technology, Art</div>
-                  <div class="timeframe">2004 - 2009</div>
+                  <div class="direction-l">
+                    <div class="flag-wrapper">
+                      <span class="flag">Eerste Christelijke Lyceum Haarlem</span>
+                      <span class="time-wrapper"><span class="time">2004 - 2009</span>
+                    </div>
+                    <div class="desc">
+                      HAVO Nature+Technique, Nature, Physics, Technology, Art
+                    </div>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -314,6 +660,7 @@ export class CVElement extends LitElement {
               <h2>Skills</h2>
               <hr>
               <div id="skillsgrid">
+                <!-- Skills Items -->
                 <div class="computer-skills">
                   <h3>Computer Skills</h3>
                   <div class="skill-badge">
@@ -388,6 +735,7 @@ export class CVElement extends LitElement {
                 </div>
               </div>
             </skills>
+          </main>
       </div>
     `;
   }
