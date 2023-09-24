@@ -24,7 +24,7 @@ export class CVElement extends LitElement {
   }
   static get styles() {
     return css`
-      #wrapper {
+      #cv {
         width: 100vw;
       }
 
@@ -38,12 +38,26 @@ export class CVElement extends LitElement {
   render() {
     return html`
       <link rel="stylesheet" href="/css/mainCSS.css">
-      <div id="wrapper">
-      <iframe id="iframe-cv"
-        src="Resume-Ryan-van-Lil-Reddy.pdf#view=FitH"
-              title="Resume-Ryan-van-Lil-Reddy.pdf"
-      >
-      </iframe>
+
+      <div id="cv">
+        <header>
+          <Title>
+            C.V.
+          </Title>
+        </header>
+        <main>
+          <h1>Ryan van Lil-Reddy</h1>
+          I have long searched for what I want to do to make this world a better
+          place, I have attempted
+          Direct-sales of good causes, Journalism, management, i’ve been a
+          chef, sidestepped into modelling and acting, the list goes on-and-on,
+          you can check the rest of my linkedin for more.
+          Alan Watts once inspired me to just go and do that which really
+          makes me happy.
+          And warned me to do it so much, i could get really really good at it.
+          and here I am.
+          Currently hacking away at a bachelor of Computer Science
+          Engineering.
       </div>
     `;
   }

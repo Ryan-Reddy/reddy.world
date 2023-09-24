@@ -66,6 +66,8 @@ export class MenuHeader extends LitElement {
         display: inline-block;
         line-height: 1.5rem;
         margin: 1rem;
+        align-items: center;
+
       }
 
       nav ul li a {
@@ -140,14 +142,17 @@ export class MenuHeader extends LitElement {
         list-style-image: none;
         position: fixed; /* Sit on top of the page content */
         display: none; /* Hidden by default */
-        width: 50%; /* 100% = Full width (cover the whole page) */
+        width: 62.5%; /* 100% = Full width (cover the whole page) */
         height: 100%; /* Full height (cover the whole page) */
         top: 0;
-        left: 3em;
+        left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+        background-color: rgba(0, 0, 0, .9625); /* Black background with opacity */
         z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+        margin: 0 auto; /* Center the child horizontally */
+
+
       }
 
       @media (max-width: 952px) {
@@ -156,6 +161,7 @@ export class MenuHeader extends LitElement {
           display: flex;
           justify-content: space-between;
           align-items: center;
+
         }
 
         .dropdown-menu-label {
@@ -168,6 +174,9 @@ export class MenuHeader extends LitElement {
 
         nav ul[name="top-nav-menu"] {
           display: none; /* Hide the top-nav-menu */
+          //float: right;
+          margin-right: 2rem;
+          padding-right: 2rem;
         }
 
         .nav-logo {
@@ -184,8 +193,9 @@ export class MenuHeader extends LitElement {
         nav ul {
           flex-direction: column; /* Stack the menu items vertically */
           align-items: center; /* Center align the menu items */
-          margin-right: 0; /* Remove margin-right */
-          padding-right: 0; /* Remove padding-right */
+          margin: 1rem; /* Remove margin-right */
+          padding: 1rem; /* Remove padding-right */
+          float: none; /* Remove padding-right */
         }
 
         nav ul li {
@@ -194,11 +204,12 @@ export class MenuHeader extends LitElement {
         }
 
         nav ul li a {
-          display: block; /* Display the links as blocks */
-          line-height: 2; /* Adjust the line height as needed */
-          margin: 0.5em 0; /* Add some vertical spacing */
-          padding: 1rem; /* Adjust padding as needed */
-          padding-bottom: 0.75rem; /* Adjust the margin-bottom value as needed */
+          background-color: transparent;
+          //display: block; /* Display the links as blocks */
+          //line-height: 2; /* Adjust the line height as needed */
+          //margin: 0rem 0; /* Add some vertical spacing */
+          //padding: 2rem; /* Adjust padding as needed */
+          //padding-bottom: 0.75rem; /* Adjust the margin-bottom value as needed */
         }
 
         .nav-button-dropdown {
@@ -256,7 +267,7 @@ export class MenuHeader extends LitElement {
 
           <ul name="top-nav-menu">
             <li><a class="nav-button" href="home" id="home">Home</a></li>
-            <li><a class="nav-button" href="about" id="about">About</a></li>
+            <li><a class="nav-button" href="about" id="about">Bio</a></li>
             <li><a class="nav-button" href="cv" id="cv">CV</a></li>
             <!--            <li><lang-element></lang-element></li> lang picked from browser lang-->
           </ul>
@@ -281,7 +292,7 @@ export class MenuHeader extends LitElement {
               role="menu"
               @click="${this._hideDropDown}">
               <li><a class="nav-button-dropdown" href="home" id="home">Home</a></li>
-              <li><a class="nav-button-dropdown" href="about" id="about">About</a></li>
+              <li><a class="nav-button-dropdown" href="about" id="about">Bio</a></li>
               <li><a class="nav-button-dropdown" href="cv" id="cv">CV</a></li>
             </ul>
           </div>
@@ -298,7 +309,7 @@ export class MenuHeader extends LitElement {
   _showDropDown() {
     console.log('_showDropDown')
     console.log(this._dropdownMenuItems.innerText)
-    this._dropdownMenuItems.style.display = 'inline';
+    this._dropdownMenuItems.style.display = 'flex';
   };
 
   _hideDropDown() {

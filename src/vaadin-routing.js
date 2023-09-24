@@ -9,7 +9,7 @@ import './components/reset-password';
 import './components/support';
 import './components/friends';
 import './components/portfolio';
-import './components/about';
+import './components/bio';
 import './components/cvFromLinkedin';
 import './components/contact';
 import './components/one-third';
