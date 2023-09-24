@@ -103,9 +103,9 @@ export class Home extends LitElement {
       <main>
         <div>
           <h1 class="header">Ryan Reddy</h1>
-          <p class="undertitle">Artist,
-            <br>Product Designer,
-            <br> and aspiring Computer Science Engineer.</p>
+          <p class="div class=" undertitle"">Artist,
+          <br>Product Designer,
+          <br> and aspiring Computer Science Engineer.</p>
         </div>
         <img fetchpriority="high" src="ryan_images/IMG_6869.png" class="landingImage"
              alt="Ryan Reddy profile image, black and white, straw hat"

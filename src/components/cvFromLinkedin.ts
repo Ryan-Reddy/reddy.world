@@ -18,63 +18,143 @@ export class CVElement extends LitElement {
     return css`
       #cv {
         width: 100vw;
-        list-style-type: none; /* Remove default list bullets */
-        padding: 1rem; /* Remove default padding */
-
+        list-style-type: none;
+        padding: 1rem;
       }
 
       li, ul {
         padding: 0;
+        margin-left: 1rem;
       }
 
-      undertitle {
-        italic: true;
+      .experience-title {
+        margin: 0;
+        margin: 0;
+
       }
 
-      bio {
+      .undertitle {
+        font-style: italic;
+        margin-bottom: 1rem;
+      }
+
+      .undertitle, .timeframe, .location, .experience_description {
+        margin-left: 1rem;
+      }
+
+
+      /* Style the bio section */
+
+      .bio {
+        width: 80%;
+        font-family: Arial, sans-serif;
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 20px;
+        position: relative;
+        background: linear-gradient(90deg, #311b80 50%, rgba(49, 27, 128, 0.26) 50%);
+        background-size: 200% 100%;
+        transition: background-position 0.3s ease;
+        overflow: hidden;
+        display: inline-block;
+      }
+
+      .bio:hover {
+        background-position: -100% 0;
+      }
+
+      /* Style the text inside the bio */
+
+      .bio p {
+        font-size: 1.2rem;
+        color: white;
+      }
+
+      /* Style the quote underline */
+
+      .bio::after {
+        content: "";
+        display: block;
+        height: 4px;
+        background: linear-gradient(to left, #f69ec4, #f9dd94 100%);
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 0;
+        transition: width .5s ease 0s, right .5s ease 0s;
+      }
+
+      .bio:hover::after {
+        width: 100%;
+        right: 0;
+      }
+
+      /* Style links within the quote */
+
+      .bio a {
+        color: #fff;
+        border-radius: 8px;
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: .25em;
+        padding: 15px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .bio a:hover::after {
+        width: 100%;
+        right: 0;
+      }
+
+      /* Style the experience section */
+
+      .experience {
         width: 80%;
       }
 
-      experience {
-        width: 80%;
-      }
+      /* Style the list within the experience section */
 
       #experience-list {
         display: grid;
         grid-template-columns: 1fr;
-
-        li {
-          width: 80%;
-        }
       }
 
+      /* Style list items within the experience section */
+
+      #experience-list li {
+        width: 80%;
+      }
+
+      /* Style the skills section */
 
       skills {
         padding: 1rem;
-
       }
+
+      /* Style the grid within the skills section */
 
       #skillsGrid {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         padding: 1rem;
-
       }
 
       @media (max-width: 952px) {
+        /* Adjust styles for smaller screens */
         skillsgrid {
           grid-template-columns: 1fr;
         }
 
-        experience {
+        .experience {
           padding: 1rem;
         }
 
+        /* Set maximum width for list items */
         li {
           max-width: 100vw;
         }
       }
-
     `;
   }
 
@@ -106,114 +186,129 @@ export class CVElement extends LitElement {
               </ul>
             </nav>
 
-            <bio>
-              "Driven by a passion for making a positive impact, I've ventured through various fields—from direct sales
-              to
-              journalism, management, and even modeling and acting. Inspired by Alan Watts, I've embarked on a journey
-              to
-              pursue what truly makes me happy, leading me to excel in the world of Computer Science Engineering."
+            <div class="bio">
+              <p>
+                "Driven by a passion for making a positive impact, <br>
+                my journey has been a dynamic and transformative one. <br> <br>
+
+                With diverse experiences spanning product design, costume creation, sales, journalism, management, <br>
+                and even a venture into modeling and acting, I've cultivated a unique perspective. <br> <br>
+
+                Inspired by the wisdom of Alan Watts, I embarked on a quest to discover true happiness, <br>
+                ultimately leading me to excel in the world of Computer Science Engineering, where innovation and
+                creativity thrive."
+              </p>
+              <p>
+                "I'm Ryan, and I'm on a mission to make a difference."
+              </p>
               - Ryan
-            </bio>
+
+            </div>
             <hr>
 
             <h2>Experience</h2>
-            <experience>
+            <div class="experience">
               <ul id="experience-list">
                 <li>
-                  <h3>Tom Crown Live Crypto Trading on Youtube</h3>
-                  <undertitle>Bachelor Computer Science Engineering</undertitle>
-                  <timeframe>September 2021 - (currently active)</timeframe>
-                  <p>
-                    Studying at the Hogeschool Utrecht in the Netherlands.
+                  <h3 class="experience-title">Tom Crown on Youtube</h3>
+                  <div class="undertitle">Editor In Chief</div>
+                  <div class="timeframe">November 2020 - September 2021 (11 months)</div>
+                  <p class="location">
+                    Remote: USA
                   </p>
-                </li>
-                <li>
-                  <h3>Tom Crown on Youtube</h3>
-                  <undertitle>Editor In Chief</undertitle>
-                  <timeframe>November 2020 - September 2021 (11 months)</timeframe>
-                  <p>
+                  <p class="experience_description">
                     Video Editing, content creation, image design, moderation, audience management.
                   </p>
                 </li>
                 <li>
-                  <h3>Amsterdamse Frisdrank Fabriek</h3>
-                  <undertitle>B-2-B Sales</undertitle>
-                  <timeframe>June 2020 - June 2021 (1 year 1 month)</timeframe>
-                  <p>
+                  <h3 class="experience-title">Amsterdamse Frisdrank Fabriek</h3>
+                  <div class="undertitle">B-2-B Sales</div>
+                  <div class="timeframe">June 2020 - June 2021 (1 year 1 month)</div>
+                  <p class="location">
                     Amsterdam, North Holland, Netherlands
+                  </p>
+                  <p class="experience_description">
                     Business-to-business sales of craft lemonades in the Benelux area.
                   </p>
                 </li>
                 <li>
-                  <h3>ReddyMaekers</h3>
-                  <undertitle>Co-Founder, CAD Designer, Art Direction</undertitle>
-                  <timeframe>September 2014 - July 2019 (4 years 11 months)</timeframe>
-                  <p>
+                  <h3 class="experience-title">ReddyMaekers</h3>
+                  <div class="undertitle">Co-Founder, CAD Designer, Art Direction</div>
+                  <div class="timeframe">September 2014 - July 2019 (4 years 11 months)</div>
+                  <p class="location">
                     Netherlands
+                  </p>
+                  <p class="experience_description">
                     Festival/filmset decors and props, and other customized building assignments/brand activations.
                     See <a href="https://www.ReddyMaekers.com">www.ReddyMaekers.com</a> and <a
                     href="https://www.instagram.com/reddymaekers/">Instagram</a> for more info!
                   </p>
                 </li>
                 <li>
-                  <h3>Studio Nepco</h3>
-                  <undertitle>Art Director/Designer</undertitle>
-                  <timeframe>October 2015 - September 2018 (3 years)</timeframe>
-                  <p>
+                  <h3 class="experience-title">Studio Nepco</h3>
+                  <div class="undertitle">Art Director/Designer</div>
+                  <div class="timeframe">October 2015 - September 2018 (3 years)</div>
+                  <p class="location">
                     Amsterdam Area, Netherlands
+                  </p>
+                  <p class="experience_description">
                     Pattern design, Foam Modulation, painting, Robotics, Sewing, Film/theatre Production, Acting.
                   </p>
                 </li>
                 <li>
-                  <h3>Ryan Reddy Productions</h3>
-                  <undertitle>Creative Art Director, Founder</undertitle>
-                  <timeframe>September 2015 - September 2017 (2 years 1 month)</timeframe>
-                  <p>
+                  <h3 class="experience-title">Ryan Reddy Productions</h3>
+                  <div class="undertitle">Creative Art Director, Founder</div>
+                  <div class="timeframe">September 2015 - September 2017 (2 years 1 month)</div>
+                  <p class="location">
+                    Amsterdam Area, Netherlands
+                  </p>
+                  <p class="experience_description">
                     Making things, of metals, wood, plastics, fabrics, and everything in between.
                   </p>
                 </li>
                 <li>
-                  <h3>Joris Laarman Lab</h3>
-                  <undertitle>Furniture Maker Internship</undertitle>
-                  <timeframe>November 2014 - March 2015 (5 months)</timeframe>
-                  <p>
+                  <h3 class="experience-title">Joris Laarman Lab</h3>
+                  <div class="undertitle">Furniture Maker Internship</div>
+                  <div class="timeframe">November 2014 - March 2015 (5 months)</div>
+                  <p class="location">
                     Amsterdam Area, Netherlands
+                  </p>
+                  <p class="experience_description">
                     Cutting-edge technique, combined with old lore crafts.
                     CAD design, 3D manufacturing techniques.
                     The renowned Joris Laarman furniture is shown in galleries and museums all over the world.
                   </p>
                 </li>
                 <li>
-                  <h3>Pepperminds</h3>
-                  <undertitle>Face-to-face sales, coaching, management, Team-Captain</undertitle>
-                  <timeframe>May 2009 - August 2011 (2 years 4 months)</timeframe>
-                  <p>
-                    Haarlem, North Holland, Netherlands
-                    Education
+                  <h3 class="experience-title">Pepperminds</h3>
+                  <div class="undertitle">Acquisition of funding for good causes</div>
+                  <div class="timeframe">May 2009 - August 2011 (2 years 4 months)</div>
+                  <p class="location">
+                    Amsterdam Area, Netherlands
+                  </p>
+                  <p class="experience_description">
+                    Door-to-door sales,
+                    coaching and training new staff, management.
                   </p>
                 </li>
+                <h2>EDUCATION</h2>
                 <li>
                   <h3>Utrecht University of Applied Sciences</h3>
-                  <undertitle>Bachelor of Applied Science - BASc, Software Development</undertitle>
-                  <timeframe>September 2021 - August 2025</timeframe>
+                  <div class="undertitle">Bachelor of Applied Science - BASc, Software Development</div>
+                  <div class="timeframe">September 2021 - August 2025</div>
                 </li>
                 <li>
                   <h3>Hout- en Meubileringscollege</h3>
-                  <undertitle>Higher Vocational College, Furniture Design and Manufacturing</undertitle>
-                  <timeframe>September 2013 - July 2017</timeframe>
+                  <div class="undertitle">Higher Vocational College, Furniture Design and Manufacturing</div>
+                  <div class="timeframe">September 2013 - July 2017</div>
                 </li>
                 <li>
                   <h3>Eerste Christelijke Lyceum Haarlem</h3>
-                  <undertitle>HAVO Nature+Technique, Nature, Physics, Technology, Art</undertitle>
-                  <timeframe>2004 - 2009</timeframe>
-                </li>
-                <li>
-                  <h3>'t Koggeschip</h3>
-                  <undertitle>Primary</undertitle>
-                  <timeframe>1995 - 2003</timeframe>
+                  <div class="undertitle">HAVO Nature+Technique, Nature, Physics, Technology, Art</div>
+                  <div class="timeframe">2004 - 2009</div>
                 </li>
               </ul>
-            </experience>
+            </div>
 
             <skills>
               <h2>Skills</h2>

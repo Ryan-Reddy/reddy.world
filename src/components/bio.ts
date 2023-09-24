@@ -42,42 +42,42 @@ export class BioElement extends LitElement {
         margin-left: 10vw;
         align-content: space-evenly;
       }
-    }
-
-    p {
-      padding-bottom: 1rem;
-      padding-top: 1rem;
-    }
-
-    h1 {
-      margin-bottom: 1rem;
-      margin-top: 1rem;
-    }
-
-    h2 {
-      text-align: left;
-      margin-bottom: .8em;
-      margin-top: .8em;
-      margin-left: 3em;
-    }
-
-    h3 {
-      text-align: left;
-    }
 
 
-    li {
-      text-align: left;
-      //margin-left: 5rem;
-      margin-top: 0.5rem;
+      p {
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+      }
 
-
-      fr {
+      h1 {
         margin-bottom: 1rem;
         margin-top: 1rem;
       }
 
-    ,
+      h2 {
+        text-align: left;
+        margin-bottom: .8em;
+        margin-top: .8em;
+        margin-left: 3em;
+      }
+
+      h3 {
+        text-align: left;
+      }
+
+
+      li {
+        text-align: left;
+        //margin-left: 5rem;
+        margin-top: 0.5rem;
+
+
+        fr {
+          margin-bottom: 1rem;
+          margin-top: 1rem;
+        }
+
+      ,
     `;
   }
 
