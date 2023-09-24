@@ -22,6 +22,10 @@ export class CVElement extends LitElement {
         padding: 0; /* Remove default padding */
       }
 
+      undertitle {
+        italic: true;
+      }
+
       experience {
         //color: blue;
 
@@ -73,11 +77,18 @@ export class CVElement extends LitElement {
             <ul>
               <li>
                 <h3>Tom Crown Live Crypto Trading on Youtube</h3>
+                <undertitle>Bachelor Computer Science Engineering</undertitle>
+                <timeframe>September 2021 - (currently active)</timeframe>
+                <p>
+                  Studying at the Hogeschool Utrecht in the Netherlands.
+                </p>
+              </li>
+              <li>
+                <h3>Tom Crown on Youtube</h3>
                 <undertitle>Editor In Chief</undertitle>
                 <timeframe>November 2020 - September 2021 (11 months)</timeframe>
                 <p>
-                  Globally
-                  Video Editing, content creation, image design, moderation
+                  Video Editing, content creation, image design, moderation, audience management.
                 </p>
               </li>
               <li>
