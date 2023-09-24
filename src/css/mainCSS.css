@@ -30,7 +30,7 @@
 }
 li {
   position: relative;
-  padding: 30px;
+  padding: 1rem;
 }
 
 a {
@@ -109,14 +109,22 @@ img {
     line-height: 1.3rem;
     letter-spacing: 2px;
   }
+
   .dropdown-menu {
     margin-left: 0 !important;
   }
+
   img {
     border: 5px solid moccasin !important;
     padding: 3px !important;
     margin: 10px;
   }
+
+  li {
+    padding: 0;
+  }
+
+  header
 }
 
 @media (prefers-color-scheme: light) {

@@ -71,6 +71,17 @@ export class ContactElement extends LitElement {
         color: rgba(21, 23, 21, 1);
       }
 
+      #contactForm {
+        /* This will center the child elements horizontally */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        ///* Set width and height as needed */
+        //width: 100%; /* Adjust as needed */
+        //height: 10vh; /* Adjust as needed, using viewport height for full height */
+      }
+
     `;
   }
   render() {
@@ -79,25 +90,26 @@ export class ContactElement extends LitElement {
       <meta name="description" content="Ryan Reddy's world contact page.">
       <meta title="Contact page">
       <body>
-      <main>
+      <main id="contactForm">
         <form onsubmit="preventDefault()">
           <ul>
             <li>
-          <input aria-label="name" type="text" id="name" name="name" placeholder="Name" maxlength="254">
+              <input aria-label="name" type="text" id="name" name="name" placeholder="Name" maxlength="254">
             </li>
             <li>
-          <input aria-label="email" type="email" id="email" name="email" placeholder="Email" maxlength="254" required>
+              <input aria-label="email" type="email" id="email" name="email" placeholder="Email" maxlength="254"
+                     required>
             </li>
             <li>
-          <input aria-label="subject" type="text" id="subject" name="subject" placeholder="Subject" maxlength="254">
+              <input aria-label="subject" type="text" id="subject" name="subject" placeholder="Subject" maxlength="254">
             </li>
             <li>
               <textarea aria-label="message" id="message" name="message" placeholder="Message..."></textarea>
             </li>
           </ul>
-        </form>
         <button id="submitBtn" type="submit" @click="${this._submitFormToFirebase}" value="Submit"
                 aria-label="submit form"><strong>Submit</strong></button>
+        </form>
         </div>
       </main>
       </body>
