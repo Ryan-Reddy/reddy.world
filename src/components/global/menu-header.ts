@@ -32,7 +32,6 @@ export class MenuHeader extends LitElement {
       }
 
       body {
-        font-size: 1em;
         opacity: 1;
       }
 
@@ -70,6 +69,7 @@ export class MenuHeader extends LitElement {
       }
 
       nav ul li a {
+        font-size: 11vw;
         color: var(--wit);
         border-radius: 8px;
         text-transform: uppercase;
