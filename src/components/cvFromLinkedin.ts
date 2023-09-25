@@ -16,10 +16,20 @@ export class CVElement extends LitElement {
 
   static get styles() {
     return css`
+
+
       #cv {
+        display: flex;
+        justify-content: center;
+        //align-items: center; /* Optional: Center vertically as well */
+        //height: 100vh; /* Optional: This centers content vertically within the viewport */
         width: 100vw;
         list-style-type: none;
         padding: 1rem;
+
+        fr {
+          width: 100%;
+        }
       }
 
       li, ul {
@@ -66,7 +76,8 @@ export class CVElement extends LitElement {
       /* Style the text inside the bio */
 
       .bio p {
-        font-size: 1.2rem;
+        font-size: 0.625rem;
+        font-style: italic;
         color: white;
       }
 
@@ -168,6 +179,7 @@ export class CVElement extends LitElement {
       .timeline {
         position: relative;
         width: 660px;
+        //width: 100%;
         margin: 0 auto;
         margin-top: 20px;
         padding: 1em 0;
@@ -227,6 +239,8 @@ export class CVElement extends LitElement {
       }
 
       .flag {
+        width: 100%;
+
         //position: relative;
         display: inline;
         background: rgb(248, 248, 248, 0.12);
@@ -358,7 +372,7 @@ export class CVElement extends LitElement {
         }
 
         .flag {
-          background: rgb(255, 255, 255);
+          background: rgb(245, 245, 245, 0.12);
           z-index: 15;
         }
 
@@ -412,7 +426,7 @@ export class CVElement extends LitElement {
           position: relative;
           margin: 1em 0 0 0;
           padding: 1em;
-          background: rgb(245, 245, 245);
+          background: rgb(245, 245, 245, 0.12);
           -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.20);
           -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.20);
           box-shadow: 0 0 1px rgba(0, 0, 0, 0.20);
@@ -431,14 +445,14 @@ export class CVElement extends LitElement {
 
       }
 
-      @media screen and (min-width: 400px ? ? max-width: 660 px) {
+      @media screen and (max-width: 660px) {
 
-      .direction-l .desc,
-      .direction-r .desc {
-        margin: 1em 4em 0 4em;
+        .direction-l .desc,
+        .direction-r .desc {
+          margin: 1em 4em 0 4em;
+        }
+
       }
-
-    }
 
 
       @media (max-width: 952px) {
@@ -477,7 +491,6 @@ export class CVElement extends LitElement {
         <header>
           <h1 hidden>C.V.</h1>
         </header>
-        <main>
           <main>
             <h1>Ryan van Lil-Reddy</h1>
             <nav>
@@ -527,7 +540,29 @@ export class CVElement extends LitElement {
                 <li>
                   <div class="direction-l">
                     <div class="flag-wrapper">
-                      <span class="flag">Amsterdamse Frisdrank Fabriek</span>
+                      <span class="flag">House of Gentle Frequencies</span>
+                      <span class="time-wrapper"><span class="time">2020 - 2022</span>
+                    </div>
+                    <div class="desc">
+                      Safe house for the advocacy of women's health, in the broadest sense.
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="direction-r">
+                    <div class="flag-wrapper">
+                      <span class="flag">Tea and Dragons</span>
+                      <span class="time-wrapper"><span class="time">2022 - present</span>
+                    </div>
+                    <div class="desc">
+                      Business-to-business sales of craft lemonades in the Benelux area.
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="direction-l">
+                    <div class="flag-wrapper">
+                      <span class="flag">A.F.F.</span>
                       <span class="time-wrapper"><span class="time">2020 - 2021</span>
                     </div>
                     <div class="desc">
@@ -566,11 +601,12 @@ export class CVElement extends LitElement {
                 <li>
                   <div class="direction-r">
                     <div class="flag-wrapper">
-                      <span class="flag">Ryan Reddy Productions</span>
+                      <span class="flag">Ryan Reddy</span>
                       <span class="time-wrapper"><span class="time">2015 - 2017</span>
                     </div>
                     <div class="desc">
-                      Making things, of metals, wood, plastics, fabrics, and everything in between.
+                      Fabrication and design of decors, props, costumes, and special effects.
+                      Also theater, performance, and just free experimentation.
                     </div>
                   </div>
                 </li>
@@ -579,7 +615,7 @@ export class CVElement extends LitElement {
                 <li>
                   <div class="direction-l">
                     <div class="flag-wrapper">
-                      <span class="flag">Joris Laarman Lab</span>
+                      <span class="flag">Laarman Lab</span>
                       <span class="time-wrapper"><span class="time">2014 - 2015</span>
                     </div>
                     <div class="desc">
@@ -658,13 +694,13 @@ export class CVElement extends LitElement {
                 <div class="computer-skills">
                   <h3>Computer Skills</h3>
                   <div class="skill-badge">
-                    <span class="skill-name">Frameworks (e.g., JUnit, Cucumber)</span>
+                    <span class="skill-name">Frameworks <br>&nbsp;&nbsp;&nbsp;(e.g., JUnit, Cucumber)</span>
                   </div>
                   <div class="skill-badge">
-                    <span class="skill-name">Object-Oriented Programming (OOP)</span>
+                    <span class="skill-name">Object-Oriented Programming <br>&nbsp;&nbsp;&nbsp;(OOP)</span>
                   </div>
                   <div class="skill-badge">
-                    <span class="skill-name">CAD DESIGN (3D Modeling, Rhino 3D)</span>
+                    <span class="skill-name">CAD DESIGN <br>&nbsp;&nbsp;&nbsp;(3D Modeling, Rhino 3D)</span>
                   </div>
                 </div>
 
