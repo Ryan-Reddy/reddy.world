@@ -1,5 +1,7 @@
 import {css, html, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
+import langCSS from "../../css/langCSS";
+import mainCSS from "../../css/mainCSS";
 
 /**
  * An example element.
@@ -25,48 +27,52 @@ export class Accountinfo extends LitElement {
     this.dispatchEvent(titleEvent);
   }
   static get styles() {
-    return css`
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        text-decoration: none;
-      }
+    return [
+      langCSS,
+      mainCSS,
+      css`
 
-      .full {
-        width: 100%;
-        height: 100%;
-        overflow: auto
-      }
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          text-decoration: none;
+        }
 
-      H1 {
-        padding-top: 1em;
-        font-size: 2em;
-        padding-bottom: 0.5em;
-      }
+        .full {
+          width: 100%;
+          height: 100%;
+          overflow: auto
+        }
 
-      header p {
-        font-size: 1em;
-      }
+        H1 {
+          padding-top: 1em;
+          font-size: 2em;
+          padding-bottom: 0.5em;
+        }
 
-      .tablecontainer {
-        height: 60vh;
-        overflow: auto
-      }
+        header p {
+          font-size: 1em;
+        }
 
-      table {
-        background: var(--blauw);
-        max-height: 100%;
-        padding: 1em;
-      }
+        .tablecontainer {
+          height: 60vh;
+          overflow: auto
+        }
 
-      th {
-        padding: .6em;
-        border-bottom: 1px dotted #ddd;
-        border-collapse: collapse;
-      }
+        table {
+          background: var(--blauw);
+          max-height: 100%;
+          padding: 1em;
+        }
 
-      tr:hover {
+        th {
+          padding: .6em;
+          border-bottom: 1px dotted #ddd;
+          border-collapse: collapse;
+        }
+
+        tr:hover {
         background-color: red;
       }
 
@@ -130,23 +136,22 @@ export class Accountinfo extends LitElement {
         cursor: pointer;
       }
 
-      .visibility-hidden {
-        display: none;
-        pointer-events: none;
-        color: var(--silver);
-        background-color: var(--silver);
-      }
-
-      @media (max-width: 858px) {
-        .hiddensmolscreen {
+        .visibility-hidden {
           display: none;
+          pointer-events: none;
+          color: var(--silver);
+          background-color: var(--silver);
         }
-    `;
+
+        @media (max-width: 858px) {
+          .hiddensmolscreen {
+            display: none;
+          }
+      `];
   }
 
   render() {
     return html`
-      <link rel="stylesheet" href="/css/mainCSS.css">
       <header>
         <h1 class="header">Account info</h1>
         <p>Breng hieronder wijzigingen in uw gegevens.</p>

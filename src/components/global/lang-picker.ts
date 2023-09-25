@@ -1,5 +1,7 @@
 import {css, html, LitElement} from 'lit';
 import {customElement, query} from 'lit/decorators.js';
+import langCSS from "../../css/langCSS";
+import mainCSS from "../../css/mainCSS";
 
 /**
  * An example element.
@@ -16,7 +18,7 @@ export class LangElement extends LitElement {
   }
 
   static get styles() {
-    return css`
+    return [langCSS, mainCSS, css`
       * {
         margin: 0;
         padding: 0;
@@ -49,13 +51,12 @@ export class LangElement extends LitElement {
         background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
         z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
       }
-    `;
+    `];
   }
+
 
   render() {
     return html`
-      <link rel="stylesheet" href="/css/mainCSS.css">
-
       <div class="language-menu"
            @mouseleave="${this._hideDropDown}">
 

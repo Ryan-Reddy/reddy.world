@@ -1,5 +1,7 @@
 import {css, html, LitElement} from 'lit';
 import {customElement, property, query} from 'lit/decorators.js';
+import langCSS from "../../css/langCSS";
+import mainCSS from "../../css/mainCSS";
 
 /**
  * A support page element.
@@ -15,20 +17,9 @@ export class NotFound extends LitElement {
   constructor() {
     super();
   }
-  firstUpdated(changedProperties: any) {
-    let titleEvent = new CustomEvent('title-change', {
-      detail: {
-        message: 'Page Not Found'
-      }
-    });
-    console.log('dispatching event:' + titleEvent.detail.message)
-    this.dispatchEvent(titleEvent);
-
-    this._audio.play();
-  }
 
   static get styles() {
-    return css`
+    return [langCSS, mainCSS, css`
       * {
         margin: 0;
         padding: 0;
@@ -89,12 +80,23 @@ export class NotFound extends LitElement {
         }
 
       }
-    `;
+    `];
+  }
+
+  firstUpdated(changedProperties: any) {
+    let titleEvent = new CustomEvent('title-change', {
+      detail: {
+        message: 'Page Not Found'
+      }
+    });
+    console.log('dispatching event:' + titleEvent.detail.message)
+    this.dispatchEvent(titleEvent);
+
+    this._audio.play();
   }
 
   render() {
     return html`
-      <link rel="stylesheet" href="/css/mainCSS.css"><!doctype html>
       <html lang="en">
 
       <head>
@@ -116,7 +118,7 @@ export class NotFound extends LitElement {
 
       </body>
 
-    <!-- IE needs 512+ bytes: https://docs.microsoft.com/archive/blogs/ieinternals/friendly-http-error-pages -->
+      <!-- IE needs 512+ bytes: https://docs.microsoft.com/archive/blogs/ieinternals/friendly-http-error-pages -->
     `;
   }
 }

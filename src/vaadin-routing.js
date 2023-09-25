@@ -1,11 +1,13 @@
 import {Router} from '@vaadin/router';
 
-import './components/account-info';
+// (login/account not in use)
+// import './components/account-info';
+// import './components/login';
+// import './components/new-account';
+// import './components/reset-password';
+
 import './components/home';
-import './components/login';
-import './components/new-account';
 import './components/readme';
-import './components/reset-password';
 import './components/support';
 import './components/friends';
 import './components/portfolio';

@@ -1,6 +1,8 @@
 import {css, html, LitElement} from "lit";
 import {customElement, property, query} from "lit/decorators.js";
 import "/css/mainCSS.css";
+import langCSS from "../css/langCSS";
+import mainCSS from "../css/mainCSS";
 
 @customElement("one-third-element")
 export class OneThirdElement extends LitElement {
@@ -22,48 +24,51 @@ export class OneThirdElement extends LitElement {
   }
 
   static get styles() {
-    return css`
-      main {
-        min-width: 550px !important;
-      }
+    return [
+      langCSS,
+      mainCSS,
+      css`
+        main {
+          min-width: 550px !important;
+        }
 
-      .invitation {
-        background-color: var(--background-color);
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        text-align: center;
-        margin-bottom: 20px;
-      }
+        .invitation {
+          background-color: var(--background-color);
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          text-align: center;
+          margin-bottom: 20px;
+        }
 
-      .invitation h2 {
-        font-size: 24px;
-        color: var(--primary-color);
-      }
+        .invitation h2 {
+          font-size: 24px;
+          color: var(--primary-color);
+        }
 
-      .invitation p {
-        font-size: 18px;
-        margin-top: 10px;
-      }
+        .invitation p {
+          font-size: 18px;
+          margin-top: 10px;
+        }
 
-      .invitation a.button {
-        text-decoration: none;
-        display: inline-block;
-        background: var(--primary-color);
-        color: white;
-        font-size: 2.5rem;
-        border: 10px;
-        border-radius: 5px;
-        padding: 10px 20px;
-        cursor: pointer;
-        transition: background 0.3s ease;
-      }
+        .invitation a.button {
+          text-decoration: none;
+          display: inline-block;
+          background: var(--primary-color);
+          color: white;
+          font-size: 2.5rem;
+          border: 10px;
+          border-radius: 5px;
+          padding: 10px 20px;
+          cursor: pointer;
+          transition: background 0.3s ease;
+        }
 
-      a {
-        text-decoration: underline;
-      }
+        a {
+          text-decoration: underline;
+        }
 
-      a.active,
+        a.active,
       a:hover {
         background: var(--silver);
         transition: var(--transitionInSeconds);
@@ -151,8 +156,9 @@ export class OneThirdElement extends LitElement {
           transition: var(--transitionInSeconds);
         }
       }
-    `;
+      `];
   }
+
 
   countUpFromTime(countFrom: string, id: string) {
     const countFromDate = new Date(countFrom).getTime();
@@ -223,7 +229,6 @@ export class OneThirdElement extends LitElement {
 
   render() {
     return html`
-      <link rel="stylesheet" href="/css/mainCSS.css">
       <title>A Cosmic Celebration</title>
       <!-- Open Graph Protocol meta tags -->
       <meta property="og:title" content="A Cosmic Celebration">

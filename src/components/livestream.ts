@@ -1,5 +1,7 @@
 import {css, html, LitElement} from 'lit';
-import {customElement, property} from 'lit/decorators.js';
+import {customElement} from 'lit/decorators.js';
+import langCSS from "../css/langCSS";
+import mainCSS from "../css/mainCSS";
 
 /**
  * An example element.
@@ -14,26 +16,30 @@ export class SupportElement extends LitElement {
   }
 
   static get styles() {
-    return css`
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        text-decoration: none;
-      }
+    return [
+      langCSS,
+      mainCSS,
+      css`
 
-      .hidden {
-        display: none;
-        pointer-events: none;
-        color: var(--silver);
-        background-color: var(--silver);
-      }
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          text-decoration: none;
+        }
 
-      button {
-        width: 66%;
-        height: 2em;
-      }
-    `;
+        .hidden {
+          display: none;
+          pointer-events: none;
+          color: var(--silver);
+          background-color: var(--silver);
+        }
+
+        button {
+          width: 66%;
+          height: 2em;
+        }
+      `];
   }
 
   firstUpdated(changedProperties: any) {
@@ -48,15 +54,14 @@ export class SupportElement extends LitElement {
 
   render() {
     return html`
-      <link rel="stylesheet" href="/css/mainCSS.css">
       <meta name="description" content="Ryan Reddy's world.">
       <meta title="Livestream page">
       <body>
       <main>
-        <img
-          style="display: block; user-select: none; margin: auto; background-color: rgb(64, 64, 64); --darkreader-inline-bgcolor:#303436;"
-          src="http://freeukraine.mywire.org:8080/?action=stream" data-darkreader-inline-bgcolor="" width="973"
-          height="547">
+        <img alt="streaming-video-webcam"
+             style="display: block; user-select: none; margin: auto; background-color: rgb(64, 64, 64); --darkreader-inline-bgcolor:#303436;"
+             src="http://freeukraine.mywire.org:8080/?action=stream" data-darkreader-inline-bgcolor="" width="973"
+             height="547">
       </main>
       </body>
     `;

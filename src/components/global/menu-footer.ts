@@ -1,6 +1,7 @@
 import {css, html, LitElement} from "lit";
 import {customElement, property, query, queryAll} from "lit/decorators.js";
 import langCSS from "../../css/langCSS";
+import mainCSS from "../../css/mainCSS";
 
 /**
  * An example element.
@@ -21,6 +22,7 @@ export class MenuFooter extends LitElement {
   static get styles() {
     return [
       langCSS,
+      mainCSS,
       css`
         nav {
           width: 100%;
@@ -167,13 +169,12 @@ export class MenuFooter extends LitElement {
             color: var(--zwart);
           }
         }
-      `,
-    ];
+      `];
   }
+
 
   render() {
     return html`
-      <link rel="stylesheet" href="/css/mainCSS.css">
       <nav>
         <div lang="en">
           <ul>

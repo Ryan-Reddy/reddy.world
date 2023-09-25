@@ -1,5 +1,7 @@
 import {css, html, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
+import langCSS from "../../css/langCSS";
+import mainCSS from "../../css/mainCSS";
 
 /**
  * A new account element.
@@ -24,31 +26,34 @@ export class NewAccount extends LitElement {
   }
 
   static get styles() {
-    return css`
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        text-decoration: none;
-      }
+    return [
+      langCSS,
+      mainCSS,
+      css`
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          text-decoration: none;
+        }
 
-      .hidden {
-        display: none;
-        pointer-events: none;
-        color: var(--silver);
-        background-color: var(--silver);
-      }
+        .hidden {
+          display: none;
+          pointer-events: none;
+          color: var(--silver);
+          background-color: var(--silver);
+        }
 
-      button {
-        width: 66%;
-        height: 2em;
-      }
-    `;
+        button {
+          width: 66%;
+          height: 2em;
+        }
+      `];
   }
+
 
   render() {
     return html`
-      <link rel="stylesheet" href="/css/mainCSS.css">
       <!DOCTYPE html>
       <html lang="en">
       <head>

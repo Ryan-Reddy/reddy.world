@@ -1,5 +1,7 @@
 import {css, html, LitElement} from 'lit';
 import {customElement} from 'lit/decorators.js';
+import langCSS from "../css/langCSS";
+import mainCSS from "../css/mainCSS";
 
 /**
  * An example element.
@@ -23,32 +25,37 @@ export class PortfolioElement extends LitElement {
     this.dispatchEvent(titleEvent);
   }
 
+
   static get styles() {
-    return css`
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        text-decoration: none;
-      }
+    return [
+      langCSS,
+      mainCSS,
+      css`
 
-      .hidden {
-        display: none;
-        pointer-events: none;
-        color: lightgrey;
-        background-color: var(--silver);
-      }
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          text-decoration: none;
+        }
 
-      button {
-        width: 66%;
-        height: 2em;
-      }
-    `;
+        .hidden {
+          display: none;
+          pointer-events: none;
+          color: lightgrey;
+          background-color: var(--silver);
+        }
+
+        button {
+          width: 66%;
+          height: 2em;
+        }
+      `];
   }
+
 
   render() {
     return html`
-      <link rel="stylesheet" href="/css/mainCSS.css">
       <head>
         <meta charset="UTF-8">
         <meta name="description" content="Ryan Reddy's portfolio.">

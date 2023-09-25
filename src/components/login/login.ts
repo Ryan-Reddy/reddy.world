@@ -1,5 +1,7 @@
 import {css, html, LitElement} from 'lit';
 import {customElement} from 'lit/decorators.js';
+import mainCSS from "../../css/mainCSS";
+import langCSS from "../../css/langCSS";
 
 /**
  * A Login element.
@@ -24,47 +26,50 @@ export class Login extends LitElement {
   }
 
   static get styles() {
-    return css`
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        text-decoration: none;
-      }
+    return [
+      langCSS,
+      mainCSS,
+      css`
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          text-decoration: none;
+        }
 
-      .full {
-        width: 100%;
-      }
+        .full {
+          width: 100%;
+        }
 
-      header {
-        padding-top: 1em;
-        font-size: 2em;
-        padding-bottom: 0.5em;
-      }
+        header {
+          padding-top: 1em;
+          font-size: 2em;
+          padding-bottom: 0.5em;
+        }
 
-      header p {
-        font-size: 0.5em;
-      }
+        header p {
+          font-size: 0.5em;
+        }
 
-      table {
-        padding: 1em;
-        background: var(--blauw);
-      }
+        table {
+          padding: 1em;
+          background: var(--blauw);
+        }
 
-      label {
-        /*font-size: 2em;*/
-        /*visibility: hidden;*/
-        display: none;
-      }
+        label {
+          /*font-size: 2em;*/
+          /*visibility: hidden;*/
+          display: none;
+        }
 
-      form {
-        margin-top: 1em;
-        padding-left: 1em;
-        padding-right: 1em;
-      }
+        form {
+          margin-top: 1em;
+          padding-left: 1em;
+          padding-right: 1em;
+        }
 
-      ul {
-        list-style-type: none;
+        ul {
+          list-style-type: none;
         margin: 0;
         padding: 0;
         overflow: hidden;
@@ -118,18 +123,19 @@ export class Login extends LitElement {
         cursor: pointer;
       }
 
-      .visibility-hidden {
-        display: none;
-        pointer-events: none;
-        color: var(--silver);
-        background-color: var(--silver);
-      }
-    `;
+        .visibility-hidden {
+          display: none;
+          pointer-events: none;
+          color: var(--silver);
+          background-color: var(--silver);
+        }
+
+
+      `];
   }
 
   render() {
     return html`
-      <link rel="stylesheet" href="/css/mainCSS.css">
       <body>
       <div id="page-container">
         <main>
@@ -197,15 +203,8 @@ export class Login extends LitElement {
     // @ts-ignore
     const id = e.target.id;
     console.log('id= ' + id);
-    // this.currentPage = id;
-
-    // const hasChanged = this.currentPage !== id;
-    // if (hasChanged) {
-    // this.currentPage = id;
-    // console.log('currentPage now: ' + this.currentPage);
 
     //notify parent:
     this.dispatchEvent(new Event('page-chosen'));
-    // }
   }
 }

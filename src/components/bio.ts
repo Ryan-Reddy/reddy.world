@@ -1,5 +1,7 @@
 import {css, html, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
+import langCSS from "../css/langCSS";
+import mainCSS from "../css/mainCSS";
 
 /**
  * An example element.
@@ -16,48 +18,51 @@ export class BioElement extends LitElement {
   }
 
   static get styles() {
-    return css`
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        text-decoration: none;
-        text-align: center;
-      }
+    return [
+      langCSS,
+      mainCSS,
+      css`
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          text-decoration: none;
+          text-align: center;
+        }
 
-      .hidden {
-        display: none;
-        pointer-events: none;
-        color: var(--silver);
-        background-color: var(--silver);
-      }
+        .hidden {
+          display: none;
+          pointer-events: none;
+          color: var(--silver);
+          background-color: var(--silver);
+        }
 
-      button {
-        width: 66%;
-        height: 2em;
-      }
+        button {
+          width: 66%;
+          height: 2em;
+        }
 
-      ul {
-        list-style: none;
-        margin-left: 10vw;
-        align-content: space-evenly;
-      }
+        ul {
+          list-style: none;
+          margin-left: 10vw;
+          align-content: space-evenly;
+        }
 
 
-      p {
-        padding-bottom: 1rem;
-        padding-top: 1rem;
-      }
+        p {
+          padding-bottom: 1rem;
+          padding-top: 1rem;
+        }
 
-      h1 {
-        margin-bottom: 1rem;
-        margin-top: 1rem;
-      }
+        h1 {
+          margin-bottom: 1rem;
+          margin-top: 1rem;
+        }
 
-      h2 {
-        text-align: left;
-        margin-bottom: .8em;
-        margin-top: .8em;
+        h2 {
+          text-align: left;
+          margin-bottom: .8em;
+          margin-top: .8em;
         margin-left: 3em;
       }
 
@@ -78,7 +83,7 @@ export class BioElement extends LitElement {
         }
 
       ,
-    `;
+      `];
   }
 
   firstUpdated(changedProperties: any) {
@@ -94,8 +99,6 @@ export class BioElement extends LitElement {
   render() {
     return html`
       <link rel="preload" href="ryan_images/IMG_6869-color-cropped.png" as="image">
-
-      <link rel="stylesheet" href="css/mainCSS.css">
       <meta name="description" content="About Ryan Reddy.">
       <meta title="Ryan Reddy Biography">
       <title>Ryan Reddy Biography</title>

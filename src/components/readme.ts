@@ -2,6 +2,8 @@ import {css, html, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import "https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js";
 import "https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"
+import langCSS from "../css/langCSS";
+import mainCSS from "../css/mainCSS";
 
 /**
  * An example element.
@@ -18,18 +20,9 @@ export class ReadmeElement extends LitElement {
   constructor() {
     super();
   }
-  firstUpdated(changedProperties: any) {
-    let titleEvent = new CustomEvent('title-change', {
-      detail: {
-        message: 'Readme'
-      }
-    });
-    console.log('dispatching event:' + titleEvent.detail.message)
-    this.dispatchEvent(titleEvent);
-  }
 
   static get styles() {
-    return css`
+    return [langCSS, mainCSS, css`
       * {
         //  margin: 0;
         //  padding: 0;
@@ -84,14 +77,21 @@ export class ReadmeElement extends LitElement {
           //content: 'This is not visible on a small screen, please view on a larger screen.'
         }
       }
-
-    `;
+    `];
   }
 
-  //TODO properly import /node_modules/zero-md:
+  firstUpdated(changedProperties: any) {
+    let titleEvent = new CustomEvent('title-change', {
+      detail: {
+        message: 'Readme'
+      }
+    });
+    console.log('dispatching event:' + titleEvent.detail.message)
+    this.dispatchEvent(titleEvent);
+  }
+
   render() {
     return html`
-      <link rel="stylesheet" href="/css/mainCSS.css">
       <head>
         <meta charset="UTF-8">
         <title>README</title>

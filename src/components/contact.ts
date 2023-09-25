@@ -1,6 +1,8 @@
 import {css, html, LitElement} from 'lit';
 import {customElement, property, query} from 'lit/decorators.js';
 import {firebaseService} from "../services/firebaseService";
+import langCSS from "../css/langCSS";
+import mainCSS from "../css/mainCSS";
 
 /**
  * An example element.
@@ -17,24 +19,13 @@ export class ContactElement extends LitElement {
   @query('#email') _email!: any;
   @query('#subject') _subject!: any;
   @query('#message') _message!: any;
+
   constructor() {
     super();
   }
-  firstUpdated(changedProperties: any) {
-    let titleEvent = new CustomEvent('title-change', {
-      detail: {
-        message: 'Contact'
-      }
-    });
-    console.log('dispatching event:' + titleEvent.detail.message)
-    this.dispatchEvent(titleEvent);
-  }
-  connectedCallback() {
-    super.connectedCallback();
-  }
 
   static get styles() {
-    return css`
+    return [langCSS, mainCSS, css`
       * {
         margin: 0;
         padding: 0;
@@ -81,12 +72,25 @@ export class ContactElement extends LitElement {
         //width: 100%; /* Adjust as needed */
         //height: 10vh; /* Adjust as needed, using viewport height for full height */
       }
-
-    `;
+    `];
   }
+
+  firstUpdated(changedProperties: any) {
+    let titleEvent = new CustomEvent('title-change', {
+      detail: {
+        message: 'Contact'
+      }
+    });
+    console.log('dispatching event:' + titleEvent.detail.message)
+    this.dispatchEvent(titleEvent);
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+  }
+
   render() {
     return html`
-      <link rel="stylesheet" href="/css/mainCSS.css">
       <meta name="description" content="Ryan Reddy's world contact page.">
       <meta title="Contact page">
       <body>
@@ -107,8 +111,8 @@ export class ContactElement extends LitElement {
               <textarea aria-label="message" id="message" name="message" placeholder="Message..."></textarea>
             </li>
           </ul>
-        <button id="submitBtn" type="submit" @click="${this._submitFormToFirebase}" value="Submit"
-                aria-label="submit form"><strong>Submit</strong></button>
+          <button id="submitBtn" type="submit" @click="${this._submitFormToFirebase}" value="Submit"
+                  aria-label="submit form"><strong>Submit</strong></button>
         </form>
         </div>
       </main>
@@ -124,17 +128,14 @@ export class ContactElement extends LitElement {
 
     console.log('_submitFormToFirebase')
 
-    firebaseService.writeContactFormToFirestore(
-      this._name.value,
-      this._email.value,
-      this._subject.value,
-      this._message.value,
-      Date.now())
+    firebaseService.writeContactFormToFirestore(this._name.value, this._email.value, this._subject.value, this._message.value, Date.now())
   }
+
   _getSingleDataFromFirebase() {
     console.log(this._getSingleDataFromFirebase)
     return firebaseService.readSingleContactFromDatabase('insertId');
   }
+
   _getAllDataFromFirebase() {
     console.log(this._getAllDataFromFirebase)
     const data = firebaseService.getAllDocs();

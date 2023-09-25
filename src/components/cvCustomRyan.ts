@@ -16,7 +16,6 @@ export class CVElement extends LitElement {
   @query('#experience') experienceSection!: HTMLElement;
   @query('#education') educationSection!: HTMLElement;
   @query('#skills') skillsSection!: HTMLElement;
-
   // Function to handle smooth scrolling
   scrollToSection(section: HTMLElement) {
     if (section) {

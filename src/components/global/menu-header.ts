@@ -1,5 +1,7 @@
 import {css, html, LitElement} from 'lit';
 import {customElement, property, query} from 'lit/decorators.js';
+import langCSS from "../../css/langCSS";
+import mainCSS from "../../css/mainCSS";
 
 /**
  * An example element.
@@ -23,48 +25,51 @@ export class MenuHeader extends LitElement {
   }
 
   static get styles() {
-    return css`
-      * {
-        margin: 0;
-        padding: 0;
-        text-decoration: none;
-      }
+    return [
+      langCSS,
+      mainCSS,
+      css`
+        * {
+          margin: 0;
+          padding: 0;
+          text-decoration: none;
+        }
 
-      body {
-        opacity: 1;
-      }
+        body {
+          opacity: 1;
+        }
 
-      .header_bar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: auto;
-        padding: 2rem;
-      }
+        .header_bar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: auto;
+          padding: 2rem;
+        }
 
-      nav ul {
-        float: right;
-        margin-right: 8em;
-        padding-right: 8em;
+        nav ul {
+          float: right;
+          margin-right: 8em;
+          padding-right: 8em;
 
-      }
+        }
 
-      nav ul li {
-        display: inline-block;
-        //margin: 1rem;
-        margin: 0;
-        padding: 0;
-        align-items: center;
+        nav ul li {
+          display: inline-block;
+          //margin: 1rem;
+          margin: 0;
+          padding: 0;
+          align-items: center;
 
-      }
+        }
 
-      nav ul li a {
-        font-size: 11vw;
-        line-height: 1.2em; /* Adjust the line-height as needed */
-        color: var(--wit);
-        border-radius: 8px;
-        text-transform: uppercase;
-        padding: 0.5rem 1rem; /* Adjust the padding as needed */
+        nav ul li a {
+          font-size: 11vw;
+          line-height: 1.2em; /* Adjust the line-height as needed */
+          color: var(--wit);
+          border-radius: 8px;
+          text-transform: uppercase;
+          padding: 0.5rem 1rem; /* Adjust the padding as needed */
         margin: 0; /* Remove margin */
         display: inline-block; /* Add this to make the background color cover the entire link text */
         transition: background-color var(--transitionInSeconds); /* Add a transition for smoother hover effect */
@@ -241,14 +246,13 @@ export class MenuHeader extends LitElement {
           filter: invert(0%);
         }
       }
-
-    `;
+      `];
   }
+
 
   render() {
     // create response menu with: https://www.codingnepalweb.com/responsive-dropdown-menu-bar-html-css/
     return html`
-      <link rel="stylesheet" href="/css/mainCSS.css">
       <body id="bodyofmenubar">
       <div class="header_bar">
         <img

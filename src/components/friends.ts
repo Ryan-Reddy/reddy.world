@@ -1,6 +1,7 @@
 import {css, html, LitElement} from 'lit';
 import {customElement} from 'lit/decorators.js';
 import langCSS from '../css/langCSS';
+import mainCSS from "../css/mainCSS";
 
 /**
  * An example element.
@@ -27,6 +28,7 @@ export class FriendsElement extends LitElement {
   static get styles() {
     return [
       langCSS,
+      mainCSS,
       css`
         * {
           margin: 0;
@@ -50,7 +52,6 @@ export class FriendsElement extends LitElement {
 
   render() {
     return html`
-      <link rel="stylesheet" href="/css/mainCSS.css">
       <head>
         <meta charset="UTF-8">
         <title>Friends</title>
