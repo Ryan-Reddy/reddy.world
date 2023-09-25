@@ -62,7 +62,7 @@ export class CVElement extends LitElement {
         width: 80%;
         font-family: Arial, sans-serif;
         margin: 20px 0;
-        padding: 20px;
+        padding: 3rem;
         border-radius: 20px;
         position: relative;
         background: linear-gradient(90deg, rgba(49, 27, 128, 0.45) 50%, rgba(49, 27, 128, 0.26) 50%);
@@ -260,7 +260,7 @@ export class CVElement extends LitElement {
         margin-top: -10px;
         background: #fff;
         border-radius: 10px;
-        border: 4px solid rgb(255, 80, 80);
+        border: 4px solid var(--gold);
         z-index: 10;
       }
 
@@ -301,7 +301,7 @@ export class CVElement extends LitElement {
 
         line-height: 1em;
         font-size: 0.66666em;
-        color: rgb(250, 80, 80);
+        color: var(--gold);
         vertical-align: middle;
       }
 
@@ -316,7 +316,7 @@ export class CVElement extends LitElement {
       .time {
         display: inline-block;
         padding: 4px 6px;
-        background: rgb(248, 248, 248);
+        background: var(--be_here_now_blue);
       }
 
       .desc {
@@ -373,7 +373,6 @@ export class CVElement extends LitElement {
           margin-left: -9px;
           background: #fff;
           border-radius: 10px;
-          border: 4px solid rgb(255, 80, 80);
           z-index: 10;
         }
 
@@ -649,7 +648,7 @@ export class CVElement extends LitElement {
               <li>
                 <div class="direction-l">
                   <div class="flag-wrapper">
-                    <span class="flag"><a href="https://www.hu.nl/">Utrecht University of Applied Sciences</a></span>
+                    <span class="flag"><a href="https://www.hu.nl/">Utrecht University</a></span>
                     <span class="time-wrapper"><span class="time">2021 - 2025</span>
                   </div>
                   <div class="desc">
@@ -662,7 +661,7 @@ export class CVElement extends LitElement {
               <li>
                 <div class="direction-r">
                   <div class="flag-wrapper">
-                    <span class="flag"><a href="https://www.hmcollege.nl/">Hout- en Meubileringscollege</a></span>
+                    <span class="flag"><a href="https://www.hmcollege.nl/">HM College</a></span>
                     <span class="time-wrapper"><span class="time">2013 - 2017</span>
                   </div>
                   <div class="desc">
@@ -675,7 +674,7 @@ export class CVElement extends LitElement {
               <li>
                 <div class="direction-l">
                   <div class="flag-wrapper">
-                    <span class="flag"><a href="https://ecl.nl/">Eerste Christelijke Lyceum Haarlem</a></span>
+                    <span class="flag"><a href="https://ecl.nl/">ECL Haarlem</a></span>
                     <span class="time-wrapper"><span class="time">2004 - 2009</span>
                   </div>
                   <div class="desc">
