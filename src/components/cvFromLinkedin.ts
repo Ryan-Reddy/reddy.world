@@ -62,7 +62,7 @@ export class CVElement extends LitElement {
         padding: 20px;
         border-radius: 20px;
         position: relative;
-        background: linear-gradient(90deg, #311b80 50%, rgba(49, 27, 128, 0.26) 50%);
+        background: linear-gradient(90deg, rgba(49, 27, 128, 0.45) 50%, rgba(49, 27, 128, 0.26) 50%);
         background-size: 200% 100%;
         transition: background-position 0.3s ease;
         overflow: hidden;
