@@ -31,6 +31,10 @@ export default css`
     text-decoration: none;
   }
 
+  ul {
+    list-style-type: none;
+  }
+
   li {
     position: relative;
     padding: 1rem;
@@ -69,11 +73,16 @@ export default css`
   main {
     margin: 1rem;
     line-height: normal;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
   }
 
   body {
     height: 100%;
     margin: 0; /* some weird margin: 8px; is inherited from somewhere */
+
   }
 
   hr {
@@ -82,9 +91,6 @@ export default css`
     width: 100%;
   }
 
-  ul {
-    list-style-type: none;
-  }
 
   img {
     width: auto;
@@ -105,8 +111,10 @@ export default css`
     main {
       /*color: var(--wit);*/
       /*background-color: var(--zwart);*/
-      margin: 0;
       line-height: normal;
+      //margin: 1rem;
+      max-width: 100%; /* Set a maximum width */
+
     }
 
     ul {
@@ -114,6 +122,7 @@ export default css`
       /*display: flex;*/
       justify-content: center;
       align-items: center;
+      margin-left: 0;
     }
 
     footer-menu {

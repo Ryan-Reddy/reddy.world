@@ -18,52 +18,54 @@ export class BioElement extends LitElement {
   }
 
   static get styles() {
-    return [
-      langCSS,
-      mainCSS,
-      css`
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-          text-decoration: none;
-          text-align: center;
-        }
+    return [langCSS, mainCSS, css`
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        text-align: center;
+      }
 
-        .hidden {
-          display: none;
-          pointer-events: none;
-          color: var(--silver);
-          background-color: var(--silver);
-        }
+      #bio {
+        width: 100%;
+        text-align: center; /* Center the text horizontally */
 
-        button {
-          width: 66%;
-          height: 2em;
-        }
+      }
 
-        ul {
-          list-style: none;
-          margin-left: 10vw;
-          align-content: space-evenly;
-        }
+      .hidden {
+        display: none;
+        pointer-events: none;
+        color: var(--silver);
+        background-color: var(--silver);
+      }
 
+      button {
+        width: 66%;
+        height: 2em;
+      }
 
-        p {
-          padding-bottom: 1rem;
-          padding-top: 1rem;
-        }
+      ul {
+        list-style: none;
+        margin-left: 7vw;
+        align-content: space-evenly;
+      }
 
-        h1 {
-          margin-bottom: 1rem;
-          margin-top: 1rem;
-        }
+      p {
+        padding: 1rem;
+        width: 100%;
+      }
 
-        h2 {
-          text-align: left;
-          margin-bottom: .8em;
-          margin-top: .8em;
-        margin-left: 3em;
+      h1 {
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+      }
+
+      h2 {
+        //text-align: center;
+        margin-bottom: .8em;
+        margin-top: .8em;
+        //margin-left: 3em;
       }
 
       h3 {
@@ -76,14 +78,30 @@ export class BioElement extends LitElement {
         //margin-left: 5rem;
         margin-top: 0.5rem;
 
-
         fr {
           margin-bottom: 1rem;
           margin-top: 1rem;
         }
 
-      ,
-      `];
+        @media (max-width: 952px) {
+          main {
+            margin: 1rem;
+          }
+
+          ul {
+            list-style: none;
+            margin-left: 0;
+            align-content: space-evenly;
+          }
+
+          #bio {
+            text-align: center; /* Center the text horizontally */
+            max-width: 800px; /* Adjust this value as needed */
+            margin: 0 auto; /* Center the container horizontally */
+            padding: 1rem;
+          }
+        },
+    `];
   }
 
   firstUpdated(changedProperties: any) {
@@ -105,17 +123,16 @@ export class BioElement extends LitElement {
 
       <body>
       <main>
-        <div>
-          <h1>Hello, I’m Ryan Reddy.</h1>
-        </div>
-
-        <img class="landingImage" src="ryan_images/IMG_6869-color-cropped.png"
-             alt="Ryan Reddy profile image, black and white, straw hat"
-             loading="eager"
-        />
-        <br>
-        <hr>
-        <div>
+        <div id="bio">
+          <div id="titlebox">
+            <h1>Hello, I’m Ryan Reddy.</h1>
+          </div>
+          <img class="landingImage" src="ryan_images/IMG_6869-color-cropped.png"
+               alt="Ryan Reddy profile image, black and white, straw hat"
+               loading="eager"
+          />
+          <br>
+          <hr>
           <h2>Bio</h2>
           <p>I'm a software developer based in Amsterdam, Netherlands.<br>
             Welcome to reddy.world, where I specialize in web <br>
@@ -178,10 +195,10 @@ export class BioElement extends LitElement {
           </ul>
           <p>
             <br>
-            Amidst this colorful array of experiences, I allways circle back to my
+            Amidst this colorful array of experiences, I allways come back to my
             true passion:
             <br><br>
-            Product Design.
+            Design of the living world.
             <br>
             My lust for improving the human experience is the driving force behind all my work.</p>
           <hr>
