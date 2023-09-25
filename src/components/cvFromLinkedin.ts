@@ -491,8 +491,6 @@ export class CVElement extends LitElement {
 
   render() {
     return html`
-      <link rel="stylesheet" href="/src/css/mainCSS.css">
-
       <div id="cv">
         <header>
           <h1 hidden>C.V.</h1>
