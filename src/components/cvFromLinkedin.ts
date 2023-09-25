@@ -1,5 +1,9 @@
 import {css, html, LitElement} from 'lit';
 import {customElement} from 'lit/decorators.js';
+import mainCSS from '../css/mainCSS';
+import langCSS from '../css/langCSS';
+
+
 /**
  * An example element.
  *
@@ -21,29 +25,30 @@ export class CVElement extends LitElement {
   }
 
   static get styles() {
-    return css`
+    return [
+      langCSS,
+      mainCSS,
+      css`
+        #cv {
+          display: flex;
+          justify-content: center;
+          //align-items: center; /* Optional: Center vertically as well */
+          //height: 100vh; /* Optional: This centers content vertically within the viewport */
+          width: 100vw;
+          list-style-type: none;
+          padding: 1rem;
 
-
-      #cv {
-        display: flex;
-        justify-content: center;
-        //align-items: center; /* Optional: Center vertically as well */
-        //height: 100vh; /* Optional: This centers content vertically within the viewport */
-        width: 100vw;
-        list-style-type: none;
-        padding: 1rem;
-
-        fr {
-          width: 100%;
+          fr {
+            width: 100%;
+          }
         }
-      }
 
-      li, ul {
-        padding: 0;
-        //margin-left: 1rem;
-      }
+        li, ul {
+          padding: 0;
+          //margin-left: 1rem;
+        }
 
-      .experience-title {
+        .experience-title {
         margin: 0;
         margin: 0;
 
@@ -476,7 +481,7 @@ export class CVElement extends LitElement {
           max-width: 100vw;
         }
       }
-    `;
+      `];
   }
 
   firstUpdated(changedProperties: any) {
