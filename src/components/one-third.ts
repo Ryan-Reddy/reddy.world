@@ -1,6 +1,5 @@
 import {css, html, LitElement} from "lit";
 import {customElement, property, query} from "lit/decorators.js";
-import "/css/mainCSS.css";
 import langCSS from "../css/langCSS";
 import mainCSS from "../css/mainCSS";
 

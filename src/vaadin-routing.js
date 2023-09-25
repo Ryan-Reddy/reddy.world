@@ -16,7 +16,7 @@ import './components/cvCustomRyan';
 import './components/contact';
 import './components/one-third';
 // admin:
-import './components/openai';
+import './components/openai/openai';
 import './components/livestream';
 import './components/ral-contrast';
 import './components/global/not-found';
