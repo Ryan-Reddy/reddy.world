@@ -10,7 +10,7 @@ import './components/support';
 import './components/friends';
 import './components/portfolio';
 import './components/bio';
-import './components/cvFromLinkedin';
+import './components/cvCustomRyan';
 import './components/contact';
 import './components/one-third';
 // admin:

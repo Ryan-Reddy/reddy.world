@@ -1,5 +1,5 @@
 import {css, html, LitElement} from 'lit';
-import {customElement} from 'lit/decorators.js';
+import {customElement, query} from 'lit/decorators.js';
 import mainCSS from '../css/mainCSS';
 import langCSS from '../css/langCSS';
 
@@ -12,11 +12,14 @@ import langCSS from '../css/langCSS';
  */
 @customElement('cv-linkedin-element')
 export class CVElement extends LitElement {
+  @query('#bio') bioSection!: HTMLElement;
+  @query('#experience') experienceSection!: HTMLElement;
+  @query('#skills') skillsSection!: HTMLElement;
+
   // Function to handle smooth scrolling
-  scrollToSection(sectionId: any) {
-    const section = this.shadowRoot.querySelector(`#${sectionId}`);
+  scrollToSection(section: HTMLElement) {
     if (section) {
-      section.scrollIntoView({behavior: 'smooth'});
+      section.scrollIntoView({behavior: 'smooth', block: 'start'});
     }
   }
 
@@ -49,142 +52,124 @@ export class CVElement extends LitElement {
         }
 
         .experience-title {
-        margin: 0;
-        margin: 0;
+          margin: 0;
+          margin: 0;
 
-      }
+        }
 
-      .undertitle {
-        font-style: italic;
-        margin-bottom: 1rem;
-      }
+        .undertitle {
+          font-style: italic;
+          margin-bottom: 1rem;
+        }
 
-      .undertitle, .timeframe, .location, .experience_description {
-        margin-left: 1rem;
-      }
+        .undertitle, .timeframe, .location, .experience_description {
+          margin-left: 1rem;
+        }
 
 
-      /* Style the bio section */
+        /* Style the bio section */
 
-      .bio {
-        width: 80%;
-        font-family: Arial, sans-serif;
-        margin: 20px 0;
-        padding: 20px;
-        border-radius: 20px;
-        position: relative;
-        background: linear-gradient(90deg, rgba(49, 27, 128, 0.45) 50%, rgba(49, 27, 128, 0.26) 50%);
-        background-size: 200% 100%;
-        transition: background-position 0.3s ease;
-        overflow: hidden;
-        display: inline-block;
-      }
+        #bio {
+          width: 80%;
+          font-family: Arial, sans-serif;
+          margin: 20px 0;
+          padding: 20px;
+          border-radius: 20px;
+          position: relative;
+          background: linear-gradient(90deg, rgba(49, 27, 128, 0.45) 50%, rgba(49, 27, 128, 0.26) 50%);
+          background-size: 200% 100%;
+          transition: background-position 0.3s ease;
+          overflow: hidden;
+          display: inline-block;
+        }
 
-      .bio:hover {
-        background-position: -100% 0;
-      }
+        #bio:hover {
+          background-position: -100% 0;
+        }
 
-      /* Style the text inside the bio */
+        /* Style the text inside the bio */
 
-      .bio p {
-        font-size: 0.625rem;
-        font-style: italic;
-        color: white;
-      }
+        #bio p {
+          font-size: 0.625rem;
+          font-style: italic;
+          color: white;
+        }
 
-      /* Style the quote underline */
+        /* Style the quote underline */
 
-      .bio::after {
-        content: "";
-        display: block;
-        height: 4px;
-        background: linear-gradient(to left, #f69ec4, #f9dd94 100%);
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 0;
-        transition: width .5s ease 0s, right .5s ease 0s;
-      }
+        #bio::after {
+          content: "";
+          display: block;
+          height: 4px;
+          background: linear-gradient(to left, #f69ec4, #f9dd94 100%);
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 0;
+          transition: width .5s ease 0s, right .5s ease 0s;
+        }
 
-      .bio:hover::after {
-        width: 100%;
-        right: 0;
-      }
+        #bio:hover::after {
+          width: 100%;
+          right: 0;
+        }
 
-      /* Style links within the quote */
+        /* Style the experience section */
 
-      .bio a {
-        color: #fff;
-        border-radius: 8px;
-        text-transform: uppercase;
-        text-decoration: none;
-        letter-spacing: .25em;
-        padding: 15px;
-        position: relative;
-        display: inline-block;
-      }
+        #experience {
+          width: 80%;
+        }
 
-      .bio a:hover::after {
-        width: 100%;
-        right: 0;
-      }
+        /* Style the list within the experience section */
 
-      /* Style the experience section */
+        #experience-list {
+          display: grid;
+          grid-template-columns: 1fr;
+        }
 
-      .experience {
-        width: 80%;
-      }
+        /* Style the skills section */
 
-      /* Style the list within the experience section */
+        #skills {
+          padding: 1rem;
+        }
 
-      #experience-list {
-        display: grid;
-        grid-template-columns: 1fr;
-      }
+        /* Style the grid within the skills section */
 
-      /* Style the skills section */
+        #skillsGrid {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          padding: 1rem;
+        }
 
-      skills {
-        padding: 1rem;
-      }
+        body {
+          margin: 0;
+          padding: 0;
+          background: rgb(230, 230, 230);
 
-      /* Style the grid within the skills section */
+          color: rgb(50, 50, 50);
+          font-family: 'Open Sans', sans-serif;
+          font-size: 112.5%;
+          line-height: 1.6em;
+        }
 
-      #skillsGrid {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        padding: 1rem;
-      }
+        /* ================ The Timeline ================ */
+        /* Reset some default styles for better alignment */
 
-      body {
-        margin: 0;
-        padding: 0;
-        background: rgb(230, 230, 230);
+        ul.timeline {
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+        }
 
-        color: rgb(50, 50, 50);
-        font-family: 'Open Sans', sans-serif;
-        font-size: 112.5%;
-        line-height: 1.6em;
-      }
+        body {
+          margin: 0;
+          padding: 0;
+          background: rgb(230, 230, 230);
 
-      /* ================ The Timeline ================ */
-      /* Reset some default styles for better alignment */
-
-      ul.timeline {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-      }
-
-      body {
-        margin: 0;
-        padding: 0;
-        background: rgb(230, 230, 230);
-
-        color: rgb(50, 50, 50);
-        font-family: 'Open Sans', sans-serif;
-        font-size: 112.5%;
-        line-height: 1.6em;
+          color: rgb(50, 50, 50);
+          font-family: 'Open Sans', sans-serif;
+          font-size: 112.5%;
+          line-height: 1.6em;
       }
 
       .timeline {
@@ -456,31 +441,31 @@ export class CVElement extends LitElement {
 
       }
 
-      @media screen and (max-width: 660px) {
+        @media screen and (max-width: 660px) {
 
-        .direction-l .desc,
-        .direction-r .desc {
-          margin: 1em 4em 0 4em;
+          .direction-l .desc,
+          .direction-r .desc {
+            margin: 1em 4em 0 4em;
+          }
+
         }
 
-      }
 
+        @media (max-width: 952px) {
+          /* Adjust styles for smaller screens */
+          skillsgrid {
+            grid-template-columns: 1fr;
+          }
 
-      @media (max-width: 952px) {
-        /* Adjust styles for smaller screens */
-        skillsgrid {
-          grid-template-columns: 1fr;
+          #experience {
+            padding: 1rem;
+          }
+
+          /* Set maximum width for list items */
+          li {
+            max-width: 100vw;
+          }
         }
-
-        .experience {
-          padding: 1rem;
-        }
-
-        /* Set maximum width for list items */
-        li {
-          max-width: 100vw;
-        }
-      }
       `];
   }
 
@@ -503,13 +488,17 @@ export class CVElement extends LitElement {
         <main>
           <h1>Ryan van Lil-Reddy</h1>
           <nav>
+
             <ul>
-              <li><a href="#" @click=${() => this.scrollToSection('experience')}>Experience</a></li>
-              <li><a href="#" @click=${() => this.scrollToSection('skills')}>Skills</a></li>
+              <li><a @click=${() => this.scrollToSection(this.bioSection)}>Bio</a></li>
+              <li><a @click=${() => this.scrollToSection(this.experienceSection)}>Experience</a></li>
+              <li><a @click=${() => this.scrollToSection(this.skillsSection)}>Skills</a></li>
             </ul>
           </nav>
 
-          <div class="bio">
+          <hr>
+
+          <div id="bio">
             <p>
               "Driven by a passion for making a positive impact, <br>
               my journey has been a dynamic and transformative one. <br> <br>
@@ -517,8 +506,8 @@ export class CVElement extends LitElement {
               With diverse experiences spanning product design, costume creation, sales, journalism, management, <br>
               and even a venture into modeling and acting, I've cultivated a unique perspective. <br> <br>
 
-                Inspired by the wisdom of Alan Watts, I embarked on a quest to discover true happiness, <br>
-                ultimately leading me to excel in the world of Computer Science Engineering, where innovation and
+              Inspired by the wisdom of Alan Watts, I embarked on a quest to discover true happiness, <br>
+              ultimately leading me to excel in the world of Computer Science Engineering, where innovation and
               creativity thrive."
             </p>
             <p>
@@ -529,8 +518,8 @@ export class CVElement extends LitElement {
           </div>
           <hr>
 
-          <h2 id="experience">Experience</h2>
-          <div class="experience">
+          <h2>Experience</h2>
+          <div id="experience">
             <ul class="timeline">
               <!-- Experience Item 1 -->
               <li>
@@ -540,37 +529,37 @@ export class CVElement extends LitElement {
                     <span class="time-wrapper"><span class="time">2020 - 2022</span>
                   </div>
                   <div class="desc">
-                      Video Editing, content creation, image design, moderation, audience management.
-                    </div>
+                    Video Editing, content creation, image design, moderation, audience management.
                   </div>
-                </li>
+                </div>
+              </li>
 
-                <!-- Experience Item 2 -->
-                <li>
-                  <div class="direction-l">
-                    <div class="flag-wrapper">
-                      <span class="flag">House of Gentle Frequencies</span>
-                      <span class="time-wrapper"><span class="time">2020 - 2022</span>
-                    </div>
-                    <div class="desc">
-                      Safe house for the advocacy of women's health, in the broadest sense.
-                    </div>
+              <!-- Experience Item 2 -->
+              <li>
+                <div class="direction-l">
+                  <div class="flag-wrapper">
+                    <span class="flag">House of Gentle Frequencies</span>
+                    <span class="time-wrapper"><span class="time">2020 - 2022</span>
                   </div>
-                </li>
-                <li>
-                  <div class="direction-r">
-                    <div class="flag-wrapper">
-                      <span class="flag">Tea and Dragons</span>
-                      <span class="time-wrapper"><span class="time">2022 - present</span>
-                    </div>
-                    <div class="desc">
-                      Business-to-business sales of craft lemonades in the Benelux area.
-                    </div>
+                  <div class="desc">
+                    Safe house for the advocacy of women's health, in the broadest sense.
                   </div>
-                </li>
-                <li>
-                  <div class="direction-l">
-                    <div class="flag-wrapper">
+                </div>
+              </li>
+              <li>
+                <div class="direction-r">
+                  <div class="flag-wrapper">
+                    <span class="flag">Tea and Dragons</span>
+                    <span class="time-wrapper"><span class="time">2022 - present</span>
+                  </div>
+                  <div class="desc">
+                    Business-to-business sales of craft lemonades in the Benelux area.
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="direction-l">
+                  <div class="flag-wrapper">
                       <span class="flag">A.F.F.</span>
                       <span class="time-wrapper"><span class="time">2020 - 2021</span>
                     </div>
@@ -648,56 +637,56 @@ export class CVElement extends LitElement {
                     </div>
                   </div>
                 </li>
-              </ul>
-            </div>
+            </ul>
+          </div>
 
-            <h2>Education</h2>
-            <div class="experience">
-              <ul class="timeline" id="experience-list">
-                <!-- Education Item 1 -->
-                <li>
-                  <div class="direction-l">
-                    <div class="flag-wrapper">
-                      <span class="flag">Utrecht University of Applied Sciences</span>
-                      <span class="time-wrapper"><span class="time">2021 - 2025</span>
-                    </div>
-                    <div class="desc">
-                      Bachelor of Applied Science - BASc, Software Development
-                    </div>
+          <h2>Education</h2>
+          <div class="education">
+            <ul class="timeline" id="experience-list">
+              <!-- Education Item 1 -->
+              <li>
+                <div class="direction-l">
+                  <div class="flag-wrapper">
+                    <span class="flag">Utrecht University of Applied Sciences</span>
+                    <span class="time-wrapper"><span class="time">2021 - 2025</span>
                   </div>
-                </li>
-
-                <!-- Education Item 2 -->
-                <li>
-                  <div class="direction-r">
-                    <div class="flag-wrapper">
-                      <span class="flag">Hout- en Meubileringscollege</span>
-                      <span class="time-wrapper"><span class="time">2013 - 2017</span>
-                    </div>
-                    <div class="desc">
-                      Higher Vocational College, Furniture Design and Manufacturing
-                    </div>
+                  <div class="desc">
+                    Bachelor of Applied Science - BASc, Software Development
                   </div>
-                </li>
+                </div>
+              </li>
 
-                <!-- Education Item 3 -->
-                <li>
-                  <div class="direction-l">
-                    <div class="flag-wrapper">
-                      <span class="flag">Eerste Christelijke Lyceum Haarlem</span>
-                      <span class="time-wrapper"><span class="time">2004 - 2009</span>
-                    </div>
-                    <div class="desc">
-                      HAVO Nature+Technique, Nature, Physics, Technology, Art
-                    </div>
+              <!-- Education Item 2 -->
+              <li>
+                <div class="direction-r">
+                  <div class="flag-wrapper">
+                    <span class="flag">Hout- en Meubileringscollege</span>
+                    <span class="time-wrapper"><span class="time">2013 - 2017</span>
                   </div>
-                </li>
-              </ul>
-            </div>
+                  <div class="desc">
+                    Higher Vocational College, Furniture Design and Manufacturing
+                  </div>
+                </div>
+              </li>
 
-          <skills>
-            <h2 id="skills">Skills</h2>
-            <hr>
+              <!-- Education Item 3 -->
+              <li>
+                <div class="direction-l">
+                  <div class="flag-wrapper">
+                    <span class="flag">Eerste Christelijke Lyceum Haarlem</span>
+                    <span class="time-wrapper"><span class="time">2004 - 2009</span>
+                  </div>
+                  <div class="desc">
+                    HAVO Nature+Technique, Nature, Physics, Technology, Art
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <hr>
+          <div id="skills">
+            <h2>Skills</h2>
             <div id="skillsgrid">
               <!-- Skills Items -->
               <div class="computer-skills">
@@ -707,27 +696,27 @@ export class CVElement extends LitElement {
                 </div>
                 <div class="skill-badge">
                   <span class="skill-name">Object-Oriented Programming <br>&nbsp;&nbsp;&nbsp;(OOP)</span>
-                  </div>
-                  <div class="skill-badge">
-                    <span class="skill-name">CAD DESIGN <br>&nbsp;&nbsp;&nbsp;(3D Modeling, Rhino 3D)</span>
-                  </div>
                 </div>
+                <div class="skill-badge">
+                  <span class="skill-name">CAD DESIGN <br>&nbsp;&nbsp;&nbsp;(3D Modeling, Rhino 3D)</span>
+                </div>
+              </div>
 
-                <div class="programming-languages">
-                  <h3>Programming Languages</h3>
-                  <div class="skill-badge">
-                    <span class="skill-name">Python</span>
-                  </div>
-                  <div class="skill-badge">
-                    <span class="skill-name">Java</span>
-                  </div>
-                  <div class="skill-badge">
-                    <span class="skill-name">Html, css, javascript, typescript</span>
-                  </div>
-                  <div class="skill-badge">
-                    <span class="skill-name">JUnit</span>
-                  </div>
-                  <div class="skill-badge">
+              <div class="programming-languages">
+                <h3>Programming Languages</h3>
+                <div class="skill-badge">
+                  <span class="skill-name">Python</span>
+                </div>
+                <div class="skill-badge">
+                  <span class="skill-name">Java</span>
+                </div>
+                <div class="skill-badge">
+                  <span class="skill-name">Html, css, javascript, typescript</span>
+                </div>
+                <div class="skill-badge">
+                  <span class="skill-name">JUnit</span>
+                </div>
+                <div class="skill-badge">
                     <span class="skill-name">Cucumber</span>
                   </div>
                   <div class="skill-badge">
@@ -772,9 +761,9 @@ export class CVElement extends LitElement {
                     <span class="skill-name">Photoshop</span>
                   </div>
                 </div>
-              </div>
-            </skills>
-          </main>
+            </div>
+          </div>
+        </main>
       </div>
     `;
   }
