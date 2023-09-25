@@ -16,160 +16,149 @@ export class CVElement extends LitElement {
   @query('#experience') experienceSection!: HTMLElement;
   @query('#education') educationSection!: HTMLElement;
   @query('#skills') skillsSection!: HTMLElement;
-  // Function to handle smooth scrolling
-  scrollToSection(section: HTMLElement) {
-    if (section) {
-      section.scrollIntoView({behavior: 'smooth', block: 'start'});
-    }
-  }
 
   constructor() {
     super();
   }
 
   static get styles() {
-    return [
-      langCSS,
-      mainCSS,
-      css`
-        #cv {
-          display: flex;
-          justify-content: center;
-          //align-items: center; /* Optional: Center vertically as well */
-          //height: 100vh; /* Optional: This centers content vertically within the viewport */
-          width: 100vw;
-          list-style-type: none;
-          padding: 1rem;
+    return [langCSS, mainCSS, css`
+      #cv {
+        display: flex;
+        justify-content: center;
+        //align-items: center; /* Optional: Center vertically as well */
+        //height: 100vh; /* Optional: This centers content vertically within the viewport */
+        width: 100vw;
+        list-style-type: none;
+        padding: 1rem;
 
-          fr {
-            width: 100%;
-          }
-        }
-
-        li, ul {
-          padding: 0;
-          //margin-left: 1rem;
-        }
-
-        .experience-title {
-          margin: 0;
-          margin: 0;
-
-        }
-
-        .undertitle {
-          font-style: italic;
-          margin-bottom: 1rem;
-        }
-
-        .undertitle, .timeframe, .location, .experience_description {
-          margin-left: 1rem;
-        }
-
-
-        /* Style the bio section */
-
-        #bio {
-          width: 80%;
-          font-family: Arial, sans-serif;
-          margin: 20px 0;
-          padding: 20px;
-          border-radius: 20px;
-          position: relative;
-          background: linear-gradient(90deg, rgba(49, 27, 128, 0.45) 50%, rgba(49, 27, 128, 0.26) 50%);
-          background-size: 200% 100%;
-          transition: background-position 0.3s ease;
-          overflow: hidden;
-          display: inline-block;
-        }
-
-        #bio:hover {
-          background-position: -100% 0;
-        }
-
-        /* Style the text inside the bio */
-
-        #bio p {
-          font-size: 0.625rem;
-          font-style: italic;
-          color: white;
-        }
-
-        /* Style the quote underline */
-
-        #bio::after {
-          content: "";
-          display: block;
-          height: 4px;
-          background: linear-gradient(to left, #f69ec4, #f9dd94 100%);
-          position: absolute;
-          bottom: 0;
-          right: 0;
-          width: 0;
-          transition: width .5s ease 0s, right .5s ease 0s;
-        }
-
-        #bio:hover::after {
+        fr {
           width: 100%;
-          right: 0;
         }
+      }
 
-        /* Style the experience section */
+      li, ul {
+        padding: 0;
+        //margin-left: 1rem;
+      }
 
-        #experience {
-          width: 80%;
-        }
+      .experience-title {
+        margin: 0;
+      }
 
-        /* Style the list within the experience section */
+      .undertitle {
+        font-style: italic;
+        margin-bottom: 1rem;
+      }
 
-        #experience-list {
-          display: grid;
-          grid-template-columns: 1fr;
-        }
+      .undertitle, .timeframe, .location, .experience_description {
+        margin-left: 1rem;
+      }
 
-        /* Style the skills section */
 
-        #skills {
-          padding: 1rem;
-        }
+      /* Style the bio section */
 
-        /* Style the grid within the skills section */
+      #bio {
+        width: 80%;
+        font-family: Arial, sans-serif;
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 20px;
+        position: relative;
+        background: linear-gradient(90deg, rgba(49, 27, 128, 0.45) 50%, rgba(49, 27, 128, 0.26) 50%);
+        background-size: 200% 100%;
+        transition: background-position 0.3s ease;
+        overflow: hidden;
+        display: inline-block;
+      }
 
-        #skillsGrid {
-          display: grid;
-          grid-template-columns: 1fr 1fr 1fr 1fr;
-          padding: 1rem;
-        }
+      #bio:hover {
+        background-position: -100% 0;
+      }
 
-        body {
-          margin: 0;
-          padding: 0;
-          background: rgb(230, 230, 230);
+      /* Style the text inside the bio */
 
-          color: rgb(50, 50, 50);
-          font-family: 'Open Sans', sans-serif;
-          font-size: 112.5%;
-          line-height: 1.6em;
-        }
+      #bio p {
+        font-size: 0.625rem;
+        font-style: italic;
+        color: white;
+      }
 
-        /* ================ The Timeline ================ */
-        /* Reset some default styles for better alignment */
+      /* Style the quote underline */
 
-        ul.timeline {
-          list-style-type: none;
-          padding: 0;
-          margin: 0;
-        }
+      #bio::after {
+        content: "";
+        display: block;
+        height: 4px;
+        background: linear-gradient(to left, #f69ec4, #f9dd94 100%);
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 0;
+        transition: width .5s ease 0s, right .5s ease 0s;
+      }
 
-        body {
-          margin: 0;
-          padding: 0;
-          background: rgb(230, 230, 230);
+      #bio:hover::after {
+        width: 100%;
+        right: 0;
+      }
 
-          color: rgb(50, 50, 50);
-          font-family: 'Open Sans', sans-serif;
-          font-size: 112.5%;
-          line-height: 1.6em;
+      /* Style the experience section */
+
+      #experience {
+        width: 80%;
+      }
+
+      /* Style the list within the experience section */
+
+      #experience-list {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      /* Style the skills section */
+
+      #skills {
+        padding: 1rem;
+      }
+
+      /* Style the grid within the skills section */
+
+      #skillsGrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding: 1rem;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        background: rgb(230, 230, 230);
+
+        color: rgb(50, 50, 50);
+        font-family: 'Open Sans', sans-serif;
+        font-size: 112.5%;
+        line-height: 1.6em;
+      }
+
+      /* ================ The Timeline ================ */
+      /* Reset some default styles for better alignment */
+
+      ul.timeline {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        background: rgb(230, 230, 230);
+
+        color: rgb(50, 50, 50);
+        font-family: 'Open Sans', sans-serif;
+        font-size: 112.5%;
+        line-height: 1.6em;
       }
 
       .timeline {
@@ -441,32 +430,39 @@ export class CVElement extends LitElement {
 
       }
 
-        @media screen and (max-width: 660px) {
+      @media screen and (max-width: 660px) {
 
-          .direction-l .desc,
-          .direction-r .desc {
-            margin: 1em 4em 0 4em;
-          }
-
+        .direction-l .desc,
+        .direction-r .desc {
+          margin: 1em 4em 0 4em;
         }
 
+      }
 
-        @media (max-width: 952px) {
-          /* Adjust styles for smaller screens */
-          skillsgrid {
-            grid-template-columns: 1fr;
-          }
 
-          #experience {
-            padding: 1rem;
-          }
-
-          /* Set maximum width for list items */
-          li {
-            max-width: 100vw;
-          }
+      @media (max-width: 952px) {
+        /* Adjust styles for smaller screens */
+        skillsgrid {
+          grid-template-columns: 1fr;
         }
-      `];
+
+        #experience {
+          padding: 1rem;
+        }
+
+        /* Set maximum width for list items */
+        li {
+          max-width: 100vw;
+        }
+      }
+    `];
+  }
+
+  // Function to handle smooth scrolling
+  scrollToSection(section: HTMLElement) {
+    if (section) {
+      section.scrollIntoView({behavior: 'smooth', block: 'start'});
+    }
   }
 
   firstUpdated(changedProperties: any) {
@@ -528,7 +524,7 @@ export class CVElement extends LitElement {
               <li>
                 <div class="direction-r">
                   <div class="flag-wrapper">
-                    <span class="flag">Tom Crown: Youtube</span>
+                    <span class="flag"><a href="https://www.youtube.com/channel/UCiuD3eNaZ95eSXImp_eSIww">Tom Crown: Youtube</a></span>
                     <span class="time-wrapper"><span class="time">2020 - 2022</span>
                   </div>
                   <div class="desc">
@@ -541,7 +537,7 @@ export class CVElement extends LitElement {
               <li>
                 <div class="direction-l">
                   <div class="flag-wrapper">
-                    <span class="flag">House of Gentle Frequencies</span>
+                    <span class="flag"><a href="https://www.facebook.com/HouseofGentleFrequencies/">House of Gentle Frequencies</a></span>
                     <span class="time-wrapper"><span class="time">2020 - 2022</span>
                   </div>
                   <div class="desc">
@@ -552,7 +548,7 @@ export class CVElement extends LitElement {
               <li>
                 <div class="direction-r">
                   <div class="flag-wrapper">
-                    <span class="flag">Tea and Dragons</span>
+                    <span class="flag"><a href="https://www.teaanddragons.art">Tea and Dragons</a></span>
                     <span class="time-wrapper"><span class="time">2022 - present</span>
                   </div>
                   <div class="desc">
@@ -563,83 +559,84 @@ export class CVElement extends LitElement {
               <li>
                 <div class="direction-l">
                   <div class="flag-wrapper">
-                      <span class="flag">A.F.F.</span>
-                      <span class="time-wrapper"><span class="time">2020 - 2021</span>
-                    </div>
-                    <div class="desc">
-                      Business-to-business sales of craft lemonades in the Benelux area.
-                    </div>
+                    <span class="flag"><a href="https://amsterdamsefrisdrankfabriek.nl/">A.F.F.</a></span>
+                    <span class="time-wrapper"><span class="time">2020 - 2021</span>
                   </div>
-                </li>
+                  <div class="desc">
+                    Business-to-business sales of craft lemonades in the Benelux area.
+                  </div>
+                </div>
+              </li>
 
-                <!-- Experience Item 3 -->
-                <li>
-                  <div class="direction-r">
-                    <div class="flag-wrapper">
-                      <span class="flag">ReddyMaekers</span>
-                      <span class="time-wrapper"><span class="time">2014 - 2019</span>
-                    </div>
-                    <div class="desc">
-                      Festival/filmset decors and props, and other customized building assignments/brand activations.
-                    </div>
+              <!-- Experience Item 3 -->
+              <li>
+                <div class="direction-r">
+                  <div class="flag-wrapper">
+                    <span class="flag"><a href="https://www.instagram.com/reddymaekers/">ReddyMaekers</a></span>
+                    <span class="time-wrapper"><span class="time">2014 - 2019</span>
                   </div>
-                </li>
+                  <div class="desc">
+                    Festival/filmset decors and props, and other customized building assignments/brand activations.
+                  </div>
+                </div>
+              </li>
 
-                <!-- Experience Item 4 -->
-                <li>
-                  <div class="direction-l">
-                    <div class="flag-wrapper">
-                      <span class="flag">Studio Nepco</span>
-                      <span class="time-wrapper"><span class="time">2015 - 2018</span>
-                    </div>
-                    <div class="desc">
-                      Pattern design, Foam Modulation, painting, Robotics, Sewing, Film/theatre Production, Acting.
-                    </div>
+              <!-- Experience Item 4 -->
+              <li>
+                <div class="direction-l">
+                  <div class="flag-wrapper">
+                    <span class="flag"><a href="https://nepco.nl/">Studio Nepco</a></span>
+                    <span class="time-wrapper"><span class="time">2015 - 2018</span>
                   </div>
-                </li>
+                  <div class="desc">
+                    Pattern design, Foam Modulation, painting, Robotics, Sewing, Film/theatre Production, Acting.
+                  </div>
+                </div>
+              </li>
 
-                <!-- Experience Item 5 -->
-                <li>
-                  <div class="direction-r">
-                    <div class="flag-wrapper">
-                      <span class="flag">Ryan Reddy</span>
-                      <span class="time-wrapper"><span class="time">2015 - 2017</span>
-                    </div>
-                    <div class="desc">
-                      Fabrication and design of decors, props, costumes, and special effects.
-                      Also theater, performance, and just free experimentation.
-                    </div>
+              <!-- Experience Item 5 -->
+              <li>
+                <div class="direction-r">
+                  <div class="flag-wrapper">
+                    <span class="flag"><a href="https://www.instagram.com/ryan___reddy/">Ryan Reddy</a></span>
+                    <span class="time-wrapper"><span class="time">2015 - 2017</span>
                   </div>
-                </li>
+                  <div class="desc">
+                    My own art;
+                    Fabrication and design of decors, props, costumes, and special effects.
+                    However performance, theatre, and just free experimentation, though the list doesn't end there.
+                  </div>
+                </div>
+              </li>
 
-                <!-- Experience Item 6 -->
-                <li>
-                  <div class="direction-l">
-                    <div class="flag-wrapper">
-                      <span class="flag">Laarman Lab</span>
-                      <span class="time-wrapper"><span class="time">2014 - 2015</span>
-                    </div>
-                    <div class="desc">
-                      Cutting-edge technique, combined with old lore crafts.
-                      CAD design, 3D manufacturing techniques.
-                      The renowned Joris Laarman furniture is shown in galleries and museums all over the world.
-                    </div>
+              <!-- Experience Item 6 -->
+              <li>
+                <div class="direction-l">
+                  <div class="flag-wrapper">
+                    <span class="flag"><a href="https://www.jorislaarman.com/">Laarman Lab</a></span>
+                    <span class="time-wrapper"><span class="time">2014 - 2015</span>
                   </div>
-                </li>
+                  <div class="desc">
+                    Cutting-edge technique, combined with old lore crafts.
+                    CAD design, 3D manufacturing techniques.
+                    The renowned Joris Laarman furniture is shown in galleries and museums all over the world.
+                  </div>
+                </div>
+              </li>
 
-                <!-- Experience Item 7 -->
-                <li>
-                  <div class="direction-r">
-                    <div class="flag-wrapper">
-                      <span class="flag">Pepperminds</span>
-                      <span class="time-wrapper"><span class="time">2009 - 2011</span>
-                    </div>
-                    <div class="desc">
-                      Door-to-door sales,
-                      coaching and training new staff, management.
-                    </div>
+              <!-- Experience Item 7 -->
+              <li>
+                <div class="direction-r">
+                  <div class="flag-wrapper">
+                    <span class="flag"><a href="https://www.pepperminds.nl/">Pepperminds</a></span>
+                    <span class="time-wrapper"><span class="time">2009 - 2011</span>
                   </div>
-                </li>
+                  <div class="desc">
+                    Door-to-door sales,
+                    coaching and training new staff, management.
+                  </div>
+                </div>
+              </li>
             </ul>
           </div>
 
@@ -652,7 +649,7 @@ export class CVElement extends LitElement {
               <li>
                 <div class="direction-l">
                   <div class="flag-wrapper">
-                    <span class="flag">Utrecht University of Applied Sciences</span>
+                    <span class="flag"><a href="https://www.hu.nl/">Utrecht University of Applied Sciences</a></span>
                     <span class="time-wrapper"><span class="time">2021 - 2025</span>
                   </div>
                   <div class="desc">
@@ -665,7 +662,7 @@ export class CVElement extends LitElement {
               <li>
                 <div class="direction-r">
                   <div class="flag-wrapper">
-                    <span class="flag">Hout- en Meubileringscollege</span>
+                    <span class="flag"><a href="https://www.hmcollege.nl/">Hout- en Meubileringscollege</a></span>
                     <span class="time-wrapper"><span class="time">2013 - 2017</span>
                   </div>
                   <div class="desc">
@@ -678,7 +675,7 @@ export class CVElement extends LitElement {
               <li>
                 <div class="direction-l">
                   <div class="flag-wrapper">
-                    <span class="flag">Eerste Christelijke Lyceum Haarlem</span>
+                    <span class="flag"><a href="https://ecl.nl/">Eerste Christelijke Lyceum Haarlem</a></span>
                     <span class="time-wrapper"><span class="time">2004 - 2009</span>
                   </div>
                   <div class="desc">
@@ -711,62 +708,69 @@ export class CVElement extends LitElement {
               <div class="programming-languages">
                 <h3>Programming Languages</h3>
                 <div class="skill-badge">
-                  <span class="skill-name">Python</span>
+                  <span class="skill-name"><a href="https://www.python.org/">Python</a></span>
                 </div>
                 <div class="skill-badge">
-                  <span class="skill-name">Java</span>
+                  <span class="skill-name"><a href="https://www.java.com/">Java</a></span>
                 </div>
                 <div class="skill-badge">
-                  <span class="skill-name">Html, css, javascript, typescript</span>
+                  <span class="skill-name"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">Html, css, javascript, typescript</a></span>
                 </div>
                 <div class="skill-badge">
-                  <span class="skill-name">JUnit</span>
+                  <span class="skill-name"><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></span>
                 </div>
                 <div class="skill-badge">
-                    <span class="skill-name">Cucumber</span>
-                  </div>
-                  <div class="skill-badge">
-                    <span class="skill-name">PostgreSQL</span>
-                  </div>
+                  <span class="skill-name"><a href="https://www.typescriptlang.org/docs">TypeScript</a></span>
                 </div>
+                <div class="skill-badge">
+                  <span class="skill-name"><a href="https://junit.org/">JUnit</a></span>
+                </div>
+                <div class="skill-badge">
+                  <span class="skill-name"><a href="https://cucumber.io/">Cucumber</a></span>
+                </div>
+                <div class="skill-badge">
+                  <span class="skill-name"><a href="https://www.postgresql.org/">PostgreSQL</a></span>
+                </div>
+              </div>
 
-                <div class="real-life-languages">
-                  <h3>Real-Life Languages</h3>
-                  <div class="skill-badge">
-                    <span class="skill-name">English</span>
-                  </div>
-                  <div class="skill-badge">
-                    <span class="skill-name">Dutch</span>
-                  </div>
+              <div class="real-life-languages">
+                <h3>Real-Life Languages</h3>
+                <div class="skill-badge">
+                  <span class="skill-name">English</span>
                 </div>
+                <div class="skill-badge">
+                  <span class="skill-name">Dutch</span>
+                </div>
+              </div>
 
-                <div class="other-skills">
-                  <h3>Other Skills</h3>
-                  <div class="skill-badge">
-                    <span class="skill-name">Team Leadership</span>
-                  </div>
-                  <div class="skill-badge">
-                    <span class="skill-name">Concept Development</span>
-                  </div>
-                  <div class="skill-badge">
-                    <span class="skill-name">Fine Woodworking</span>
-                  </div>
-                  <div class="skill-badge">
-                    <span class="skill-name">Set Decoration</span>
-                  </div>
-                  <div class="skill-badge">
-                    <span class="skill-name">Sewing</span>
-                  </div>
-                  <div class="skill-badge">
-                    <span class="skill-name">Pattern Design</span>
-                  </div>
-                  <div class="skill-badge">
-                    <span class="skill-name">Art Direction</span>
-                  </div>
-                  <div class="skill-badge">
-                    <span class="skill-name">Photoshop</span>
-                  </div>
+              <div class="other-skills">
+                <h3>Other Skills</h3>
+                <div class="skill-badge">
+                  <span class="skill-name">Team Leadership</span>
                 </div>
+                <div class="skill-badge">
+                  <span class="skill-name">Concept Development</span>
+                </div>
+                <div class="skill-badge">
+                  <span class="skill-name">Fine Woodworking</span>
+                </div>
+                <div class="skill-badge">
+                  <span class="skill-name">Set Decoration</span>
+                </div>
+                <div class="skill-badge">
+                  <span class="skill-name">Sewing</span>
+                </div>
+                <div class="skill-badge">
+                  <span class="skill-name">Pattern Design</span>
+                </div>
+                <div class="skill-badge">
+                  <span class="skill-name">Art Direction</span>
+                </div>
+                <div class="skill-badge">
+                  <span class="skill-name">Photoshop</span>
+                </div>
+              </div>
             </div>
           </div>
         </main>
