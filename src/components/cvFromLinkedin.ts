@@ -9,6 +9,13 @@ import {customElement} from 'lit/decorators.js';
  */
 @customElement('cv-linkedin-element')
 export class CVElement extends LitElement {
+  // Function to handle smooth scrolling
+  scrollToSection(sectionId: any) {
+    const section = this.shadowRoot.querySelector(`#${sectionId}`);
+    if (section) {
+      section.scrollIntoView({behavior: 'smooth'});
+    }
+  }
 
   constructor() {
     super();
@@ -491,46 +498,46 @@ export class CVElement extends LitElement {
         <header>
           <h1 hidden>C.V.</h1>
         </header>
-          <main>
-            <h1>Ryan van Lil-Reddy</h1>
-            <nav>
-              <ul>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-              </ul>
-            </nav>
+        <main>
+          <h1>Ryan van Lil-Reddy</h1>
+          <nav>
+            <ul>
+              <li><a href="#" @click=${() => this.scrollToSection('experience')}>Experience</a></li>
+              <li><a href="#" @click=${() => this.scrollToSection('skills')}>Skills</a></li>
+            </ul>
+          </nav>
 
-            <div class="bio">
-              <p>
-                "Driven by a passion for making a positive impact, <br>
-                my journey has been a dynamic and transformative one. <br> <br>
+          <div class="bio">
+            <p>
+              "Driven by a passion for making a positive impact, <br>
+              my journey has been a dynamic and transformative one. <br> <br>
 
-                With diverse experiences spanning product design, costume creation, sales, journalism, management, <br>
-                and even a venture into modeling and acting, I've cultivated a unique perspective. <br> <br>
+              With diverse experiences spanning product design, costume creation, sales, journalism, management, <br>
+              and even a venture into modeling and acting, I've cultivated a unique perspective. <br> <br>
 
                 Inspired by the wisdom of Alan Watts, I embarked on a quest to discover true happiness, <br>
                 ultimately leading me to excel in the world of Computer Science Engineering, where innovation and
-                creativity thrive."
-              </p>
-              <p>
-                "I'm Ryan, and I'm on a mission to make a difference."
-              </p>
-              - Ryan
+              creativity thrive."
+            </p>
+            <p>
+              "I'm Ryan, and I'm on a mission to make a difference."
+            </p>
+            - Ryan
 
-            </div>
-            <hr>
+          </div>
+          <hr>
 
-            <h2>Experience</h2>
-            <div class="experience">
-              <ul class="timeline">
-                <!-- Experience Item 1 -->
-                <li>
-                  <div class="direction-r">
-                    <div class="flag-wrapper">
-                      <span class="flag">Tom Crown: Youtube</span>
-                      <span class="time-wrapper"><span class="time">2020 - 2022</span>
-                    </div>
-                    <div class="desc">
+          <h2 id="experience">Experience</h2>
+          <div class="experience">
+            <ul class="timeline">
+              <!-- Experience Item 1 -->
+              <li>
+                <div class="direction-r">
+                  <div class="flag-wrapper">
+                    <span class="flag">Tom Crown: Youtube</span>
+                    <span class="time-wrapper"><span class="time">2020 - 2022</span>
+                  </div>
+                  <div class="desc">
                       Video Editing, content creation, image design, moderation, audience management.
                     </div>
                   </div>
@@ -686,18 +693,18 @@ export class CVElement extends LitElement {
               </ul>
             </div>
 
-            <skills>
-              <h2>Skills</h2>
-              <hr>
-              <div id="skillsgrid">
-                <!-- Skills Items -->
-                <div class="computer-skills">
-                  <h3>Computer Skills</h3>
-                  <div class="skill-badge">
-                    <span class="skill-name">Frameworks <br>&nbsp;&nbsp;&nbsp;(e.g., JUnit, Cucumber)</span>
-                  </div>
-                  <div class="skill-badge">
-                    <span class="skill-name">Object-Oriented Programming <br>&nbsp;&nbsp;&nbsp;(OOP)</span>
+          <skills>
+            <h2 id="skills">Skills</h2>
+            <hr>
+            <div id="skillsgrid">
+              <!-- Skills Items -->
+              <div class="computer-skills">
+                <h3>Computer Skills</h3>
+                <div class="skill-badge">
+                  <span class="skill-name">Frameworks <br>&nbsp;&nbsp;&nbsp;(e.g., JUnit, Cucumber)</span>
+                </div>
+                <div class="skill-badge">
+                  <span class="skill-name">Object-Oriented Programming <br>&nbsp;&nbsp;&nbsp;(OOP)</span>
                   </div>
                   <div class="skill-badge">
                     <span class="skill-name">CAD DESIGN <br>&nbsp;&nbsp;&nbsp;(3D Modeling, Rhino 3D)</span>

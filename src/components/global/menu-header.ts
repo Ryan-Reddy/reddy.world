@@ -27,7 +27,6 @@ export class MenuHeader extends LitElement {
       * {
         margin: 0;
         padding: 0;
-        // box-sizing: border-box;
         text-decoration: none;
       }
 
@@ -36,47 +35,39 @@ export class MenuHeader extends LitElement {
       }
 
       .header_bar {
-        //position: relative;
-        //overflow: hidden;
-
         display: flex;
         justify-content: space-between;
         align-items: center;
-        //min-height: 5.25rem;
         height: auto;
         padding: 2rem;
-      }
-
-      .ingelogd_als {
-        width: 176px;
-        position: relative;
-        left: 1em;
-        font-family: Fira Code, serif;
-        font-size: 12px;
-        text-align: left;
       }
 
       nav ul {
         float: right;
         margin-right: 8em;
         padding-right: 8em;
+
       }
 
       nav ul li {
         display: inline-block;
-        line-height: 1.5rem;
-        margin: 1rem;
+        //margin: 1rem;
+        margin: 0;
+        padding: 0;
         align-items: center;
 
       }
 
       nav ul li a {
         font-size: 11vw;
+        line-height: 1.2em; /* Adjust the line-height as needed */
         color: var(--wit);
         border-radius: 8px;
         text-transform: uppercase;
-        padding: 3vw;
-        padding-bottom: 0.75rem; /* Adjust the margin-bottom value as needed */
+        padding: 0.5rem 1rem; /* Adjust the padding as needed */
+        margin: 0; /* Remove margin */
+        display: inline-block; /* Add this to make the background color cover the entire link text */
+        transition: background-color var(--transitionInSeconds); /* Add a transition for smoother hover effect */
       }
 
       a.active, a:hover {
@@ -96,6 +87,7 @@ export class MenuHeader extends LitElement {
       .nav-button {
         opacity: 1;
         text-align: center;
+        //height: 6vw;
       }
 
       li {
@@ -227,13 +219,14 @@ export class MenuHeader extends LitElement {
         nav ul li {
           display: block;
         }
+
       ;
       }
 
       @media (prefers-color-scheme: light) {
         footer, nav ul li a {
           color: var(--zwart);
-          background-color: var(--wit);
+          background-color: transparent;
           border-color: var(--wit);
         }
 
