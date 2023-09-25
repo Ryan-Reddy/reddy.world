@@ -501,6 +501,7 @@ export class CVElement extends LitElement {
           <hr>
 
           <div id="bio">
+            <h2>Bio</h2>
             <p>
               "Driven by a passion for making a positive impact, <br>
               my journey has been a dynamic and transformative one. <br> <br>
