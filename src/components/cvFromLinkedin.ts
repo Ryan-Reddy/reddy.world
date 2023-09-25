@@ -1,6 +1,5 @@
 import {css, html, LitElement} from 'lit';
 import {customElement} from 'lit/decorators.js';
-
 /**
  * An example element.
  *
@@ -492,7 +491,7 @@ export class CVElement extends LitElement {
 
   render() {
     return html`
-      <link rel="stylesheet" href="/css/mainCSS.css">
+      <link rel="stylesheet" href="/src/css/mainCSS.css">
 
       <div id="cv">
         <header>
