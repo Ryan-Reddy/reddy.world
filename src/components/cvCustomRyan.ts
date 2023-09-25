@@ -14,6 +14,7 @@ import langCSS from '../css/langCSS';
 export class CVElement extends LitElement {
   @query('#bio') bioSection!: HTMLElement;
   @query('#experience') experienceSection!: HTMLElement;
+  @query('#education') educationSection!: HTMLElement;
   @query('#skills') skillsSection!: HTMLElement;
 
   // Function to handle smooth scrolling
@@ -492,6 +493,7 @@ export class CVElement extends LitElement {
             <ul>
               <li><a @click=${() => this.scrollToSection(this.bioSection)}>Bio</a></li>
               <li><a @click=${() => this.scrollToSection(this.experienceSection)}>Experience</a></li>
+              <li><a @click=${() => this.scrollToSection(this.educationSection)}>Education</a></li>
               <li><a @click=${() => this.scrollToSection(this.skillsSection)}>Skills</a></li>
             </ul>
           </nav>
@@ -516,10 +518,11 @@ export class CVElement extends LitElement {
             - Ryan
 
           </div>
+
           <hr>
 
-          <h2>Experience</h2>
           <div id="experience">
+            <h2>Experience</h2>
             <ul class="timeline">
               <!-- Experience Item 1 -->
               <li>
@@ -640,8 +643,10 @@ export class CVElement extends LitElement {
             </ul>
           </div>
 
-          <h2>Education</h2>
-          <div class="education">
+          <hr>
+
+          <div id="education">
+            <h2>Education</h2>
             <ul class="timeline" id="experience-list">
               <!-- Education Item 1 -->
               <li>
@@ -685,6 +690,7 @@ export class CVElement extends LitElement {
           </div>
 
           <hr>
+
           <div id="skills">
             <h2>Skills</h2>
             <div id="skillsgrid">
