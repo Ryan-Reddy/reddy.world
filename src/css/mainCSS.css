@@ -11,7 +11,6 @@
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
 
-  --silver: #cccccc;
   --gold: #876618;
   --groen: #398718;
   --blauw: #00aaff;
@@ -70,6 +69,7 @@ main {
 
 body {
   height: 100%;
+  margin: 0; /* some weird margin: 8px; is inherited from somewhere */
 }
 hr {
   margin-top: 2rem;
@@ -84,7 +84,7 @@ img {
   width: auto;
   max-height: 50svh;
   max-width: 90% !important;
-  padding: 0px !important;
+  padding: 0 !important;
   margin-left: auto !important;
   margin-right: auto !important;
   border: 1.5rem solid #f6f6dc !important;

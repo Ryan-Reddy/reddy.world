@@ -32,13 +32,13 @@ export class MenuFooter extends LitElement {
           //float: right;
           display: flex;
           align-items: center;
-          margin: 0.5rem;
+          //margin: 0.5rem;
           line-height: 2em; // height of buttons -> stops overlap
         }
 
         .nav-button {
           font-size: 1.7rem;
-          line-height: 2em;
+          line-height: 1.9em;
         }
 
         //.lang-match {
@@ -49,7 +49,6 @@ export class MenuFooter extends LitElement {
         body {
           font-family: "Montserrat", sans-serif;
           color: white;
-          font-size: 1em;
           opacity: 1;
         }
 
