@@ -37,11 +37,8 @@ export class CVElement extends LitElement {
       #cv {
         display: flex;
         justify-content: center;
-        //align-items: center; /* Optional: Center vertically as well */
-        //height: 100vh; /* Optional: This centers content vertically within the viewport */
-        width: 100vw;
+        width: 100%;
         list-style-type: none;
-        padding: 1rem;
 
         fr {
           width: 100%;
@@ -66,13 +63,14 @@ export class CVElement extends LitElement {
         margin-left: 1rem;
       }
 
-
       /* Style the bio section */
 
       #bio {
-        width: 80%;
+        width: 100%; /* Make the element take up the full width of its parent */
+        max-width: 80%; /* Set a maximum width */
+        box-sizing: border-box; /* Include padding and border in the width calculation */
         font-family: Arial, sans-serif;
-        margin: 20px 0;
+        margin: 1rem 0;
         padding: 3rem;
         border-radius: 20px;
         position: relative;
@@ -117,7 +115,6 @@ export class CVElement extends LitElement {
       /* Style the experience section */
 
       #experience {
-        width: 80%;
       }
 
       /* Style the list within the experience section */
@@ -130,7 +127,7 @@ export class CVElement extends LitElement {
       /* Style the skills section */
 
       #skills {
-        padding: 1rem;
+        //padding: 1rem;
       }
 
       /* Style the grid within the skills section */
@@ -144,44 +141,45 @@ export class CVElement extends LitElement {
       /* ================ Skills and badges.... ================ */
 
       #skills {
+        box-sizing: border-box; /* Include padding and border in the width calculation */
+        width: 100%; /* Make the element take up the full width of its parent */
+        max-width: 80%; /* Set a maximum width */
+        //padding: 1rem;
         ul {
           margin-top: 1rem;
           margin-bottom: 1rem;
         }
+
       }
 
       .skill-badge {
         position: relative; /* Make the .skill-badge element a positioning context for ::before */
         line-height: 24px;
+        padding-left: 200px; /* Add margin to create space between skill name and skill bar */
+
       }
 
       /* pill shaped bar */
 
-      .skill-badge::before {
+      .skill-badge:before {
         margin-bottom: 0.5rem;
         margin-top: 0.5rem;
         position: absolute;
         display: block;
         top: 0;
-        left: -100px; /* Adjust this value for spacing */
-        content: attr(data-percentage); /* Display the percentage from a data attribute */
-        //background: var(--be_here_now_blue); /* Color of the percentage bar */
-        background: linear-gradient(to right, var(--gold) 0%, var(--gold) attr(data-percentage), transparent attr(data-percentage), transparent 100%); /* Use a gradient to represent the percentage */
-
-        //height: 100%;
-        width: 100px; /* Set the width to 100px */
-        //z-index: 5; /* Adjust the z-index as needed */
-        border-radius: 4px;
-        color: #fff; /* Text color for the percentage */
-        font-size: 12px; /* Adjust the font size as needed */
+        left: 0;
+        content: attr(data-percentage);
+        background: linear-gradient(to right, var(--gold) 0%, var(--gold) attr(data-percentage)%, transparent attr(data-percentage)%, transparent 100%);
+        width: 200px;
+        color: #fff;
+        font-size: 12px;
         text-align: center;
-        line-height: 24px; /* Adjust the line height to vertically center the text */
+        line-height: 24px;
         height: 1rem;
         background: var(--be_here_now_blue);
         box-shadow: 2px 14px 15px -7px rgba(46, 12, 182, 0.46);
         border-radius: 50px;
         transition: all 0.5s;
-
       }
 
       /* ================ The Timeline ================ */
@@ -385,6 +383,14 @@ export class CVElement extends LitElement {
       /* ================ Timeline Media Queries ================ */
 
       @media screen and (max-width: 660px) {
+        .skill-badge {
+          padding-left: 0; /* Remove left padding on small screens */
+        }
+
+        /* Move the ::before pseudo-element above the skill-badge */
+        .skill-badge:before {
+          display: none;
+        }
 
         .timeline {
           width: 100%;
@@ -478,10 +484,6 @@ export class CVElement extends LitElement {
           z-index: 15;
         }
 
-      }
-
-      @media screen and (max-width: 660px) {
-
         .direction-l .desc,
         .direction-r .desc {
           margin: 1em 4em 0 4em;
@@ -490,7 +492,12 @@ export class CVElement extends LitElement {
       }
 
       @media (max-width: 952px) {
-        /* Adjust styles for smaller screens */
+
+        /* Style the bio section */
+        #bio {
+          padding: 1rem;
+        }
+
         skillsgrid {
           grid-template-columns: 1fr;
         }
@@ -733,19 +740,16 @@ export class CVElement extends LitElement {
               <!-- Skills Items -->
               <div class="computer-skills">
                 <h3>Computer Skills</h3>
-                <div class="skill-badge">
-                  <div class="skill-badge" data-percentage="90">
-                    <span class="skill-name"><a href="">Test Driven Design (using e.g., JUnit, Cucumber)</a></span>
-                  </div>
+                <div class="skill-badge" data-percentage="90">
+                  <span class="skill-name"><a href="">Test Driven Design (using e.g., JUnit, Cucumber)</a></span>
                 </div>
                 <div class="skill-badge" data-percentage="75">
                   <span class="skill-name"><a href="">Object-Oriented Programming <br>&nbsp;&nbsp;&nbsp;(OOP)</a></span>
                 </div>
-                <div class="skill-badge">
-                  <div class="skill-badge" data-percentage="80">
-                    <a href="">CAD DESIGN <br>&nbsp;&nbsp;&nbsp;(3D Modeling, Rhino 3D)</a></span>
-                  </div>
+                <div class="skill-badge" data-percentage="80">
+                  <a href="">CAD DESIGN <br>&nbsp;&nbsp;&nbsp;(3D Modeling, Rhino 3D)</a></span>
                 </div>
+
               </div>
               <hr>
               <div class="programming-languages">

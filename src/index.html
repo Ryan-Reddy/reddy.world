@@ -1,24 +1,26 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="">
-
+<html lang="en">
 <head>
+  <!-- Meta Tags -->
   <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
-
   <meta name="sitemap" content="sitemap.xml">
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
 
-  <!-- HTML Meta Tags -->
+  <!-- Title and Description -->
+  <title>reddy.world</title>
   <meta content="A little corner of the internet Ryan Reddy calls his home." property="og:title">
-  <meta content="  Ryan Reddy's portfolio, cv and contact info.
-  Also a place where project I work on get hosted.
-  Come see my latest exploits, resume, and contact me." name="description">
-  <meta content="nl_NL" property="og:locale:alternate"/>
+  <meta
+    content="Ryan Reddy's portfolio, CV, and contact info. Also a place where projects I work on get hosted. Come see my latest exploits, resume, and contact me."
+    name="description">
+  <meta content="nl_NL" property="og:locale:alternate">
 
-  <!-- Facebook Meta Tags -->
+  <!-- Facebook Open Graph Meta Tags -->
   <meta content="https://reddy.world/" property="og:url">
   <meta content="website" property="og:type">
-  <meta content="  Ryan Reddy's portfolio, cv and contact info.
-  Also a place where project I work on get hosted.
-  Come see my latest exploits, resume, and get into contact with me." property="og:description">
+  <meta
+    content="Ryan Reddy's portfolio, CV, and contact info. Also a place where projects I work on get hosted. Come see my latest exploits, resume, and get into contact with me."
+    property="og:description">
   <meta content="https://reddy.world/ryan_images/IMG_6869-scaled.png" property="og:image">
 
   <!-- Twitter Meta Tags -->
@@ -26,24 +28,19 @@
   <meta content="reddy.world" property="twitter:domain">
   <meta content="https://reddy.world/" property="twitter:url">
   <meta content="A little corner of the internet Ryan Reddy calls his home." name="twitter:title">
-  <meta content="  Ryan Reddy's portfolio, cv and contact info.
-  Also a place where project I work on get hosted.
-  Come see my latest exploits, resume, and get into contact with me." name="twitter:description">
+  <meta
+    content="Ryan Reddy's portfolio, CV, and contact info. Also a place where projects I work on get hosted. Come see my latest exploits, resume, and get into contact with me."
+    name="twitter:description">
   <meta content="https://reddy.world/ryan_images/IMG_6869-scaled.png" name="twitter:image">
-  <!-- Meta Tags Generated via https://www.opengraph.xyz -->
 
-  <!-- the above page related information should be within first 200-250 characters of the page to improve SEO-->
-  <meta charset="UTF-8">
-  <meta content="width=device-width, initial-scale=1" name="viewport">
-
-  <link href="humans.txt" rel="author" type="text/plain"/>
-
+  <!-- Styles and Favicon -->
+  <link href="/css/mainCSS.css" rel="stylesheet">
+  <link href="humans.txt" rel="author" type="text/plain">
   <link href="site.webmanifest" rel="manifest">
   <link href="../public/icons/apple-touch-icon.png" rel="apple-touch-icon">
-  <!-- Place favicon.ico in the root directory -->
   <meta content="#fafafa" name="theme-color">
 
-  <!-- Google tag (gtag.js) -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-12SFENLZLH"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -51,48 +48,33 @@
     function gtag() {
       dataLayer.push(arguments);
     }
-
     gtag('js', new Date());
     gtag('config', 'G-12SFENLZLH');
   </script>
 
+  <!-- JavaScript Modules -->
   <script defer src="vaadin-routing.js" type="module"></script>
   <script defer src="components/global/menu-header.ts" type="module"></script>
   <script defer src="components/global/menu-footer.ts" type="module"></script>
-
   <script defer src="components/global/my-listener.ts" type="module"></script>
   <script defer src="components/global/my-dispatcher.ts" type="module"></script>
-  <meta charset="UTF-8">
 
-  <link href="/css/mainCSS.css" rel="stylesheet">
-
-
-  <title>A little corner of the internet Ryan Reddy calls his home.</title>
-  <!--This sets title based upon event thrown from element-->
+  <!-- Custom Title Update Script -->
   <script>
     window.addEventListener('title-change', (e) => {
-      this.document.title = e.detail.message;
-    }, true) </script>
-
+      document.title = e.detail.message;
+    }, true);
+  </script>
 </head>
-<noscript>You need to enable JavaScript to run this app.</noscript>
 <body>
+<noscript>You need to enable JavaScript to run this app.</noscript>
 <header-menu></header-menu>
 <main>
-  <!-- Vaadin will add element based on urlhere -->
+  <!-- Vaadin will add elements based on the URL here -->
   <div id="app"></div>
-
-  <!--  DELETEABLE? inserted from boilerplate -->
-  <script src="js/vendor/modernizr-3.11.2.min.js" type="module"></script>
-  <script src="js/plugins.js" type="module"></script>
-  <script src="js/main.js" type="module"></script>
-  <!--  DELETEABLE? inserted from boilerplate -->
-
-
 </main>
 <footer>
   <footer-menu></footer-menu>
 </footer>
 </body>
-
 </html>

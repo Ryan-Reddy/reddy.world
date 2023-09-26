@@ -27,6 +27,44 @@ export default css`
     --be_here_now_blue: #301987;
   }
 
+
+  main {
+    width: 100vw;
+    //padding: 1rem;
+    line-height: normal;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+  }
+
+  body {
+    height: 100%;
+    margin: 0; /* some weird margin: 8px; is inherited from somewhere */
+
+  }
+
+  hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+
+
+  img {
+    width: auto;
+    max-height: 50svh;
+    max-width: 90% !important;
+    padding: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    border: 1.5rem solid #f6f6dc !important;
+    -webkit-filter: sepia(7%); /* Safari 6.0 - 9.0 */
+    filter: sepia(7%);
+    display: block !important;
+    margin-bottom: 3rem !important;
+  }
+
   * {
     text-decoration: none;
   }
@@ -69,43 +107,6 @@ export default css`
     width: 0;
   }
 
-
-  main {
-    margin: 1rem;
-    line-height: normal;
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically */
-  }
-
-  body {
-    height: 100%;
-    margin: 0; /* some weird margin: 8px; is inherited from somewhere */
-
-  }
-
-  hr {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    width: 100%;
-  }
-
-
-  img {
-    width: auto;
-    max-height: 50svh;
-    max-width: 90% !important;
-    padding: 0 !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    border: 1.5rem solid #f6f6dc !important;
-    -webkit-filter: sepia(7%); /* Safari 6.0 - 9.0 */
-    filter: sepia(7%);
-    display: block !important;
-    margin-bottom: 3rem !important;
-  }
-
   @media (max-width: 952px) {
 
     main {
@@ -113,7 +114,7 @@ export default css`
       /*background-color: var(--zwart);*/
       line-height: normal;
       //margin: 1rem;
-      max-width: 100%; /* Set a maximum width */
+      max-width: 90vw; /* Set a maximum width */
 
     }
 
