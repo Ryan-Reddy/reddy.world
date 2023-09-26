@@ -171,10 +171,13 @@ export class CVElement extends LitElement {
         content: attr(data-percentage);
         background: linear-gradient(to right, var(--gold) 0%, var(--gold) attr(data-percentage)%, transparent attr(data-percentage)%, transparent 100%);
         width: 200px;
-        color: #fff;
-        font-size: 12px;
+        color: var(--gold);
+        font-size: 0.66666em;
+
         text-align: center;
-        line-height: 24px;
+
+        border: var(--border);
+        line-height: 1rem;
         height: 1rem;
         background: var(--be_here_now_blue);
         box-shadow: 2px 14px 15px -7px rgba(46, 12, 182, 0.46);
@@ -366,6 +369,10 @@ export class CVElement extends LitElement {
         display: inline-block;
         padding: 4px 6px;
         background: var(--be_here_now_blue);
+
+        border: var(--border);
+        border-left: none;
+
       }
 
       .desc {

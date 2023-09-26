@@ -11,7 +11,7 @@
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
 
-  --gold: #876618;
+  --gold: goldenrod;
   --groen: #398718;
   --blauw: #00aaff;
   --wit: #fff;
@@ -22,6 +22,8 @@
   --transitionInSeconds: 0.6s;
   --logoTransitionInSeconds: 0.8s;
   --be_here_now_blue: #301987;
+
+  --border: 2px solid var(--gold);
 }
 
 * {
