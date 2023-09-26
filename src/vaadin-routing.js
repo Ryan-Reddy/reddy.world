@@ -46,10 +46,8 @@ router.setRoutes([{
   path: '/contact', component: 'contact-element',
 }, {
   name: 'mail-element', // doet niks impliciet
-  path: '/mail', component:
-  // 'mail-element'
-    ''
-  ,
+  path: '/mail', component: // 'mail-element'
+    '',
 }, {
   name: 'bio-element', // doet niks impliciet
   path: '/bio', component: 'bio-element',
@@ -93,11 +91,9 @@ router.setRoutes([{
     name: 'home-page-element-catchall', // doet niks impliciet
     path: '/',                  // standaard landingspage
     component: 'home-page-element',
-  }
-  // , {
-  //   name: 'not-found-element', // doet niks impliciet
-  //   path: '(.*)',           // 404 must be last in this file
-  //   component: 'not-found-element',
-  // },
-
+  }, {
+    name: 'not-found-element', // doet niks impliciet
+    path: '(.*)',           // 404 must be last in this file
+    component: 'not-found-element',
+  },
 ]);

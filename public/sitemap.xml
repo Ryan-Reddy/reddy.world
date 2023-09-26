@@ -10,7 +10,7 @@
 
   <!-- About Page -->
   <url>
-    <loc>https://www.reddy.world/about</loc>
+    <loc>https://www.reddy.world/bio</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <lastmod>2023-09-21</lastmod>

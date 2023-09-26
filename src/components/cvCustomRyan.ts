@@ -153,8 +153,6 @@ export class CVElement extends LitElement {
       .skill-badge {
         position: relative; /* Make the .skill-badge element a positioning context for ::before */
         line-height: 24px;
-
-
       }
 
       .skill-badge::before {
