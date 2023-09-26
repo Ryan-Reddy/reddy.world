@@ -155,6 +155,8 @@ export class CVElement extends LitElement {
         line-height: 24px;
       }
 
+      /* pill shaped bar */
+
       .skill-badge::before {
         margin-bottom: 0.5rem;
         margin-top: 0.5rem;
@@ -166,7 +168,7 @@ export class CVElement extends LitElement {
         //background: var(--be_here_now_blue); /* Color of the percentage bar */
         background: linear-gradient(to right, var(--gold) 0%, var(--gold) attr(data-percentage), transparent attr(data-percentage), transparent 100%); /* Use a gradient to represent the percentage */
 
-        height: 100%;
+        //height: 100%;
         width: 100px; /* Set the width to 100px */
         //z-index: 5; /* Adjust the z-index as needed */
         border-radius: 4px;
@@ -174,7 +176,7 @@ export class CVElement extends LitElement {
         font-size: 12px; /* Adjust the font size as needed */
         text-align: center;
         line-height: 24px; /* Adjust the line height to vertically center the text */
-        height: 20px;
+        height: 1rem;
         background: var(--be_here_now_blue);
         box-shadow: 2px 14px 15px -7px rgba(46, 12, 182, 0.46);
         border-radius: 50px;
@@ -732,44 +734,45 @@ export class CVElement extends LitElement {
               <div class="computer-skills">
                 <h3>Computer Skills</h3>
                 <div class="skill-badge">
-                  <div class="skill-badge">
-                    <span class="skill-name"><a href="">Frameworks (e.g., JUnit, Cucumber)</a></span>
+                  <div class="skill-badge" data-percentage="90">
+                    <span class="skill-name"><a href="">Test Driven Design (using e.g., JUnit, Cucumber)</a></span>
                   </div>
                 </div>
-                <div class="skill-badge">
+                <div class="skill-badge" data-percentage="75">
                   <span class="skill-name"><a href="">Object-Oriented Programming <br>&nbsp;&nbsp;&nbsp;(OOP)</a></span>
                 </div>
                 <div class="skill-badge">
-                  <span class="skill-name"><a
-                    href="">CAD DESIGN <br>&nbsp;&nbsp;&nbsp;(3D Modeling, Rhino 3D)</a></span>
+                  <div class="skill-badge" data-percentage="80">
+                    <a href="">CAD DESIGN <br>&nbsp;&nbsp;&nbsp;(3D Modeling, Rhino 3D)</a></span>
+                  </div>
                 </div>
               </div>
-
+              <hr>
               <div class="programming-languages">
                 <h3>Programming Languages</h3>
-                <div class="skill-badge">
+                <div class="skill-badge" data-percentage="60">
                   <span class="skill-name"><a href="https://www.python.org/">Python</a></span>
                 </div>
-                <div class="skill-badge">
-                  <span class="skill-name"><a href="https://www.java.com/">Java</a></span>
+                <div class="skill-badge" data-percentage="70"><span class="skill-name"><a href="https://www.java.com/">Java</a></span>
                 </div>
-                <div class="skill-badge">
-                  <span class="skill-name"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">Html, css, javascript, typescript</a></span>
+                <div class="skill-badge" data-percentage="80">
+                  <span class="skill-name"><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML, CSS</a></span>
                 </div>
-                <div class="skill-badge">
+                <div class="skill-badge" data-percentage="10">
                   <span class="skill-name"><a
                     href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></span>
                 </div>
-                <div class="skill-badge">
+                <div class="skill-badge" data-percentage="10">
                   <span class="skill-name"><a href="https://www.typescriptlang.org/docs">TypeScript</a></span>
                 </div>
-                <div class="skill-badge">
+                <div class="skill-badge" data-percentage="10">
                   <span class="skill-name"><a href="https://junit.org/">JUnit</a></span>
                 </div>
-                <div class="skill-badge">
+                <div class="skill-badge" data-percentage="10">
                   <span class="skill-name"><a href="https://cucumber.io/">Cucumber</a></span>
                 </div>
-                <div class="skill-badge">
+                <div class="skill-badge" data-percentage="10">
                   <span class="skill-name"><a href="https://www.postgresql.org/">PostgreSQL</a></span>
                 </div>
               </div>
@@ -778,12 +781,12 @@ export class CVElement extends LitElement {
                 <h3>Real-Life Languages</h3>
                 <ul>
                   <li>
-                    <div class="skill-badge">
+                    <div class="skill-badge" data-percentage="10">
                       <span class="skill-name"><a>English</a></span>
                     </div>
                   </li>
                   <li>
-                    <div class="skill-badge">
+                    <div class="skill-badge" data-percentage="10">
                       <span class="skill-name"><a>Dutch</a></span>
                     </div>
                   </li>
@@ -792,33 +795,31 @@ export class CVElement extends LitElement {
 
               <div class="other-skills">
                 <h3>Other Skills</h3>
-                <div class="skill-badge">
+                <div class="skill-badge" data-percentage="10">
                   <span class="skill-name"><a href="">Team Leadership</a></span>
                 </div>
-                <div class="skill-badge">
+                <div class="skill-badge" data-percentage="10">
                   <span class="skill-name"><a href="">Concept Development</a></span>
                 </div>
-                <div class="skill-badge">
+                <div class="skill-badge" data-percentage="10">
                   <span class="skill-name"><a href="">Fine Woodworking</a></span>
                 </div>
-                <div class="skill-badge">
+                <div class="skill-badge" data-percentage="10">
                   <span class="skill-name"><a href="">Set Decoration</a></span>
                 </div>
-                <div class="skill-badge">
+                <div class="skill-badge" data-percentage="10">
                   <span class="skill-name"><a href="">Sewing</a></span>
                 </div>
-                <div class="skill-badge">
+                <div class="skill-badge" data-percentage="10">
                   <span class="skill-name"><a href="">Pattern Design</a></span>
                 </div>
-                <div class="skill-badge">
+                <div class="skill-badge" data-percentage="10">
                   <span class="skill-name"><a href="">Art Direction</a></span>
                 </div>
-                <div class="skill-badge">
+                <div class="skill-badge" data-percentage="10">
                   <span class="skill-name"><a href="">Photoshop</a></span>
                 </div>
               </div>
-            </div>
-          </div>
         </main>
       </div>
     `;
