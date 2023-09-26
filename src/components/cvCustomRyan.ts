@@ -143,17 +143,29 @@ export class CVElement extends LitElement {
 
       /* ================ Skills and badges.... ================ */
 
+      #skills {
+        ul {
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }
+      }
+
       .skill-badge {
         position: relative; /* Make the .skill-badge element a positioning context for ::before */
+        line-height: 24px;
+
+
       }
 
       .skill-badge::before {
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
         position: absolute;
+        display: block;
         top: 0;
         left: -100px; /* Adjust this value for spacing */
         content: attr(data-percentage); /* Display the percentage from a data attribute */
-        display: block;
-        background: var(--be_here_now_blue); /* Color of the percentage bar */
+        //background: var(--be_here_now_blue); /* Color of the percentage bar */
         background: linear-gradient(to right, var(--gold) 0%, var(--gold) attr(data-percentage), transparent attr(data-percentage), transparent 100%); /* Use a gradient to represent the percentage */
 
         height: 100%;
@@ -164,6 +176,12 @@ export class CVElement extends LitElement {
         font-size: 12px; /* Adjust the font size as needed */
         text-align: center;
         line-height: 24px; /* Adjust the line height to vertically center the text */
+        height: 20px;
+        background: var(--be_here_now_blue);
+        box-shadow: 2px 14px 15px -7px rgba(46, 12, 182, 0.46);
+        border-radius: 50px;
+        transition: all 0.5s;
+
       }
 
       /* ================ The Timeline ================ */
@@ -716,15 +734,16 @@ export class CVElement extends LitElement {
               <div class="computer-skills">
                 <h3>Computer Skills</h3>
                 <div class="skill-badge">
-                  <div class="skill-badge" data-percentage="80">
-                    <span class="skill-name">Frameworks (e.g., JUnit, Cucumber)</span>
+                  <div class="skill-badge">
+                    <span class="skill-name"><a href="">Frameworks (e.g., JUnit, Cucumber)</a></span>
                   </div>
                 </div>
                 <div class="skill-badge">
-                  <span class="skill-name">Object-Oriented Programming <br>&nbsp;&nbsp;&nbsp;(OOP)</span>
+                  <span class="skill-name"><a href="">Object-Oriented Programming <br>&nbsp;&nbsp;&nbsp;(OOP)</a></span>
                 </div>
                 <div class="skill-badge">
-                  <span class="skill-name">CAD DESIGN <br>&nbsp;&nbsp;&nbsp;(3D Modeling, Rhino 3D)</span>
+                  <span class="skill-name"><a
+                    href="">CAD DESIGN <br>&nbsp;&nbsp;&nbsp;(3D Modeling, Rhino 3D)</a></span>
                 </div>
               </div>
 
@@ -759,39 +778,45 @@ export class CVElement extends LitElement {
 
               <div class="real-life-languages">
                 <h3>Real-Life Languages</h3>
-                <div class="skill-badge">
-                  <span class="skill-name">English</span>
-                </div>
-                <div class="skill-badge">
-                  <span class="skill-name">Dutch</span>
-                </div>
+                <ul>
+                  <li>
+                    <div class="skill-badge">
+                      <span class="skill-name"><a>English</a></span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="skill-badge">
+                      <span class="skill-name"><a>Dutch</a></span>
+                    </div>
+                  </li>
+                </ul>
               </div>
 
               <div class="other-skills">
                 <h3>Other Skills</h3>
                 <div class="skill-badge">
-                  <span class="skill-name">Team Leadership</span>
+                  <span class="skill-name"><a href="">Team Leadership</a></span>
                 </div>
                 <div class="skill-badge">
-                  <span class="skill-name">Concept Development</span>
+                  <span class="skill-name"><a href="">Concept Development</a></span>
                 </div>
                 <div class="skill-badge">
-                  <span class="skill-name">Fine Woodworking</span>
+                  <span class="skill-name"><a href="">Fine Woodworking</a></span>
                 </div>
                 <div class="skill-badge">
-                  <span class="skill-name">Set Decoration</span>
+                  <span class="skill-name"><a href="">Set Decoration</a></span>
                 </div>
                 <div class="skill-badge">
-                  <span class="skill-name">Sewing</span>
+                  <span class="skill-name"><a href="">Sewing</a></span>
                 </div>
                 <div class="skill-badge">
-                  <span class="skill-name">Pattern Design</span>
+                  <span class="skill-name"><a href="">Pattern Design</a></span>
                 </div>
                 <div class="skill-badge">
-                  <span class="skill-name">Art Direction</span>
+                  <span class="skill-name"><a href="">Art Direction</a></span>
                 </div>
                 <div class="skill-badge">
-                  <span class="skill-name">Photoshop</span>
+                  <span class="skill-name"><a href="">Photoshop</a></span>
                 </div>
               </div>
             </div>
