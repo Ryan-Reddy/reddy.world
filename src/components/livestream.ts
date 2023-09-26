@@ -48,7 +48,6 @@ export class SupportElement extends LitElement {
         message: 'LiveStream'
       }
     });
-    console.log('dispatching event:' + titleEvent.detail.message)
     this.dispatchEvent(titleEvent);
   }
 

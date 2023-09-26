@@ -23,7 +23,6 @@ export class Accountinfo extends LitElement {
         message: 'Account info'
       }
     });
-    console.log('dispatching event:' + titleEvent.detail.message)
     this.dispatchEvent(titleEvent);
   }
   static get styles() {

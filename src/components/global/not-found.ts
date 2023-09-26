@@ -89,7 +89,6 @@ export class NotFound extends LitElement {
         message: 'Page Not Found'
       }
     });
-    console.log('dispatching event:' + titleEvent.detail.message)
     this.dispatchEvent(titleEvent);
 
     this._audio.play();

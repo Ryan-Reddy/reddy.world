@@ -21,7 +21,6 @@ export class Login extends LitElement {
         message: 'Login'
       }
     });
-    console.log('dispatching event:' + titleEvent.detail.message)
     this.dispatchEvent(titleEvent);
   }
 

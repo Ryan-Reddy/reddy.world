@@ -110,7 +110,6 @@ export class BioElement extends LitElement {
         message: 'Ryan Reddy Biography'
       }
     });
-    console.log('dispatching event:' + titleEvent.detail.message)
     this.dispatchEvent(titleEvent);
   }
 

@@ -112,7 +112,6 @@ export class OpenAIElement extends LitElement {
         message: 'OpenAi',
       }
     });
-    console.log('dispatching event:' + titleEvent.detail.message)
     this.dispatchEvent(titleEvent);
   }
   render() {

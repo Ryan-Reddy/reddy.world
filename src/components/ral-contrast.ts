@@ -78,7 +78,6 @@ export class RalContrastElement extends LitElement {
         message: 'Ral Contrast Checker'
       }
     });
-    console.log('dispatching event:' + titleEvent.detail.message)
     this.dispatchEvent(titleEvent);
   }
 

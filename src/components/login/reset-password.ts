@@ -21,7 +21,6 @@ export class ResetPassword extends LitElement {
         message: 'Reset password'
       }
     });
-    console.log('dispatching event:' + titleEvent.detail.message)
     this.dispatchEvent(titleEvent);
   }
 

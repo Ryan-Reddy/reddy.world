@@ -21,7 +21,6 @@ export class Home extends LitElement {
         message: 'A little corner of the internet Ryan Reddy calls his home.'
       }
     });
-    console.log('dispatching event:' + titleEvent.detail.message)
     this.dispatchEvent(titleEvent);
   }
 

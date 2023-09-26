@@ -86,7 +86,6 @@ export class ReadmeElement extends LitElement {
         message: 'Readme'
       }
     });
-    console.log('dispatching event:' + titleEvent.detail.message)
     this.dispatchEvent(titleEvent);
   }
 

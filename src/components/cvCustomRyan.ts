@@ -23,6 +23,17 @@ export class CVElement extends LitElement {
 
   static get styles() {
     return [langCSS, mainCSS, css`
+      body {
+        margin: 0;
+        padding: 0;
+        background: rgb(230, 230, 230);
+
+        color: rgb(50, 50, 50);
+        font-family: 'Open Sans', sans-serif;
+        font-size: 112.5%;
+        line-height: 1.6em;
+      }
+
       #cv {
         display: flex;
         justify-content: center;
@@ -84,7 +95,7 @@ export class CVElement extends LitElement {
         color: white;
       }
 
-      /* Style the quote underline */
+      /* Style the bio */
 
       #bio::after {
         content: "";
@@ -130,15 +141,29 @@ export class CVElement extends LitElement {
         padding: 1rem;
       }
 
-      body {
-        margin: 0;
-        padding: 0;
-        background: rgb(230, 230, 230);
+      /* ================ Skills and badges.... ================ */
 
-        color: rgb(50, 50, 50);
-        font-family: 'Open Sans', sans-serif;
-        font-size: 112.5%;
-        line-height: 1.6em;
+      .skill-badge {
+        position: relative; /* Make the .skill-badge element a positioning context for ::before */
+      }
+
+      .skill-badge::before {
+        position: absolute;
+        top: 0;
+        left: -100px; /* Adjust this value for spacing */
+        content: attr(data-percentage); /* Display the percentage from a data attribute */
+        display: block;
+        background: var(--be_here_now_blue); /* Color of the percentage bar */
+        background: linear-gradient(to right, var(--gold) 0%, var(--gold) attr(data-percentage), transparent attr(data-percentage), transparent 100%); /* Use a gradient to represent the percentage */
+
+        height: 100%;
+        width: 100px; /* Set the width to 100px */
+        //z-index: 5; /* Adjust the z-index as needed */
+        border-radius: 4px;
+        color: #fff; /* Text color for the percentage */
+        font-size: 12px; /* Adjust the font size as needed */
+        text-align: center;
+        line-height: 24px; /* Adjust the line height to vertically center the text */
       }
 
       /* ================ The Timeline ================ */
@@ -160,6 +185,8 @@ export class CVElement extends LitElement {
         font-size: 112.5%;
         line-height: 1.6em;
       }
+
+      /* ================ Timeline ............. ================ */
 
       .timeline {
         position: relative;
@@ -203,18 +230,7 @@ export class CVElement extends LitElement {
         visibility: hidden;
       }
 
-      .direction-l {
-        position: relative;
-        width: 300px;
-        float: left;
-        text-align: right;
-      }
-
-      .direction-r {
-        position: relative;
-        width: 300px;
-        float: right;
-      }
+      /* ================ flag-wrapper.......... ================ */
 
       .flag-wrapper {
         display: flex;
@@ -234,6 +250,21 @@ export class CVElement extends LitElement {
 
         font-weight: 600;
         text-align: left;
+      }
+
+      /* ================ direction-l & -r flag ================ */
+
+      .direction-l {
+        position: relative;
+        width: 300px;
+        float: left;
+        text-align: right;
+      }
+
+      .direction-r {
+        position: relative;
+        width: 300px;
+        float: right;
       }
 
       .direction-l .flag {
@@ -295,6 +326,8 @@ export class CVElement extends LitElement {
         border-width: 8px;
         pointer-events: none;
       }
+
+      /* ================ Time-wrapper.......... ================ */
 
       .time-wrapper {
         display: inline;
@@ -438,7 +471,6 @@ export class CVElement extends LitElement {
 
       }
 
-
       @media (max-width: 952px) {
         /* Adjust styles for smaller screens */
         skillsgrid {
@@ -470,7 +502,6 @@ export class CVElement extends LitElement {
         message: 'C.V. Ryan van Lil-Reddy'
       }
     });
-    console.log('dispatching event:' + titleEvent.detail.message)
     this.dispatchEvent(titleEvent);
   }
 
@@ -483,7 +514,6 @@ export class CVElement extends LitElement {
         <main>
           <h1>Ryan van Lil-Reddy</h1>
           <nav>
-
             <ul>
               <li><a @click=${() => this.scrollToSection(this.bioSection)}>Bio</a></li>
               <li><a @click=${() => this.scrollToSection(this.experienceSection)}>Experience</a></li>
@@ -491,9 +521,7 @@ export class CVElement extends LitElement {
               <li><a @click=${() => this.scrollToSection(this.skillsSection)}>Skills</a></li>
             </ul>
           </nav>
-
           <hr>
-
           <div id="bio">
             <h2>Bio</h2>
             <p>
@@ -513,9 +541,7 @@ export class CVElement extends LitElement {
             - Ryan
 
           </div>
-
           <hr>
-
           <div id="experience">
             <h2>Experience</h2>
             <ul class="timeline">
@@ -638,9 +664,7 @@ export class CVElement extends LitElement {
               </li>
             </ul>
           </div>
-
           <hr>
-
           <div id="education">
             <h2>Education</h2>
             <ul class="timeline" id="experience-list">
@@ -684,9 +708,7 @@ export class CVElement extends LitElement {
               </li>
             </ul>
           </div>
-
           <hr>
-
           <div id="skills">
             <h2>Skills</h2>
             <div id="skillsgrid">
@@ -694,7 +716,9 @@ export class CVElement extends LitElement {
               <div class="computer-skills">
                 <h3>Computer Skills</h3>
                 <div class="skill-badge">
-                  <span class="skill-name">Frameworks <br>&nbsp;&nbsp;&nbsp;(e.g., JUnit, Cucumber)</span>
+                  <div class="skill-badge" data-percentage="80">
+                    <span class="skill-name">Frameworks (e.g., JUnit, Cucumber)</span>
+                  </div>
                 </div>
                 <div class="skill-badge">
                   <span class="skill-name">Object-Oriented Programming <br>&nbsp;&nbsp;&nbsp;(OOP)</span>

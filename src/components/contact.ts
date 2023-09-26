@@ -81,7 +81,6 @@ export class ContactElement extends LitElement {
         message: 'Contact'
       }
     });
-    console.log('dispatching event:' + titleEvent.detail.message)
     this.dispatchEvent(titleEvent);
   }
 

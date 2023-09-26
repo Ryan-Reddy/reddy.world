@@ -21,7 +21,6 @@ export class FriendsElement extends LitElement {
         message: 'Friends'
       }
     });
-    console.log('dispatching event:' + titleEvent.detail.message)
     this.dispatchEvent(titleEvent);
   }
 

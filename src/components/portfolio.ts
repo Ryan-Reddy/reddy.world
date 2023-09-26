@@ -21,7 +21,6 @@ export class PortfolioElement extends LitElement {
         message: 'Portfolio'
       }
     });
-    console.log('dispatching event:' + titleEvent.detail.message)
     this.dispatchEvent(titleEvent);
   }
 

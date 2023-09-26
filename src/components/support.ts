@@ -53,7 +53,6 @@ export class SupportElement extends LitElement {
         message: 'Support'
       }
     });
-    console.log('dispatching event:' + titleEvent.detail.message)
     this.dispatchEvent(titleEvent);
   }
 

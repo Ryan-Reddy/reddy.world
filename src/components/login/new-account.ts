@@ -21,7 +21,6 @@ export class NewAccount extends LitElement {
         message: 'New Account'
       }
     });
-    console.log('dispatching event:' + titleEvent.detail.message)
     this.dispatchEvent(titleEvent);
   }
 

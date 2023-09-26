@@ -280,24 +280,20 @@ export class MenuFooter extends LitElement {
   }
 
   firstUpdated() {
-    console.log(this._containers);
     this._setLanguage();
     this._containers.forEach((value) => {
       if (value.lang == this._language) {
         value.className = "lang-match";
-        console.log(value);
       }
     });
   }
 
   _setLanguage() {
     this._language = navigator.language;
-    console.log(this._language);
     this._language = this._language.split("-")[0];
     if (this._language != "nl" || "en") {
       this._language = "en"; // set default english if no other lang found
     }
-    console.log(this._language);
   }
 
   protected createRenderRoot() {

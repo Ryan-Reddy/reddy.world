@@ -71,7 +71,6 @@
   <!--This sets title based upon event thrown from element-->
   <script>
     window.addEventListener('title-change', (e) => {
-      console.log('gathering from the ether... :' + e.detail.message)
       this.document.title = e.detail.message;
     }, true) </script>
 
