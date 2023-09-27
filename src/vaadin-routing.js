@@ -21,6 +21,7 @@ import './components/livestream';
 import './components/ral-contrast';
 import './components/global/not-found';
 import './components/global/lang-picker';
+import './components/blackjack/blackjack';
 
 const app = document.querySelector('#app');
 export const router = new Router(app);
@@ -78,6 +79,9 @@ router.setRoutes([{
 }, {
   name: 'portfolio-element', // doet niks impliciet
   path: '/portfolio', component: 'portfolio-element',
+}, {
+  name: 'blackjack-element', // doet niks impliciet
+  path: '/blackjack', component: 'blackjack-element',
 },
 
   ////////////////////////////////////////////////////////////////////////
