@@ -581,7 +581,7 @@ export class CVElement extends LitElement {
               <li>
                 <div class="direction-r">
                   <div class="flag-wrapper">
-                    <span class="flag"><a href="https://www.youtube.com/channel/UCiuD3eNaZ95eSXImp_eSIww">Tom Crown: Youtube</a></span>
+                    <span class="flag"><a href="https://www.youtube.com/channel/UCiuD3eNaZ95eSXImp_eSIww">Tom Crown</a></span>
                     <span class="time-wrapper"><span class="time">2020 - 2022</span>
                   </div>
                   <div class="desc">

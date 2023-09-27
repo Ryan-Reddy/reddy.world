@@ -264,7 +264,7 @@ export class MenuHeader extends LitElement {
         <nav>
 
           <ul name="top-nav-menu">
-            <li><a class="nav-button" href="home" id="home">Home</a></li>
+            <li><a class="nav-button" href="/" id="home">Home</a></li>
             <li><a class="nav-button" href="bio" id="bio">Bio</a></li>
             <li><a class="nav-button" href="cv" id="cv">CV</a></li>
             <!--            <li><lang-element></lang-element></li> lang picked from browser lang-->
@@ -289,7 +289,7 @@ export class MenuHeader extends LitElement {
               aria-expanded="true"
               role="menu"
               @click="${this._hideDropDown}">
-              <li><a class="nav-button-dropdown" href="home" id="home">Home</a></li>
+              <li><a class="nav-button-dropdown" href="/" id="home">Home</a></li>
               <li><a class="nav-button-dropdown" href="bio" id="bio">Bio</a></li>
               <li><a class="nav-button-dropdown" href="cv" id="cv">CV</a></li>
             </ul>
