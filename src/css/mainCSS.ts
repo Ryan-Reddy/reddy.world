@@ -146,6 +146,10 @@ export default css`
     li {
       padding: 0;
     }
+
+    a {
+      margin: .5rem;
+    }
   }
 
   @media (prefers-color-scheme: light) {
