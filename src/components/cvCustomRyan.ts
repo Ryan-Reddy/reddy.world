@@ -389,7 +389,23 @@ export class CVElement extends LitElement {
 
       /* ================ Timeline Media Queries ================ */
 
-      @media screen and (max-width: 660px) {
+      @media (max-width: 952px) {
+
+        /* Style the bio section */
+        .main-divs {
+          padding: 1rem;
+          width: 80%
+        }
+
+        skillsgrid {
+          grid-template-columns: 1fr;
+        }
+
+        /* Set maximum width for list items */
+        li {
+          max-width: 100vw;
+        }
+
         .skill-badge {
           padding-left: 0; /* Remove left padding on small screens */
         }
@@ -485,39 +501,13 @@ export class CVElement extends LitElement {
         .direction-l .desc,
         .direction-r .desc {
           position: relative;
-          margin: 1em 1em 0 1em;
           padding: 1em;
 
           z-index: 15;
-        }
-
-        .direction-l .desc,
-        .direction-r .desc {
-          margin: 1em 4em 0 4em;
-        }
-
-      }
-
-      @media (max-width: 952px) {
-
-        /* Style the bio section */
-        #bio {
-          padding: 1rem;
-        }
-
-        skillsgrid {
-          grid-template-columns: 1fr;
-        }
-
-        #experience {
-          padding: 1rem;
-        }
-
-        /* Set maximum width for list items */
-        li {
-          max-width: 100vw;
+          margin: 1em 1em 0 1em;
         }
       }
+
     `];
   }
 
@@ -554,7 +544,7 @@ export class CVElement extends LitElement {
             </ul>
           </nav>
           <hr>
-          <div id="bio">
+          <div class="main-divs" id="bio">
             <h2>Bio</h2>
             <p>
               "Driven by a passion for making a positive impact, <br>
@@ -574,7 +564,7 @@ export class CVElement extends LitElement {
 
           </div>
           <hr>
-          <div id="experience">
+          <div class="main-divs" id="experience">
             <h2>Experience</h2>
             <ul class="timeline">
               <!-- Experience Item 1 -->
@@ -697,7 +687,7 @@ export class CVElement extends LitElement {
             </ul>
           </div>
           <hr>
-          <div id="education">
+          <div class="main-divs" id="education">
             <h2>Education</h2>
             <ul class="timeline" id="experience-list">
               <!-- Education Item 1 -->
@@ -741,7 +731,7 @@ export class CVElement extends LitElement {
             </ul>
           </div>
           <hr>
-          <div id="skills">
+          <div class="main-divs" id="skills">
             <h2>Skills</h2>
             <div id="skillsgrid">
               <!-- Skills Items -->
