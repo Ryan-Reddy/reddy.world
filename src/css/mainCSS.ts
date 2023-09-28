@@ -108,13 +108,22 @@ export default css`
   }
 
   @media (max-width: 952px) {
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
 
     main {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center; // This centers inline or inline-block content
       /*color: var(--wit);*/
       /*background-color: var(--zwart);*/
       line-height: normal;
       //margin: 1rem;
-      max-width: 90vw; /* Set a maximum width */
+      //max-width: 90vw; /* Set a maximum width */
 
     }
 

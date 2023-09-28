@@ -43,7 +43,6 @@ export class ContactElement extends LitElement {
       ul {
         list-style: none;
         width: 100%
-
       }
 
       input, textarea, button {
@@ -72,6 +71,24 @@ export class ContactElement extends LitElement {
         //width: 100%; /* Adjust as needed */
         //height: 10vh; /* Adjust as needed, using viewport height for full height */
       }
+
+      li {
+        padding: 0.2rem !important;
+      }
+
+      //ul {          padding: 0.5em !important;        }
+      input, textarea {
+        font: 1rem monospace !important;
+        padding: 1rem !important;
+      }
+
+      form {
+        width: 62.5%;
+        //font: 1rem monospace !important;
+        ::placeholder {
+          //color: white;  /* Replace with your desired color */
+          //}
+          //}
     `];
   }
 

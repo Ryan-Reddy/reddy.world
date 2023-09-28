@@ -230,7 +230,6 @@ export class MenuHeader extends LitElement {
 
       @media (prefers-color-scheme: light) {
         footer, nav ul li a {
-          color: var(--zwart);
           background-color: transparent;
           border-color: var(--wit);
         }
