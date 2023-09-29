@@ -29,16 +29,20 @@ export default css`
 
 
   main {
-    width: 100vw;
+    height: 100vh;
+    width: 100%;
     //padding: 1rem;
     line-height: normal;
-    display: flex;
+    display: inline-flex !important;
     flex-direction: column; /* Stack items vertically */
     justify-content: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically */
+
+    //padding-left: 50px !important;
+
   }
 
   body {
+    width: 100%;
     height: 100%;
     margin: 0; /* some weird margin: 8px; is inherited from somewhere */
 
@@ -58,7 +62,9 @@ export default css`
     padding: 0 !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    border: 1.5rem solid #f6f6dc !important;
+    border: 1.5rem solid moccasin !important;
+    //border: var(--border) !important;
+
     -webkit-filter: sepia(7%); /* Safari 6.0 - 9.0 */
     filter: sepia(7%);
     display: block !important;
@@ -124,7 +130,14 @@ export default css`
       line-height: normal;
       //margin: 1rem;
       //max-width: 90vw; /* Set a maximum width */
+    }
 
+    body {
+      margin: 0;
+      height: 100vh; /* use viewport height to make it full-screen height */
+
+      display: inline !important; /* turns on flexbox layout */
+      justify-content: center !important; /* center horizontally */
     }
 
     ul {
@@ -173,12 +186,12 @@ export default css`
     }
 
     table {
-      color: var(--wit);
+      color: var(--zwart);
       background: var(--wit);
     }
 
     :root .header_bar {
-      color: var(--wit);
+      color: var(--zwart);
       background-color: var(--wit);
     }
 
@@ -187,6 +200,7 @@ export default css`
     }
 
     nav ul li a {
+      //color: var(--zwart) !important;
       background-color: var(--wit);
       border-bottom-color: var(--gold);
     }
@@ -206,7 +220,6 @@ export default css`
     main {
       color: var(--wit);
       background-color: var(--zwart);
-
     }
 
     table {

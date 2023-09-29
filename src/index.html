@@ -11,7 +11,7 @@
   <title>reddy.world</title>
   <meta content="A little corner of the internet Ryan Reddy calls his home." property="og:title">
   <meta
-    content="Ryan Reddy's portfolio, CV, and contact info. Also a place where projects I work on get hosted. Come see my latest exploits, resume, and contact me."
+    content="Ryan Reddy's portfolio, CV, bio, and contact info. Also a place where projects I work on get hosted. Come see my latest exploits, resume, and get into contact with me."
     name="description">
   <meta content="nl_NL" property="og:locale:alternate">
 
@@ -19,7 +19,7 @@
   <meta content="https://reddy.world/" property="og:url">
   <meta content="website" property="og:type">
   <meta
-    content="Ryan Reddy's portfolio, CV, and contact info. Also a place where projects I work on get hosted. Come see my latest exploits, resume, and get into contact with me."
+    content="Ryan Reddy's portfolio, CV, bio, and contact info. Also a place where projects I work on get hosted. Come see my latest exploits, resume, and get into contact with me."
     property="og:description">
   <meta content="https://reddy.world/ryan_images/IMG_6869-scaled.png" property="og:image">
 
@@ -29,7 +29,7 @@
   <meta content="https://reddy.world/" property="twitter:url">
   <meta content="A little corner of the internet Ryan Reddy calls his home." name="twitter:title">
   <meta
-    content="Ryan Reddy's portfolio, CV, and contact info. Also a place where projects I work on get hosted. Come see my latest exploits, resume, and get into contact with me."
+    content="Ryan Reddy's portfolio, CV, bio, and contact info. Also a place where projects I work on get hosted. Come see my latest exploits, resume, and get into contact with me."
     name="twitter:description">
   <meta content="https://reddy.world/ryan_images/IMG_6869-scaled.png" name="twitter:image">
 
@@ -65,6 +65,27 @@
       document.title = e.detail.message;
     }, true);
   </script>
+
+  <!-- Custom Metadata Update Script -->
+  <script>
+    window.addEventListener('metadata-change', (e) => {
+      // Update title
+      document.title = e.detail.title;
+
+      // Update description
+      const metaDescription = document.querySelector("meta[name='description']");
+      if (metaDescription) {
+        metaDescription.setAttribute("content", e.detail.description);
+      }
+
+      // // Update canonical URL
+      // const canonicalLink = document.querySelector("link[rel='canonical']");
+      // if (canonicalLink) {
+      //   canonicalLink.setAttribute("href", e.detail.canonical);
+      // }
+    }, true);
+  </script>
+
 </head>
 <body>
 <noscript>You need to enable JavaScript to run this app.</noscript>
