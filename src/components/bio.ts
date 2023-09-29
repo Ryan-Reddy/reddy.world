@@ -126,10 +126,15 @@ export class BioElement extends LitElement {
           <div id="titlebox">
             <h1>Hello, I’m Ryan Reddy.</h1>
           </div>
-          <img class="landingImage" src="ryan_images/IMG_6869-color-cropped.png"
-               alt="Ryan Reddy profile image, black and white, straw hat"
-               loading="eager"
-          />
+          <picture>
+            <!-- WebP format for browsers that support it -->
+            <source srcset="/ryan_images/IMG_6869-color-cropped.webp" type="image/webp">
+
+            <!-- Fallback PNG image for browsers that do not support WebP -->
+            <img class="landingImage" src="ryan_images/IMG_6869-color-cropped.png"
+                 alt="Ryan Reddy profile image, black and white, straw hat"
+            />
+          </picture>
           <br>
           <hr>
           <h2>Bio</h2>

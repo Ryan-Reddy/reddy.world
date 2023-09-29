@@ -113,14 +113,14 @@ export class Home extends LitElement {
             <br>Product Designer,
             <br> and aspiring Computer Science Engineer.</p>
         </div>
-        <img fetchpriority="high" src="ryan_images/IMG_6869.png" class="landingImage"
-             alt="Ryan Reddy profile image, black and white, straw hat"
-             loading="eager"
-        />
-        <source srcset="ryan_images/IMG_6869-scaled.webp" type="image/webp"
-                alt="Ryan Reddy profile image, black and white, straw hat"
-                loading="eager"
-        >
+        <picture>
+          <!-- WebP format for browsers that support it -->
+          <source srcset="/ryan_images/IMG_6869-scaled.webp" type="image/webp">
+
+          <!-- Fallback PNG image for browsers that do not support WebP -->
+          <img src="/ryan_images/IMG_6869.png" class="landingImage"
+               alt="Ryan Reddy profile image, black and white, straw hat">
+        </picture>
       </main>
       </body>
     `;

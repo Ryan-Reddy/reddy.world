@@ -13,6 +13,9 @@ import mainCSS from "../../css/mainCSS";
 export class MenuHeader extends LitElement {
   @property() naamGebruiker = 'Hans Fumphriehd';
   @property() siteLogo = 'be_here_now/be_here_now-no_outside-SCALED.png';
+  @property() siteLogoWebp = 'be_here_now/be_here_now-no_outside-SCALED.webp';
+
+
   // @property() siteLogo = 'be_here_now/be_here_now-color_corrected.png';
   @property() siteLogoDescription = 'Be Here Now. - Ram Dass';
   @property() currentPage: string = '';
@@ -160,7 +163,7 @@ export class MenuHeader extends LitElement {
             display: flex;
             justify-content: space-between;
             align-items: center;
-
+            flex-direction: column;
           }
 
           .dropdown-menu-label {
@@ -169,6 +172,17 @@ export class MenuHeader extends LitElement {
 
           div #smallmenuicon {
             display: inline-block;
+          }
+
+          nav {
+            position: relative;
+          }
+
+          .smallmenuicon {
+            position: absolute;
+            left: 0; /* stick to the left edge */
+            top: 50%; /* to vertically center it, if you want */
+            transform: translateY(-50%); /* to vertically center it, if you want */
           }
 
           nav ul[name="top-nav-menu"] {
@@ -215,10 +229,7 @@ export class MenuHeader extends LitElement {
           .nav-button-dropdown {
             display: flex;
           }
-        }
 
-
-        @media (max-width: 858px) {
           .checkbtn {
             display: block;
           }
@@ -226,8 +237,6 @@ export class MenuHeader extends LitElement {
           nav ul li {
             display: block;
           }
-
-        ;
         }
 
         @media (prefers-color-scheme: light) {
@@ -265,34 +274,43 @@ export class MenuHeader extends LitElement {
     return html`
       <body id="bodyofmenubar">
       <div class="header_bar">
-        <img
-          @click=${this.logoClicked}
-          src="${this.siteLogo}"
-          alt="${this.siteLogoDescription}"
-          class="nav-logo"
-        />
-        <nav>
+        <picture>
+          <picture>
+            <!-- WebP format for browsers that support it -->
+            <source type="image/webp" srcset="be_here_now/be_here_now-no_outside-SCALED.webp">
 
-          <!--          <div name="top-nav-menu">-->
-          <ul name="top-nav-menu">
-            <li><a class="nav-button" href="/" id="home">Home</a></li>
-            <li><a class="nav-button" href="bio" id="bio">Bio</a></li>
-            <li><a class="nav-button" href="cv" id="cv">CV</a></li>
-            <!--            <li><lang-element></lang-element></li> lang picked from browser lang-->
-          </ul>
-          <!--          </div>-->
-          <div id='smallmenuicon'>
-            <img src="icons/three-bars_32.png" width="32"
-                 alt="three-bars img"
-                 type="button"
-                 class="dropdown-menu-label"
-                 aria-haspopup="true"
-                 aria-owns="language-menu"
-                 aria-label="Current language is English. Choose your preferred language."
-                 @click="${this._showDropDown}">
-          </div>
+            <!-- Fallback PNG image for browsers that do not support WebP -->
+            <img class="nav-logo" src="be_here_now/be_here_now-no_outside-SCALED.png" alt="Be Here Now. - Ram Dass">
+          </picture>
 
-          <div class="dropdown-menu-div" @mouseleave="${this._hideDropDown}"
+
+          <nav>
+
+            <!--          <div name="top-nav-menu">-->
+            <ul name="top-nav-menu">
+              <li><a class="nav-button" href="/" id="home">Home</a></li>
+              <li><a class="nav-button" href="bio" id="bio">Bio</a></li>
+              <li><a class="nav-button" href="cv" id="cv">CV</a></li>
+              <!--            <li><lang-element></lang-element></li> lang picked from browser lang-->
+            </ul>
+            <!--          </div>-->
+
+
+            <div id='smallmenuicon'>
+              <picture>
+                <source srcset="icons/three-bars_32.webp" type="image/webp">
+                <img src="icons/three-bars_32.png" width="32"
+                     alt="three-bars img"
+                     type="button"
+                     class="dropdown-menu-label"
+                     aria-haspopup="true"
+                     aria-owns="language-menu"
+                     aria-label="Current language is English. Choose your preferred language."
+                     @click="${this._showDropDown}">
+              </picture>
+            </div>
+
+            <div class="dropdown-menu-div" @mouseleave="${this._hideDropDown}"
           >
             <ul
               id="language-menu"
