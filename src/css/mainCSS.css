@@ -35,13 +35,13 @@ main {
   line-height: normal;
   flex-direction: column; /* Stack items vertically */
   justify-content: center; /* Center items horizontally */
-  display: inline-flex !important;
+}
+body {
+  margin: 0;
+  height: 100vh; /* use viewport height to make it full-screen height */
+  justify-content: center !important;
 }
 
-body {
-  height: 100%;
-  margin: 0; /* some weird margin: 8px; is inherited from somewhere */
-}
 
 hr {
   margin-top: 2rem;
@@ -117,11 +117,6 @@ a::after {
   }
 
   body {
-    margin: 0;
-    height: 100vh; /* use viewport height to make it full-screen height */
-
-    display: inline !important; /* turns on flexbox layout */
-    justify-content: center !important; /* center horizontally */
   }
 
   ul {
