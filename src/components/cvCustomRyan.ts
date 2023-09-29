@@ -36,6 +36,13 @@ export class CVElement extends LitElement {
 
       main {
         height: 100%;
+
+        display: flex;
+        justify-content: center;
+
+        padding: 1rem;
+        width: 100%;
+
       }
 
 
@@ -49,9 +56,19 @@ export class CVElement extends LitElement {
         }
       }
 
+
+      /* Style the sections */
+
+      .main-divs {
+        padding: 1rem;
+        width: 80%; /* Adjust this value as needed. */
+        display: flex;
+        flex-direction: column; /* If you want its children to stack vertically. */
+        align-items: center; /* To center the items horizontally inside the .main-divs */
+      }
+
       li, ul {
         padding: 0;
-        //margin-left: 1rem;
       }
 
       .experience-title {
@@ -70,31 +87,42 @@ export class CVElement extends LitElement {
       /* Style the bio section */
 
       #bio {
-        width: 100%; /* Make the element take up the full width of its parent */
+        flex-direction: column;
+
+        width: fit-content; /* Make the element take up the full width of its parent */
         max-width: 80%; /* Set a maximum width */
         box-sizing: border-box; /* Include padding and border in the width calculation */
-        font-family: Arial, sans-serif;
-        margin: 1rem 0;
-        padding: 3rem;
+        //font-family: Arial, sans-serif;
+        font-size: 2rem;
+
+        margin: .5rem 0;
+        padding: .5rem 3rem .5rem 3rem;
         border-radius: 20px;
         position: relative;
         background: linear-gradient(90deg, rgba(49, 27, 128, 0.45) 50%, rgba(49, 27, 128, 0.26) 50%);
         background-size: 200% 100%;
         transition: background-position 0.3s ease;
         overflow: hidden;
+
+        a {
+          text-transform: none; // reset from uppercase
+        }
+
+        /* Style the text inside the bio */
+
+        p {
+          letter-spacing: normal;
+          font-size: 0.825rem;
+          font-style: italic;
+          color: white;
+        }
+
       }
 
-      #bio:hover {
+      #bio :hover {
         background-position: -100% 0;
       }
 
-      /* Style the text inside the bio */
-
-      #bio p {
-        font-size: 0.625rem;
-        font-style: italic;
-        color: white;
-      }
 
       /* Style the bio */
 
@@ -393,12 +421,13 @@ export class CVElement extends LitElement {
       /* ================ Timeline Media Queries ================ */
 
       @media (max-width: 952px) {
+        #bio {
+          width: 80vw;
+          margin: 0.2rem;
+          padding: .5rem .5rem .5rem .5rem;
 
-        /* Style the sections */
-        .main-divs {
-          padding: 1rem;
-          width: 80%;
         }
+
 
         skillsgrid {
           grid-template-columns: 1fr;
@@ -549,22 +578,25 @@ export class CVElement extends LitElement {
           <hr>
           <div class="main-divs" id="bio">
             <h2>Bio</h2>
-            <p>
-              "Driven by a passion for making a positive impact, <br>
-              my journey has been a dynamic and transformative one. <br> <br>
+            <a href="/bio">
+              <p>
+                "Driven by a passion for making a positive impact, <br>
+                my journey has been a dynamic and transformative one. <br> <br>
 
-              With diverse experiences spanning product design, costume creation, sales, journalism, management, <br>
-              and even a venture into modeling and acting, I've cultivated a unique perspective. <br> <br>
+                With diverse experiences spanning product design, costume creation, sales, journalism, management,
+                <br>
+                and even a venture into modeling and acting, I've cultivated a unique perspective. <br> <br>
 
-              Inspired by the wisdom of Alan Watts, I embarked on a quest to discover true happiness, <br>
-              ultimately leading me to excel in the world of Computer Science Engineering, where innovation and
-              creativity thrive."
-            </p>
-            <p>
-              "I'm Ryan, and I'm on a mission to make a difference."
-            </p>
-            - Ryan
+                Inspired by the wisdom of Alan Watts, I embarked on a quest to discover true happiness, <br>
+                ultimately leading me to excel in the world of Computer Science Engineering, where innovation and
+                creativity thrive."
+              </p>
+              <p>
+                "I'm Ryan, and I'm on a mission to make a difference."
+              </p>
+              - Ryan
 
+            </a>
           </div>
           <hr>
           <div class="main-divs" id="experience">
@@ -736,18 +768,25 @@ export class CVElement extends LitElement {
           <hr>
           <div class="main-divs" id="skills">
             <h2>Skills</h2>
+            <br>
             <div id="skillsgrid">
               <!-- Skills Items -->
               <div class="computer-skills">
                 <h3>Computer Skills</h3>
-                <div class="skill-badge" data-percentage="90">
+                <div class="skill-badge" data-percentage="70">
                   <span class="skill-name"><a href="">Test Driven Design (using e.g., JUnit, Cucumber)</a></span>
                 </div>
-                <div class="skill-badge" data-percentage="75">
+                <div class="skill-badge" data-percentage="80">
                   <span class="skill-name"><a href="">Object-Oriented Programming <br>&nbsp;&nbsp;&nbsp;(OOP)</a></span>
                 </div>
-                <div class="skill-badge" data-percentage="80">
+                <div class="skill-badge" data-percentage="85">
                   <a href="">CAD DESIGN <br>&nbsp;&nbsp;&nbsp;(3D Modeling, Rhino 3D)</a></span>
+                </div>
+                <div class="skill-badge" data-percentage="75">
+                  <span class="skill-name"><a href="">Photoshop</a></span>
+                </div>
+                <div class="skill-badge" data-percentage="90">
+                  <span class="skill-name"><a href="">Wordpress</a></span>
                 </div>
 
               </div>
@@ -757,26 +796,26 @@ export class CVElement extends LitElement {
                 <div class="skill-badge" data-percentage="60">
                   <span class="skill-name"><a href="https://www.python.org/">Python</a></span>
                 </div>
-                <div class="skill-badge" data-percentage="70"><span class="skill-name"><a href="https://www.java.com/">Java</a></span>
+                <div class="skill-badge" data-percentage="75"><span class="skill-name"><a href="https://www.java.com/">Java</a></span>
                 </div>
                 <div class="skill-badge" data-percentage="80">
                   <span class="skill-name"><a
                     href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML, CSS</a></span>
                 </div>
-                <div class="skill-badge" data-percentage="10">
+                <div class="skill-badge" data-percentage="65">
                   <span class="skill-name"><a
                     href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></span>
                 </div>
-                <div class="skill-badge" data-percentage="10">
+                <div class="skill-badge" data-percentage="55">
                   <span class="skill-name"><a href="https://www.typescriptlang.org/docs">TypeScript</a></span>
                 </div>
-                <div class="skill-badge" data-percentage="10">
+                <div class="skill-badge" data-percentage="75">
                   <span class="skill-name"><a href="https://junit.org/">JUnit</a></span>
                 </div>
-                <div class="skill-badge" data-percentage="10">
+                <div class="skill-badge" data-percentage="60">
                   <span class="skill-name"><a href="https://cucumber.io/">Cucumber</a></span>
                 </div>
-                <div class="skill-badge" data-percentage="10">
+                <div class="skill-badge" data-percentage="60">
                   <span class="skill-name"><a href="https://www.postgresql.org/">PostgreSQL</a></span>
                 </div>
               </div>
@@ -785,12 +824,12 @@ export class CVElement extends LitElement {
                 <h3>Real-Life Languages</h3>
                 <ul>
                   <li>
-                    <div class="skill-badge" data-percentage="10">
+                    <div class="skill-badge" data-percentage="native-speaker">
                       <span class="skill-name"><a>English</a></span>
                     </div>
                   </li>
                   <li>
-                    <div class="skill-badge" data-percentage="10">
+                    <div class="skill-badge" data-percentage="native-speaker">
                       <span class="skill-name"><a>Dutch</a></span>
                     </div>
                   </li>
@@ -799,31 +838,29 @@ export class CVElement extends LitElement {
 
               <div class="other-skills">
                 <h3>Other Skills</h3>
-                <div class="skill-badge" data-percentage="10">
+                <div class="skill-badge" data-percentage="85">
                   <span class="skill-name"><a href="">Team Leadership</a></span>
                 </div>
-                <div class="skill-badge" data-percentage="10">
+                <div class="skill-badge" data-percentage="85">
                   <span class="skill-name"><a href="">Concept Development</a></span>
                 </div>
-                <div class="skill-badge" data-percentage="10">
+                <div class="skill-badge" data-percentage="90">
                   <span class="skill-name"><a href="">Fine Woodworking</a></span>
                 </div>
-                <div class="skill-badge" data-percentage="10">
+                <div class="skill-badge" data-percentage="90">
                   <span class="skill-name"><a href="">Set Decoration</a></span>
                 </div>
-                <div class="skill-badge" data-percentage="10">
+                <div class="skill-badge" data-percentage="75">
                   <span class="skill-name"><a href="">Sewing</a></span>
                 </div>
-                <div class="skill-badge" data-percentage="10">
+                <div class="skill-badge" data-percentage="85">
                   <span class="skill-name"><a href="">Pattern Design</a></span>
                 </div>
-                <div class="skill-badge" data-percentage="10">
+                <div class="skill-badge" data-percentage="85">
                   <span class="skill-name"><a href="">Art Direction</a></span>
                 </div>
-                <div class="skill-badge" data-percentage="10">
-                  <span class="skill-name"><a href="">Photoshop</a></span>
-                </div>
               </div>
+            </div>
         </main>
       </div>
     `;
