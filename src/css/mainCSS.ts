@@ -25,27 +25,33 @@ export default css`
     --transitionInSeconds: 0.6s;
     --logoTransitionInSeconds: 0.8s;
     --be_here_now_blue: #301987;
+
+    // Light mode colours
+    --light_mode_color: --zwart;
+    --light-mode-background: --wit;
+
+    // Dark mode colours
+    --color-dark-mode: --wit;
+    --background-dark-mode: --zwart;
   }
 
+  * {
+    text-decoration: none;
+  }
 
   main {
     height: 100vh;
     width: 100%;
-    //padding: 1rem;
     line-height: normal;
     display: inline-flex !important;
     flex-direction: column; /* Stack items vertically */
     justify-content: center; /* Center items horizontally */
-
-    //padding-left: 50px !important;
-
   }
 
   body {
     width: 100%;
     height: 100%;
     margin: 0; /* some weird margin: 8px; is inherited from somewhere */
-
   }
 
   hr {
@@ -53,7 +59,6 @@ export default css`
     margin-bottom: 2rem;
     width: 100%;
   }
-
 
   img {
     width: auto;
@@ -64,15 +69,10 @@ export default css`
     margin-right: auto !important;
     border: 1.5rem solid moccasin !important;
     //border: var(--border) !important;
-
     -webkit-filter: sepia(7%); /* Safari 6.0 - 9.0 */
     filter: sepia(7%);
     display: block !important;
     margin-bottom: 3rem !important;
-  }
-
-  * {
-    text-decoration: none;
   }
 
   ul {
@@ -85,7 +85,7 @@ export default css`
   }
 
   a {
-    color: #fff;
+    color: var(--color-dark-mode);
     border-radius: 8px;
     text-transform: uppercase;
     text-decoration: none;
@@ -125,11 +125,7 @@ export default css`
       justify-content: center;
       align-items: center;
       text-align: center; // This centers inline or inline-block content
-      /*color: var(--wit);*/
-      /*background-color: var(--zwart);*/
       line-height: normal;
-      //margin: 1rem;
-      //max-width: 90vw; /* Set a maximum width */
     }
 
     body {
@@ -141,8 +137,6 @@ export default css`
     }
 
     ul {
-      /* This will center the child elements horizontally */
-      /*display: flex;*/
       justify-content: center;
       align-items: center;
       margin-left: 0;
@@ -176,13 +170,12 @@ export default css`
 
   @media (prefers-color-scheme: light) {
     :root {
-      color: var(--zwart);
-      background-color: var(--wit);
+      color: var(--light-mode-color);
+      background-color: var(--light-mode-background);
     }
 
     main {
-      color: var(--zwart);
-      /* background-color: transparent; */
+      color: var(--light-mode-color);
     }
 
     table {
@@ -193,10 +186,6 @@ export default css`
     :root .header_bar {
       color: var(--zwart);
       background-color: var(--wit);
-    }
-
-    a {
-      color: midnightblue;
     }
 
     nav ul li a {

@@ -68,9 +68,9 @@ export class MenuHeader extends LitElement {
         }
 
         nav ul li a {
+          color: var(--wit);
           font-size: 11vw;
           line-height: 1.2em; /* Adjust the line-height as needed */
-          color: var(--zwart);
           border-radius: 8px;
           text-transform: uppercase;
           padding: 0.5rem 1rem; /* Adjust the padding as needed */
@@ -231,6 +231,10 @@ export class MenuHeader extends LitElement {
         }
 
         @media (prefers-color-scheme: light) {
+          nav ul li a {
+            color: var(--zwart);
+          }
+
           footer, nav ul li a {
             background-color: transparent;
             border-color: var(--wit);

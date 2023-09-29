@@ -34,8 +34,12 @@ export class CVElement extends LitElement {
         line-height: 1.6em;
       }
 
-      #cv {
-        display: flex;
+      main {
+        height: 100%;
+      }
+
+
+      #cv, #app {
         justify-content: center;
         width: 100%;
         list-style-type: none;
@@ -78,7 +82,6 @@ export class CVElement extends LitElement {
         background-size: 200% 100%;
         transition: background-position 0.3s ease;
         overflow: hidden;
-        display: inline-block;
       }
 
       #bio:hover {
@@ -97,7 +100,7 @@ export class CVElement extends LitElement {
 
       #bio::after {
         content: "";
-        display: block;
+        //display: block;
         height: 4px;
         background: linear-gradient(to left, #f69ec4, #f9dd94 100%);
         position: absolute;
@@ -120,7 +123,7 @@ export class CVElement extends LitElement {
       /* Style the list within the experience section */
 
       #experience-list {
-        display: grid;
+        //display: grid;
         grid-template-columns: 1fr;
       }
 
@@ -133,7 +136,7 @@ export class CVElement extends LitElement {
       /* Style the grid within the skills section */
 
       #skillsGrid {
-        display: grid;
+        //display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         padding: 1rem;
       }
@@ -165,7 +168,7 @@ export class CVElement extends LitElement {
         margin-bottom: 0.5rem;
         margin-top: 0.5rem;
         position: absolute;
-        display: block;
+        //display: block;
         top: 0;
         left: 0;
         content: attr(data-percentage);
@@ -222,7 +225,7 @@ export class CVElement extends LitElement {
         left: 50%;
         top: 0;
         content: ' ';
-        display: block;
+        //display: block;
         width: 6px;
         height: 100%;
         margin-left: -3px;
@@ -391,10 +394,10 @@ export class CVElement extends LitElement {
 
       @media (max-width: 952px) {
 
-        /* Style the bio section */
+        /* Style the sections */
         .main-divs {
           padding: 1rem;
-          width: 80%
+          width: 80%;
         }
 
         skillsgrid {
