@@ -51,8 +51,8 @@ export class NotFound extends LitElement {
       }
 
       body {
-        display: table-cell;
-        vertical-align: middle;
+        //display: table-cell;
+        //vertical-align: middle;
         margin: 2em auto;
       }
 
@@ -60,11 +60,13 @@ export class NotFound extends LitElement {
         color: #555;
         font-size: 2em;
         font-weight: 400;
+        padding: 1rem;
       }
 
       p {
         margin: 0 auto;
-        width: 280px;
+        width: 100%;
+        padding: 1rem;
       }
 
       @media only screen and (max-width: 280px) {

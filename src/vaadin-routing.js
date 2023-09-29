@@ -93,7 +93,11 @@ router.setRoutes([{
     path: '/',                  // standaard landingspage
     component: 'home-page-element',
   }, {
-    name: 'not-found-element', // doet niks impliciet
+    name: 'not-found-element-404', // doet niks impliciet
+    path: '(.404)',           // 404 must be last in this file
+    component: 'not-found-element',
+  }, {
+    name: 'not-found-element-catchall', // doet niks impliciet
     path: '(.*)',           // 404 must be last in this file
     component: 'not-found-element',
   },
