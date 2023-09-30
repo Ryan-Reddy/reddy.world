@@ -37,6 +37,7 @@ main {
   justify-content: center; /* Center items horizontally */
 }
 body {
+  display: grid;
   margin: 0;
   height: 100vh; /* use viewport height to make it full-screen height */
   justify-content: center !important;
