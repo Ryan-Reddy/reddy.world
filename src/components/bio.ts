@@ -19,6 +19,14 @@ export class BioElement extends LitElement {
 
   static get styles() {
     return [langCSS, mainCSS, css`
+      :host {
+        max-width: 1280px;
+        height: 100vh;
+        margin: 0 auto;
+        padding: 2rem;
+        text-align: center;
+      }
+
       * {
         margin: 0;
         padding: 0;
@@ -30,7 +38,6 @@ export class BioElement extends LitElement {
       #bio {
         width: 100%;
         text-align: center; /* Center the text horizontally */
-
       }
 
       .hidden {
@@ -93,7 +100,6 @@ export class BioElement extends LitElement {
             margin-left: 0;
             align-content: space-evenly;
           }
-
           #bio {
             text-align: center; /* Center the text horizontally */
             max-width: 800px; /* Adjust this value as needed */

@@ -36,11 +36,24 @@ main {
   flex-direction: column; /* Stack items vertically */
   justify-content: center; /* Center items horizontally */
 }
+
+
 body {
   display: grid;
   margin: 0;
   height: 100vh; /* use viewport height to make it full-screen height */
   justify-content: center !important;
+}
+
+#app {
+  margin-top: 30px; /* Adjust the value to the height of your navbar */
+  /* other styles */
+}
+
+
+header-menu {
+  z-index: 100; /* Adjust as needed */
+  position: relative; /* or absolute, depending on your layout */
 }
 
 
@@ -127,6 +140,7 @@ a::after {
     align-items: center;
     margin-left: 0;
   }
+
 
   footer-menu {
     width: 100%;

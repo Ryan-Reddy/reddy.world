@@ -3,16 +3,10 @@ import {customElement, query} from 'lit/decorators.js';
 import mainCSS from '../../css/langCSS';
 import langCSS from '../../css/mainCSS';
 
-
-/**
- * An example element.
- *
- * @slot - This element has a slot
- * @csspart button - The button
- */
 @customElement('blackjack-element')
 export class CVElement extends LitElement {
   // @query('#bio') bioSection!: HTMLElement;
+  private token: any;
 
   constructor() {
     super();
@@ -31,6 +25,7 @@ export class CVElement extends LitElement {
         display: flex;
         justify-content: space-around;
         margin-top: 50px;
+        display: inline-flex;
       }
 
       .cards {
@@ -92,6 +87,53 @@ export class CVElement extends LitElement {
     this.dispatchEvent(titleEvent);
   }
 
+  async login() {
+    const loginEndpoint = 'http://localhost:8080/login'; // Replace with your authentication endpoint URL
+    // const loginEndpoint = 'http://35.204.255.73/login'; // Replace with your authentication endpoint URL
+    const credentials = {
+      username: 'admin',
+      password: 'admin',
+    };
+
+    try {
+      const response = await fetch(loginEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(credentials),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      const jwtToken = data.token; // Retrieve the JWT token from the response
+      console.log('JWT Token:', jwtToken);
+
+      // Store the token for future requests
+      this.token = jwtToken;
+
+      // You can now use the stored JWT token for authenticated requests
+      const authenticatedEndpoint = 'localhost:8080/blackjack'; // Replace with your authenticated API endpoint URL
+      const authenticatedResponse = await fetch(authenticatedEndpoint, {
+        headers: {
+          'Authorization': `Bearer ${jwtToken}`, // Include the JWT token in the 'Authorization' header
+        },
+      });
+
+      if (!authenticatedResponse.ok) {
+        throw new Error(`Authenticated HTTP error! Status: ${authenticatedResponse.status}`);
+      }
+
+      const authenticatedData = await authenticatedResponse.json();
+      console.log('Authenticated Data:', authenticatedData);
+    } catch (error) {
+      console.error('Authentication Error:', error);
+    }
+  }
+
   render() {
     return html`
       <!DOCTYPE html>
@@ -119,6 +161,7 @@ export class CVElement extends LitElement {
             <img src="blackjack/cards/ace_of_diamonds.png">
           </div>
 
+          <button id="loginBtn" @click="${this.login}">Login</button>
           <button id="hitBtn">Hit</button>
           <button id="standBtn">Stand</button>
         </div>

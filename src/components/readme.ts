@@ -70,6 +70,10 @@ export class ReadmeElement extends LitElement {
           //display: none;
           //align-content: center;
         }
+        #readme {
+          overflow-y: hidden;
+          overflow-x: auto !important;
+        }
 
         div.readme:after {
           top: 0;

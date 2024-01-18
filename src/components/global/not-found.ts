@@ -1,7 +1,7 @@
 import {css, html, LitElement} from 'lit';
 import {customElement, property, query} from 'lit/decorators.js';
-import langCSS from "../../css/langCSS";
-import mainCSS from "../../css/mainCSS";
+import langCSS from '../../css/langCSS';
+import mainCSS from '../../css/mainCSS';
 
 /**
  * A support page element.
@@ -11,22 +11,23 @@ import mainCSS from "../../css/mainCSS";
  */
 @customElement('not-found-element')
 export class NotFound extends LitElement {
-  @property() _hiddenElement = 'hidden';
-  @query('#my_audio') _audio: any;
+  @property({type: String}) _hiddenElement = 'hidden';
+  @query('#my_audio') _audio: { play: () => void; } | undefined;
 
   constructor() {
     super();
   }
 
-  static get styles() {
-    return [langCSS, mainCSS, css`
+  static styles = [
+    langCSS,
+    mainCSS,
+    css`
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
         text-decoration: none;
         line-height: 1.2;
-
       }
 
       .hidden {
@@ -51,8 +52,6 @@ export class NotFound extends LitElement {
       }
 
       body {
-        //display: table-cell;
-        //vertical-align: middle;
         margin: 2em auto;
       }
 
@@ -70,7 +69,6 @@ export class NotFound extends LitElement {
       }
 
       @media only screen and (max-width: 280px) {
-
         body,
         p {
           width: 95%;
@@ -80,45 +78,48 @@ export class NotFound extends LitElement {
           font-size: 1.5em;
           margin: 0 0 0.3em;
         }
-
       }
-    `];
-  }
+    `,
+  ];
 
-  firstUpdated(changedProperties: any) {
+  firstUpdated() {
     let titleEvent = new CustomEvent('title-change', {
       detail: {
-        message: 'Page Not Found'
-      }
+        message: 'Page Not Found',
+      },
     });
     this.dispatchEvent(titleEvent);
 
+    // @ts-ignore
     this._audio.play();
   }
 
   render() {
     return html`
       <html lang="en">
+        <head>
+          <meta charset="utf-8" />
+          <title>Page Not Found</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+        </head>
 
-      <head>
-        <meta charset="utf-8">
-        <title>Page Not Found</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <body>
+          <h1>Page Not Found</h1>
 
-      </head>
-
-      <body>
-      <h1>Page Not Found</h1>
-
-      <p>Sorry, but the page you were trying to view does not exist.
-        But sometimes that's when you find something you didn't know you where looking for.
-      </p>
-      <br>
-      <audio id="my_audio" src="yosemitebear_nountain_double_rainbow.mp3" loop="loop"></audio>
-      <img src="double_rainbow.png" height="533" width="800" alt="double rainbow all the way meme beautiful"/>
-
-      </body>
-
+          <p>
+            Sorry, but the page you were trying to view does not exist.
+            But sometimes that's when you find something you didn't know you where looking for.
+          </p>
+          <br />
+          <audio id="my_audio" src="yosemitebear_nountain_double_rainbow.mp3" loop="loop"></audio>
+          <img
+            src="double_rainbow.png"
+            height="533"
+            width="800"
+            alt="double rainbow all the way meme beautiful"
+          />
+        </body>
+      </html>
       <!-- IE needs 512+ bytes: https://docs.microsoft.com/archive/blogs/ieinternals/friendly-http-error-pages -->
     `;
   }

@@ -36,15 +36,11 @@ export class CVElement extends LitElement {
 
       main {
         height: 100%;
-
         display: flex;
         justify-content: center;
-
         padding: 1rem;
         width: 100%;
-
       }
-
 
       #cv, #app {
         justify-content: center;
@@ -55,7 +51,6 @@ export class CVElement extends LitElement {
           width: 100%;
         }
       }
-
 
       /* Style the sections */
 
@@ -93,7 +88,7 @@ export class CVElement extends LitElement {
         max-width: 80%; /* Set a maximum width */
         box-sizing: border-box; /* Include padding and border in the width calculation */
         //font-family: Arial, sans-serif;
-        font-size: 2rem;
+        font-size: 1rem;
 
         margin: .5rem 0;
         padding: .5rem 3rem .5rem 3rem;
@@ -421,13 +416,22 @@ export class CVElement extends LitElement {
       /* ================ Timeline Media Queries ================ */
 
       @media (max-width: 952px) {
-        #bio {
-          width: 80vw;
-          margin: 0.2rem;
-          padding: .5rem .5rem .5rem .5rem;
-
+        main {
+          display: flex;
+          flex-direction: column; /* Stack children vertically */
+          align-items: stretch;   /* Stretch children horizontally to fill the width */
+          background: var(--be_here_now_blue);
+          width: 100%;
+          margin: 1rem;
+          padding: 1rem;
         }
-
+        #bio {
+          width: 100%;
+          margin: 0.2rem;
+          padding: .5rem .0rem .5rem .0rem;
+          font-size: .7rem;
+          text-transform: none;
+        }
 
         skillsgrid {
           grid-template-columns: 1fr;
@@ -469,7 +473,7 @@ export class CVElement extends LitElement {
         }
 
         .flag {
-          background: rgb(245, 245, 245, 0.12);
+          background: rgb(245, 245, 245, 0.8);
           z-index: 15;
         }
 
