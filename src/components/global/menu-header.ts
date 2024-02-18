@@ -281,6 +281,7 @@ export class MenuHeader extends LitElement {
 <!--            <li><a class="nav-button" href="/" id="home">Home</a></li>-->
             <li><a class="nav-button" href="bio" id="bio">Bio</a></li>
             <li><a class="nav-button" href="cv" id="cv">CV</a></li>
+            <li><a class="nav-button" href="contact" id="cv">Contact</a></li>
             <!--            <li><lang-element></lang-element></li> lang picked from browser lang-->
           </ul>
 

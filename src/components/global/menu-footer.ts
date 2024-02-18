@@ -207,15 +207,6 @@ export class MenuFooter extends LitElement {
               >Support</a
               >
             </li>
-            <li>
-              <a
-                class="nav-button"
-                href="contact"
-                id="contact-button"
-                aria-label="Contact"
-              >Contact</a
-              >
-            </li>
           </ul>
         </div>
         <div lang="nl">
@@ -256,16 +247,6 @@ export class MenuFooter extends LitElement {
                 id="support-button"
                 aria-label="Support"
               >Support</a
-              >
-            </li>
-            <li>
-              <a
-                class="nav-button"
-                href="${this._contactClickedEnglish}"
-                id="contact-button"
-                aria-label="Contact"
-              >
-                Contact</a
               >
             </li>
           </ul>
