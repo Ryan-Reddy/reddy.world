@@ -54,6 +54,18 @@ export default css`
     margin: 0; /* some weird margin: 8px; is inherited from somewhere */
   }
 
+  h1 {
+    margin-top: 1rem;
+  }
+
+  h2 {
+    margin-top: .8em;
+  }
+
+  h3 {
+    margin-top: .5em;
+    text-align: left;
+  }
   hr {
     margin-top: 2rem;
     margin-bottom: 2rem;
