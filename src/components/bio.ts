@@ -111,9 +111,7 @@ export class BioElement extends LitElement {
       <meta name="title" content="Ryan Reddy Biography">
       <title>Ryan Reddy Biography</title>
 
-      <body>
 
-      <main>
 
         <div id="bio">
           <div id="titlebox">
@@ -196,7 +194,7 @@ export class BioElement extends LitElement {
           </ul>
           <p>
             <br>
-            Amidst this colorful array of experiences, I allways come back to my
+            Amidst this colorful array of experiences, I always come back to my
             true passion:
             <br><br>
             Design of the living world.
@@ -219,8 +217,6 @@ export class BioElement extends LitElement {
             creativity knows no bounds.
           </p>
         </div>
-      </main>
-      </body>
     `;
   }
 }
