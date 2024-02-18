@@ -25,28 +25,15 @@ export class MenuFooter extends LitElement {
       mainCSS,
       css`
         nav {
-          width: 100%;
-          //box-sizing: border-box;
           text-decoration: none;
           justify-content: space-between;
           text-align: center; /* center the child */
           align-content: center;
-          //float: right;
-          display: flex;
+          //display: flex;
           align-items: center;
-          //margin: 0.5rem;
+          margin: 0.5rem;
           line-height: 2em; // height of buttons -> stops overlap
         }
-
-        .nav-button {
-          font-size: 1.7rem;
-          line-height: 1.9em;
-        }
-
-        //.lang-match {
-        //  //width: 100%;
-        //
-        //}
 
         body {
           font-family: "Montserrat", sans-serif;
@@ -91,11 +78,6 @@ export class MenuFooter extends LitElement {
           color: var(--zwart);
         }
 
-        .nav-button {
-          opacity: 1;
-          text-align: center;
-        }
-
         @media (max-width: 952px) {
           nav {
             float: none;
@@ -131,10 +113,6 @@ export class MenuFooter extends LitElement {
         @media (max-width: 858px) {
           display: inline-block;
 
-          .checkbtn {
-            display: inline-block;
-          }
-
           u {
             position: fixed;
             width: auto;
@@ -147,10 +125,6 @@ export class MenuFooter extends LitElement {
 
           nav ul li a {
             font-size: 11vw;
-          }
-
-          #check:checked {
-            left: 0;
           }
         }
 
@@ -191,7 +165,7 @@ export class MenuFooter extends LitElement {
               <a
                 class="nav-button"
                 data-key="nav-btn-friends"
-                href="friends"
+                href="/friends"
                 id="friends-button"
                 aria-label="Friends"
               >Friends</a
@@ -201,7 +175,7 @@ export class MenuFooter extends LitElement {
               <a
                 class="nav-button"
                 data-key="nav-btn-friends"
-                href="support"
+                href="/support"
                 id="support-button"
                 aria-label="Support"
               >Support</a

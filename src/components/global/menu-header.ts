@@ -52,8 +52,8 @@ export class MenuHeader extends LitElement {
 
       nav ul {
         float: left;
-        margin-right: 8em;
-        padding-right: 8em;
+        //margin-right: 8em;
+        //padding-right: 8em;
 
       }
 
@@ -307,7 +307,6 @@ export class MenuHeader extends LitElement {
               aria-expanded="true"
               role="menu"
               @click="${this._hideDropDown}">
-<!--              <li><a class="nav-button-dropdown" href="/" id="home">Home</a></li>-->
               <li><a class="nav-button-dropdown" href="bio" id="bio">Bio</a></li>
               <li><a class="nav-button-dropdown" href="cv" id="cv">CV</a></li>
             </ul>
