@@ -36,12 +36,6 @@ export class FriendsElement extends LitElement {
           text-decoration: none;
         }
 
-        .hidden {
-          display: none;
-          pointer-events: none;
-          color: var(--silver);
-        }
-
         button {
           width: 66%;
           height: 2em;
@@ -55,8 +49,6 @@ export class FriendsElement extends LitElement {
         <meta charset="UTF-8">
         <title>Friends</title>
       </head>
-      <body>
-      <main>
         <div>
           <!--          <span lang="nl">Nederlandse span</span>-->
           <!--          <br>-->
@@ -86,10 +78,7 @@ export class FriendsElement extends LitElement {
 
           </ul>
         </div>
-      </main>
 
-
-      </body>
     `;
   }
 }
