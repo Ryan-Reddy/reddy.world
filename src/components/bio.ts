@@ -63,21 +63,6 @@ export class BioElement extends LitElement {
         width: 100%;
       }
 
-      h1 {
-        margin-bottom: 1rem;
-        margin-top: 1rem;
-      }
-
-      h2 {
-        //text-align: center;
-        margin-bottom: .8em;
-        margin-top: .8em;
-        //margin-left: 3em;
-      }
-
-      h3 {
-        text-align: left;
-      }
 
 
       li {
@@ -123,23 +108,29 @@ export class BioElement extends LitElement {
     return html`
       <link rel="preload" href="ryan_images/IMG_6869-color-cropped.png" as="image">
       <meta name="description" content="About Ryan Reddy.">
-      <meta title="Ryan Reddy Biography">
+      <meta name="title" content="Ryan Reddy Biography">
       <title>Ryan Reddy Biography</title>
 
       <body>
+
       <main>
+
         <div id="bio">
           <div id="titlebox">
-            <h1>Hello, I’m Ryan Reddy.</h1>
+            <h1 class="header">Ryan Reddy</h1>
+            <p class="undertitle">Artist,
+              <br>Product Designer,
+              <br> and aspiring Computer Science Engineer.</p>
           </div>
+
+
           <picture>
             <!-- WebP format for browsers that support it -->
-            <source srcset="/ryan_images/IMG_6869-color-cropped.webp" type="image/webp">
+            <source srcset="/ryan_images/IMG_6869-scaled.webp" type="image/webp">
 
             <!-- Fallback PNG image for browsers that do not support WebP -->
-            <img class="landingImage" src="ryan_images/IMG_6869-color-cropped.png"
-                 alt="Ryan Reddy profile image, black and white, straw hat"
-            />
+            <img src="/ryan_images/IMG_6869.png" class="landingImage"
+                 alt="Ryan Reddy profile image, black and white, straw hat">
           </picture>
           <br>
           <hr>
