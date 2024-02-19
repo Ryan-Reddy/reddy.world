@@ -119,6 +119,7 @@ export class BioElement extends LitElement {
             <p class="undertitle">Artist,
               <br>Product Designer
               <br> and Computer Science Engineer.</p>
+              <br> and cool guy.</p>
           </div>
 
 
