@@ -117,8 +117,8 @@ export class BioElement extends LitElement {
           <div id="titlebox">
             <h1 class="header">Ryan Reddy</h1>
             <p class="undertitle">Artist,
-              <br>Product Designer,
-              <br> and aspiring Computer Science Engineer.</p>
+              <br>Product Designer
+              <br> and Computer Science Engineer.</p>
           </div>
 
 
