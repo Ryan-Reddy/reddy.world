@@ -47,7 +47,7 @@ body {
 }
 
 #app {
-  margin: 30px; /* Adjust the value to the height of your navbar */
+  /*margin-top: 30px; !* Adjust the value to the height of your navbar *!*/
   width: 100vw; /* max width of app */
 }
 
