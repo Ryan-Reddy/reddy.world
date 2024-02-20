@@ -40,6 +40,7 @@ export class CVElement extends LitElement {
         justify-content: center;
         padding: 1rem;
         width: 100%;
+        align-items: center; /* To center the items horizontally inside the main */
       }
 
       #cv, #app {
