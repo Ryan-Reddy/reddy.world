@@ -24,8 +24,8 @@ export class CVElement extends LitElement {
   static get styles() {
     return [langCSS, mainCSS, css`
       body {
-        margin: 0;
-        padding: 0;
+        //margin: 0;
+        //padding: 0;
         background: rgb(230, 230, 230);
 
         color: rgb(50, 50, 50);
@@ -57,7 +57,7 @@ export class CVElement extends LitElement {
 
       .main-divs {
         padding: 1rem;
-        width: 80%; /* Adjust this value as needed. */
+        //width: 80%; /* Adjust this value as needed. */
         display: flex;
         flex-direction: column; /* If you want its children to stack vertically. */
         align-items: center; /* To center the items horizontally inside the .main-divs */
@@ -573,36 +573,12 @@ export class CVElement extends LitElement {
         <main>
           <nav>
             <ul>
-<!--              <li><a @click=${() => this.scrollToSection(this.bioSection)}>Bio</a></li>-->
               <li><a @click=${() => this.scrollToSection(this.experienceSection)}>Experience</a></li>
               <li><a @click=${() => this.scrollToSection(this.educationSection)}>Education</a></li>
               <li><a @click=${() => this.scrollToSection(this.skillsSection)}>Skills</a></li>
             </ul>
           </nav>
           <hr>
-<!--          <div class="main-divs" id="bio">-->
-<!--            <h2>Bio</h2>-->
-<!--            <a href="/bio">-->
-<!--              <p>-->
-<!--                "Driven by a passion for making a positive impact, <br>-->
-<!--                my journey has been a dynamic and transformative one. <br> <br>-->
-
-<!--                With diverse experiences spanning product design, costume creation, sales, journalism, management,-->
-<!--                <br>-->
-<!--                and even a venture into modeling and acting, I've cultivated a unique perspective. <br> <br>-->
-
-<!--                Inspired by the wisdom of Alan Watts, I embarked on a quest to discover true happiness, <br>-->
-<!--                ultimately leading me to excel in the world of Computer Science Engineering, where innovation and-->
-<!--                creativity thrive."-->
-<!--              </p>-->
-<!--              <p>-->
-<!--                "I'm Ryan, and I'm on a mission to make a difference."-->
-<!--              </p>-->
-<!--              - Ryan-->
-
-<!--            </a>-->
-<!--          </div>-->
-<!--          <hr>-->
           <div class="main-divs" id="experience">
             <h2>Experience</h2>
             <ul class="timeline">

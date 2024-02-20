@@ -35,6 +35,7 @@ main {
   line-height: normal;
   flex-direction: column; /* Stack items vertically */
   justify-content: center; /* Center items horizontally */
+  text-align: center;
 }
 
 
@@ -42,7 +43,7 @@ body {
   display: grid;
   margin: 0;
   height: 100vh; /* use viewport height to make it full-screen height */
-  width: 100vw;
+  /*width: 100vw;*/
   /*justify-content: center !important;*/
 }
 

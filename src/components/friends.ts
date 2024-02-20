@@ -55,9 +55,9 @@ export class FriendsElement extends LitElement {
 
           <!--          <span lang="en">Engelse span</span>-->
 
-
+          <div id="titlebox">
           <h1>Friends</h1>
-
+          </div>
           <br>
 
           <ul>
