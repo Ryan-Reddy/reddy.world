@@ -27,12 +27,12 @@ export default css`
     --be_here_now_blue: #301987;
 
     // Light mode colours
-    --light_mode_color: --zwart;
-    --light-mode-background: --wit;
+    --light-mode-color: black;
+    --light-mode-background: white;
 
     // Dark mode colours
-    --color-dark-mode: --wit;
-    --background-dark-mode: --zwart;
+    --color-dark-mode: white;
+    --background-dark-mode: black;
   }
 
   * {
@@ -55,16 +55,25 @@ export default css`
   }
 
   h1 {
-    margin-top: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+
   }
 
   h2 {
-    margin-top: .8em;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+
   }
 
   h3 {
-    margin-top: .5em;
-    text-align: left;
+    margin-top: .5rem;
+    //text-align: left;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin: 0.5rem
   }
   hr {
     margin-top: 2rem;
@@ -94,6 +103,7 @@ export default css`
   li {
     position: relative;
     padding: 1rem;
+    text-align: center;
   }
 
   a {
@@ -182,7 +192,7 @@ export default css`
 
   @media (prefers-color-scheme: light) {
     :root {
-      color: var(--light-mode-color);
+      color: var(--light_mode_color);
       background-color: var(--light-mode-background);
     }
 

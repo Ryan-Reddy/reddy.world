@@ -35,17 +35,12 @@ export class BioElement extends LitElement {
         text-align: center;
       }
 
-      #bio {
-        width: 100%;
-        text-align: center; /* Center the text horizontally */
-      }
-
-      .hidden {
-        display: none;
-        pointer-events: none;
-        color: var(--silver);
-        background-color: var(--silver);
-      }
+      //.hidden {
+      //  display: none;
+      //  pointer-events: none;
+      //  color: var(--silver);
+      //  background-color: var(--silver);
+      //}
 
       button {
         width: 66%;
@@ -59,7 +54,7 @@ export class BioElement extends LitElement {
       }
 
       p {
-        padding: 1rem;
+        //padding: 1rem;
         width: 100%;
       }
 
@@ -112,111 +107,119 @@ export class BioElement extends LitElement {
       <title>Ryan Reddy Biography</title>
 
 
+      <div id="bio">
+        <div id="titlebox">
+          <h1 class="header">Ryan Reddy</h1>
+          <p class="undertitle">Artist,
+            <br>Product Designer
+            <br> and Computer Science Engineer.</p>
+        </div>
 
-        <div id="bio">
-          <div id="titlebox">
-            <h1 class="header">Ryan Reddy</h1>
-            <p class="undertitle">Artist,
-              <br>Product Designer
-              <br> and Computer Science Engineer.</p>
-          </div>
 
+        <picture>
+          <!-- WebP format for browsers that support it -->
+          <source srcset="/ryan_images/IMG_6869-scaled.webp" type="image/webp">
 
-          <picture>
-            <!-- WebP format for browsers that support it -->
-            <source srcset="/ryan_images/IMG_6869-scaled.webp" type="image/webp">
-
-            <!-- Fallback PNG image for browsers that do not support WebP -->
-            <img src="/ryan_images/IMG_6869.png" class="landingImage"
-                 alt="Ryan Reddy profile image, black and white, straw hat">
-          </picture>
+          <!-- Fallback PNG image for browsers that do not support WebP -->
+          <img src="/ryan_images/IMG_6869.png" class="landingImage"
+               alt="Ryan Reddy profile image, black and white, straw hat">
+        </picture>
+        <br>
+        <hr>
+        <h2>Bio</h2>
+        <p>I'm a software developer based in Amsterdam, Netherlands.<br>
+          Welcome to reddy.world, where I specialize in web <br>
+          development that combines innovation with design excellence. <br>
+          My background encompasses website building, art, design, special effects, and computer science engineering.
           <br>
-          <hr>
-          <h2>Bio</h2>
-          <p>I'm a software developer based in Amsterdam, Netherlands.<br>
-            Welcome to reddy.world, where I specialize in web <br>
-            development that combines innovation with design excellence. <br>
-            My background encompasses website building, art, design, special effects, and computer science engineering.
-            <br>
-            I create websites that not only look impressive but also perform exceptionally well. <br>
-            <br>
-            I prioritize the perfect balance between artistic creativity and technical precision. <br>
-            With extensive project management experience in various industries, <br>
-            I consistently deliver on time and within budget. <br>
-            My goal is to
-            provide you with a distinctive website that represents your brand and outshines the competition.</p>
+          I create websites that not only look impressive but also perform exceptionally well. <br>
+          <br>
+          I prioritize the perfect balance between artistic creativity and technical precision. <br>
+          With extensive project management experience in various industries, <br>
+          I consistently deliver on time and within budget. <br>
+          My goal is to
+          provide you with a distinctive website that represents your brand and outshines the competition.</p>
 
-          <hr>
-          <h2>Side ventures</h2>
+        <hr>
+        <h2>Side ventures</h2>
 
-          <p>Beyond my dedication to programming, my interests are as diverse as my
-            professional journey. <br>
-            I've ventured into several entrepreneurial endeavors,
-            including:</p>
-          <ul>
-            <li>
-              <h3>
-                <a href="https://nepco.nl/">Theater Costumes:</a>
-              </h3>
-              Bringing characters to
-              life on stage with unique and captivating costumes.
-            </li>
-            <li>
-              <h3>
-                <a href="https://reddymaekersproductions.wordpress.com/">Decor and Props</a>
-              </h3>
-              Crafting immersive environments and captivating props for various creative
-              projects.
-            </li>
-            <li>
-              <h3>
-                <a href="https://www.facebook.com/HouseofGentleFrequencies/">
-                  Women's Health
-                  Advocacy
-                </a></h3>Hosting a platform dedicated to women's health, where
+        <p>Beyond my dedication to programming, my interests are as diverse as my
+          professional journey. <br>
+          I've ventured into several entrepreneurial endeavors,
+          including:</p>
+        <ul>
+          <li>
+            <h3>
+              <a href="https://nepco.nl/">Theater Costumes:</a>
+            </h3>
+            <p>
+            Bringing characters to
+            life on stage with unique and captivating costumes.
+            </p>
+
+          </li>
+          <li>
+            <h3>
+              <a href="https://reddymaekersproductions.wordpress.com/">Decor and Props</a>
+            </h3>
+            <p>
+            Crafting immersive environments and captivating props for various creative
+            projects.
+            </p>
+          </li>
+          <li>
+            <h3>
+              <a href="https://www.facebook.com/HouseofGentleFrequencies/">
+                Women's Health
+                Advocacy
+              </a></h3>
+            <p>
+              Hosting a platform dedicated to women's health, where
               knowledge and support meet.
-            </li>
-            <li>
-              <h3>
-                <a href="https://amsterdamsefrisdrankfabriek.nl/">Artisanal Soda
-                  Production</a>
-              </h3>Creating delightful, handcrafted sodas that tickle the taste
+            </p>
+          </li>
+          <li>
+            <h3>
+              <a href="https://amsterdamsefrisdrankfabriek.nl/">Artisanal Soda
+                Production</a>
+            </h3>
+            <p>
+              Creating delightful, handcrafted sodas that tickle the taste
               buds.
-            </li>
-            <li>
-              <h3>
-                <a href="http://resethealthbar.nl/">
-                  Food Stand Management</a>
-              </h3>
+            </p>
+          </li>
+          <li>
+            <h3>
+              <a href="http://resethealthbar.nl/">
+                Food Stand Management</a>
+            </h3>
+            <p>
               Serving up
               culinary delights to satisfy hungry appetites.
-            </li>
-          </ul>
-          <p>
-            <br>
-            Amidst this colorful array of experiences, I always come back to my
-            true passion:
-            <br><br>
-            Design of the living world.
-            <br>
-            My lust for improving the human experience is the driving force behind all my work.</p>
-          <hr>
-          <h2>Be here, now.</h2>
-          <p>If you're interested in delving deeper, please explore my <br>
-            <a href="cv">CV</a> <br>
-            for a comprehensive overview of my accomplishments.
-            <br>
+            </p>
+          </li>
+        </ul>
+        <p>
+          <br>
+          Amidst this colorful array of experiences, I always come back to my
+          true passion:
+          <br><br>
+          Making life better for everyone.
+          <br>
+          My lust for improving the human experience is the driving force behind all my work.</p>
+        <hr>
+        <h2>Be here, now.</h2>
+        <p>If you're interested in delving deeper, please explore my <br>
+          <a href="cv">CV</a> <br>
+          for a comprehensive overview of my accomplishments.
+          <br>
 
-            For inquiries, potential collaborations, <br>
-            or even just a friendly chat, <br>
-            don't hesitate to reach out to me at <a
-              href="${this._contact}">ryan@reddy.world</a>.<br>
-
-            <br>
-            Thank you for visiting reddy.world,<br> where the possibilities are endless, and
-            creativity knows no bounds.
-          </p>
-        </div>
+          For inquiries, potential collaborations, <br>
+          or even just a friendly chat, <br>
+          don't hesitate to reach out to me at <a
+            href="${this._contact}">ryan@reddy.world</a>.<br>
+        </p>
+      </div>
     `;
   }
 }
