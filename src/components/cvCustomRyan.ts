@@ -778,13 +778,16 @@ export class CVElement extends LitElement {
               <div class="computer-skills">
                 <h3>Computer Skills</h3>
                 <div class="skill-badge" data-percentage="70">
-                  <span class="skill-name"><a href="">Test Driven Design (using e.g., JUnit, Cucumber)</a></span>
+                  <span class="skill-name"><a href="">Test Driven Design</a></span>
                 </div>
                 <div class="skill-badge" data-percentage="80">
-                  <span class="skill-name"><a href="">Object-Oriented Programming <br>&nbsp;&nbsp;&nbsp;(OOP)</a></span>
+                  <span class="skill-name"><a href="">Object-Oriented Programming </a></span>
+                </div>
+                <div class="skill-badge" data-percentage="60">
+                  <span class="skill-name"><a href="">Software Architecture</a></span>
                 </div>
                 <div class="skill-badge" data-percentage="85">
-                  <a href="">CAD DESIGN <br>&nbsp;&nbsp;&nbsp;(3D Modeling, Rhino 3D)</a></span>
+                  <a href="">CAD DESIGN</a></span>
                 </div>
                 <div class="skill-badge" data-percentage="75">
                   <span class="skill-name"><a href="">Photoshop</a></span>
