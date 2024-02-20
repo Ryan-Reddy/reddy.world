@@ -571,39 +571,38 @@ export class CVElement extends LitElement {
           <h1 hidden>C.V.</h1>
         </header>
         <main>
-          <h1>Ryan van Lil-Reddy</h1>
           <nav>
             <ul>
-              <li><a @click=${() => this.scrollToSection(this.bioSection)}>Bio</a></li>
+<!--              <li><a @click=${() => this.scrollToSection(this.bioSection)}>Bio</a></li>-->
               <li><a @click=${() => this.scrollToSection(this.experienceSection)}>Experience</a></li>
               <li><a @click=${() => this.scrollToSection(this.educationSection)}>Education</a></li>
               <li><a @click=${() => this.scrollToSection(this.skillsSection)}>Skills</a></li>
             </ul>
           </nav>
           <hr>
-          <div class="main-divs" id="bio">
-            <h2>Bio</h2>
-            <a href="/bio">
-              <p>
-                "Driven by a passion for making a positive impact, <br>
-                my journey has been a dynamic and transformative one. <br> <br>
+<!--          <div class="main-divs" id="bio">-->
+<!--            <h2>Bio</h2>-->
+<!--            <a href="/bio">-->
+<!--              <p>-->
+<!--                "Driven by a passion for making a positive impact, <br>-->
+<!--                my journey has been a dynamic and transformative one. <br> <br>-->
 
-                With diverse experiences spanning product design, costume creation, sales, journalism, management,
-                <br>
-                and even a venture into modeling and acting, I've cultivated a unique perspective. <br> <br>
+<!--                With diverse experiences spanning product design, costume creation, sales, journalism, management,-->
+<!--                <br>-->
+<!--                and even a venture into modeling and acting, I've cultivated a unique perspective. <br> <br>-->
 
-                Inspired by the wisdom of Alan Watts, I embarked on a quest to discover true happiness, <br>
-                ultimately leading me to excel in the world of Computer Science Engineering, where innovation and
-                creativity thrive."
-              </p>
-              <p>
-                "I'm Ryan, and I'm on a mission to make a difference."
-              </p>
-              - Ryan
+<!--                Inspired by the wisdom of Alan Watts, I embarked on a quest to discover true happiness, <br>-->
+<!--                ultimately leading me to excel in the world of Computer Science Engineering, where innovation and-->
+<!--                creativity thrive."-->
+<!--              </p>-->
+<!--              <p>-->
+<!--                "I'm Ryan, and I'm on a mission to make a difference."-->
+<!--              </p>-->
+<!--              - Ryan-->
 
-            </a>
-          </div>
-          <hr>
+<!--            </a>-->
+<!--          </div>-->
+<!--          <hr>-->
           <div class="main-divs" id="experience">
             <h2>Experience</h2>
             <ul class="timeline">
@@ -738,7 +737,7 @@ export class CVElement extends LitElement {
                     <span class="time-wrapper"><span class="time">2021 - 2025</span>
                   </div>
                   <div class="desc">
-                    Bachelor of Applied Science - BASc, Software Development
+                    University of Applied Science - Computer Science Engineering
                   </div>
                 </div>
               </li>
