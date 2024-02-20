@@ -32,6 +32,10 @@ export class RalContrastElement extends LitElement {
         text-decoration: none;
       }
 
+      #ral-app {
+        padding: 1rem;
+      }
+
       .hidden {
         display: none;
         pointer-events: none;
@@ -47,7 +51,7 @@ export class RalContrastElement extends LitElement {
         width: 100%;
         height: 750px;
         border: none;
-        border-radius: 8px;
+        border-radius: 1rem;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         background-color: rgba(0, 0, 0, 0.1) !important; /////////// DOESNT WORK SOMEHOW
       }
@@ -91,31 +95,28 @@ export class RalContrastElement extends LitElement {
         <meta title="RAL CONTRAST CHECKER">
         <title>RAL CONTRAST CHECKER</title>
       </head>
-      <body>
-      <main>
-        <div>
-          <!--          <span lang="nl">Nederlandse span</span>-->
-          <!--          <br>-->
+      <div id="ral-app">
+        <!--          <span lang="nl">Nederlandse span</span>-->
+        <!--          <br>-->
 
-          <!--          <span lang="en">Engelse span</span>-->
-          <div>
-            <iframe
-              src="/ralcontrast/index.html"
-              class="iframe-container"
-            ></iframe>
-          </div>
-          <div class="credit-box">
-            <h3>Credits:</h3>
-            <p>This project was created as a team assignment for Stichting Accessibility by students from Hogeschool
-              Utrecht in 2023:</p>
-            ${this.sortedCredits.map(credit => html`
+        <!--          <span lang="en">Engelse span</span>-->
+        <div>
+          <iframe
+            src="/ralcontrast/index.html"
+            class="iframe-container"
+          ></iframe>
+        </div>
+        <div class="credit-box">
+          <h3>Credits:</h3>
+          <p>This project was created as a team assignment for Stichting Accessibility by students from Hogeschool
+            Utrecht in 2023:</p>
+          ${this.sortedCredits.map(credit => html`
               <p><a href=${credit.link} target="_blank">${credit.name}</a></p>
             `)}
             <p>&copy; ${new Date().getFullYear()} Stichting Accessibility. All rights reserved.</p>
           </div>
         </div>
-      </main>
-      </body>
+
     `;
   }
 }

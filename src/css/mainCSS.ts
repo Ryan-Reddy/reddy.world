@@ -68,7 +68,6 @@ export default css`
 
   h3 {
     margin-top: .5rem;
-    //text-align: left;
     margin-bottom: 0.5rem;
   }
 
@@ -88,7 +87,7 @@ export default css`
     padding: 0 !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    border: 1.5rem solid moccasin !important;
+    border: 1.5rem solid white !important;
     //border: var(--border) !important;
     -webkit-filter: sepia(7%); /* Safari 6.0 - 9.0 */
     filter: sepia(7%);
