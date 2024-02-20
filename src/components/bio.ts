@@ -49,7 +49,6 @@ export class BioElement extends LitElement {
 
       ul {
         list-style: none;
-        margin-left: 7vw;
         align-content: space-evenly;
       }
 
@@ -203,7 +202,7 @@ export class BioElement extends LitElement {
           <br>
           Amidst this colorful array of experiences, I always come back to my
           true passion:
-          <br><br>
+          <br><br>x
           Making life better for everyone.
           <br>
           My lust for improving the human experience is the driving force behind all my work.</p>
