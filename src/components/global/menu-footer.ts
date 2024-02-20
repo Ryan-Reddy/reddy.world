@@ -174,10 +174,10 @@ export class MenuFooter extends LitElement {
             <li>
               <a
                 class="nav-button"
-                href="/contact"
-                id="contact-button"
-                aria-label="Contact"
-              >Contact</a
+                href="/connect"
+                id="connect-button"
+                aria-label="connect"
+              >Connect</a
               >
             </li>
           </ul>
@@ -215,11 +215,11 @@ export class MenuFooter extends LitElement {
             <li>
               <a
                 class="nav-button"
-                href="/contact"
-                id="contact-button"
-                aria-label="Contact"
+                href="/connect"
+                id="connect-button"
+                aria-label="connect"
               >
-                Contact</a
+                Connect</a
               >
             </li>
           </ul>

@@ -14,6 +14,7 @@ import './components/portfolio';
 import './components/bio';
 import './components/cvCustomRyan';
 import './components/contact';
+import './components/connect';
 import './components/one-third';
 // admin:
 import './components/openai/openai';
@@ -45,6 +46,9 @@ router.setRoutes([{
 }, {
   name: 'contact-element', // doet niks impliciet
   path: '/contact', component: 'contact-element',
+}, {
+  name: 'connect-element', // doet niks impliciet
+  path: '/connect', component: 'connect-element',
 }, {
   name: 'mail-element', // doet niks impliciet
   path: '/mail', component: // 'mail-element'
