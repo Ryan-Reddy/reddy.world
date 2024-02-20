@@ -56,6 +56,9 @@ body {
 header-menu {
   z-index: 100; /* Adjust as needed */
   position: relative; /* or absolute, depending on your layout */
+  border-bottom: dotted white 1px;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 
