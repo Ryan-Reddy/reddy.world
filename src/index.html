@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <!-- Meta Tags -->
-  <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="cache-control"
+        content="public, max-age=86400">
   <meta name="sitemap" content="sitemap.xml">
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -77,12 +78,6 @@
       if (metaDescription) {
         metaDescription.setAttribute("content", e.detail.description);
       }
-
-      // // Update canonical URL
-      // const canonicalLink = document.querySelector("link[rel='canonical']");
-      // if (canonicalLink) {
-      //   canonicalLink.setAttribute("href", e.detail.canonical);
-      // }
     }, true);
   </script>
 
