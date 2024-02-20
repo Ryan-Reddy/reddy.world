@@ -54,6 +54,7 @@ export class ConnectElement extends LitElement {
 
         <li><a href="https://www.linkedin.com/in/ryan-reddy-productions/">LinkedIn</a></li>
         <li><a href="https://github.com/Ryan-Reddy">Github</a></li>
+        <li><a href="/contact">Contact Form</a></li>
       </ul>
 
     `;
