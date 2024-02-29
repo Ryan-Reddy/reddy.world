@@ -5,12 +5,14 @@ name: Deploy to Firebase Hosting on merge
 'on':
   push:
     branches:
-      - master
+      - main
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Change to app directory
+        run: cd wanderzeit-app
       - run: npm install
       - run: npm ci
       - run: npm test
