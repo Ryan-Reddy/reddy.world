@@ -96,13 +96,17 @@ export class CVElement extends LitElement {
       /* ================ Skills and badges.... ================ */
 
       .skill-badge {
+
+        color: var(--zwart);
+        border: var(--background-light);
+
         position: relative;
         display: inline-block;
         width: 100%; /* Allow it to fill available space */
         //max-width: 250px; /* Adjust if necessary */
         margin: 5px;
         padding: 10px;
-        background: #f0f0f0;
+
         border-radius: 5px;
         box-sizing: border-box;
         overflow: hidden;
@@ -337,9 +341,20 @@ export class CVElement extends LitElement {
         }
 
         .skill-badge {
+          width: 120%;
           padding: 8px; /* Adjust padding for smaller screens */
         }
       }
+
+      @media (prefers-color-scheme: dark) {
+
+        .skill-badge {
+          color: var(--wit);
+          border: var(--silver);
+        }
+
+      }
+
 
     `];
   }

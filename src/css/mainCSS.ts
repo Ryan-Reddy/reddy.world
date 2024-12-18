@@ -22,10 +22,15 @@ export default css`
     --zwart: #000;
     --warning-red: red;
     --fullwidth: 100%;
-    --transitionInSeconds: 0.6s;
+    --transitionInSeconds: all 0.6s ease;
     --logoTransitionInSeconds: 0.8s;
     --be_here_now_blue: #301987;
 
+
+    --background-dark: #1e1e1e; /* softer black */
+    --background-light: #f4f4f4; /* soft white */
+
+    --border: 2px solid var(--gold);
     // Light mode colours
     --light-mode-color: black;
     --light-mode-background: white;
@@ -106,7 +111,7 @@ export default css`
   }
 
   a {
-    color: var(--color-dark-mode);
+    color: var(--zwart);
     border-radius: 8px;
     text-transform: uppercase;
     text-decoration: none;
@@ -197,22 +202,23 @@ export default css`
 
     main {
       color: var(--light-mode-color);
+      background-color: var(--light-mode-background);
     }
 
     table {
-      color: var(--zwart);
-      background: var(--wit);
+      color: var(--light-mode-color);
+      background-color: var(--light-mode-background);
     }
 
     :root .header_bar {
-      color: var(--zwart);
-      background-color: var(--wit);
+      color: var(--light-mode-color);
+      background-color: var(--light-mode-background);
     }
 
     nav ul li a {
       //color: var(--zwart) !important;
-      background-color: var(--wit);
-      border-bottom-color: var(--gold);
+      color: var(--light_mode_color);
+      background-color: var(--light-mode-background);
     }
 
     nav ul li a.active, a:hover {
@@ -224,27 +230,32 @@ export default css`
   @media (prefers-color-scheme: dark) {
     :root {
       color: var(--wit);
-      background-color: var(--zwart);
+      background-color: var(--background-dark);
     }
 
     main {
       color: var(--wit);
-      background-color: var(--zwart);
+      background-color: var(--background-dark);
     }
 
     table {
       color: var(--wit);
-      background: var(--zwart);
+      background-color: var(--background-dark);
     }
 
     :root .header_bar {
       color: var(--wit);
-      background-color: var(--zwart);
+      background-color: var(--background-dark);
+    }
+
+    a {
+      color: var(--wit);
+      background-color: var(--background-dark);
     }
 
     nav ul li a {
       color: var(--wit);
-      background-color: var(--zwart);
+      background-color: var(--background-dark);
     }
 
     nav ul li a.active, a:hover {

@@ -1,7 +1,7 @@
 :root {
   font-family: 'Inter', 'Avenir', 'Helvetica', Arial, sans-serif;
   /*font-family: "Helvetica Neue", Helvetica, sans-serif, "Helvetica Roman", Icons;*/
-  font-size: 24.2px;
+  font-size: 16px;
   line-height: 1.3;
   font-weight: 500;
   color-scheme: light dark;
@@ -16,6 +16,9 @@
   --blauw: #00aaff;
   --wit: #fff;
   --zwart: #000;
+
+  --background-dark: #1e1e1e; /* softer black */
+  --background-light: #f4f4f4; /* soft white */
 
   --warning-red: red;
   --fullwidth: 100%;
@@ -181,22 +184,22 @@ a::after {
 @media (prefers-color-scheme: light) {
   :root {
     color: var(--zwart);
-    background-color: var(--wit);
+    background-color: var(--background-light); /* soft white */
   }
 
   main {
     color: var(--zwart);
-    /* background-color: transparent; */
+    background-color: var(--background-light); /* soft white */
   }
 
   table {
-    color: var(--wit);
-    background: var(--wit);
+    color: var(--zwart);
+    background-color: var(--background-light); /* soft white */
   }
 
   :root .header_bar {
-    color: var(--wit);
-    background-color: var(--wit);
+    color: var(--zwart);
+    background-color: var(--background-light); /* soft white */
   }
 
   a {
@@ -204,49 +207,41 @@ a::after {
   }
 
   nav ul li a {
-  / / color: var(--zwart) !important;
-    background-color: var(--wit);
+    color: var(--zwart);
+    background-color: var(--background-light); /* soft white */
     border-bottom-color: var(--gold);
   }
 
   nav ul li a.active, a:hover {
     transition: var(--transitionInSeconds);
-    color: var(--zwart) !important;
+    color: var(--zwart)
   }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    color: #f4f4f4; /* soft white */
-    background-color: #1e1e1e; /* softer black */
-    --background-dark: #1e1e1e; /* softer black */
-    --background-light: #f4f4f4; /* soft white */
+    color: var(--wit);
+    background-color: var(--background-dark);
   }
 
   main {
-    color: #f4f4f4; /* soft white */
-    background-color: #1e1e1e; /* softer black */
-    --background-dark: #1e1e1e; /* softer black */
-    --background-light: #f4f4f4; /* soft white */
+    color: var(--wit);
+    background-color: var(--background-dark);
   }
 
   table {
-    color: #f4f4f4; /* soft white */
-    background-color: #1e1e1e; /* softer black */
-    --background-dark: #1e1e1e; /* softer black */
-    --background-light: #f4f4f4; /* soft white */
+    color: var(--wit);
+    background-color: var(--background-dark);
   }
 
   :root .header_bar {
-    color: #f4f4f4; /* soft white */
-    background-color: #1e1e1e; /* softer black */
-    --background-dark: #1e1e1e; /* softer black */
-    --background-light: #f4f4f4; /* soft white */
+    color: var(--wit);
+    background-color: var(--background-dark);
   }
 
   nav ul li a {
-    color: #f4f4f4; /* soft white */
-    background-color: #1e1e1e; /* softer black */
+    color: var(--wit); /* soft white */
+    background-color: var(--background-dark);
   }
 
   nav ul li a.active, a:hover {
