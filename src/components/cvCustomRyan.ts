@@ -61,6 +61,65 @@ export class CVElement extends LitElement {
       li, ul {
         padding: 0;
         width: 100vw; // FUL WIDTH OF PAGE
+        list-style: none; /* Remove default bullet points if needed */
+        position: relative; /* Ensure the list item can contain positioned children */
+      }
+
+
+      .desc {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transform: translateY(-20px); /* Start higher for a more dramatic effect */
+        visibility: hidden;
+        transition: opacity 0.4s cubic-bezier(0.23, 1, 0.32, 1), /* Ease out opacity for smooth fade-in */ max-height 0.4s ease, /* Smooth vertical expansion */ transform 0.4s cubic-bezier(0.23, 1, 0.32, 1); /* Use a spring-like easing curve */
+      }
+
+      li:hover .desc {
+        opacity: 1;
+        max-height: 100px; /* Adjust this to suit your content */
+        visibility: visible;
+        transform: translateY(0); /* Animate into its natural position */
+      }
+
+
+      .time-wrapper {
+        opacity: 0;
+        visibility: hidden;
+
+        display: inline;
+        line-height: 1em;
+        //font-size: 0.66666em;
+        color: var(--gold);
+        vertical-align: middle;
+      }
+
+      .direction-l .time-wrapper {
+        float: left;
+      }
+
+      .direction-r .time-wrapper {
+        float: right;
+      }
+
+      .time {
+        display: inline-block;
+        padding: 4px 6px;
+        background: var(--be_here_now_blue);
+        border: var(--border);
+        border-left: none;
+      }
+
+      li:hover .time-wrapper {
+        opacity: 1;
+        max-height: 100px; /* Adjust this to suit your content */
+        visibility: visible;
+        transform: translateY(0); /* Animate into its natural position */
+      }
+
+      li:hover {
+        height: auto; /* Adjust the height dynamically to fit the description */
+        padding-bottom: 2rem; /* Add spacing for the description */
       }
 
       .experience-title {
@@ -179,6 +238,9 @@ export class CVElement extends LitElement {
         justify-content: center;
         align-items: center;
         text-align: center;
+
+        position: relative;
+        z-index: 1; /* Ensure it stays above the description */
       }
 
       .flag {
@@ -239,69 +301,31 @@ export class CVElement extends LitElement {
         left: -40px;
       }
 
-      .direction-l .flag:after, .direction-r .flag:after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        height: 0;
-        width: 0;
-        margin-top: -8px;
-        border: solid transparent;
-        pointer-events: none;
-      }
+      // Arrow //
 
-      .direction-l .flag:after {
-        left: 100%;
-        border-left-color: rgb(248, 248, 248);
-        border-width: 8px;
-      }
+      //.direction-l .flag:after, .direction-r .flag:after {
+      //  content: "";
+      //  position: absolute;
+      //  top: 50%;
+      //  height: 0;
+      //  width: 0;
+      //  margin-top: -8px;
+      //  border: solid transparent;
+      //  pointer-events: none;
+      //}
+      //
+      //.direction-l .flag:after {
+      //  left: 100%;
+      //  border-left-color: rgb(248, 248, 248);
+      //  border-width: 8px;
+      //}
+      //
+      //.direction-r .flag:after {
+      //  right: 100%;
+      //  border-right-color: rgb(248, 248, 248);
+      //  border-width: 8px;
+      //}
 
-      .direction-r .flag:after {
-        right: 100%;
-        border-right-color: rgb(248, 248, 248);
-        border-width: 8px;
-      }
-
-      .time-wrapper {
-        display: inline;
-        line-height: 1em;
-        //font-size: 0.66666em;
-        color: var(--gold);
-        vertical-align: middle;
-      }
-
-      .direction-l .time-wrapper {
-        float: left;
-      }
-
-      .direction-r .time-wrapper {
-        float: right;
-      }
-
-      .time {
-        display: inline-block;
-        padding: 4px 6px;
-        background: var(--be_here_now_blue);
-        border: var(--border);
-        border-left: none;
-      }
-
-      .desc {
-        opacity: 0;
-        position: absolute;
-        top: 100%; /* Adjust this to place it below the flag */
-        left: 0;
-        transform: translateY(10px); /* Adjust this for spacing between flag and description */
-        visibility: hidden;
-        transition: opacity 0.3s ease, visibility 0.3s ease;
-      }
-
-      li:hover .desc {
-        opacity: 1;
-        visibility: visible; /* Make it visible on hover */
-        transition: opacity 0.3s ease, visibility 0.3s ease;
-
-      }
 
       // MEDIA MOBILE /
       @media (max-width: 768px) {
@@ -395,7 +419,7 @@ export class CVElement extends LitElement {
     return html`
       <div id="cv">
         <header>
-          <h1 hidden>C.V.</h1>
+          <h1 visibility="hidden">C.V.</h1>
         </header>
         <main>
           <nav>

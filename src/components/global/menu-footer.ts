@@ -124,19 +124,18 @@ export class MenuFooter extends LitElement {
           }
 
           nav ul li a {
-            font-size: 11vw;
-          }
-        }
-
-        @media (prefers-color-scheme: light) {
-          footer,
-          nav ul li a {
-            color: var(--zwart);
-            background-color: var(--wit);
-            border-color: var(--wit);
+            font-size: 6vw;
           }
 
-          a.active,
+          @media (prefers-color-scheme: light) {
+            footer,
+            nav ul li a {
+              color: var(--zwart);
+              background-color: var(--wit);
+              border-color: var(--wit);
+            }
+
+            a.active,
           a:hover {
             background: var(--gold);
             transition: var(--transitionInSeconds);
