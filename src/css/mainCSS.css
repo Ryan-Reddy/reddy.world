@@ -19,7 +19,8 @@
 
   --warning-red: red;
   --fullwidth: 100%;
-  --transitionInSeconds: 0.6s;
+  --transitionInSeconds: all 0.6s ease;
+  --transition: all 0.6s ease;
   --logoTransitionInSeconds: 0.8s;
   --be_here_now_blue: #301987;
 
@@ -119,7 +120,7 @@ a::after {
   right: 0;
   position: absolute;
   background: linear-gradient(to left, #f69ec4, #f9dd94 100%);
-  transition: all 0.3s ease;
+  transition: all 0.6s ease;
   width: 0;
 }
 
