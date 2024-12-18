@@ -280,15 +280,13 @@ export class CVElement extends LitElement {
       }
 
       .desc {
-        //opacity: 0;
+        opacity: 0;
         position: absolute;
-        top: 50%;
-        left: 100%;
-        //transform: translateX(-500%);
-        transition: opacity 0.3s ease, visibility 0.3s ease;
+        top: 100%; /* Adjust this to place it below the flag */
+        left: 0;
+        transform: translateY(10px); /* Adjust this for spacing between flag and description */
         visibility: hidden;
-        z-index: 10;
-        background-color: rgba(0, 0, 0, 0.5); /* Temporary background */
+        transition: opacity 0.3s ease, visibility 0.3s ease;
       }
 
       li:hover .desc {
