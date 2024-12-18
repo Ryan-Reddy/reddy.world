@@ -33,6 +33,8 @@ export class MenuFooter extends LitElement {
           align-items: center;
           margin: 0.5rem;
           line-height: 2em; // height of buttons -> stops overlap
+          align-items: center;
+
         }
 
         body {

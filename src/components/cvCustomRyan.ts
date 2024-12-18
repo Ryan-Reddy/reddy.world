@@ -61,10 +61,16 @@ export class CVElement extends LitElement {
       li, ul {
         padding: 0;
         width: 100vw; // FUL WIDTH OF PAGE
+        height: 100vh; /* Full height of the viewport */
+
         list-style: none; /* Remove default bullet points if needed */
         position: relative; /* Ensure the list item can contain positioned children */
       }
 
+      a {
+        height: 40px;
+        margin: 0;
+      }
 
       .desc {
         opacity: 0;
@@ -115,11 +121,6 @@ export class CVElement extends LitElement {
         max-height: 100px; /* Adjust this to suit your content */
         visibility: visible;
         transform: translateY(0); /* Animate into its natural position */
-      }
-
-      li:hover {
-        height: auto; /* Adjust the height dynamically to fit the description */
-        padding-bottom: 2rem; /* Add spacing for the description */
       }
 
       .experience-title {
@@ -208,6 +209,8 @@ export class CVElement extends LitElement {
         margin-top: 20px;
         padding: 1em 0;
         display: block;
+        z-index: 1;
+
       }
 
       .timeline:before {
@@ -220,7 +223,7 @@ export class CVElement extends LitElement {
         margin-left: -3px;
         background: rgb(80, 80, 80);
         background: linear-gradient(to bottom, rgba(80, 80, 80, 0) 0%, rgb(80, 80, 80) 8%, rgb(80, 80, 80) 92%, rgba(80, 80, 80, 0) 100%);
-        z-index: 5;
+        z-index: 0;
       }
 
       .timeline li:after {
@@ -259,7 +262,7 @@ export class CVElement extends LitElement {
         position: relative;
         width: 50vw;
         float: left;
-        margin-left: -34px;
+        //margin-left: 50vw;
 
         text-align: right;
       }
@@ -283,14 +286,17 @@ export class CVElement extends LitElement {
       /* Ball */
 
       .direction-l .flag:before, .direction-r .flag:before {
-        position: absolute;
-        top: 50%;
-        right: -40px;
         content: ' ';
+        position: absolute;
+        top: 30px; /* Adjust as needed to control vertical placement */
+        right: 0%; /* Horizontally center along the page's centerline */
+        transform: translateY(-50%); /* Offset to ensure perfect vertical alignment */
+
+        //right: -40px;
         display: block;
         width: 12px;
         height: 12px;
-        margin-top: -10px;
+        //margin-top: -10px;
         background: #fff;
         border-radius: 10px;
         border: 4px solid var(--gold);
@@ -299,26 +305,33 @@ export class CVElement extends LitElement {
 
       .direction-r .flag:before {
         left: -40px;
+        top: 15px;
       }
 
       // Arrow //
 
-      //.direction-l .flag:after, .direction-r .flag:after {
-      //  content: "";
-      //  position: absolute;
-      //  top: 50%;
-      //  height: 0;
-      //  width: 0;
-      //  margin-top: -8px;
-      //  border: solid transparent;
-      //  pointer-events: none;
-      //}
-      //
-      //.direction-l .flag:after {
-      //  left: 100%;
-      //  border-left-color: rgb(248, 248, 248);
-      //  border-width: 8px;
-      //}
+      .direction-l .flag:after, .direction-r .flag:after {
+        left: 40px;
+
+        content: "";
+        position: absolute;
+        top: 50%;
+        height: 0;
+        width: 0;
+        margin-top: -8px;
+        border: solid transparent;
+        pointer-events: none;
+      }
+
+      .direction-l .flag:after {
+        left: 100%;
+        border-left-color: rgb(248, 248, 248);
+        border-width: 8px;
+
+        transform: translateY(-50%); /* Offset to ensure perfect vertical alignment */
+
+      }
+
       //
       //.direction-r .flag:after {
       //  right: 100%;
