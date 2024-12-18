@@ -74,58 +74,6 @@ export class CVElement extends LitElement {
         margin-left: 1rem;
       }
 
-      /* Style the bio section */
-
-
-      #bio {
-        display: flex;
-        flex-direction: column;
-        width: fit-content;
-        max-width: 80%;
-        box-sizing: border-box;
-        font-size: 1rem;
-        padding: .5rem 3rem;
-        border-radius: 20px;
-        position: relative;
-        background: linear-gradient(90deg, rgba(49, 27, 128, 0.45) 50%, rgba(49, 27, 128, 0.26) 50%);
-        background-size: 200% 100%;
-        transition: background-position 0.3s ease;
-        overflow: hidden;
-      }
-
-      #bio a {
-        text-transform: none;
-      }
-
-      #bio p {
-        letter-spacing: normal;
-        font-size: 0.825rem;
-        font-style: italic;
-        color: white;
-      }
-
-
-      /* Style the bio */
-
-      #bio:hover {
-        background-position: -100% 0;
-      }
-
-      #bio::after {
-        content: "";
-        height: 4px;
-        background: linear-gradient(to left, #f69ec4, #f9dd94 100%);
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 0;
-        transition: width .5s ease 0s, right .5s ease 0s;
-      }
-
-      #bio:hover::after {
-        width: 100%;
-        right: 0;
-      }
 
       #experience { /* Add your custom styling here if needed */
       }
@@ -332,13 +280,70 @@ export class CVElement extends LitElement {
       }
 
       .desc {
-        opacity: 0;
-        visibility: hidden;
+        //opacity: 0;
         position: absolute;
         top: 50%;
         left: 100%;
-        transform: translateY(-50%);
-      }  `];
+        //transform: translateX(-500%);
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        visibility: hidden;
+        z-index: 10;
+        background-color: rgba(0, 0, 0, 0.5); /* Temporary background */
+      }
+
+      li:hover .desc {
+        opacity: 1;
+        visibility: visible; /* Make it visible on hover */
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+
+      }
+
+      // MEDIA MOBILE /
+      @media (max-width: 768px) {
+        .timeline {
+          //flex-direction: column; /* Stacks timeline items vertically */
+          overflow-x: auto; /* Adds horizontal scrolling */
+          flex-direction: row;
+        }
+
+        .timeline-item {
+          min-width: 100%; /* Ensure each timeline item takes up full width */
+        }
+
+        .skill-badge {
+          width: 100%; /* Ensures skill badges are full width */
+          margin-bottom: 10px; /* Adds spacing between items */
+        }
+
+        #skillsgrid {
+          display: block; /* Switch grid to block to avoid layout overflow */
+        }
+
+        .computer-skills {
+          width: 100%; /* Make sure skills take full width */
+        }
+
+        /* Adjusting hr to not break the layout */
+        hr {
+          width: 100%;
+          margin: 10px 0;
+        }
+
+        // Reduce the size of elements for mobile
+        .skill-name {
+          font-size: 14px; /* Adjust font size for smaller screens */
+        }
+
+        .computer-skills h3 {
+          font-size: 18px; /* Ensure section headers are not too big */
+        }
+
+        .skill-badge {
+          padding: 8px; /* Adjust padding for smaller screens */
+        }
+      }
+
+    `];
   }
 
 
