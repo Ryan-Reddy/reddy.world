@@ -37,9 +37,9 @@ export class CVElement extends LitElement {
         height: 100%;
         display: flex;
         justify-content: center;
-        padding: 1rem;
-        width: 100%;
-        align-items: center; /* To center the items horizontally inside the main */
+        //padding: 1rem;
+        //width: 100%;
+        align-items: start;
       }
 
       #cv, #app {
@@ -51,14 +51,16 @@ export class CVElement extends LitElement {
       /* Style the sections */
 
       .main-divs {
-        padding: 1rem;
-        display: flex;
+        //padding: 1rem;
+        //display: flex;
         flex-direction: column;
         align-items: center;
+
       }
 
       li, ul {
         padding: 0;
+        width: 100vw; // FUL WIDTH OF PAGE
       }
 
       .experience-title {
@@ -83,9 +85,9 @@ export class CVElement extends LitElement {
       }
 
       #skills {
-        box-sizing: border-box;
-        width: 100%;
-        max-width: 80%;
+        //box-sizing: border-box;
+        //width: 100%;
+        //max-width: 80%;
       }
 
       #skillsGrid {
@@ -108,7 +110,7 @@ export class CVElement extends LitElement {
         padding: 10px;
 
         border-radius: 5px;
-        box-sizing: border-box;
+        //box-sizing: border-box;
         overflow: hidden;
         word-wrap: break-word; /* Allows long words to break onto the next line */
         overflow-wrap: break-word; /* For better support across browsers */
@@ -142,7 +144,7 @@ export class CVElement extends LitElement {
 
       .timeline {
         position: relative;
-        width: 660px;
+        //width: 660px;
         margin: 0 auto;
         margin-top: 20px;
         padding: 1em 0;
@@ -160,10 +162,6 @@ export class CVElement extends LitElement {
         background: rgb(80, 80, 80);
         background: linear-gradient(to bottom, rgba(80, 80, 80, 0) 0%, rgb(80, 80, 80) 8%, rgb(80, 80, 80) 92%, rgba(80, 80, 80, 0) 100%);
         z-index: 5;
-      }
-
-      .timeline li {
-        padding: 1em 0;
       }
 
       .timeline li:after {
@@ -197,15 +195,18 @@ export class CVElement extends LitElement {
 
       .direction-l {
         position: relative;
-        width: 300px;
+        width: 50vw;
         float: left;
+        margin-left: -34px;
+
         text-align: right;
       }
 
       .direction-r {
         position: relative;
-        width: 300px;
+        width: 50vw;
         float: right;
+        margin-right: -34px; /* Ball position = 40 px - ball radius = 6px === -34px */
       }
 
       .direction-l .flag {
@@ -216,6 +217,8 @@ export class CVElement extends LitElement {
         box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
       }
 
+
+      /* Ball */
 
       .direction-l .flag:before, .direction-r .flag:before {
         position: absolute;
@@ -262,7 +265,7 @@ export class CVElement extends LitElement {
       .time-wrapper {
         display: inline;
         line-height: 1em;
-        font-size: 0.66666em;
+        //font-size: 0.66666em;
         color: var(--gold);
         vertical-align: middle;
       }
@@ -302,6 +305,12 @@ export class CVElement extends LitElement {
 
       // MEDIA MOBILE /
       @media (max-width: 768px) {
+
+        main {
+          padding: 0;
+          padding-right: 0;
+        }
+
         .timeline {
           //flex-direction: column; /* Stacks timeline items vertically */
           overflow-x: auto; /* Adds horizontal scrolling */
@@ -319,6 +328,12 @@ export class CVElement extends LitElement {
 
         #skillsgrid {
           display: block; /* Switch grid to block to avoid layout overflow */
+          width: 100%;
+          margin-left: 70px;
+        }
+
+        #skills {
+          //max-width: 80%
         }
 
         .computer-skills {
@@ -394,12 +409,12 @@ export class CVElement extends LitElement {
           <div class="main-divs" id="experience">
             <h2>Experience</h2>
             <ul class="timeline">
-              <!-- Experience Item 1 -->
               <li>
                 <div class="direction-r">
                   <div class="flag-wrapper">
-                    <span class="flag"><a href="https://www.youtube.com/channel/UCiuD3eNaZ95eSXImp_eSIww">Tom Crown</a></span>
-                    <span class="time-wrapper"><span class="time">2020 - 2022</span>
+                    <a href="https://www.youtube.com/channel/UCiuD3eNaZ95eSXImp_eSIww" class="flag">Tom
+                      Crown</a>
+                    <span class="time-wrapper"><span class="time">2020 - 2022</span></span>
                   </div>
                   <div class="desc">
                     Video Editing, content creation, image design, moderation, community management.
@@ -411,12 +426,13 @@ export class CVElement extends LitElement {
               <li>
                 <div class="direction-l">
                   <div class="flag-wrapper">
-                    <span class="flag"><a href="https://www.facebook.com/HouseofGentleFrequencies/">House of Gentle Frequencies</a></span>
-                    <span class="time-wrapper"><span class="time">2020 - 2022</span>
+                    <a href="https://www.facebook.com/HouseofGentleFrequencies/" class="flag">House of
+                      Gentle Frequencies</a>
+                    <span class="time-wrapper"><span class="time">2020 - 2022</span></span>
                   </div>
                   <div class="desc">
                     Safe house for the advocacy of women's health, in the broadest sense.
-                    I hosted, marketed and creating and maintaining B2B-relations.
+                    I hosted, marketed and created and maintained B2B-relations.
                   </div>
                 </div>
               </li>
@@ -425,8 +441,8 @@ export class CVElement extends LitElement {
               <li>
                 <div class="direction-r">
                   <div class="flag-wrapper">
-                    <span class="flag"><a href="https://www.teaanddragons.art">Tea and Dragons</a></span>
-                    <span class="time-wrapper"><span class="time">2022 - present</span>
+                    <a href="https://www.teaanddragons.art" class="flag">Tea and Dragons</a>
+                    <span class="time-wrapper"><span class="time">2022 - present</span></span>
                   </div>
                   <div class="desc">
                     Business-to-business sales of craft lemonades in the Benelux area.
@@ -439,11 +455,12 @@ export class CVElement extends LitElement {
               <li>
                 <div class="direction-l">
                   <div class="flag-wrapper">
-                    <span class="flag"><a href="https://amsterdamsefrisdrankfabriek.nl/">A.F.F.</a></span>
+                    <a href="https://amsterdamsefrisdrankfabriek.nl/" class="flag">A.F.F.</a>
+
                     <span class="time-wrapper"><span class="time">2020 - 2021</span>
                   </div>
                   <div class="desc">
-                    Business-to-business sales of craft lemonades in the Benelux area.
+                    B2B-sales and production of craft lemonades in the Benelux area.
                   </div>
                 </div>
               </li>
@@ -452,11 +469,13 @@ export class CVElement extends LitElement {
               <li>
                 <div class="direction-r">
                   <div class="flag-wrapper">
-                    <span class="flag"><a href="https://www.instagram.com/reddymaekers/">ReddyMaekers</a></span>
+                    <a href="https://www.instagram.com/reddymaekers/" class="flag">ReddyMaekers</a>
+
                     <span class="time-wrapper"><span class="time">2014 - 2019</span>
                   </div>
                   <div class="desc">
-                    Festival/filmset decors and props, and other customized building assignments/brand activations.
+                    Festival/filmset decors and props, and other customized building assignments/brand
+                    activations.
                   </div>
                 </div>
               </li>
@@ -465,11 +484,13 @@ export class CVElement extends LitElement {
               <li>
                 <div class="direction-l">
                   <div class="flag-wrapper">
-                    <span class="flag"><a href="https://nepco.nl/">Studio Nepco</a></span>
+                    <a href="https://nepco.nl/" class="flag">Studio Nepco</a>
+
                     <span class="time-wrapper"><span class="time">2015 - 2018</span>
                   </div>
                   <div class="desc">
-                    Pattern design, Foam Modulation, painting, Robotics, Sewing, Film/theatre Production, Acting.
+                    Pattern design, Foam Modulation, painting, Robotics, Sewing, Film/theatre
+                    Production, Acting.
                   </div>
                 </div>
               </li>
@@ -478,13 +499,13 @@ export class CVElement extends LitElement {
               <li>
                 <div class="direction-r">
                   <div class="flag-wrapper">
-                    <span class="flag"><a href="https://www.instagram.com/ryan___reddy/">Ryan Reddy</a></span>
+                    <a href="https://www.instagram.com/ryan___reddy/" class="flag">Ryan Reddy</a>
                     <span class="time-wrapper"><span class="time">2015 - 2017</span>
                   </div>
                   <div class="desc">
                     My own art;
                     Fabrication and design of decors, props, costumes, and special effects.
-                    However performance, theatre, and just free experimentation, though the list doesn't end there.
+                    However performance, theatre, and experience design.
                   </div>
                 </div>
               </li>
@@ -493,13 +514,14 @@ export class CVElement extends LitElement {
               <li>
                 <div class="direction-l">
                   <div class="flag-wrapper">
-                    <span class="flag"><a href="https://www.jorislaarman.com/">Laarman Lab</a></span>
+                    <a href="https://www.jorislaarman.com/" class="flag">Laarman Lab</a>
                     <span class="time-wrapper"><span class="time">2014 - 2015</span>
                   </div>
                   <div class="desc">
                     Cutting-edge technique, combined with old lore crafts.
-                    CAD design, 3D manufacturing techniques.
-                    The renowned Joris Laarman furniture is shown in galleries and museums all over the world.
+                    CAD design, and modern manufacturing techniques.
+                    The renowned Joris Laarman furniture is shown in galleries and museums all over the
+                    world.
                   </div>
                 </div>
               </li>
@@ -508,7 +530,7 @@ export class CVElement extends LitElement {
               <li>
                 <div class="direction-r">
                   <div class="flag-wrapper">
-                    <span class="flag"><a href="https://www.pepperminds.nl/">Pepperminds</a></span>
+                    <a href="https://www.pepperminds.nl/" class="flag">Pepperminds</a>
                     <span class="time-wrapper"><span class="time">2009 - 2011</span>
                   </div>
                   <div class="desc">
@@ -527,7 +549,7 @@ export class CVElement extends LitElement {
               <li>
                 <div class="direction-l">
                   <div class="flag-wrapper">
-                    <span class="flag"><a href="https://www.hu.nl/">Utrecht University</a></span>
+                    <a href="https://www.hu.nl/" class="flag">Utrecht University</a>
                     <span class="time-wrapper"><span class="time">2021 - 2025</span>
                   </div>
                   <div class="desc">
@@ -540,7 +562,8 @@ export class CVElement extends LitElement {
               <li>
                 <div class="direction-r">
                   <div class="flag-wrapper">
-                    <span class="flag"><a href="https://www.hmcollege.nl/">HM College</a></span>
+                    <a href="https://www.hmcollege.nl/" class="flag">HM College</a>
+
                     <span class="time-wrapper"><span class="time">2013- 2017</span>
                   </div>
                   <div class="desc">
@@ -553,7 +576,7 @@ export class CVElement extends LitElement {
               <li>
                 <div class="direction-l">
                   <div class="flag-wrapper">
-                    <span class="flag"><a href="https://ecl.nl/">ECL Haarlem</a></span>
+                    <a href="https://ecl.nl/" class="flag">ECL Haarlem</a>
                     <span class="time-wrapper"><span class="time">2004 - 2009</span>
                   </div>
                   <div class="desc">
@@ -597,7 +620,8 @@ export class CVElement extends LitElement {
                 <div class="skill-badge" data-percentage="60">
                   <span class="skill-name"><a href="https://www.python.org/">Python</a></span>
                 </div>
-                <div class="skill-badge" data-percentage="75"><span class="skill-name"><a href="https://www.java.com/">Java</a></span>
+                <div class="skill-badge" data-percentage="75"><span class="skill-name"><a
+                  href="https://www.java.com/">Java</a></span>
                 </div>
                 <div class="skill-badge" data-percentage="80">
                   <span class="skill-name"><a
@@ -608,7 +632,8 @@ export class CVElement extends LitElement {
                     href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></span>
                 </div>
                 <div class="skill-badge" data-percentage="55">
-                  <span class="skill-name"><a href="https://www.typescriptlang.org/docs">TypeScript</a></span>
+                                <span class="skill-name"><a
+                                  href="https://www.typescriptlang.org/docs">TypeScript</a></span>
                 </div>
                 <div class="skill-badge" data-percentage="75">
                   <span class="skill-name"><a href="https://junit.org/">JUnit</a></span>

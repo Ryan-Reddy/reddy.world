@@ -94,7 +94,7 @@ ul {
 }
 
 li {
-  position: relative;
+  /*position: relative;*/
   padding: 1rem;
 }
 
@@ -157,7 +157,7 @@ a::after {
   footer-menu {
     width: 100%;
     height: 100%;
-    font-size: 2.1rem;
+    font-size: 1.53rem;
     line-height: 1.3rem;
     letter-spacing: 2px;
   }
