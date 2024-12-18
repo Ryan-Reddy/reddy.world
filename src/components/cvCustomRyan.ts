@@ -29,7 +29,7 @@ export class CVElement extends LitElement {
         background: rgb(230, 230, 230);
 
         color: rgb(50, 50, 50);
-        font-family: 'Open Sans', sans-serif;
+        font-family: 'Inter', 'Avenir', 'Helvetica', Arial, sans-serif;
         font-size: 112.5%;
         line-height: 1.6em;
       }
@@ -420,12 +420,13 @@ export class CVElement extends LitElement {
         main {
           display: flex;
           flex-direction: column; /* Stack children vertically */
-          align-items: stretch;   /* Stretch children horizontally to fill the width */
-          background: var(--be_here_now_blue);
+          align-items: stretch; /* Stretch children horizontally to fill the width */
+          //background: var(--be_here_now_blue);
           width: 100%;
           margin: 1rem;
           padding: 1rem;
         }
+
         #bio {
           width: 100%;
           margin: 0.2rem;
