@@ -23,6 +23,7 @@
   --warning-red: red;
   --fullwidth: 100%;
   --transitionInSeconds: all 0.6s ease;
+
   --transition: all 0.6s ease;
   --logoTransitionInSeconds: 0.8s;
   --be_here_now_blue: #301987;
@@ -212,10 +213,12 @@ a::after {
     border-bottom-color: var(--gold);
   }
 
-  nav ul li a.active, a:hover {
-    transition: var(--transitionInSeconds);
-    color: var(--zwart)
-  }
+  /*nav ul li a.active, a:hover {*/
+  /*  transition: var(--transitionInSeconds);*/
+  /*  color: var(--zwart)*/
+  /*}*/
+
+
 }
 
 @media (prefers-color-scheme: dark) {

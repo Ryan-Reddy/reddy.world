@@ -68,7 +68,6 @@ export class CVElement extends LitElement {
       }
 
       a {
-        height: 40px;
         margin: 0;
       }
 
@@ -93,6 +92,7 @@ export class CVElement extends LitElement {
         opacity: 0;
         visibility: hidden;
 
+        max-width: 50px;
         display: inline;
         line-height: 1em;
         //font-size: 0.66666em;
@@ -114,13 +114,14 @@ export class CVElement extends LitElement {
         background: var(--be_here_now_blue);
         border: var(--border);
         border-left: none;
+        height: 60px;
       }
 
       li:hover .time-wrapper {
         opacity: 1;
         max-height: 100px; /* Adjust this to suit your content */
         visibility: visible;
-        transform: translateY(0); /* Animate into its natural position */
+        transform: translateX(-35px); /* Animate into its natural position */
       }
 
       .experience-title {
@@ -248,12 +249,22 @@ export class CVElement extends LitElement {
 
       .flag {
         width: 100%;
+        height: 60px;
+
         display: inline;
         background: rgb(248, 248, 248, 0.12);
-        padding: 6px 10px;
+        padding: 10px;
         border-radius: 5px;
         font-weight: 600;
         text-align: left;
+      }
+
+      a.left-facing-flag.active,
+      a.left-facing-flag:hover {
+        transform: scaleX(-1); /* Flips horizontally */
+        transition: var(--transitionInSeconds);
+        background: var(--silver);
+        color: var(--zwart);
       }
 
       /* ================ direction-l & -r flag ================ */
@@ -262,7 +273,6 @@ export class CVElement extends LitElement {
         position: relative;
         width: 50vw;
         float: left;
-        //margin-left: 50vw;
 
         text-align: right;
       }
@@ -327,11 +337,7 @@ export class CVElement extends LitElement {
         left: 100%;
         border-left-color: rgb(248, 248, 248);
         border-width: 8px;
-
-        transform: translateY(-50%); /* Offset to ensure perfect vertical alignment */
-
       }
-
       //
       //.direction-r .flag:after {
       //  right: 100%;
@@ -463,7 +469,7 @@ export class CVElement extends LitElement {
               <li>
                 <div class="direction-l">
                   <div class="flag-wrapper">
-                    <a href="https://www.facebook.com/HouseofGentleFrequencies/" class="flag">House of
+                    <a href="https://www.facebook.com/HouseofGentleFrequencies/" class="left-facing-flag">House of
                       Gentle Frequencies</a>
                     <span class="time-wrapper"><span class="time">2020 - 2022</span></span>
                   </div>
