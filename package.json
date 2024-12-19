@@ -24,6 +24,7 @@
     "@types/chai": "^4.3.4",
     "@types/cucumber": "^7.0.0",
     "@types/selenium-webdriver": "^4.1.10",
+    "@types/wordcloud": "^1.2.2",
     "cucumber": "^6.0.7",
     "vite": "4.0.5"
   },

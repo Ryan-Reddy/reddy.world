@@ -2,7 +2,7 @@ import {css, html, LitElement} from 'lit';
 import {customElement, query} from 'lit/decorators.js';
 import mainCSS from '../css/mainCSS';
 import langCSS from '../css/langCSS';
-
+import WordCloud from 'wordcloud';
 
 /**
  * A custom CV-timeline element.
@@ -16,8 +16,11 @@ export class CVElement extends LitElement {
   @query('#experience') experienceSection!: HTMLElement;
   @query('#education') educationSection!: HTMLElement;
   @query('#skills') skillsSection!: HTMLElement;
+  @query('#word-cloud') wordCloudSection!: HTMLElement;
 
   constructor() {
+    console.log('constructing')
+
     super();
   }
 
@@ -60,8 +63,8 @@ export class CVElement extends LitElement {
 
       li, ul {
         padding: 0;
-        width: 100vw; // FUL WIDTH OF PAGE
-        height: 100vh; /* Full height of the viewport */
+        width: 100vw; /* FUL WIDTH OF PAGE */
+        //height: 100vh; /* Full height of the viewport */
 
         list-style: none; /* Remove default bullet points if needed */
         position: relative; /* Ensure the list item can contain positioned children */
@@ -145,6 +148,8 @@ export class CVElement extends LitElement {
         grid-template-columns: 1fr;
       }
 
+      /* ================ Skills and badges.... ================ */
+
       #skills {
         //box-sizing: border-box;
         //width: 100%;
@@ -156,7 +161,12 @@ export class CVElement extends LitElement {
         padding: 1rem;
       }
 
-      /* ================ Skills and badges.... ================ */
+      #word-cloud {
+        width: 100%;
+        height: 400px;
+        margin: auto;
+        background-color: #f9f9f9;
+      }
 
       .skill-badge {
 
@@ -424,6 +434,31 @@ export class CVElement extends LitElement {
       }
     });
     this.dispatchEvent(titleEvent);
+
+    // console.log('firstUpdated')
+    // this.updateWordCLoud();
+  }
+
+  updateWordCLoud() {
+    // After the component is rendered, initialize the word cloud
+    const skills: any = [
+      {text: "Test Driven Design", weight: 7},
+      {text: "Object-Oriented Programming", weight: 8},
+      {text: "Software Architecture", weight: 6},
+      {text: "CAD Design", weight: 8.5},
+      {text: "Photoshop", weight: 7.5},
+      {text: "WordPress", weight: 9},
+      {text: "Python", weight: 6},
+      {text: "Java", weight: 7.5},
+      {text: "HTML, CSS", weight: 8},
+      {text: "JavaScript", weight: 6.5},
+      {text: "TypeScript", weight: 5.5}
+    ];
+
+    WordCloud(this.wordCloudSection, skills);
+
+    console.log(this.wordCloudSection.innerText)
+
   }
 
   render() {
@@ -697,6 +732,7 @@ export class CVElement extends LitElement {
                 </ul>
               </div>
 
+              <h2>Skills</h2>
               <div class="other-skills">
                 <h3>Other Skills</h3>
                 <div class="skill-badge" data-percentage="85">
@@ -726,4 +762,5 @@ export class CVElement extends LitElement {
       </div>
     `;
   }
+
 }
