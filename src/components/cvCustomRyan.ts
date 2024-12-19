@@ -259,14 +259,6 @@ export class CVElement extends LitElement {
         text-align: left;
       }
 
-      a.left-facing-flag.active,
-      a.left-facing-flag:hover {
-        transform: scaleX(-1); /* Flips horizontally */
-        transition: var(--transitionInSeconds);
-        background: var(--silver);
-        color: var(--zwart);
-      }
-
       /* ================ direction-l & -r flag ================ */
 
       .direction-l {
@@ -334,16 +326,16 @@ export class CVElement extends LitElement {
       }
 
       .direction-l .flag:after {
-        left: 100%;
+
         border-left-color: rgb(248, 248, 248);
         border-width: 8px;
       }
-      //
-      //.direction-r .flag:after {
-      //  right: 100%;
-      //  border-right-color: rgb(248, 248, 248);
-      //  border-width: 8px;
-      //}
+
+      .direction-r .flag:after {
+
+        border-right-color: rgb(248, 248, 248);
+        border-width: 8px;
+      }
 
 
       // MEDIA MOBILE /
@@ -469,7 +461,7 @@ export class CVElement extends LitElement {
               <li>
                 <div class="direction-l">
                   <div class="flag-wrapper">
-                    <a href="https://www.facebook.com/HouseofGentleFrequencies/" class="left-facing-flag">House of
+                    <a href="https://www.facebook.com/HouseofGentleFrequencies/" class="flag">House of
                       Gentle Frequencies</a>
                     <span class="time-wrapper"><span class="time">2020 - 2022</span></span>
                   </div>

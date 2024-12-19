@@ -126,6 +126,7 @@ a::after {
   background: linear-gradient(to left, #f69ec4, #f9dd94 100%);
   transition: all 0.6s ease;
   width: 0;
+  left: 0; /* Start the bar at the left side */
 }
 
 @media (max-width: 952px) {
