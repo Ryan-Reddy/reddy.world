@@ -52,7 +52,14 @@ export class CVElement extends LitElement {
           //height: 100vh; /* Full viewport height */
           display: flex;
           justify-content: center;
-          align-items: start;
+          align-items: center; /* Adjust if you want vertical positioning */
+
+        }
+
+        nav ul li {
+          justify-content: center; /* Centers the entire <ul> inside the <nav> */
+          align-items: center; /* Centers vertically (optional if you want vertical alignment) */
+
         }
 
         #cv {
@@ -87,11 +94,12 @@ export class CVElement extends LitElement {
           align-items: center;
 
           display: flex;
-
         }
 
         h2 {
           text-align: center;
+          margin: 0 0 1.2em 0;
+
         }
 
         li, ul {
@@ -233,7 +241,6 @@ export class CVElement extends LitElement {
         }
 
 
-
         /* ================ The Timeline ================ */
         /* Reset some default styles for better alignment */
 
@@ -242,7 +249,6 @@ export class CVElement extends LitElement {
           flex-direction: column; /* Ensure items stack vertically */
           list-style-type: none;
           padding: 0;
-          margin: 0;
         }
 
         .timeline {
@@ -311,7 +317,9 @@ export class CVElement extends LitElement {
         }
 
         .direction-r {
-          width: 50vw; (makes column half screen)
+          width: 50vw;
+        (makes column half screen) padding-left: 0.75 em;
+
         }
 
         .direction-l .flag {
@@ -598,10 +606,10 @@ export class CVElement extends LitElement {
             </ul>
           </nav>
 
+              <hr>
           <div id="columns">
             <div class="left-column">
 
-              <hr>
               <div class="main-divs" id="experience">
                 <h2>Experience</h2>
                 <ul class="timeline">
@@ -650,7 +658,7 @@ export class CVElement extends LitElement {
                   <!-- Experience Item -->
                   <li>
                     <div class="direction-l">
-                      <div class="flag-wrapper" style="width: 845.717px;">
+                      <div class="flag-wrapper">
                         <a href="https://amsterdamsefrisdrankfabriek.nl/" class="flag">A.F.F.</a>
                         <span class="time-wrapper"><span class="time">2020 - 2021</span></span>
                         <!-- Fixed closing tags -->
