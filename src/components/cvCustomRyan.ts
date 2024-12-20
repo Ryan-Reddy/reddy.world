@@ -35,6 +35,11 @@ export class CVElement extends LitElement {
 
   static get styles() {
     return [langCSS, mainCSS, css`
+      :host {
+        display: block;
+        font-family: Arial, sans-serif;
+      }
+
       body {
         margin: 0;
         padding: 0;
@@ -54,11 +59,11 @@ export class CVElement extends LitElement {
         align-items: start;
       }
 
-      #cv, #app {
-        justify-content: center;
-        width: 100%;
-        list-style-type: none;
-      }
+      //#cv, #app {
+      //  justify-content: center;
+      //  width: 100%;
+      //  list-style-type: none;
+      //}
 
       /* Style the sections */
 
@@ -212,6 +217,61 @@ export class CVElement extends LitElement {
         margin: 0;
         padding: 0;
       }
+
+
+      /* General Styling */
+      # 'skills-container' {
+      #skills-container {
+        margin: 20px;
+      }
+      .skills-category {
+        margin-bottom: 20px;
+      }
+      h3 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        margin: 10px 0;
+        font-size: 1em;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+
+
+    }
+      /* Progress Display */
+      .progress-display {
+        display: flex;
+        gap: 4px;
+      }
+      .progress-ball {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: lightgray;
+        display: inline-block;
+      }
+      .progress-ball.filled {
+        background-color: #4caf50; /* Green for filled progress */
+      }
+      .progress-ball.empty {
+        background-color: lightgray; /* Gray for empty progress */
+      }
+
+      /* Placeholder for No Data */
+      .no-data {
+        font-size: 0.8em;
+        color: gray;
+      }
+
+
 
       /* ================ The Timeline ================ */
       /* Reset some default styles for better alignment */
@@ -379,18 +439,6 @@ export class CVElement extends LitElement {
         margin-right: 3px;
       }
 
-      .ball-low {
-        background-color: red;
-      }
-
-      .ball-medium {
-        background-color: yellow;
-      }
-
-      .ball-high {
-        background-color: green;
-      }
-
       /////////////////////////////////
 
 
@@ -494,6 +542,32 @@ export class CVElement extends LitElement {
   }
 
 
+// Helper to Render Progress as Stars or Circles
+  renderVisualProgress(percentage: string | number | undefined) {
+    if (!percentage || typeof percentage !== 'number') {
+      return html`<span class="no-data">No data</span>`;
+    }
+
+    const filled = Math.round(percentage / 10); // Convert to a scale of 10
+    const empty = 10 - filled;
+
+    return html`
+    ${Array(filled)
+      .fill(0)
+      .map(() => html`<span class="progress-ball filled"></span>`)}
+    ${Array(empty)
+      .fill(0)
+      .map(() => html`<span class="progress-ball empty"></span>`)}
+  `;
+  }
+
+  renderStars(percentage: number | undefined): string {
+    if (typeof percentage !== 'number') return '☆ ☆ ☆ ☆ ☆'; // Default to empty stars
+    const filledStars = Math.round(percentage / 20); // Calculate the number of filled stars
+    return '★ '.repeat(filledStars) + '☆ '.repeat(5 - filledStars); // Combine filled and empty stars
+  }
+
+
   render() {
     return html`
       <div id="cv">
@@ -508,6 +582,8 @@ export class CVElement extends LitElement {
               <li><a @click=${() => this.scrollToSection(this.skillsSection)}>Skills</a></li>
             </ul>
           </nav>
+
+          <div id="columns">
           <hr>
           <div class="main-divs" id="experience">
             <h2>Experience</h2>
@@ -690,47 +766,36 @@ export class CVElement extends LitElement {
             </ul>
           </div>
           <hr>
-          <!--          <div class="main-divs" id="skills">-->
-          <!--            <h2>Skills</h2>-->
-          <!--            <div id="skills-container"></div>-->
 
-          <!--&lt;!&ndash;            <div id="skillsgrid">&ndash;&gt;-->
-          <!--&lt;!&ndash;              &lt;!&ndash; Skills Items &ndash;&gt;&ndash;&gt;-->
-          <!--&lt;!&ndash;              <div class="skills-category">&ndash;&gt;-->
-          <!--&lt;!&ndash;                <h3>Computer Skills</h3>&ndash;&gt;-->
-          <!--&lt;!&ndash;                <div id="computer-skills"></div>&ndash;&gt;-->
-          <!--&lt;!&ndash;              </div>&ndash;&gt;-->
+            <div class="main-divs" id="education">
 
-          <!--&lt;!&ndash;              <div class="skills-category">&ndash;&gt;-->
-          <!--&lt;!&ndash;                <h3>Programming Languages</h3>&ndash;&gt;-->
-          <!--&lt;!&ndash;                <div id="programming-languages"></div>&ndash;&gt;-->
-          <!--&lt;!&ndash;              </div>&ndash;&gt;-->
 
-          <!--&lt;!&ndash;              <div class="skills-category">&ndash;&gt;-->
-          <!--&lt;!&ndash;                <h3>Real-Life Languages</h3>&ndash;&gt;-->
-          <!--&lt;!&ndash;                <div id="real-life-languages"></div>&ndash;&gt;-->
-          <!--&lt;!&ndash;              </div>&ndash;&gt;-->
-
-          <!--&lt;!&ndash;              <div class="skills-category">&ndash;&gt;-->
-          <!--&lt;!&ndash;                <h3>Other Skills</h3>&ndash;&gt;-->
-          <!--&lt;!&ndash;                <div id="other-skills"></div>&ndash;&gt;-->
-          <!--&lt;!&ndash;              </div>&ndash;&gt;-->
-          <!--            </div>-->
-          <!--          </div>-->
-          <!--      </div>-->
-
-          <h2>Skills</h2>
-
-          <div id="skills-container">
-            ${this.skills?.categories.map((category: { name: string; skills: any[]; }) => html`
+      <h2>Skills</h2>
+      <div id="skills-container">
+      ${this.skills?.categories
+        ? this.skills.categories.map(
+            (category) => html`
               <div class="skills-category">
                 <h3>${category.name}</h3>
-                <ul>
-                  ${category.skills.map(skill => html`
-                    <li>${skill.name} - ${skill.percentage || 'No data'}</li>`)}
+      <ul>
+      ${category.skills.map(
+        (skill) => html`
+          <li>
+            <span>${skill.name}</span>
+      <span class="stars">
+      ${this.renderStars(skill.percentage)}
+      </span>
+      </li>
+        `
+                  )}
                 </ul>
               </div>
-            `)}
+            `
+  )
+  : html`<p>Loading skills...</p>`}
+</div>
+
+          </div>
           </div>
 
     `;
