@@ -59,19 +59,34 @@ export class CVElement extends LitElement {
         align-items: start;
       }
 
-      //#cv, #app {
-      //  justify-content: center;
-      //  width: 100%;
-      //  list-style-type: none;
-      //}
+      #cv {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
-      /* Style the sections */
+      #columns {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        gap: 20px;
+      }
+
+      .main-divs {
+        width: 48%; /* Two columns side-by-side */
+        box-sizing: border-box;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      h2 {
+        text-align: center;
+      }
 
       .main-divs {
         //padding: 1rem;
         //display: flex;
-        flex-direction: column;
-        align-items: center;
 
       }
 
@@ -220,234 +235,280 @@ export class CVElement extends LitElement {
 
 
       /* General Styling */
-      # 'skills-container' {
+
       #skills-container {
         margin: 20px;
       }
-      .skills-category {
-        margin-bottom: 20px;
+
+      .skills-category, .timeline {
+        flex: 1; /* Equal width */
+        margin: 0 10px; /* Add spacing */
       }
+
+      .skills-category ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .skills-category li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 0;
+      }
+
+      .stars {
+        font-size: 1.2em;
+        color: gold;
+      }
+
+      .timeline {
+        /* Example styling for the timeline section */
+        border-left: 2px solid #ccc;
+        padding-left: 20px;
+      }
+
       h3 {
         font-size: 1.2em;
         margin-bottom: 10px;
       }
+
       ul {
         list-style: none;
         padding: 0;
       }
+
       li {
         margin: 10px 0;
         font-size: 1em;
-        display: flex;
+        //display: flex;
         align-items: center;
         justify-content: space-between;
       }
 
 
+    }
+
+    /* Progress Display */
+    .progress-display {
+      display: flex;
+      gap: 4px;
+    }
+
+    .progress-ball {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: lightgray;
+      display: inline-block;
+    }
+
+    .progress-ball.filled {
+      background-color: #4caf50; /* Green for filled progress */
+    }
+
+    .progress-ball.empty {
+      background-color: lightgray; /* Gray for empty progress */
+    }
+
+    /* Placeholder for No Data */
+    .no-data {
+      font-size: 0.8em;
+      color: gray;
+    }
+
+
+    /* ================ The Timeline ================ */
+    /* Reset some default styles for better alignment */
+
+    ul.timeline {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .timeline {
+      position: relative;
+      //width: 660px;
+      margin: 0 auto;
+      margin-top: 20px;
+      padding: 1em 0;
+      display: block;
+      z-index: 1;
 
     }
-      /* Progress Display */
-      .progress-display {
-        display: flex;
-        gap: 4px;
-      }
-      .progress-ball {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background-color: lightgray;
-        display: inline-block;
-      }
-      .progress-ball.filled {
-        background-color: #4caf50; /* Green for filled progress */
-      }
-      .progress-ball.empty {
-        background-color: lightgray; /* Gray for empty progress */
-      }
 
-      /* Placeholder for No Data */
-      .no-data {
-        font-size: 0.8em;
-        color: gray;
-      }
+    .timeline:before {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      content: '';
+      width: 6px;
+      height: 100%;
+      margin-left: -3px;
+      background: rgb(80, 80, 80);
+      background: linear-gradient(to bottom, rgba(80, 80, 80, 0) 0%, rgb(80, 80, 80) 8%, rgb(80, 80, 80) 92%, rgba(80, 80, 80, 0) 100%);
+      z-index: 0;
+    }
+
+    .timeline li:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden;
+    }
+
+    /* ================ flag-wrapper.......... ================ */
+
+    .flag-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      position: relative;
+      z-index: 1; /* Ensure it stays above the description */
+    }
+
+    .flag {
+      width: 100%;
+      height: 60px;
+
+      display: inline;
+      background: rgb(248, 248, 248, 0.12);
+      padding: 10px;
+      border-radius: 5px;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    /* ================ direction-l & -r flag ================ */
+
+    .direction-l {
+      position: relative;
+      width: 50vw;
+      float: left;
+
+      text-align: right;
+    }
+
+    .direction-r {
+      position: relative;
+      width: 50vw;
+      float: right;
+      margin-right: -34px; /* Ball position = 40 px - ball radius = 6px === -34px */
+    }
+
+    .direction-l .flag {
+      box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
+    }
+
+    .direction-r .flag {
+      box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
+    }
 
 
+    /* Ball */
 
-      /* ================ The Timeline ================ */
-      /* Reset some default styles for better alignment */
+    .direction-l .flag:before, .direction-r .flag:before {
+      content: ' ';
+      position: absolute;
+      top: 30px; /* Adjust as needed to control vertical placement */
+      right: 0%; /* Horizontally center along the page's centerline */
+      transform: translateY(-50%); /* Offset to ensure perfect vertical alignment */
 
-      ul.timeline {
-        list-style-type: none;
+      //right: -40px;
+      display: block;
+      width: 12px;
+      height: 12px;
+      //margin-top: -10px;
+      background: #fff;
+      border-radius: 10px;
+      border: 4px solid var(--gold);
+      z-index: 10;
+    }
+
+    .direction-r .flag:before {
+      left: -40px;
+      top: 15px;
+    }
+
+    // Arrow //
+
+    .direction-l .flag:after, .direction-r .flag:after {
+      left: 40px;
+
+      content: "";
+      position: absolute;
+      top: 50%;
+      height: 0;
+      width: 0;
+      margin-top: -8px;
+      border: solid transparent;
+      pointer-events: none;
+    }
+
+    .direction-l .flag:after {
+
+      border-left-color: rgb(248, 248, 248);
+      border-width: 8px;
+    }
+
+    .direction-r .flag:after {
+
+      border-right-color: rgb(248, 248, 248);
+      border-width: 8px;
+    }
+
+    /////////////////////////////////
+
+    .skill-badge {
+      display: flex;
+      align-items: center;
+      margin: 5px 0;
+    }
+
+    .skill-name {
+      margin-right: 10px;
+    }
+
+    .skill-rating {
+      display: flex;
+    }
+
+    .skill-rating .ball {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 3px;
+    }
+
+    /////////////////////////////////
+
+
+    // MEDIA MOBILE /
+    @media (max-width: 768px) {
+
+      main {
         padding: 0;
-        margin: 0;
-      }
-
-      .timeline {
-        position: relative;
-        //width: 660px;
-        margin: 0 auto;
-        margin-top: 20px;
-        padding: 1em 0;
-        display: block;
-        z-index: 1;
-
-      }
-
-      .timeline:before {
-        position: absolute;
-        left: 50%;
-        top: 0;
-        content: '';
-        width: 6px;
-        height: 100%;
-        margin-left: -3px;
-        background: rgb(80, 80, 80);
-        background: linear-gradient(to bottom, rgba(80, 80, 80, 0) 0%, rgb(80, 80, 80) 8%, rgb(80, 80, 80) 92%, rgba(80, 80, 80, 0) 100%);
-        z-index: 0;
-      }
-
-      .timeline li:after {
-        content: "";
-        display: block;
-        height: 0;
-        clear: both;
-        visibility: hidden;
-      }
-
-      /* ================ flag-wrapper.......... ================ */
-
-      .flag-wrapper {
+        padding-right: 0;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
+      !important;
 
-        position: relative;
-        z-index: 1; /* Ensure it stays above the description */
       }
 
-      .flag {
-        width: 100%;
-        height: 60px;
-
-        display: inline;
-        background: rgb(248, 248, 248, 0.12);
-        padding: 10px;
-        border-radius: 5px;
-        font-weight: 600;
-        text-align: left;
-      }
-
-      /* ================ direction-l & -r flag ================ */
-
-      .direction-l {
-        position: relative;
-        width: 50vw;
-        float: left;
-
-        text-align: right;
-      }
-
-      .direction-r {
-        position: relative;
-        width: 50vw;
-        float: right;
-        margin-right: -34px; /* Ball position = 40 px - ball radius = 6px === -34px */
-      }
-
-      .direction-l .flag {
-        box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
-      }
-
-      .direction-r .flag {
-        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
-      }
-
-
-      /* Ball */
-
-      .direction-l .flag:before, .direction-r .flag:before {
-        content: ' ';
-        position: absolute;
-        top: 30px; /* Adjust as needed to control vertical placement */
-        right: 0%; /* Horizontally center along the page's centerline */
-        transform: translateY(-50%); /* Offset to ensure perfect vertical alignment */
-
-        //right: -40px;
-        display: block;
-        width: 12px;
-        height: 12px;
-        //margin-top: -10px;
-        background: #fff;
-        border-radius: 10px;
-        border: 4px solid var(--gold);
-        z-index: 10;
-      }
-
-      .direction-r .flag:before {
-        left: -40px;
-        top: 15px;
-      }
-
-      // Arrow //
-
-      .direction-l .flag:after, .direction-r .flag:after {
-        left: 40px;
-
-        content: "";
-        position: absolute;
-        top: 50%;
-        height: 0;
-        width: 0;
-        margin-top: -8px;
-        border: solid transparent;
-        pointer-events: none;
-      }
-
-      .direction-l .flag:after {
-
-        border-left-color: rgb(248, 248, 248);
-        border-width: 8px;
-      }
-
-      .direction-r .flag:after {
-
-        border-right-color: rgb(248, 248, 248);
-        border-width: 8px;
-      }
-
-      /////////////////////////////////
-
-      .skill-badge {
-        display: flex;
-        align-items: center;
-        margin: 5px 0;
-      }
-
-      .skill-name {
-        margin-right: 10px;
-      }
-
-      .skill-rating {
-        display: flex;
-      }
-
-      .skill-rating .ball {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        margin-right: 3px;
-      }
-
-      /////////////////////////////////
-
-
-      // MEDIA MOBILE /
       @media (max-width: 768px) {
+        #columns {
+          flex-direction: column;
+        }
 
-        main {
-          padding: 0;
-          padding-right: 0;
+        .main-divs {
+          width: 80%; /* Full-width for smaller screens */
+        }
+
+        .container {
+          flex-direction: column; /* Stack on smaller screens */
         }
 
         .timeline {
@@ -455,6 +516,7 @@ export class CVElement extends LitElement {
           overflow-x: auto; /* Adds horizontal scrolling */
           flex-direction: row;
         }
+
 
         .timeline-item {
           min-width: 100%; /* Ensure each timeline item takes up full width */
@@ -508,8 +570,6 @@ export class CVElement extends LitElement {
         }
 
       }
-
-
     `];
   }
 
@@ -552,13 +612,13 @@ export class CVElement extends LitElement {
     const empty = 10 - filled;
 
     return html`
-    ${Array(filled)
-      .fill(0)
-      .map(() => html`<span class="progress-ball filled"></span>`)}
-    ${Array(empty)
-      .fill(0)
-      .map(() => html`<span class="progress-ball empty"></span>`)}
-  `;
+      ${Array(filled)
+        .fill(0)
+        .map(() => html`<span class="progress-ball filled"></span>`)}
+      ${Array(empty)
+        .fill(0)
+        .map(() => html`<span class="progress-ball empty"></span>`)}
+    `;
   }
 
   renderStars(percentage: number | undefined): string {
@@ -584,218 +644,218 @@ export class CVElement extends LitElement {
           </nav>
 
           <div id="columns">
-          <hr>
-          <div class="main-divs" id="experience">
-            <h2>Experience</h2>
-            <ul class="timeline">
-              <li>
-                <div class="direction-r">
-                  <div class="flag-wrapper">
-                    <a href="https://www.youtube.com/channel/UCiuD3eNaZ95eSXImp_eSIww" class="flag">Tom
-                      Crown</a>
-                    <span class="time-wrapper"><span class="time">2020 - 2022</span></span>
+            <hr>
+            <div class="main-divs" id="experience">
+              <h2>Experience</h2>
+              <ul class="timeline">
+                <li>
+                  <div class="direction-r">
+                    <div class="flag-wrapper">
+                      <a href="https://www.youtube.com/channel/UCiuD3eNaZ95eSXImp_eSIww" class="flag">Tom
+                        Crown</a>
+                      <span class="time-wrapper"><span class="time">2020 - 2022</span></span>
+                    </div>
+                    <div class="desc">
+                      Video Editing, content creation, image design, moderation, community management.
+                    </div>
                   </div>
-                  <div class="desc">
-                    Video Editing, content creation, image design, moderation, community management.
-                  </div>
-                </div>
-              </li>
+                </li>
 
-              <!-- Experience Item 2 -->
-              <li>
-                <div class="direction-l">
-                  <div class="flag-wrapper">
-                    <a href="https://www.facebook.com/HouseofGentleFrequencies/" class="flag">House of
-                      Gentle Frequencies</a>
-                    <span class="time-wrapper"><span class="time">2020 - 2022</span></span>
+                <!-- Experience Item 2 -->
+                <li>
+                  <div class="direction-l">
+                    <div class="flag-wrapper">
+                      <a href="https://www.facebook.com/HouseofGentleFrequencies/" class="flag">House of
+                        Gentle Frequencies</a>
+                      <span class="time-wrapper"><span class="time">2020 - 2022</span></span>
+                    </div>
+                    <div class="desc">
+                      Safe house for the advocacy of women's health, in the broadest sense.
+                      I hosted, marketed and created and maintained B2B-relations.
+                    </div>
                   </div>
-                  <div class="desc">
-                    Safe house for the advocacy of women's health, in the broadest sense.
-                    I hosted, marketed and created and maintained B2B-relations.
-                  </div>
-                </div>
-              </li>
+                </li>
 
-              <!-- Experience Item -->
-              <li>
-                <div class="direction-r">
-                  <div class="flag-wrapper">
-                    <a href="https://www.teaanddragons.art" class="flag">Tea and Dragons</a>
-                    <span class="time-wrapper"><span class="time">2022 - present</span></span>
+                <!-- Experience Item -->
+                <li>
+                  <div class="direction-r">
+                    <div class="flag-wrapper">
+                      <a href="https://www.teaanddragons.art" class="flag">Tea and Dragons</a>
+                      <span class="time-wrapper"><span class="time">2022 - present</span></span>
+                    </div>
+                    <div class="desc">
+                      Business-to-business sales of craft lemonades in the Benelux area.
+                    </div>
                   </div>
-                  <div class="desc">
-                    Business-to-business sales of craft lemonades in the Benelux area.
-                  </div>
-                </div>
-              </li>
+                </li>
 
-              <!-- Experience Item -->
+                <!-- Experience Item -->
 
-              <li>
-                <div class="direction-l">
-                  <div class="flag-wrapper">
-                    <a href="https://amsterdamsefrisdrankfabriek.nl/" class="flag">A.F.F.</a>
+                <li>
+                  <div class="direction-l">
+                    <div class="flag-wrapper">
+                      <a href="https://amsterdamsefrisdrankfabriek.nl/" class="flag">A.F.F.</a>
 
-                    <span class="time-wrapper"><span class="time">2020 - 2021</span>
+                      <span class="time-wrapper"><span class="time">2020 - 2021</span>
+                    </div>
+                    <div class="desc">
+                      B2B-sales and production of craft lemonades in the Benelux area.
+                    </div>
                   </div>
-                  <div class="desc">
-                    B2B-sales and production of craft lemonades in the Benelux area.
-                  </div>
-                </div>
-              </li>
+                </li>
 
-              <!-- Experience Item 3 -->
-              <li>
-                <div class="direction-r">
-                  <div class="flag-wrapper">
-                    <a href="https://www.instagram.com/reddymaekers/" class="flag">ReddyMaekers</a>
+                <!-- Experience Item 3 -->
+                <li>
+                  <div class="direction-r">
+                    <div class="flag-wrapper">
+                      <a href="https://www.instagram.com/reddymaekers/" class="flag">ReddyMaekers</a>
 
-                    <span class="time-wrapper"><span class="time">2014 - 2019</span>
+                      <span class="time-wrapper"><span class="time">2014 - 2019</span>
+                    </div>
+                    <div class="desc">
+                      Festival/filmset decors and props, and other customized building assignments/brand
+                      activations.
+                    </div>
                   </div>
-                  <div class="desc">
-                    Festival/filmset decors and props, and other customized building assignments/brand
-                    activations.
-                  </div>
-                </div>
-              </li>
+                </li>
 
-              <!-- Experience Item 4 -->
-              <li>
-                <div class="direction-l">
-                  <div class="flag-wrapper">
-                    <a href="https://nepco.nl/" class="flag">Studio Nepco</a>
+                <!-- Experience Item 4 -->
+                <li>
+                  <div class="direction-l">
+                    <div class="flag-wrapper">
+                      <a href="https://nepco.nl/" class="flag">Studio Nepco</a>
 
-                    <span class="time-wrapper"><span class="time">2015 - 2018</span>
+                      <span class="time-wrapper"><span class="time">2015 - 2018</span>
+                    </div>
+                    <div class="desc">
+                      Pattern design, Foam Modulation, painting, Robotics, Sewing, Film/theatre
+                      Production, Acting.
+                    </div>
                   </div>
-                  <div class="desc">
-                    Pattern design, Foam Modulation, painting, Robotics, Sewing, Film/theatre
-                    Production, Acting.
-                  </div>
-                </div>
-              </li>
+                </li>
 
-              <!-- Experience Item 5 -->
-              <li>
-                <div class="direction-r">
-                  <div class="flag-wrapper">
-                    <a href="https://www.instagram.com/ryan___reddy/" class="flag">Ryan Reddy</a>
-                    <span class="time-wrapper"><span class="time">2015 - 2017</span>
+                <!-- Experience Item 5 -->
+                <li>
+                  <div class="direction-r">
+                    <div class="flag-wrapper">
+                      <a href="https://www.instagram.com/ryan___reddy/" class="flag">Ryan Reddy</a>
+                      <span class="time-wrapper"><span class="time">2015 - 2017</span>
+                    </div>
+                    <div class="desc">
+                      My own art;
+                      Fabrication and design of decors, props, costumes, and special effects.
+                      However performance, theatre, and experience design.
+                    </div>
                   </div>
-                  <div class="desc">
-                    My own art;
-                    Fabrication and design of decors, props, costumes, and special effects.
-                    However performance, theatre, and experience design.
-                  </div>
-                </div>
-              </li>
+                </li>
 
-              <!-- Experience Item 6 -->
-              <li>
-                <div class="direction-l">
-                  <div class="flag-wrapper">
-                    <a href="https://www.jorislaarman.com/" class="flag">Laarman Lab</a>
-                    <span class="time-wrapper"><span class="time">2014 - 2015</span>
+                <!-- Experience Item 6 -->
+                <li>
+                  <div class="direction-l">
+                    <div class="flag-wrapper">
+                      <a href="https://www.jorislaarman.com/" class="flag">Laarman Lab</a>
+                      <span class="time-wrapper"><span class="time">2014 - 2015</span>
+                    </div>
+                    <div class="desc">
+                      Cutting-edge technique, combined with old lore crafts.
+                      CAD design, and modern manufacturing techniques.
+                      The renowned Joris Laarman furniture is shown in galleries and museums all over the
+                      world.
+                    </div>
                   </div>
-                  <div class="desc">
-                    Cutting-edge technique, combined with old lore crafts.
-                    CAD design, and modern manufacturing techniques.
-                    The renowned Joris Laarman furniture is shown in galleries and museums all over the
-                    world.
-                  </div>
-                </div>
-              </li>
+                </li>
 
-              <!-- Experience Item 7 -->
-              <li>
-                <div class="direction-r">
-                  <div class="flag-wrapper">
-                    <a href="https://www.pepperminds.nl/" class="flag">Pepperminds</a>
-                    <span class="time-wrapper"><span class="time">2009 - 2011</span>
+                <!-- Experience Item 7 -->
+                <li>
+                  <div class="direction-r">
+                    <div class="flag-wrapper">
+                      <a href="https://www.pepperminds.nl/" class="flag">Pepperminds</a>
+                      <span class="time-wrapper"><span class="time">2009 - 2011</span>
+                    </div>
+                    <div class="desc">
+                      Door-to-door sales,
+                      coaching and training new staff, management.
+                    </div>
                   </div>
-                  <div class="desc">
-                    Door-to-door sales,
-                    coaching and training new staff, management.
+                </li>
+              </ul>
+            </div>
+            <hr>
+            <div class="main-divs" id="education">
+              <h2>Education</h2>
+              <ul class="timeline" id="experience-list">
+                <!-- Education Item 1 -->
+                <li>
+                  <div class="direction-l">
+                    <div class="flag-wrapper">
+                      <a href="https://www.hu.nl/" class="flag">Utrecht University</a>
+                      <span class="time-wrapper"><span class="time">2021 - 2025</span>
+                    </div>
+                    <div class="desc">
+                      University of Applied Science(HBO) - Computer Science Engineering
+                    </div>
                   </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <hr>
-          <div class="main-divs" id="education">
-            <h2>Education</h2>
-            <ul class="timeline" id="experience-list">
-              <!-- Education Item 1 -->
-              <li>
-                <div class="direction-l">
-                  <div class="flag-wrapper">
-                    <a href="https://www.hu.nl/" class="flag">Utrecht University</a>
-                    <span class="time-wrapper"><span class="time">2021 - 2025</span>
-                  </div>
-                  <div class="desc">
-                    University of Applied Science(HBO) - Computer Science Engineering
-                  </div>
-                </div>
-              </li>
+                </li>
 
-              <!-- Education Item 2 -->
-              <li>
-                <div class="direction-r">
-                  <div class="flag-wrapper">
-                    <a href="https://www.hmcollege.nl/" class="flag">HM College</a>
+                <!-- Education Item 2 -->
+                <li>
+                  <div class="direction-r">
+                    <div class="flag-wrapper">
+                      <a href="https://www.hmcollege.nl/" class="flag">HM College</a>
 
-                    <span class="time-wrapper"><span class="time">2013- 2017</span>
+                      <span class="time-wrapper"><span class="time">2013- 2017</span>
+                    </div>
+                    <div class="desc">
+                      Higher Vocational College (MBO), Furniture Design and Manufacturing
+                    </div>
                   </div>
-                  <div class="desc">
-                    Higher Vocational College (MBO), Furniture Design and Manufacturing
-                  </div>
-                </div>
-              </li>
+                </li>
 
-              <!-- Education Item 3 -->
-              <li>
-                <div class="direction-l">
-                  <div class="flag-wrapper">
-                    <a href="https://ecl.nl/" class="flag">ECL Haarlem</a>
-                    <span class="time-wrapper"><span class="time">2004 - 2009</span>
+                <!-- Education Item 3 -->
+                <li>
+                  <div class="direction-l">
+                    <div class="flag-wrapper">
+                      <a href="https://ecl.nl/" class="flag">ECL Haarlem</a>
+                      <span class="time-wrapper"><span class="time">2004 - 2009</span>
+                    </div>
+                    <div class="desc">
+                      HAVO Nature+Technique, Nature, Physics, Technology, Art
+                    </div>
                   </div>
-                  <div class="desc">
-                    HAVO Nature+Technique, Nature, Physics, Technology, Art
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <hr>
+                </li>
+              </ul>
+            </div>
+            <hr>
 
             <div class="main-divs" id="education">
 
 
-      <h2>Skills</h2>
-      <div id="skills-container">
-      ${this.skills?.categories
-        ? this.skills.categories.map(
-            (category) => html`
-              <div class="skills-category">
-                <h3>${category.name}</h3>
-      <ul>
-      ${category.skills.map(
-        (skill) => html`
-          <li>
-            <span>${skill.name}</span>
-      <span class="stars">
+              <h2>Skills</h2>
+              <div id="skills-container">
+                ${this.skills?.categories
+                  ? this.skills.categories.map(
+                    (category) => html`
+                      <div class="skills-category">
+                        <h3>${category.name}</h3>
+                        <ul>
+                          ${category.skills.map(
+                            (skill) => html`
+                              <li>
+                                <span>${skill.name}</span>
+                                <span class="stars">
       ${this.renderStars(skill.percentage)}
       </span>
-      </li>
-        `
-                  )}
-                </ul>
+                              </li>
+                            `
+                          )}
+                        </ul>
+                      </div>
+                    `
+                  )
+                  : html`<p>Loading skills...</p>`}
               </div>
-            `
-  )
-  : html`<p>Loading skills...</p>`}
-</div>
 
-          </div>
+            </div>
           </div>
 
     `;
