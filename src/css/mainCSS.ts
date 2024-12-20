@@ -45,12 +45,9 @@ export default css`
   }
 
   main {
-    height: 100vh;
-    width: 100%;
-    line-height: normal;
-    display: inline-flex !important;
-    flex-direction: column; /* Stack items vertically */
-    justify-content: center; /* Center items horizontally */
+    //height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
 
   body {
@@ -196,7 +193,7 @@ export default css`
 
   @media (prefers-color-scheme: light) {
     :root {
-      color: var(--light_mode_color);
+      color: var(--light-mode-color);
       background-color: var(--light-mode-background);
     }
 
