@@ -17,8 +17,8 @@
         { "name": "Python", "percentage": 60 },
         { "name": "Java", "percentage": 75 },
         { "name": "HTML, CSS", "percentage": 80 },
-        { "name": "JavaScript", "percentage": 65 },
-        { "name": "TypeScript", "percentage": 55 },
+        { "name": "JavaScript", "percentage": 80 },
+        { "name": "TypeScript", "percentage": 60 },
         { "name": "JUnit", "percentage": 75 },
         { "name": "Cucumber", "percentage": 60 },
         { "name": "PostgreSQL", "percentage": 60 }
@@ -27,8 +27,8 @@
     {
       "name": "Real-Life Languages",
       "skills": [
-        { "name": "English", "percentage": "native-speaker" },
-        { "name": "Dutch", "percentage": "native-speaker" }
+        { "name": "English - native-speaker", "percentage": "90" },
+        { "name": "Dutch - native-speaker", "percentage": "80" }
       ]
     },
     {

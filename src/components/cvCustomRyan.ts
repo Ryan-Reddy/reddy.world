@@ -104,7 +104,7 @@ export class CVElement extends LitElement {
 
         li, ul {
           padding: 0;
-          width: 50vw; /* half WIDTH OF PAGE */
+          width: 45vw; /* +- half WIDTH OF PAGE */
           /*height: 100vh; /* Full height of the viewport */
 
           list-style: none; /* Remove default bullet points if needed */
@@ -163,7 +163,18 @@ export class CVElement extends LitElement {
           height: 60px;
         }
 
+        li {
+          position: relative; /* Ensure li can contain absolutely positioned elements */
+        }
+
         li:hover .time-wrapper {
+          opacity: 1;
+          max-height: 100px; /* Adjust this to suit your content */
+          visibility: visible;
+          transform: translateX(-35px); /* Animate into its natural position */
+        }
+
+        li.active .time-wrapper {
           opacity: 1;
           max-height: 100px; /* Adjust this to suit your content */
           visibility: visible;
@@ -416,11 +427,6 @@ export class CVElement extends LitElement {
           color: gold;
         }
 
-        .timeline {
-          /* Example styling for the timeline section */
-          border-left: 2px solid #ccc;
-          padding-left: 20px;
-        }
 
         h3 {
           font-size: 1.2em;
@@ -506,10 +512,16 @@ export class CVElement extends LitElement {
 
           #columns {
             flex-direction: column;
+            width: 100vw;
+          }
+
+          #left-column, #right-column {
+            max-width: 100%; /* Let each column take up the full width on mobile */
+            width: 100%;
           }
 
           .main-divs {
-            width: 80%; /* Full-width for smaller screens */
+            width: 100vw; /* Full-width for smaller screens */
           }
 
           .container {
@@ -517,27 +529,71 @@ export class CVElement extends LitElement {
           }
 
           .timeline {
-            overflow-x: auto; /* Adds horizontal scrolling */
-            flex-direction: row;
+            //overflow-x: auto; /* Adds horizontal scrolling */
+            //flex-direction: row;
           }
 
           .timeline-item {
             min-width: 100%; /* Ensure each timeline item takes up full width */
           }
-        }
-
-        @media (prefers-color-scheme: dark) {
-          .skill-badge {
-            color: var(--wit);
-            border: var(--silver);
+          body {
+            font-size: 100%; /* Adjust font size for better readability on small screens */
           }
-        }
+
+          /* Adjust list widths for mobile */
+          li, ul {
+            width: 100%; /* Make the list items take up the full width on mobile */
+          }
+          .direction-l .flag {
+            margin-left: 0em;
+      }
+          .flag {
+            width: 30vw;
+            height: 60px;
+            }
+
+          }
+
+          @media (prefers-color-scheme: dark) {
+            .skill-badge {
+              color: var(--wit);
+              border: var(--silver);
+            }
+          }
 
 
-      `];
+`];
   }
 
 
+  // Called when the component is first rendered (connected)
+  connectedCallback() {
+    super.connectedCallback();
+    this.addEventListeners(); // This will run when the element is added to the DOM
+  }
+
+  // Add event listeners for DOM elements
+  private addEventListeners() {
+    // Wait for DOMContentLoaded (even though Lit does it already)
+    document.addEventListener('DOMContentLoaded', () => {
+      const listItems = this.shadowRoot?.querySelectorAll('li'); // Using shadow DOM if you're using LitElement
+
+      listItems?.forEach(item => {
+        item.addEventListener('click', (event: MouseEvent) => {
+          // Only toggle on mobile (e.g., <= 768px)
+          if (window.innerWidth <= 768) {
+            event.preventDefault(); // Prevent default action (link navigation)
+
+            // Toggle the 'active' class to show or hide the time-wrapper
+            const timeWrapper = item.querySelector('.time-wrapper');
+            if (timeWrapper) {
+              item.classList.toggle('active');
+            }
+          }
+        });
+      });
+    });
+  }
   scrollToSection(section: HTMLElement) {
     if (section) {
       section.scrollIntoView({behavior: 'smooth', block: 'start'});
