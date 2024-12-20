@@ -661,8 +661,6 @@ export class CVElement extends LitElement {
               <li><a @click=${() => this.scrollToSection(this.skillsSection)}>Skills</a></li>
             </ul>
           </nav>
-
-              <hr>
           <div id="columns">
             <div class="left-column">
 
@@ -876,9 +874,19 @@ export class CVElement extends LitElement {
                 </div>
 
               </div>
+              <hr>
+              <h3>Projects</h3>
+              <a
+                class="nav-button"
+                href="/ral-contrast-checker"
+                id="contrast-checker-button"
+                aria-label="art"
+              >RAL-contrast</a
+              >
+              <hr>
             </div>
           </div>
-
+          <hr>
     `;
   }
 }

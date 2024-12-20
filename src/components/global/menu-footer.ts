@@ -153,25 +153,17 @@ export class MenuFooter extends LitElement {
       <nav>
         <div lang="en">
           <ul>
-            <li>
-              <a
-                class="nav-button"
-                href="/ral-contrast-checker"
-                id="contrast-checker-button"
-                aria-label="art"
-              >RAL-contrast</a
-              >
-            </li>
-            <li>
-              <a
-                class="nav-button"
-                data-key="nav-btn-friends"
-                href="/friends"
-                id="friends-button"
-                aria-label="Friends"
-              >Friends</a
-              >
-            </li>
+
+<!--            <li>-->
+<!--              <a-->
+<!--                class="nav-button"-->
+<!--                data-key="nav-btn-friends"-->
+<!--                href="/friends"-->
+<!--                id="friends-button"-->
+<!--                aria-label="Friends"-->
+<!--              >Friends</a-->
+<!--              >-->
+<!--            </li>-->
             <li>
               <a
                 class="nav-button"
