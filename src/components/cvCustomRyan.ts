@@ -1,9 +1,11 @@
 import {css, html, LitElement} from 'lit';
-import {customElement, query} from 'lit/decorators.js';
+import {customElement, query, state} from 'lit/decorators.js';
 import mainCSS from '../css/mainCSS';
 import langCSS from '../css/langCSS';
 import WordCloud from 'wordcloud';
 
+
+// @ts-ignore
 /**
  * A custom CV-timeline element.
  *
@@ -18,10 +20,17 @@ export class CVElement extends LitElement {
   @query('#skills') skillsSection!: HTMLElement;
   @query('#word-cloud') wordCloudSection!: HTMLElement;
 
-  constructor() {
-    console.log('constructing')
+  @query('#computer-skills') computerSkillsContainer!: HTMLElement;
+  @query('#skills-container') container: HTMLElement | undefined;
 
+  @state() skills: {
+    categories: Array<{ name: string; skills: Array<{ name: string; percentage?: string | number }> }>
+  } | null = null;
+
+
+  constructor() {
     super();
+    console.log('constructing')
   }
 
   static get styles() {
@@ -347,6 +356,43 @@ export class CVElement extends LitElement {
         border-width: 8px;
       }
 
+      /////////////////////////////////
+
+      .skill-badge {
+        display: flex;
+        align-items: center;
+        margin: 5px 0;
+      }
+
+      .skill-name {
+        margin-right: 10px;
+      }
+
+      .skill-rating {
+        display: flex;
+      }
+
+      .skill-rating .ball {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin-right: 3px;
+      }
+
+      .ball-low {
+        background-color: red;
+      }
+
+      .ball-medium {
+        background-color: yellow;
+      }
+
+      .ball-high {
+        background-color: green;
+      }
+
+      /////////////////////////////////
+
 
       // MEDIA MOBILE /
       @media (max-width: 768px) {
@@ -427,39 +473,26 @@ export class CVElement extends LitElement {
     }
   }
 
-  firstUpdated(changedProperties: any) {
-    let titleEvent = new CustomEvent('title-change', {
-      detail: {
-        message: 'C.V. Ryan van Lil-Reddy'
-      }
+
+  firstUpdated() {
+    const titleEvent = new CustomEvent('title-change', {
+      detail: {message: 'C.V. Ryan van Lil-Reddy'},
     });
     this.dispatchEvent(titleEvent);
-
-    // console.log('firstUpdated')
-    // this.updateWordCLoud();
+    this.loadSkills(); // Load skills when the component is first updated
   }
 
-  updateWordCLoud() {
-    // After the component is rendered, initialize the word cloud
-    const skills: any = [
-      {text: "Test Driven Design", weight: 7},
-      {text: "Object-Oriented Programming", weight: 8},
-      {text: "Software Architecture", weight: 6},
-      {text: "CAD Design", weight: 8.5},
-      {text: "Photoshop", weight: 7.5},
-      {text: "WordPress", weight: 9},
-      {text: "Python", weight: 6},
-      {text: "Java", weight: 7.5},
-      {text: "HTML, CSS", weight: 8},
-      {text: "JavaScript", weight: 6.5},
-      {text: "TypeScript", weight: 5.5}
-    ];
 
-    WordCloud(this.wordCloudSection, skills);
-
-    console.log(this.wordCloudSection.innerText)
-
+  async loadSkills() {
+    try {
+      const response = await fetch('skills.json');
+      this.skills = await response.json();
+      console.log('Skills loaded:', this.skills); // Debugging
+    } catch (error) {
+      console.error('Error loading skills:', error);
+    }
   }
+
 
   render() {
     return html`
@@ -657,110 +690,53 @@ export class CVElement extends LitElement {
             </ul>
           </div>
           <hr>
-          <div class="main-divs" id="skills">
-            <h2>Skills</h2>
-            <br>
-            <div id="skillsgrid">
-              <!-- Skills Items -->
-              <div class="computer-skills">
-                <h3>Computer Skills</h3>
-                <div class="skill-badge" data-percentage="70">
-                  <span class="skill-name"><a href="">Test Driven Design</a></span>
-                </div>
-                <div class="skill-badge" data-percentage="80">
-                  <span class="skill-name"><a href="">Object-Oriented Programming </a></span>
-                </div>
-                <div class="skill-badge" data-percentage="60">
-                  <span class="skill-name"><a href="">Software Architecture</a></span>
-                </div>
-                <div class="skill-badge" data-percentage="85">
-                  <span class="skill-name"><a href="">CAD DESIGN</a></span>
-                </div>
-                <div class="skill-badge" data-percentage="75">
-                  <span class="skill-name"><a href="">Photoshop</a></span>
-                </div>
-                <div class="skill-badge" data-percentage="90">
-                  <span class="skill-name"><a href="">Wordpress</a></span>
-                </div>
+          <!--          <div class="main-divs" id="skills">-->
+          <!--            <h2>Skills</h2>-->
+          <!--            <div id="skills-container"></div>-->
 
-              </div>
-              <hr>
-              <div class="programming-languages">
-                <h3>Programming Languages</h3>
-                <div class="skill-badge" data-percentage="60">
-                  <span class="skill-name"><a href="https://www.python.org/">Python</a></span>
-                </div>
-                <div class="skill-badge" data-percentage="75"><span class="skill-name"><a
-                  href="https://www.java.com/">Java</a></span>
-                </div>
-                <div class="skill-badge" data-percentage="80">
-                  <span class="skill-name"><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML, CSS</a></span>
-                </div>
-                <div class="skill-badge" data-percentage="65">
-                  <span class="skill-name"><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></span>
-                </div>
-                <div class="skill-badge" data-percentage="55">
-                                <span class="skill-name"><a
-                                  href="https://www.typescriptlang.org/docs">TypeScript</a></span>
-                </div>
-                <div class="skill-badge" data-percentage="75">
-                  <span class="skill-name"><a href="https://junit.org/">JUnit</a></span>
-                </div>
-                <div class="skill-badge" data-percentage="60">
-                  <span class="skill-name"><a href="https://cucumber.io/">Cucumber</a></span>
-                </div>
-                <div class="skill-badge" data-percentage="60">
-                  <span class="skill-name"><a href="https://www.postgresql.org/">PostgreSQL</a></span>
-                </div>
-              </div>
+          <!--&lt;!&ndash;            <div id="skillsgrid">&ndash;&gt;-->
+          <!--&lt;!&ndash;              &lt;!&ndash; Skills Items &ndash;&gt;&ndash;&gt;-->
+          <!--&lt;!&ndash;              <div class="skills-category">&ndash;&gt;-->
+          <!--&lt;!&ndash;                <h3>Computer Skills</h3>&ndash;&gt;-->
+          <!--&lt;!&ndash;                <div id="computer-skills"></div>&ndash;&gt;-->
+          <!--&lt;!&ndash;              </div>&ndash;&gt;-->
 
-              <div class="real-life-languages">
-                <h3>Real-Life Languages</h3>
+          <!--&lt;!&ndash;              <div class="skills-category">&ndash;&gt;-->
+          <!--&lt;!&ndash;                <h3>Programming Languages</h3>&ndash;&gt;-->
+          <!--&lt;!&ndash;                <div id="programming-languages"></div>&ndash;&gt;-->
+          <!--&lt;!&ndash;              </div>&ndash;&gt;-->
+
+          <!--&lt;!&ndash;              <div class="skills-category">&ndash;&gt;-->
+          <!--&lt;!&ndash;                <h3>Real-Life Languages</h3>&ndash;&gt;-->
+          <!--&lt;!&ndash;                <div id="real-life-languages"></div>&ndash;&gt;-->
+          <!--&lt;!&ndash;              </div>&ndash;&gt;-->
+
+          <!--&lt;!&ndash;              <div class="skills-category">&ndash;&gt;-->
+          <!--&lt;!&ndash;                <h3>Other Skills</h3>&ndash;&gt;-->
+          <!--&lt;!&ndash;                <div id="other-skills"></div>&ndash;&gt;-->
+          <!--&lt;!&ndash;              </div>&ndash;&gt;-->
+          <!--            </div>-->
+          <!--          </div>-->
+          <!--      </div>-->
+
+          <h2>Skills</h2>
+
+          <div id="skills-container">
+            ${this.skills?.categories.map((category: { name: string; skills: any[]; }) => html`
+              <div class="skills-category">
+                <h3>${category.name}</h3>
                 <ul>
-                  <li>
-                    <div class="skill-badge" data-percentage="native-speaker">
-                      <span class="skill-name"><a>English</a></span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="skill-badge" data-percentage="native-speaker">
-                      <span class="skill-name"><a>Dutch</a></span>
-                    </div>
-                  </li>
+                  ${category.skills.map(skill => html`
+                    <li>${skill.name} - ${skill.percentage || 'No data'}</li>`)}
                 </ul>
               </div>
+            `)}
+          </div>
 
-              <h2>Skills</h2>
-              <div class="other-skills">
-                <h3>Other Skills</h3>
-                <div class="skill-badge" data-percentage="85">
-                  <span class="skill-name"><a href="">Team Leadership</a></span>
-                </div>
-                <div class="skill-badge" data-percentage="85">
-                  <span class="skill-name"><a href="">Concept Development</a></span>
-                </div>
-                <div class="skill-badge" data-percentage="90">
-                  <span class="skill-name"><a href="">Fine Woodworking</a></span>
-                </div>
-                <div class="skill-badge" data-percentage="90">
-                  <span class="skill-name"><a href="">Set Decoration</a></span>
-                </div>
-                <div class="skill-badge" data-percentage="75">
-                  <span class="skill-name"><a href="">Sewing</a></span>
-                </div>
-                <div class="skill-badge" data-percentage="85">
-                  <span class="skill-name"><a href="">Pattern Design</a></span>
-                </div>
-                <div class="skill-badge" data-percentage="85">
-                  <span class="skill-name"><a href="">Art Direction</a></span>
-                </div>
-              </div>
-            </div>
-        </main>
-      </div>
     `;
   }
-
 }
+
+
+
+
