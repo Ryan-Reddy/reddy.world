@@ -5,7 +5,7 @@ import langCSS from '../css/langCSS';
 import WordCloud from 'wordcloud';
 
 
-// @ts-ignore
+/* @ts-ignore */
 /**
  * A custom CV-timeline element.
  *
@@ -54,8 +54,6 @@ export class CVElement extends LitElement {
         height: 100%;
         display: flex;
         justify-content: center;
-        //padding: 1rem;
-        //width: 100%;
         align-items: start;
       }
 
@@ -67,14 +65,23 @@ export class CVElement extends LitElement {
 
       #columns {
         display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        margin-top: 20px;
-        gap: 20px;
+        gap: 20px; /* Space between columns */
+        overflow: hidden; /* Avoid content overflow */
+      }
+
+      #left-column {
+        flex: 2; /* Larger column for experience/education */
+        min-height: 100%; /* Ensure the left column occupies the full height */
+        max-width: 50vw; /* Ensure the column doesnt cover the screen */
+      }
+
+      #right-column {
+        flex: 1; /* Smaller column for skills */
+        min-height: 100%; /* Ensure the left column occupies the full height */
       }
 
       .main-divs {
-        width: 48%; /* Two columns side-by-side */
+        //width: 48%; /* Two columns side-by-side */
         box-sizing: border-box;
         flex-direction: column;
         align-items: center;
@@ -84,16 +91,10 @@ export class CVElement extends LitElement {
         text-align: center;
       }
 
-      .main-divs {
-        //padding: 1rem;
-        //display: flex;
-
-      }
-
       li, ul {
         padding: 0;
         width: 100vw; /* FUL WIDTH OF PAGE */
-        //height: 100vh; /* Full height of the viewport */
+        /*height: 100vh; /* Full height of the viewport */
 
         list-style: none; /* Remove default bullet points if needed */
         position: relative; /* Ensure the list item can contain positioned children */
@@ -127,7 +128,7 @@ export class CVElement extends LitElement {
         max-width: 50px;
         display: inline;
         line-height: 1em;
-        //font-size: 0.66666em;
+        /*font-size: 0.66666em;*/
         color: var(--gold);
         vertical-align: middle;
       }
@@ -180,9 +181,9 @@ export class CVElement extends LitElement {
       /* ================ Skills and badges.... ================ */
 
       #skills {
-        //box-sizing: border-box;
-        //width: 100%;
-        //max-width: 80%;
+        /*box-sizing: border-box;*/
+        /*width: 100%;*/
+        /*max-width: 80%;*/
       }
 
       #skillsGrid {
@@ -205,12 +206,12 @@ export class CVElement extends LitElement {
         position: relative;
         display: inline-block;
         width: 100%; /* Allow it to fill available space */
-        //max-width: 250px; /* Adjust if necessary */
+        /*max-width: 250px; /* Adjust if necessary */
         margin: 5px;
         padding: 10px;
 
         border-radius: 5px;
-        //box-sizing: border-box;
+        /*box-sizing: border-box;*/
         overflow: hidden;
         word-wrap: break-word; /* Allows long words to break onto the next line */
         overflow-wrap: break-word; /* For better support across browsers */
@@ -254,7 +255,7 @@ export class CVElement extends LitElement {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 5px 0;
+        /*padding: 5px 0;*/
       }
 
       .stars {
@@ -274,14 +275,16 @@ export class CVElement extends LitElement {
       }
 
       ul {
+
         list-style: none;
         padding: 0;
       }
 
       li {
-        margin: 10px 0;
+        margin: 0.5rem 0; /* Optional: Space between items */
+
         font-size: 1em;
-        //display: flex;
+        /*display: flex;*/
         align-items: center;
         justify-content: space-between;
       }
@@ -329,7 +332,7 @@ export class CVElement extends LitElement {
 
     .timeline {
       position: relative;
-      //width: 660px;
+      /*width: 660px;*/
       margin: 0 auto;
       margin-top: 20px;
       padding: 1em 0;
@@ -418,11 +421,11 @@ export class CVElement extends LitElement {
       right: 0%; /* Horizontally center along the page's centerline */
       transform: translateY(-50%); /* Offset to ensure perfect vertical alignment */
 
-      //right: -40px;
+      /*right: -40px;*/
       display: block;
       width: 12px;
       height: 12px;
-      //margin-top: -10px;
+      /*margin-top: -10px;*/
       background: #fff;
       border-radius: 10px;
       border: 4px solid var(--gold);
@@ -434,7 +437,7 @@ export class CVElement extends LitElement {
       top: 15px;
     }
 
-    // Arrow //
+    /* Arrow */
 
     .direction-l .flag:after, .direction-r .flag:after {
       left: 40px;
@@ -461,8 +464,6 @@ export class CVElement extends LitElement {
       border-width: 8px;
     }
 
-    /////////////////////////////////
-
     .skill-badge {
       display: flex;
       align-items: center;
@@ -484,17 +485,15 @@ export class CVElement extends LitElement {
       margin-right: 3px;
     }
 
-    /////////////////////////////////
+    /**/
 
 
-    // MEDIA MOBILE /
+    /* MEDIA MOBILE */
     @media (max-width: 768px) {
 
       main {
         padding: 0;
-        padding-right: 0;
         display: flex;
-      !important;
 
       }
 
@@ -512,7 +511,6 @@ export class CVElement extends LitElement {
         }
 
         .timeline {
-          //flex-direction: column; /* Stacks timeline items vertically */
           overflow-x: auto; /* Adds horizontal scrolling */
           flex-direction: row;
         }
@@ -534,7 +532,7 @@ export class CVElement extends LitElement {
         }
 
         #skills {
-          //max-width: 80%
+          /*max-width: 80%*/
         }
 
         .computer-skills {
@@ -547,7 +545,7 @@ export class CVElement extends LitElement {
           margin: 10px 0;
         }
 
-        // Reduce the size of elements for mobile
+        /* Reduce the size of elements for mobile */
         .skill-name {
           font-size: 14px; /* Adjust font size for smaller screens */
         }
@@ -570,11 +568,11 @@ export class CVElement extends LitElement {
         }
 
       }
+
     `];
   }
 
 
-  // Function to handle smooth scrolling
   scrollToSection(section: HTMLElement) {
     if (section) {
       section.scrollIntoView({behavior: 'smooth', block: 'start'});
@@ -587,7 +585,7 @@ export class CVElement extends LitElement {
       detail: {message: 'C.V. Ryan van Lil-Reddy'},
     });
     this.dispatchEvent(titleEvent);
-    this.loadSkills(); // Load skills when the component is first updated
+    this.loadSkills(); /* Load skills when the component is first updated*/
   }
 
 
@@ -595,20 +593,20 @@ export class CVElement extends LitElement {
     try {
       const response = await fetch('skills.json');
       this.skills = await response.json();
-      console.log('Skills loaded:', this.skills); // Debugging
+      console.log('Skills loaded:', this.skills); /* Debugging*/
     } catch (error) {
       console.error('Error loading skills:', error);
     }
   }
 
 
-// Helper to Render Progress as Stars or Circles
+/* Helper to Render Progress as Stars or Circles*/
   renderVisualProgress(percentage: string | number | undefined) {
     if (!percentage || typeof percentage !== 'number') {
       return html`<span class="no-data">No data</span>`;
     }
 
-    const filled = Math.round(percentage / 10); // Convert to a scale of 10
+    const filled = Math.round(percentage / 10); /* Convert to a scale of 10*/
     const empty = 10 - filled;
 
     return html`
@@ -621,7 +619,7 @@ export class CVElement extends LitElement {
     `;
   }
 
-  renderStars(percentage: number | undefined): string {
+  renderStars(percentage: string | number | undefined): string {
     if (typeof percentage !== 'number') return '☆ ☆ ☆ ☆ ☆'; // Default to empty stars
     const filledStars = Math.round(percentage / 20); // Calculate the number of filled stars
     return '★ '.repeat(filledStars) + '☆ '.repeat(5 - filledStars); // Combine filled and empty stars
@@ -644,6 +642,8 @@ export class CVElement extends LitElement {
           </nav>
 
           <div id="columns">
+            <div class="left-column">
+
             <hr>
             <div class="main-divs" id="experience">
               <h2>Experience</h2>
@@ -826,8 +826,11 @@ export class CVElement extends LitElement {
               </ul>
             </div>
             <hr>
+            </div>
 
-            <div class="main-divs" id="education">
+              <div id="right-column">
+
+              <div id="main-divs" id="skills">
 
 
               <h2>Skills</h2>
@@ -856,6 +859,7 @@ export class CVElement extends LitElement {
               </div>
 
             </div>
+              </div>
           </div>
 
     `;
