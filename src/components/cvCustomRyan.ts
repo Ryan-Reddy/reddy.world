@@ -17,8 +17,8 @@ export class CVElement extends LitElement {
   @query('#bio') bioSection!: HTMLElement;
   @query('#experience') experienceSection!: HTMLElement;
   @query('#education') educationSection!: HTMLElement;
-  @query('#skills') skillsSection!: HTMLElement;
-  @query('#word-cloud') wordCloudSection!: HTMLElement;
+  @query('#skills-container') skillsSection!: HTMLElement;
+  @query('#projects') projectsSection!: HTMLElement;
 
   @query('#computer-skills') computerSkillsContainer!: HTMLElement;
   @query('#skills-container') container: HTMLElement | undefined;
@@ -668,6 +668,7 @@ export class CVElement extends LitElement {
               <li><a @click=${() => this.scrollToSection(this.experienceSection)}>Experience</a></li>
               <li><a @click=${() => this.scrollToSection(this.educationSection)}>Education</a></li>
               <li><a @click=${() => this.scrollToSection(this.skillsSection)}>Skills</a></li>
+              <li><a @click=${() => this.scrollToSection(this.projectsSection)}>Projects</a></li>
             </ul>
           </nav>
           <div id="columns">
@@ -884,16 +885,19 @@ export class CVElement extends LitElement {
 
               </div>
               <hr>
-              <h3>Projects</h3>
-              <a
-                class="nav-button"
-                href="/ral-contrast-checker"
-                id="contrast-checker-button"
-                aria-label="art"
-              >RAL-contrast</a
-              >
-              <hr>
+              <div id="projects">
+                <h3>Projects</h3>
+                <a
+                  class="nav-button"
+                  href="/ral-contrast-checker"
+                  id="contrast-checker-button"
+                  aria-label="art"
+                >RAL-contrast</a
+                >
+                <hr>
+              </div>
             </div>
+
           </div>
           <hr>
     `;
