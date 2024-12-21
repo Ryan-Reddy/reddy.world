@@ -612,7 +612,9 @@ export class CVElement extends LitElement {
 
   firstUpdated() {
     const titleEvent = new CustomEvent('title-change', {
-      detail: {message: 'C.V. Ryan van Lil-Reddy'},
+      detail: {
+        message: 'C.V. Ryan van Lil-Reddy'
+      },
     });
     this.dispatchEvent(titleEvent);
     this.loadSkills(); /* Load skills when the component is first updated*/
@@ -660,7 +662,7 @@ export class CVElement extends LitElement {
     return html`
       <div id="cv">
         <header>
-          <h1 visibility="hidden">C.V.</h1>
+          <h1>Curriculum Vitae</h1>
         </header>
         <main>
           <nav>

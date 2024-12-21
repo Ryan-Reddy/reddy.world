@@ -64,7 +64,7 @@ export class MenuHeader extends LitElement {
 
       nav ul li a {
         color: var(--wit);
-        font-size: 5vw;
+        font-size: 4vw;
         line-height: 1.2em; /* Adjust the line-height as needed */
         border-radius: 8px;
         text-transform: uppercase;
