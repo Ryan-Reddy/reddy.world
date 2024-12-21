@@ -40,6 +40,46 @@ export class ConnectElement extends LitElement {
           width: 66%;
           height: 2em;
         }
+        .connect-box {
+
+          display: flex; /* Use flexbox for layout */
+          width: 100vw;
+          align-items: center; /* Center content horizontally */
+
+          flex-direction: row; /* Change to row layout on larger screens */
+          justify-content: center; /* Center the menu horizontally */
+        }
+        ul {
+          display: flex; /* Set the list to flexbox */
+          flex-direction: row; /* Stack vertically by default */
+          list-style: none; /* Remove bullet points */
+          padding: 0;
+        }
+
+        li {
+          margin: 0.5em 1em; /* Add spacing between items */
+        }
+
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+
+        @media (max-width: 768px) {
+          .connect-box {
+              flex-direction: column;
+              width: 100vw;
+
+          }
+          li, ul {
+            max-width: 100vw; /* Make the list items take up the full width on mobile */
+          }
+          ul {
+            //display: inline-block;
+            flex-direction: column; /* Stack on smaller screens */
+
+          }
+        }
       `];
   }
 
@@ -47,15 +87,18 @@ export class ConnectElement extends LitElement {
     return html`
 
       <hr>
-      <h2 lang="en">Connect with me</h2>
+      <h2 lang="en">Let's Connect!</h2>
       <br>
 
+      <div class="connect-box">
       <ul>
 
         <li><a href="https://www.linkedin.com/in/ryan-reddy-productions/">LinkedIn</a></li>
         <li><a href="https://github.com/Ryan-Reddy">Github</a></li>
         <li><a href="/contact">Contact Form</a></li>
       </ul>
+
+      </div>
 
     `;
   }
