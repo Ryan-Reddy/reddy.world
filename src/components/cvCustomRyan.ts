@@ -557,7 +557,7 @@ export class CVElement extends LitElement {
             margin-left: 0em;
       }
           .flag {
-            width: 30vw;
+            width: 40vw;
             height: 60px;
             }
 

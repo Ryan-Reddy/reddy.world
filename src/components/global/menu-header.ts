@@ -50,7 +50,6 @@ export class MenuHeader extends LitElement {
         float: left;
         //margin-right: 8em;
         //padding-right: 8em;
-
       }
 
       nav ul li {
@@ -59,7 +58,6 @@ export class MenuHeader extends LitElement {
         margin: 0;
         padding: 0;
         align-items: center;
-
       }
 
       nav ul li a {
