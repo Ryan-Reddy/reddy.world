@@ -3,44 +3,40 @@
     {
       "name": "Computer Skills",
       "skills": [
-        { "name": "Test Driven Design", "percentage": 70 },
+        { "name": "CAD Design", "percentage": 85 },
         { "name": "Object-Oriented Programming", "percentage": 80 },
+        { "name": "Test Driven Design", "percentage": 70 },
         { "name": "Software Architecture", "percentage": 60 },
-        { "name": "CAD DESIGN", "percentage": 85 },
-        { "name": "Photoshop", "percentage": 75 },
-        { "name": "Wordpress", "percentage": 90 }
+        { "name": "Photoshop", "percentage": 75 }
       ]
     },
     {
       "name": "Programming Languages",
       "skills": [
-        { "name": "Python", "percentage": 60 },
-        { "name": "Java", "percentage": 75 },
+        { "name": "Java", "percentage": 85 },
         { "name": "HTML, CSS", "percentage": 80 },
-        { "name": "JavaScript", "percentage": 80 },
-        { "name": "TypeScript", "percentage": 60 },
-        { "name": "JUnit", "percentage": 75 },
-        { "name": "Cucumber", "percentage": 60 },
-        { "name": "PostgreSQL", "percentage": 60 }
+        { "name": "JavaScript/Typescript", "percentage": 75 },
+        { "name": "JUnit/Cucumber", "percentage": 75 },
+        { "name": "SQL", "percentage": 60 },
+        { "name": "Python", "percentage": 60 },
+        { "name": "C#/.net", "percentage": 60 }
       ]
     },
     {
       "name": "Real-Life Languages",
       "skills": [
-        { "name": "English - native-speaker", "percentage": "90" },
-        { "name": "Dutch - native-speaker", "percentage": "80" }
+        { "name": "English - native-speaker", "percentage": 90 },
+        { "name": "Dutch - native-speaker", "percentage": 90 }
       ]
     },
     {
       "name": "Other Skills",
       "skills": [
-        { "name": "Team Leadership", "percentage": 85 },
-        { "name": "Concept Development", "percentage": 85 },
         { "name": "Fine Woodworking", "percentage": 90 },
         { "name": "Set Decoration", "percentage": 90 },
-        { "name": "Sewing", "percentage": 75 },
-        { "name": "Pattern Design", "percentage": 85 },
-        { "name": "Art Direction", "percentage": 85 }
+        { "name": "Team Leadership", "percentage": 85 },
+        { "name": "Concept Development", "percentage": 85 },
+        { "name": "Sewing/Pattern Design", "percentage": 85 }
       ]
     }
   ]
