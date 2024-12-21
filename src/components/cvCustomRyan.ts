@@ -116,12 +116,22 @@ export class CVElement extends LitElement {
         }
 
         .desc {
+          max-width: 30vw;
+          margin-left: -15em;
+
           opacity: 0;
           max-height: 0;
           overflow: hidden;
-          transform: translateY(-20px); /* Start higher for a more dramatic effect */
           visibility: hidden;
           transition: opacity 0.4s cubic-bezier(0.23, 1, 0.32, 1), /* Ease out opacity for smooth fade-in */ max-height 0.4s ease, /* Smooth vertical expansion */ transform 0.4s cubic-bezier(0.23, 1, 0.32, 1); /* Use a spring-like easing curve */
+        }
+
+        .direction-r .desc {
+          margin-left: 15em;
+        }
+
+        .direction-l .desc {
+        //  margin-left: 15em;
         }
 
         li:hover .desc {
@@ -132,7 +142,6 @@ export class CVElement extends LitElement {
           visibility: visible;
           transform: translateY(0); /* Animate into its natural position */
         }
-
 
         .time-wrapper {
           opacity: 0;

@@ -4,7 +4,8 @@ export default css`
   :root {
     font-family: "Adobe Garamond Pro", Garamond, Inter, Avenir, Helvetica, Arial, sans-serif;
     /*font-family: "Helvetica Neue", Helvetica, sans-serif, "Helvetica Roman", Icons;*/
-    font-size: 27.2px;
+
+
     line-height: 1.3;
     font-weight: 500;
     color-scheme: light dark;
@@ -54,6 +55,12 @@ export default css`
     width: 100%;
     height: 100%;
     margin: 0; /* some weird margin: 8px; is inherited from somewhere */
+  }
+
+  p {
+    //padding: 1rem;
+    width: 100%;
+    line-height: 1.5em;
   }
 
   h1 {
