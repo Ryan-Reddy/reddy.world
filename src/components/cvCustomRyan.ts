@@ -131,7 +131,7 @@ export class CVElement extends LitElement {
         }
 
         .direction-l .desc {
-        //  margin-left: 15em;
+          //  margin-left: 15em;
         }
 
         li:hover .desc {
@@ -265,19 +265,20 @@ export class CVElement extends LitElement {
         /* Reset some default styles for better alignment */
 
         ul.timeline {
+          padding: 1em;
+
           display: flex;
           flex-direction: column; /* Ensure items stack vertically */
           list-style-type: none;
           padding: 0;
         }
 
+
         .timeline {
-          /*position: relative;*/
-          /*width: 660px;*/
+          position: relative;
+          list-style-type: none;
 
-
-          margin: 0 auto;
-          margin-top: 20px;
+          margin: 20px auto 0;
           padding: 1em 0;
           display: block;
           z-index: 1;
@@ -303,6 +304,24 @@ export class CVElement extends LitElement {
           height: 0;
           clear: both;
           visibility: hidden;
+        }
+
+        .year-marker {
+          position: absolute;
+          left: -5em; /* Adjust to align the year */
+          top: 0;
+          margin-bottom: 3em;
+          font-size: 2em;
+
+          font-weight: bold;
+          color: #333;
+          text-align: right;
+          width: 2em; /* Adjust for alignment */
+        }
+
+        #year-marker-right {
+          left: 7em;
+
         }
 
         /* ================ flag-wrapper.......... ================ */
@@ -519,6 +538,24 @@ export class CVElement extends LitElement {
             display: flex;
           }
 
+          .timeline {
+            //overflow-x: auto; /* Adds horizontal scrolling */
+            //flex-direction: row;
+            padding: 1em;
+          }
+
+          .timeline-item {
+            min-width: 100%; /* Ensure each timeline item takes up full width */
+          }
+
+          body {
+            font-size: 100%; /* Adjust font size for better readability on small screens */
+          }
+          .year-marker {
+            left: 2em;
+          }
+
+
           #columns {
             flex-direction: column;
             width: 100vw;
@@ -537,41 +574,32 @@ export class CVElement extends LitElement {
             flex-direction: column; /* Stack on smaller screens */
           }
 
-          .timeline {
-            //overflow-x: auto; /* Adds horizontal scrolling */
-            //flex-direction: row;
-          }
-
-          .timeline-item {
-            min-width: 100%; /* Ensure each timeline item takes up full width */
-          }
-          body {
-            font-size: 100%; /* Adjust font size for better readability on small screens */
-          }
 
           /* Adjust list widths for mobile */
           li, ul {
             width: 100%; /* Make the list items take up the full width on mobile */
           }
+
           .direction-l .flag {
             margin-left: 0em;
-      }
+          }
+
           .flag {
             width: 40vw;
             height: 60px;
-            }
-
           }
 
-          @media (prefers-color-scheme: dark) {
-            .skill-badge {
-              color: var(--wit);
-              border: var(--silver);
-            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+          .skill-badge {
+            color: var(--wit);
+            border: var(--silver);
           }
+        }
 
 
-`];
+      `];
   }
 
 
@@ -679,6 +707,11 @@ export class CVElement extends LitElement {
               <div class="main-divs" id="experience">
                 <h2>Experience</h2>
                 <ul class="timeline">
+                  <!-- Year Marker -->
+                  <li>
+                    <div class="year-marker">2022</div>
+                  </li>
+
                   <li>
                     <div class="direction-r">
                       <div class="flag-wrapper">
@@ -807,12 +840,22 @@ export class CVElement extends LitElement {
                       </div>
                     </div>
                   </li>
+                  <!-- Year Marker -->
+                  <li>
+                    <div class="year-marker">2009</div>
+                  </li>
+
                 </ul>
               </div>
               <hr>
               <div class="main-divs" id="education">
                 <h2>Education</h2>
                 <ul class="timeline" id="experience-list">
+                  <!-- Year Marker -->
+                  <li>
+                    <div id="year-marker-right" class="year-marker">2025</div>
+                  </li>
+
                   <!-- Education Item 1 -->
                   <li>
                     <div class="direction-l">
@@ -852,10 +895,17 @@ export class CVElement extends LitElement {
                       </div>
                     </div>
                   </li>
+
+                  <!-- Year Marker -->
+                  <li>
+                    <div id="year-marker-right" class="year-marker">2004</div>
+                  </li>
                 </ul>
               </div>
               <hr>
             </div>
+
+
             <div id="right-column">
               <div id="main-divs" id="skills">
 
