@@ -60,9 +60,11 @@ export class BioElement extends LitElement {
 
 
       li {
-        text-align: left;
-        //margin-left: 5rem;
-        margin-top: 0.5rem;
+          text-align: left;
+          //margin-left: 5rem;
+          margin-top: 0.5rem;
+          display: block;
+      }
 
         fr {
           margin-bottom: 1rem;
@@ -125,100 +127,37 @@ export class BioElement extends LitElement {
         </picture>
         <br>
         <hr>
-        <h2>Bio</h2>
-        <p>I'm a software developer based in Amsterdam, Netherlands.<br>
-          Welcome to reddy.world, where I specialize in web <br>
-          development that combines innovation with design excellence. <br>
-          My background encompasses website building, art, design, special effects, and computer science engineering.
-          <br>
-          I create websites that not only look impressive but also perform exceptionally well. <br>
-          <br>
-          I prioritize the perfect balance between artistic creativity and technical precision. <br>
-          With extensive project management experience in various industries, <br>
-          I consistently deliver on time and within budget. <br>
-          My goal is to
-          provide you with a distinctive website that represents your brand and outshines the competition.</p>
+  <h2>Bio</h2>
+  <p>
+    I'm a software developer based in Amsterdam, Netherlands.<br>
+    At reddy.world, I craft innovative websites that blend artistic creativity with technical precision.<br>
+    My diverse background in web development, design, special effects, and computer science ensures high-performing websites that look and function exceptionally well.<br>
+    With extensive project management experience, I deliver on time and within budget, creating distinctive websites that make brands shine.<br>
+  </p>
 
-        <hr>
-        <h2>Side ventures</h2>
+  <hr>
 
-        <p>Beyond my dedication to programming, my interests are as diverse as my
-          professional journey. <br>
-          I've ventured into several entrepreneurial endeavors,
-          including:</p>
-        <ul>
-          <li>
-            <h3>
-              <a href="https://nepco.nl/">Theater Costumes:</a>
-            </h3>
-            <p>
-            Bringing characters to
-            life on stage with unique and captivating costumes.
-            </p>
+  <h2>Side Ventures</h2>
+  <p>
+    Beyond programming, I've explored poured my passion into various entrepreneurial endeavors:
+    <ul>
+      <li><h3><strong><a href="https://nepco.nl/">Theater Costumes</a></strong><br>Creating captivating stage characters.</h3></li>
+      <li><h3><strong><a href="https://reddymaekersproductions.wordpress.com/">Decor and Props</a></strong><br>Crafting immersive environments.</h3></li>
+      <li><h3><strong><a href="https://www.facebook.com/HouseofGentleFrequencies/">Women's Health Advocacy</a></strong><br>Supporting women’s well-being.</h3></li>
+      <li><h3><strong><a href="https://amsterdamsefrisdrankfabriek.nl/">Artisanal Soda Production</a></strong><br>Handcrafted beverages.</h3></li>
+      <li><h3><strong><a href="http://resethealthbar.nl/">Food Stand Management</a></strong><br>Delivering culinary delights.</h3></li>
+    </ul>
+  </p>
 
-          </li>
-          <li>
-            <h3>
-              <a href="https://reddymaekersproductions.wordpress.com/">Decor and Props</a>
-            </h3>
-            <p>
-            Crafting immersive environments and captivating props for various creative
-            projects.
-            </p>
-          </li>
-          <li>
-            <h3>
-              <a href="https://www.facebook.com/HouseofGentleFrequencies/">
-                Women's Health
-                Advocacy
-              </a></h3>
-            <p>
-              Hosting a platform dedicated to women's health, where
-              knowledge and support meet.
-            </p>
-          </li>
-          <li>
-            <h3>
-              <a href="https://amsterdamsefrisdrankfabriek.nl/">Artisanal Soda
-                Production</a>
-            </h3>
-            <p>
-              Creating delightful, handcrafted sodas that tickle the taste
-              buds.
-            </p>
-          </li>
-          <li>
-            <h3>
-              <a href="http://resethealthbar.nl/">
-                Food Stand Management</a>
-            </h3>
-            <p>
-              Serving up
-              culinary delights to satisfy hungry appetites.
-            </p>
-          </li>
-        </ul>
-        <p>
-          <br>
-          Amidst this colorful array of experiences, I always come back to my
-          true passion:
-          <br><br>x
-          Making life better for everyone.
-          <br>
-          My lust for improving the human experience is the driving force behind all my work.</p>
-        <hr>
-        <h2>Be here, now.</h2>
-        <p>If you're interested in delving deeper, please explore my <br>
-          <a href="cv">CV</a> <br>
-          for a comprehensive overview of my accomplishments.
-          <br>
+  <hr>
 
-          For inquiries, potential collaborations, <br>
-          or even just a friendly chat, <br>
-          don't hesitate to reach out to me at <a
-            href="${this._contact}">ryan@reddy.world</a>.<br>
-        </p>
-      </div>
+  <h2>Be Here, Now</h2>
+  <p>
+    Interested in my journey? Check out my <a href="cv">CV</a> for a detailed overview.<br>
+    For collaborations or a friendly chat, reach out at <a href="mailto:ryan@reddy.world">ryan@reddy.world</a>.
+  </p>
+</div>
+
     `;
   }
 }
