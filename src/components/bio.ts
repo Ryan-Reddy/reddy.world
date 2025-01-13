@@ -111,10 +111,12 @@ export class BioElement extends LitElement {
       <div id="bio">
         <div id="titlebox">
           <h1 class="header">Ryan Reddy</h1>
+          <br>
           <p class="undertitle">Artist,
             <br>Product Designer
             <br> and Computer Science Engineer.</p>
         </div>
+        <br>
 
 
         <picture>
@@ -153,7 +155,8 @@ export class BioElement extends LitElement {
 
   <h2>Be Here, Now</h2>
   <p>
-    Interested in my journey? Check out my <a href="cv">CV</a> for a detailed overview.<br>
+    Interested in my journey?           <br>
+    Check out my <a href="cv">Curriculum Vitae</a> for a detailed overview.<br>
     For collaborations or a friendly chat, reach out at <a href="mailto:ryan@reddy.world">ryan@reddy.world</a>.
   </p>
 </div>
