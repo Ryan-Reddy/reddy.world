@@ -87,11 +87,12 @@ export class ConnectElement extends LitElement {
     return html`
 
       <hr>
-      <h2 lang="en">Let's Connect!</h2>
-      <br>
+<!--      <h2 lang="en">Let's Connect!</h2>-->
+<!--      <br>-->
 
       <div class="connect-box">
       <ul>
+        <li><a class="nav-button" href="/portfolio" id="portfolio">Portfolio</a></li>
 
         <li><a href="https://www.linkedin.com/in/ryan-reddy-productions/">LinkedIn</a></li>
         <li><a href="https://github.com/Ryan-Reddy">Github</a></li>

@@ -302,6 +302,12 @@ export class MenuHeader extends LitElement {
               @click="${this._hideDropDown}">
               <li><a class="nav-button-dropdown" href="/bio" id="bio">Bio</a></li>
               <li><a class="nav-button-dropdown" href="/cv" id="cv">CV</a></li>
+              <li><a class="nav-button" href="/portfolio" id="portfolio">Portfolio</a></li>
+              <br>
+              <li><a class="nav-button" href="/contact" id="cv">Contact</a></li>
+              <br>
+              <li><a href="https://www.linkedin.com/in/ryan-reddy-productions/">LinkedIn</a></li>
+              <li><a href="https://github.com/Ryan-Reddy">Github</a></li>
             </ul>
           </div>
         </nav>
