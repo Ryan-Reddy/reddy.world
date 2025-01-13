@@ -71,13 +71,13 @@ export default css`
 
   h2 {
     margin-top: 1rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
 
   }
 
   h3 {
     margin-top: .5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
   }
 
   p {

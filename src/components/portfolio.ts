@@ -79,14 +79,10 @@ export class PortfolioElement extends LitElement {
       </head>
 
       <div>
-        <h1>Portfolio</h1>
-
-        <hr />
-
-        <h2>Software Projects</h2>
+        <h1>Software Projects</h1>
         <ul>
           <li>
-            <strong>Wanderzeit:</strong>
+            <h2>Wanderzeit:</h2>
             <p>
               A walking app for hosting or joining walks, focusing on clean, user-friendly design.
             </p>
@@ -96,7 +92,18 @@ export class PortfolioElement extends LitElement {
             </p>
           </li>
           <li>
-            <strong>RAL Contrast Checker:</strong>
+            <h2>KPN Mobility Dashboard:</h2>
+            <p>
+              A functional dashboard app for visualizing and collecting CO2 mobility data of employees. Features include interactive visualizations and data collection tools.
+            </p>
+              <p>Login: ryan@reddy.world</p>
+              <p>Password: password</p>
+            <p>
+              <a href="https://kpn-vs-co2.web.app/" class="nav-button" aria-label="KPN Mobility Dashboard">View Project</a>
+            </p>
+          </li>
+          <li>
+            <h2>RAL Contrast Checker:</h2>
             <p>
               A tool for designers and architects to evaluate RAL color contrasts for accessibility.
             </p>
@@ -105,7 +112,7 @@ export class PortfolioElement extends LitElement {
             </p>
           </li>
           <li>
-            <strong>Archive Trawler:</strong>
+            <h2>Archive Trawler:</h2>
             <p>
               A search tool that integrates multiple APIs into one interface with exportable results.
             </p>
@@ -113,22 +120,11 @@ export class PortfolioElement extends LitElement {
               <a href="/archive-trawler" class="nav-button" aria-label="Archive Trawler Project">View Project</a>
             </p>
           </li>
-          <li>
-            <strong>KPN Mobility Dashboard:</strong>
-            <p>
-              A dashboard app for visualizing and collecting CO2 mobility data of employees.
-            </p>
-            <p>
-              <a href="https://kpn-vs-co2.web.app/" class="nav-button" aria-label="KPN Mobility Dashboard">View Project</a>
-              <br>
-              <strong>Demo:</strong> Login: ryan@reddy.world | Password: password
-            </p>
-          </li>
         </ul>
 
         <hr />
 
-        <h2>Art</h2>
+        <h1>Art</h1>
         <p>These are design and art companies I have managed and contributed to:</p>
         <ul>
           <li><a href="http://www.nepco.nl/" target="_blank">Costumes for Theatre</a></li>
