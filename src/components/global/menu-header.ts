@@ -102,7 +102,8 @@ export class MenuHeader extends LitElement {
         opacity: 1 !important;
         position: absolute !important;
         right: 2em !important;
-        margin: 1rem;
+        padding: 1rem;
+          padding-right: 1em !important;
       }
 
       @keyframes smoothMove {
