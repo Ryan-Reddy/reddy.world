@@ -1,5 +1,5 @@
-import { css, html, LitElement } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import {css, html, LitElement} from 'lit';
+import {customElement} from 'lit/decorators.js';
 import langCSS from "../css/langCSS";
 import mainCSS from "../css/mainCSS";
 
@@ -72,14 +72,14 @@ export class PortfolioElement extends LitElement {
   render() {
     return html`
       <head>
-        <meta charset="UTF-8" />
-        <meta name="description" content="Ryan Reddy's portfolio." />
-        <meta title="Portfolio" />
+        <meta charset="UTF-8"/>
+        <meta name="description" content="Ryan Reddy's portfolio."/>
+        <meta title="Portfolio"/>
         <title>Portfolio</title>
       </head>
 
       <div>
-        <h1>Software Projects</h1>
+        <h1>Software Projects from my Study</h1>
         <ul>
           <li>
             <h2>Wanderzeit:</h2>
@@ -88,18 +88,20 @@ export class PortfolioElement extends LitElement {
             </p>
             <p>
               <a href="https://wanderzeit.nl/" class="nav-button" aria-label="Wanderzeit Project">View Project</a>
-<!--              https://hu-sd-v3inno-fe-2024.github.io/teamopdracht-trailblazers/-->
+              <!--              https://hu-sd-v3inno-fe-2024.github.io/teamopdracht-trailblazers/-->
             </p>
           </li>
           <li>
             <h2>KPN Mobility Dashboard:</h2>
             <p>
-              A functional dashboard app for visualizing and collecting CO2 mobility data of employees. Features include interactive visualizations and data collection tools.
+              A functional dashboard app for visualizing and collecting CO2 mobility data of employees. Features include
+              interactive visualizations and data collection tools.
             </p>
-              <p>Login: ryan@reddy.world</p>
-              <p>Password: password</p>
+            <p>Login: ryan@reddy.world</p>
+            <p>Password: password</p>
             <p>
-              <a href="https://kpn-vs-co2.web.app/" class="nav-button" aria-label="KPN Mobility Dashboard">View Project</a>
+              <a href="https://kpn-vs-co2.web.app/" class="nav-button" aria-label="KPN Mobility Dashboard">View
+                Project</a>
             </p>
           </li>
           <li>
@@ -122,13 +124,14 @@ export class PortfolioElement extends LitElement {
           </li>
         </ul>
 
-        <hr />
+        <hr/>
 
         <h1>Art</h1>
         <p>These are design and art companies I have managed and contributed to:</p>
         <ul>
           <li><a href="http://www.nepco.nl/" target="_blank">Costumes for Theatre</a></li>
-          <li><a href="http://www.reddymaekersproductions.wordpress.com/" target="_blank">Decor/Props for Film and Events</a></li>
+          <li><a href="http://www.reddymaekersproductions.wordpress.com/" target="_blank">Decor/Props for Film and
+            Events</a></li>
           <li><a href="http://www.ryanvanlil.wordpress.com" target="_blank">My old Portfolio</a></li>
         </ul>
 

@@ -2,7 +2,6 @@ import {css, html, LitElement} from 'lit';
 import {customElement, query, state} from 'lit/decorators.js';
 import mainCSS from '../css/mainCSS';
 import langCSS from '../css/langCSS';
-import WordCloud from 'wordcloud';
 
 
 /* @ts-ignore */
@@ -703,6 +702,63 @@ export class CVElement extends LitElement {
           </nav>
           <div id="columns">
             <div class="left-column">
+              <div class="main-divs" id="education">
+                <h2>Education</h2>
+                <ul class="timeline" id="experience-list">
+                  <!-- Year Marker -->
+                  <li>
+                    <div id="year-marker-right" class="year-marker">2025</div>
+                  </li>
+
+                  <!-- Education Item 1 -->
+                  <li>
+                    <div class="direction-l">
+                      <div class="flag-wrapper">
+                        <a href="https://www.hu.nl/" class="flag">Utrecht University</a>
+                        <span class="time-wrapper"><span class="time">2021 - current</span>
+                      </div>
+                      <div class="desc">
+                        University of Applied Science(HBO) - Computer Science Engineering
+                      </div>
+                    </div>
+                  </li>
+
+                  <!-- Education Item 2 -->
+                  <li>
+                    <div class="direction-r">
+                      <div class="flag-wrapper">
+                        <a href="https://www.hmcollege.nl/" class="flag">HM College</a>
+
+                        <span class="time-wrapper"><span class="time">2013- 2017</span>
+                      </div>
+                      <div class="desc">
+                        Higher Vocational College (MBO), Furniture Design and Manufacturing
+                      </div>
+                    </div>
+                  </li>
+
+                  <!-- Education Item 3 -->
+                  <li>
+                    <div class="direction-l">
+                      <div class="flag-wrapper">
+                        <a href="https://ecl.nl/" class="flag">ECL Haarlem</a>
+                        <span class="time-wrapper"><span class="time">2004 - 2009</span>
+                      </div>
+                      <div class="desc">
+                        HAVO Nature+Technique, Nature, Physics, Technology, Art
+                      </div>
+                    </div>
+                  </li>
+
+                  <!-- Year Marker -->
+                  <li>
+                    <div id="year-marker-right" class="year-marker">2004</div>
+                  </li>
+                </ul>
+              </div>
+              <br>
+              <hr>
+
 
               <div class="main-divs" id="experience">
                 <h2>Experience</h2>
@@ -847,61 +903,7 @@ export class CVElement extends LitElement {
 
                 </ul>
               </div>
-              <hr>
-              <div class="main-divs" id="education">
-                <h2>Education</h2>
-                <ul class="timeline" id="experience-list">
-                  <!-- Year Marker -->
-                  <li>
-                    <div id="year-marker-right" class="year-marker">2025</div>
-                  </li>
-
-                  <!-- Education Item 1 -->
-                  <li>
-                    <div class="direction-l">
-                      <div class="flag-wrapper">
-                        <a href="https://www.hu.nl/" class="flag">Utrecht University</a>
-                        <span class="time-wrapper"><span class="time">2021 - 2025</span>
-                      </div>
-                      <div class="desc">
-                        University of Applied Science(HBO) - Computer Science Engineering
-                      </div>
-                    </div>
-                  </li>
-
-                  <!-- Education Item 2 -->
-                  <li>
-                    <div class="direction-r">
-                      <div class="flag-wrapper">
-                        <a href="https://www.hmcollege.nl/" class="flag">HM College</a>
-
-                        <span class="time-wrapper"><span class="time">2013- 2017</span>
-                      </div>
-                      <div class="desc">
-                        Higher Vocational College (MBO), Furniture Design and Manufacturing
-                      </div>
-                    </div>
-                  </li>
-
-                  <!-- Education Item 3 -->
-                  <li>
-                    <div class="direction-l">
-                      <div class="flag-wrapper">
-                        <a href="https://ecl.nl/" class="flag">ECL Haarlem</a>
-                        <span class="time-wrapper"><span class="time">2004 - 2009</span>
-                      </div>
-                      <div class="desc">
-                        HAVO Nature+Technique, Nature, Physics, Technology, Art
-                      </div>
-                    </div>
-                  </li>
-
-                  <!-- Year Marker -->
-                  <li>
-                    <div id="year-marker-right" class="year-marker">2004</div>
-                  </li>
-                </ul>
-              </div>
+              <br>
               <hr>
             </div>
 
@@ -938,7 +940,7 @@ export class CVElement extends LitElement {
               </div>
               <hr>
               <div id="projects">
-                <h3>Projects</h3>
+                <portfolio-element></portfolio-element>
                 <a
                   class="nav-button"
                   href="/ral-contrast-checker"
@@ -951,6 +953,7 @@ export class CVElement extends LitElement {
             </div>
 
           </div>
+          <br>
           <hr>
     `;
   }
