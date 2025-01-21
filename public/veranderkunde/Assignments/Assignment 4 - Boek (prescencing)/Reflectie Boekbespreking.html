@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Reflectie Boekbespreking.md</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+    <style>
+        /* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+        /*---------------------------------------------------------------------------------------------
+         *  Copyright (c) Microsoft Corporation. All rights reserved.
+         *  Licensed under the MIT License. See License.txt in the project root for license information.
+         *--------------------------------------------------------------------------------------------*/
+
+        body {
+            font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+            font-size: var(--vscode-markdown-font-size, 14px);
+            padding: 0 26px;
+            line-height: var(--vscode-markdown-line-height, 22px);
+            word-wrap: break-word;
+        }
+
+        html, footer, header {
+            font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+            font-size: var(--vscode-markdown-font-size, 14px);
+        }
+
+        #code-csp-warning {
+            position: fixed;
+            top: 0;
+            right: 0;
+            color: white;
+            margin: 16px;
+            text-align: center;
+            font-size: 12px;
+            font-family: sans-serif;
+            background-color: #444444;
+            cursor: pointer;
+            padding: 6px;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, .25);
+        }
+
+        #code-csp-warning:hover {
+            text-decoration: none;
+            background-color: #007acc;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, .25);
+        }
+
+        body.scrollBeyondLastLine {
+            margin-bottom: calc(100vh - 22px);
+        }
+
+        body.showEditorSelection .code-line {
+            position: relative;
+        }
+
+        body.showEditorSelection .code-active-line:before,
+        body.showEditorSelection .code-line:hover:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: -12px;
+            height: 100%;
+        }
+
+        body.showEditorSelection li.code-active-line:before,
+        body.showEditorSelection li.code-line:hover:before {
+            left: -30px;
+        }
+
+        .vscode-light.showEditorSelection .code-active-line:before {
+            border-left: 3px solid rgba(0, 0, 0, 0.15);
+        }
+
+        .vscode-light.showEditorSelection .code-line:hover:before {
+            border-left: 3px solid rgba(0, 0, 0, 0.40);
+        }
+
+        .vscode-light.showEditorSelection .code-line .code-line:hover:before {
+            border-left: none;
+        }
+
+        .vscode-dark.showEditorSelection .code-active-line:before {
+            border-left: 3px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .vscode-dark.showEditorSelection .code-line:hover:before {
+            border-left: 3px solid rgba(255, 255, 255, 0.60);
+        }
+
+        .vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+            border-left: none;
+        }
+
+        .vscode-high-contrast.showEditorSelection .code-active-line:before {
+            border-left: 3px solid rgba(255, 160, 0, 0.7);
+        }
+
+        .vscode-high-contrast.showEditorSelection .code-line:hover:before {
+            border-left: 3px solid rgba(255, 160, 0, 1);
+        }
+
+        .vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+            border-left: none;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        a:focus,
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: 1px solid -webkit-focus-ring-color;
+            outline-offset: -1px;
+        }
+
+        hr {
+            border: 0;
+            height: 2px;
+            border-bottom: 2px solid;
+        }
+
+        h1 {
+            padding-bottom: 0.3em;
+            line-height: 1.2;
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+        }
+
+        h1, h2, h3 {
+            font-weight: normal;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        table > thead > tr > th {
+            text-align: left;
+            border-bottom: 1px solid;
+        }
+
+        table > thead > tr > th,
+        table > thead > tr > td,
+        table > tbody > tr > th,
+        table > tbody > tr > td {
+            padding: 5px 10px;
+        }
+
+        table > tbody > tr + tr > td {
+            border-top: 1px solid;
+        }
+
+        blockquote {
+            margin: 0 7px 0 5px;
+            padding: 0 16px 0 10px;
+            border-left-width: 5px;
+            border-left-style: solid;
+        }
+
+        code {
+            font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+            font-size: 1em;
+            line-height: 1.357em;
+        }
+
+        body.wordWrap pre {
+            white-space: pre-wrap;
+        }
+
+        pre:not(.hljs),
+        pre.hljs code > div {
+            padding: 16px;
+            border-radius: 3px;
+            overflow: auto;
+        }
+
+        pre code {
+            color: var(--vscode-editor-foreground);
+            tab-size: 4;
+        }
+
+        /** Theming */
+
+        .vscode-light pre {
+            background-color: rgba(220, 220, 220, 0.4);
+        }
+
+        .vscode-dark pre {
+            background-color: rgba(10, 10, 10, 0.4);
+        }
+
+        .vscode-high-contrast pre {
+            background-color: rgb(0, 0, 0);
+        }
+
+        .vscode-high-contrast h1 {
+            border-color: rgb(0, 0, 0);
+        }
+
+        .vscode-light table > thead > tr > th {
+            border-color: rgba(0, 0, 0, 0.69);
+        }
+
+        .vscode-dark table > thead > tr > th {
+            border-color: rgba(255, 255, 255, 0.69);
+        }
+
+        .vscode-light h1,
+        .vscode-light hr,
+        .vscode-light table > tbody > tr + tr > td {
+            border-color: rgba(0, 0, 0, 0.18);
+        }
+
+        .vscode-dark h1,
+        .vscode-dark hr,
+        .vscode-dark table > tbody > tr + tr > td {
+            border-color: rgba(255, 255, 255, 0.18);
+        }
+
+    </style>
+
+    <style>
+        /* Tomorrow Theme */
+        /* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+        /* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+        /* Tomorrow Comment */
+        .hljs-comment,
+        .hljs-quote {
+            color: #8e908c;
+        }
+
+        /* Tomorrow Red */
+        .hljs-variable,
+        .hljs-template-variable,
+        .hljs-tag,
+        .hljs-name,
+        .hljs-selector-id,
+        .hljs-selector-class,
+        .hljs-regexp,
+        .hljs-deletion {
+            color: #c82829;
+        }
+
+        /* Tomorrow Orange */
+        .hljs-number,
+        .hljs-built_in,
+        .hljs-builtin-name,
+        .hljs-literal,
+        .hljs-type,
+        .hljs-params,
+        .hljs-meta,
+        .hljs-link {
+            color: #f5871f;
+        }
+
+        /* Tomorrow Yellow */
+        .hljs-attribute {
+            color: #eab700;
+        }
+
+        /* Tomorrow Green */
+        .hljs-string,
+        .hljs-symbol,
+        .hljs-bullet,
+        .hljs-addition {
+            color: #718c00;
+        }
+
+        /* Tomorrow Blue */
+        .hljs-title,
+        .hljs-section {
+            color: #4271ae;
+        }
+
+        /* Tomorrow Purple */
+        .hljs-keyword,
+        .hljs-selector-tag {
+            color: #8959a8;
+        }
+
+        .hljs {
+            display: block;
+            overflow-x: auto;
+            color: #4d4d4c;
+            padding: 0.5em;
+        }
+
+        .hljs-emphasis {
+            font-style: italic;
+        }
+
+        .hljs-strong {
+            font-weight: bold;
+        }
+    </style>
+
+    <style>
+        /*
+         * Custom MD PDF CSS
+         */
+        html, footer, header {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+            padding: 0 12px;
+        }
+
+        pre {
+            background-color: #f8f8f8;
+            border: 1px solid #cccccc;
+            border-radius: 3px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            overflow-wrap: break-word;
+        }
+
+        pre:not(.hljs) {
+            padding: 23px;
+            line-height: 19px;
+        }
+
+        blockquote {
+            background: rgba(127, 127, 127, 0.1);
+            border-color: rgba(0, 122, 204, 0.5);
+        }
+
+        .emoji {
+            height: 1.4em;
+        }
+
+        code {
+            font-size: 14px;
+            line-height: 19px;
+        }
+
+        /* for inline code */
+        :not(pre):not(.hljs) > code {
+            color: #C9AE75; /* Change the old color so it seems less like an error */
+            font-size: inherit;
+        }
+
+        /* Page Break : use <div class="page"/> to insert page break
+        -------------------------------------------------------- */
+        .page {
+            page-break-after: always;
+        }
+
+    </style>
+    <link rel="stylesheet" href="file:///r%3A/2.Travail/1.Enseignement/Cours/_1.Outils/2.Developpement/1.SCSS/main.css"
+          type="text/css">
+    <link rel="stylesheet" href="file:///d%3A/rdaros/Cours/_1.Outils/2.Developpement/1.SCSS/main.css" type="text/css">
+</head>
+
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>Overall Feedback van Annika</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Voldoende, je hebt alle aspecten van de assignment behandeld en het model duidelijk uitgelegd.<br><br>Zorg
+            dat je in je reflectie goed uitlegt waarom op deze manier met dingen omgaan voor jou anders is dan hoe je
+            dat voorheen deed. En let erop dat je de structuur goed vasthoudt. In je beantwoording van de vragen ging je
+            behoorlijk alle kanten op
+        </td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+<h1 id="introductie">Introductie</h1>
+<p>Een van de grootste transities dit semester was het beginnen en uiteindelijk weer het stoppen met roken. Ik wist dat
+    ik diep van binnen echt niet wilde roken, maar toch kon ik het niet stoppen, telkens bezweek ik op het eerste moment
+    dat het moeilijk werd, de gewoonte was gewoon niet te doorbreken.</p>
+<p>Waarom bleef ik dan toch roken, ondanks mijn intentie om te stoppen?</p>
+<p>Door te werken met <strong>Theory U</strong> en <strong>Presencing</strong>, leerde ik dat ik eerst moest
+    vertragen(suspension), reflecteren en luisteren naar mezelf. Met een <strong>open geest, open hart en open
+        wil</strong> werd het duidelijk: het roken was niets meer dan een patroon dat zichzelf voedde. Elke avond stopte
+    ik, gooide ik mijn pakje weg en zwoor ik nooit meer te roken. De volgende ochtend werd ik vol angsten wakker en zat
+    er niets anders op dan toch een pakje te halen. Eenmaal aan het roken, was het goor, niet plezierig en maakte het
+    mij eerder onrustig dan gefocussed. Het echte probleem was dat ik op de automatische piloot leefde.</p>
+<p>Je kan de U verdelen in grofweg 3 kanten,</p>
+<ol>
+    <li>Suspensie (tijd vertragen en de diepte van de U)</li>
+    <li>Diepte (onderkant van de U)</li>
+    <li>De praktijk in brengen (de rechterkant weer omhoog de U)</li>
+</ol>
+<p><img src="theory%20U%20broken%20down/theory%20U%201.png" alt="theory U 1.png"></p>
+<h3 id="hoe-ging-dit-in-zijn-werking">Hoe ging dit in zijn werking?</h3>
+<p><img src="theory%20U%20broken%20down/theory%20U%202.png" alt="theory U 2.png"></p>
+<h4 id="1-suspensie">1. Suspensie</h4>
+<p>Allereerst, het belangrijkste dat ik leerde, was hoe ik mijn gedachten kon pauzeren (<strong>suspensie</strong>) om
+    dan te kunnen reflecteren.<br>
+    In plaats van gelijk die angst in te duiken en dit gevoel te voeden en te vergroten met de verkeerde gedachten, kon
+    ik met behulp van <strong>RET</strong> die onhandige overtuigingen te veranderen naar nieuwe inzichten:</p>
+<ol>
+    <li>
+        <p><strong>“Ik verdien het om te roken.”</strong><br>
+            <em>“Nee, ik verdien het juist om goed voor mezelf te zorgen. Roken past daar niet bij.”</em></p>
+    </li>
+    <li>
+        <p><strong>“Ik kan best nog één dag roken.”</strong><br>
+            <em>“Elk moment telt. Dit moment is onderdeel van een kettingreactie naar mijn vrijheid.”</em></p>
+    </li>
+    <li>
+        <p><strong>“Als ik nu stop, moet ik voor altijd wachten.”</strong><br>
+            <em>“Wachten? Ik ben er al! Door te stoppen leef ik nu al de verandering die ik wil zien.”</em></p>
+    </li>
+</ol>
+<p>Het vertragen van de gedachten en respons voelde in het begin als een onmogelijke taak.<br>
+    Toch merkte ik dat ik er beter in werd.<br>
+    Deze gedachte hielp ook om het te blijven &quot;oefenen&quot;.</p>
+<p>Door deze tijd te nemen en echt even mijn gedachten te bestuderen kwam de verandering in gedrag plotseling
+    vanzelf.</p>
+<h4 id="2-diepste-van-de-u">2. Diepste van de U</h4>
+<p><img src="theory%20U%20broken%20down/theory%20U%203.png" alt="theory U 3.png"></p>
+<p>Toen ik diep in de U zat, confronteerde ik mezelf met de vraag:<br>
+    waarom rook ik eigenlijk?</p>
+<p>Ik nam een beetje een helicopter view en zag gelijk wat ik allang wist,<br>
+    het roken had me niets te bieden, en ik wilde het ook niet.</p>
+<p>De ik die ik ben, rookt niet,<br>
+    en dat had ik al vier jaar zo gevoeld.<br>
+    Maar in dat moment, door die reflectie, zag ik dat roken niets meer was dan een oud patroon<br>
+    dat ik bleef herhalen uit angst en onzekerheid.</p>
+<p>De vraag was dus duidelijk, waarom kon ik nog niet stoppen, ondanks dat ik dit zo diep voelde?</p>
+<p>Ik moest mijn focus leggen op de andere twee zijden van de U: het belichamen en het vertragen.<br>
+    Het patroon van roken voelde ineens los van wie ik werkelijk was, het probleem zat hem in mijn gedachten (die ik zou
+    aanpakken met 1. Suspensie)<br>
+    en mijn gedrag (3.Belichamen)</p>
+<h4 id="3-belichamen">3. Belichamen</h4>
+<p><img src="theory%20U%20broken%20down/theory%20U%204.png" alt="theory U 4.png"></p>
+<p>Door uiteindelijk in het moment zelf te kunnen beslissen<br>
+    dat ik het eigenlijk niet wil en niet nodig heb, voelde het puur euforisch.<br>
+    Die eerste keer was cruciaal;<br>
+    Het gaf me het vertrouwen en de kennis dat het blijkbaar ook anders kon.<br>
+    Hierdoor wist ik gelijk dat ik het eindelijk voor altijd los kon laten;<br>
+    het enige wat ik moest gaan doen was telkens alleen voor het nu nee te zeggen,<br>
+    en die energie was een bron voor een keten aan overwinningen!</p>
+<hr>
+<hr>
+<h2 id="reflectie-waarom-dit-werkte"><strong>Reflectie: Waarom dit werkte</strong></h2>
+<p>Het bijzondere is dat het stoppen met roken niet alleen draaide om wilskracht.<br>
+    Juist het vertragen, het stilzetten van gedachten en ruimte maken voor reflectie maakten het verschil.</p>
+<ul>
+    <li>
+        <p><strong>Theory U</strong> gaf me de tools om het oude los te laten en iets nieuws te laten ontstaan.</p>
+    </li>
+    <li>
+        <p><strong>Presencing</strong> hielp me om de waarheid te zien: roken had geen waarde in mijn leven.</p>
+    </li>
+    <li>
+        <p><strong>RET</strong> zorgde ervoor dat ik de automatische patronen kon doorbreken.</p>
+    </li>
+</ul>
+<p>Eerder schoot ik gelijk in angst en handelde dan vanuit een gevoel van nood en pijn,<br>
+    zonder echt stil te staan bij wat ik voelde of nodig had.</p>
+<p>Toen ik eenmaal de 1e keer echt even stopte en mn gevoel bekeek zonder er op te reageren,<br>
+    ging die trek eigenlijk vanzelf erg gauw weg.</p>
+<p>Nu neem ik bewust tijd om te pauzeren, mijn gedachten te onderzoeken en met compassie naar<br>
+    mezelf te luisteren. Dit is een compleet nieuwe manier van omgaan met uitdagingen.</p>
+<h3 id="grootste-les">Grootste les</h3>
+<p>Het afremmen en het bekijken van je gedachten, is dit blok al een enorm grote revelatie voor mij geweest.<br>
+    Ik ben persoonlijk hoog intelligent, ook emotioneel erg intelligent,<br>
+    en daarnaast heb ik intense chronische ADHD.</p>
+<p>deze combinatie is gevaarlijk omdat ik dus eigenlijk altijd wel of mijn eerste gevoel,<br>
+    danwel mijn eerste gedachten vertrouw.</p>
+<p>Wat voor mij de grootste les is, is dus wel dat ik dit niet hoef te doen.<br>
+    Sterker nog, ik kan er voor kiezen om daar in mee te gaan of zelfs een andere realiteit te gaan leven.</p>
+<hr>
+<h3 id="breder-toepassen"><strong>Breder toepassen</strong></h3>
+<p>Dit proces van <strong>vertragen, reflecteren en omvormen</strong> is niet alleen van toepassing op roken.<br>
+    Ik merk dat ik het kan gebruiken in andere delen van mijn leven, zoals:</p>
+<ul>
+    <li>
+        <p><strong>Stressvolle situaties</strong>: In plaats van direct te reageren, pauzeer ik en kijk ik met een open
+            houding naar de situatie.</p>
+    </li>
+    <li>
+        <p><strong>Gezondere keuzes</strong>: Door bewust te luisteren naar wat ik nodig heb,<br>
+            maak ik betere beslissingen voor mezelf.</p>
+    </li>
+    <li>
+        <p><strong>Samenwerking</strong>: Ik neem meer tijd om te luisteren en anderen ruimte te geven, voordat ik
+            handel. Ook kan ik inzien wanneer een ander de tijd niet neemt, en dit alsnog proberen aan te bieden.</p>
+    </li>
+</ul>
+<hr>
+<h2 id="conclusie"><strong>Conclusie</strong></h2>
+<p>Door de inzichten uit <strong>Theory U</strong>, <strong>Presencing</strong> en <strong>RET</strong> heb ik geleerd
+    om niet alleen mijn gedrag, maar ook mijn gedachten te transformeren. Stoppen met roken werd daardoor meer dan
+    alleen een persoonlijke overwinning: het werd een manier om bewuster te leven, zowel voor mezelf als in mijn
+    samenwerking met anderen.</p>
+
+</body>
+
+</html>
