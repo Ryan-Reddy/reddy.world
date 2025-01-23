@@ -20,6 +20,7 @@ export class MenuHeader extends LitElement {
   @property() siteLogoDescription = 'Be Here Now. - Ram Dass';
   @property() currentPage: string = '';
   @property() _logoBarClickedLink = 'mailto:ryan@reddy.world?subject=Hello, I am here now!';
+  @property() _logoBarClickedLink2 = '/veranderkunde/HOME/index.html';
   @query('.dropdown-menu-div') _dropDownMenuDiv!: HTMLDivElement;
   @query('.dropdown-menu-items') _dropdownMenuItems!: HTMLUListElement;
 
@@ -262,13 +263,16 @@ export class MenuHeader extends LitElement {
     return html`
       <body id="bodyofmenubar">
       <div class="header_bar">
-        <picture>
-          <!-- WebP format for browsers that support it -->
-          <source type="image/webp" srcset="be_here_now/be_here_now-no_outside-SCALED.webp">
+<!--        <a href="">-->
+        <div id="logobox" @click="${this._logoClicked}">
+          <picture>
+            <!-- WebP format for browsers that support it -->
+            <source type="image/webp" srcset="be_here_now/be_here_now-no_outside-SCALED.webp">
 
-          <!-- Fallback PNG image for browsers that do not support WebP -->
-          <img class="nav-logo" src="be_here_now/be_here_now-no_outside-SCALED.png" alt="Be Here Now. - Ram Dass">
-        </picture>
+            <!-- Fallback PNG image for browsers that do not support WebP -->
+            <img class="nav-logo" src="be_here_now/be_here_now-no_outside-SCALED.png" alt="Be Here Now. - Ram Dass">
+          </picture>
+        </div>
 
         <nav>
           <ul name="top-nav-menu">
@@ -316,8 +320,10 @@ export class MenuHeader extends LitElement {
     `;
   }
 
-  logoClicked() {
-    window.open(this._logoBarClickedLink);
+  _logoClicked() {
+    console.log('_logoClicked')
+    // window.open(this._logoBarClickedLink);
+    window.open(this._logoBarClickedLink2);
   }
 
   _showDropDown() {
