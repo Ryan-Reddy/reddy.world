@@ -23,6 +23,7 @@ import './components/ral-contrast';
 import './components/global/not-found';
 import './components/global/lang-picker';
 import './components/blackjack/blackjack';
+import './components/enquete';
 
 const app = document.querySelector('#app');
 export const router = new Router(app);
@@ -86,6 +87,9 @@ router.setRoutes([{
 }, {
   name: 'blackjack-element', // doet niks impliciet
   path: '/blackjack', component: 'blackjack-element',
+}, {
+  name: 'enquete-element', // doet niks impliciet
+  path: '/enquete-domits', component: 'enquete-element',
 },
 
   ////////////////////////////////////////////////////////////////////////
