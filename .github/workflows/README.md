@@ -25,7 +25,7 @@ Triggers on pull requests:
 ### GitHub Secrets
 Add this secret to your GitHub repository settings:
 
-- **`FIREBASE_SERVICE_ACCOUNT_REDDY_WORLD`**: Firebase service account JSON
+- **`FIREBASE_SERVICE_ACCOUNT_GETREDDYWORLD`**: Firebase service account JSON
   
   To create this secret:
   1. Go to [Firebase Console](https://console.firebase.google.com/)
