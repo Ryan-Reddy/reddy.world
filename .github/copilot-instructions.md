@@ -6,26 +6,29 @@
 
 This is a personal portfolio/website built as a single-page application (SPA) with:
 - **Frontend Framework**: Lit Element web components (not React/Vue)
-- **Build Tool**: Vite (root: `src/`, public dir: `public/`)
-- **Routing**: Vaadin Router (`src/vaadin-routing.js`) - client-side only
-- **Styling**: Shared CSS modules imported into each component
+- **Build Tool**: Vite 4.0.5 (root: `src/`, public dir: `public/`)
+- **Routing**: Vaadin Router 1.7.4 (`src/vaadin-routing.js`) - client-side only
+- **Styling**: Shared CSS modules (Lit's `css` tagged template literals)
 
 ### Component Architecture
 
 Every page/feature is a **Lit Element custom element** defined in `src/components/`:
 - Components use `@customElement('element-name')` decorator
 - Each component imports: `import {css, html, LitElement} from 'lit'`
+- Properties use `@property()` decorator for reactive state
 - Routing maps paths to custom element tag names (e.g., `/bio` → `<bio-element>`)
 
 **Critical Pattern**: Components import **two CSS modules** for styling:
 ```typescript
 import langCSS from "../css/langCSS";
-import mainCSS from "../css/mainCSS";
+import mainCSS from "../css/mainCSS"; // or mainCSS-refined
 
 static get styles() {
   return [langCSS, mainCSS, css`...additional styles...`];
 }
 ```
+
+**Why this matters**: The CSS import order determines cascade priority. `langCSS` handles i18n, `mainCSS` provides global design tokens, and inline `css` adds component-specific styles.
 
 ### Brand Identity & Design System
 
@@ -46,25 +49,30 @@ static get styles() {
 
 ## Routing System
 
-**Entry Point**: `src/index.html` loads `src/vaadin-routing.js`
+**Entry Point**: `src/index.html` → loads `src/vaadin-routing.js` → mounts router on `#app` div
 
 Routes are defined in `vaadin-routing.js`:
 ```javascript
+const app = document.querySelector('#app');
+export const router = new Router(app);
+
 router.setRoutes([
-  { path: '/bio', component: 'bio-element' },
-  { path: '/portfolio', component: 'portfolio-element' },
+  { path: '/bio', component: 'bio-element', name: 'bio-element' },
+  { path: '/portfolio', component: 'portfolio-element', name: 'portfolio-element' },
   { path: '/', component: 'bio-element' }, // default landing page
   { path: '(.*)', component: 'not-found-element' } // 404 - MUST BE LAST
 ]);
 ```
 
-**Adding a new route**:
-1. Create component in `src/components/my-page.ts`
-2. Export as custom element: `@customElement('my-page-element')`
-3. Import in `vaadin-routing.js`: `import './components/my-page'`
-4. Add route: `{ path: '/my-page', component: 'my-page-element' }`
+**Adding a new route** (4-step process):
+1. Create component in `src/components/my-page.ts` with `@customElement('my-page-element')`
+2. Import in `vaadin-routing.js`: `import './components/my-page'`
+3. Add route **before** the catch-all `(.*)` route (order matters!)
+4. Optionally add `name` property (currently unused but matches convention)
 
-**Navigation**: Use `<a href="/path">` links - Vaadin Router intercepts and renders client-side
+**Navigation**: Use `<a href="/path">` links - Vaadin Router intercepts clicks and renders client-side without page reload.
+
+**Route Order Critical**: The 404 catch-all `(.*)` MUST be last, otherwise all routes after it will be unreachable.
 
 ## Development Workflow
 
@@ -75,26 +83,25 @@ router.setRoutes([
 ./dev.sh
 ```
 
-This script tries multiple methods:
-1. `npx vite --host` (preferred)
-2. Direct node execution
-3. Falls back to Python HTTP server on port 8080
+This script:
+1. Checks if `node_modules` exists, runs `npm install` if missing
+2. Starts Vite dev server with `npx vite --host`
 
-**DO NOT** run `npm run dev` directly - it fails with file permission errors.
+**DO NOT** run `npm run dev` directly - it may fail with file permission errors on Windows/OneDrive.
 
 ### File Access Issues
 
-OneDrive sync causes permission errors. If you can't read files:
-- Use `cat` or `grep` via terminal instead of `read_file` tool
-- Create new files instead of editing existing ones
-- Use `semantic_search` for code discovery
+OneDrive sync can cause file permission errors. If you encounter read/write failures:
+- Use `cat` or `grep` via terminal instead of file read tools
+- Create new files instead of editing locked ones
+- Use `semantic_search` for code discovery when files are inaccessible
 
-### Building
+### Building for Production
 
 ```bash
 npm run build  # or: npx vite build
 ```
-Output: `dist/` directory
+Output: `dist/` directory ready for deployment
 
 ## Component Patterns
 
@@ -126,13 +133,15 @@ export class MyElement extends LitElement {
 
 ### Global Components
 
-- `src/components/global/menu-header.ts` - Top navigation bar
-- `src/components/global/menu-footer.ts` - Footer
-- `src/components/global/lang-picker.ts` - Language selector
-- `src/components/global/my-listener.ts` - Event listener
-- `src/components/global/my-dispatcher.ts` - Event dispatcher
+Located in `src/components/global/` and imported in `src/index.html`:
+- `menu-header.ts` - Top navigation bar with logo and menu
+- `menu-footer.ts` - Footer with links
+- `lang-picker.ts` - Language selector component
+- `not-found.ts` - 404 error page
+- `my-listener.ts` - Event listener utilities
+- `my-dispatcher.ts` - Event dispatcher utilities
 
-These are imported in `index.html` and available on all pages.
+These components are available on all pages and handle cross-page functionality.
 
 ## Styling Conventions
 
@@ -202,8 +211,9 @@ Cucumber/Gherkin test files exist but may be incomplete:
 
 ### Adding a new page
 1. Create `src/components/my-page.ts` with `@customElement('my-page-element')`
-2. Import in `vaadin-routing.js`
-3. Add route before the catch-all `(.*)`
+2. Import in `vaadin-routing.js`: `import './components/my-page'`
+3. Add route **before** the catch-all `(.*)` route: `{ path: '/my-page', component: 'my-page-element', name: 'my-page-element' }`
+4. Component should import `langCSS` and `mainCSS-refined` (or `mainCSS`)
 
 ### Updating styles globally
 - Edit `src/css/mainCSS-refined.ts` (preferred) or `src/css/mainCSS.ts`
@@ -212,7 +222,8 @@ Cucumber/Gherkin test files exist but may be incomplete:
 ### Adding a new UI component
 - Create in `src/components/ui/my-component.ts`
 - Export from `src/components/ui/index.ts`
-- Follow existing component patterns (gold accent colors, subtle borders)
+- Follow existing component patterns (gold accent colors, subtle borders, elegant transitions)
+- Import `themeTokens` and `baseStyles` instead of langCSS/mainCSS
 
 ## Important Notes
 
@@ -222,3 +233,4 @@ Cucumber/Gherkin test files exist but may be incomplete:
 - **File permissions** - OneDrive causes issues, use workarounds
 - **404 route MUST be last** in `vaadin-routing.js`
 - **No npm commands** directly - use `./dev.sh` script
+- **Vite config**: Root is `src/`, public dir is `public/`, output is `dist/`
