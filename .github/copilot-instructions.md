@@ -103,6 +103,26 @@ npm run build  # or: npx vite build
 ```
 Output: `dist/` directory ready for deployment
 
+### Deployment to Firebase Hosting
+
+**Firebase Configuration**: `firebase.json` deploys from `dist/` directory
+
+**Automated Deployment (GitHub Actions)**:
+- Push to `master` → Automatically builds, tests, and deploys to Firebase Hosting live
+- Pull Requests → Creates preview deployment and runs tests
+- All branches → Runs tests on every push (`.github/workflows/test.yml`)
+
+**Manual Deployment**:
+1. Build the project: `npm run build`
+2. Deploy to Firebase: `firebase deploy --only hosting`
+
+**Branch Strategy**:
+- `master` - Production branch (auto-deploys on push via GitHub Actions)
+- Feature branches - Tested on every push, preview on PR
+- Requires: `FIREBASE_SERVICE_ACCOUNT_REDDY_WORLD` secret in GitHub repository settings
+
+**Note**: Firebase hosting serves from `dist/` with SPA rewrite rules (all routes → `/index.html`)
+
 ## Component Patterns
 
 ### Standard Component Structure
@@ -203,9 +223,35 @@ Files exist but may not be active:
 
 ## Testing
 
-Cucumber/Gherkin test files exist but may be incomplete:
-- `src/test/resources/features/trainer.feature`
-- `step_definitions/MySteps.ts`
+**Test Framework**: Cucumber/Gherkin (BDD approach) with Selenium WebDriver
+
+**Run Tests**:
+```bash
+npm test           # Run all tests
+npm run test:ci    # Run tests with fail-fast for CI
+```
+
+**Test Structure**:
+- Feature files: `src/test/resources/features/*.feature` (Gherkin syntax)
+- Step definitions: `step_definitions/MySteps.ts` (TypeScript implementations)
+- Config: `cucumber-js.conf.js`
+
+**Automated Test Execution**:
+- **Git Hooks** (via Husky):
+  - `pre-commit`: Runs tests before each commit
+  - `pre-push`: Runs build + tests before pushing
+- **CI/CD**:
+  - Tests run on every push to any branch
+  - Tests required to pass before PR merge
+  - Tests run before deployment to Firebase
+
+**Setup Git Hooks** (first time):
+```bash
+npm install        # Installs husky
+npm run prepare    # Sets up git hooks
+```
+
+**Current Status**: Test infrastructure exists with Selenium WebDriver for browser automation. TDD/BDD patterns are configured and enforced via CI/CD.
 
 ## Common Tasks
 

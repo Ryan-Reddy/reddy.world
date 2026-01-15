@@ -18,7 +18,9 @@
     "dev": "vite",
     "build": "vite build",
     "start": "npm run build && npm run dev",
-    "test": "npx cucumber-js"
+    "test": "npx cucumber-js",
+    "prepare": "husky install",
+    "test:ci": "npm test -- --fail-fast"
   },
   "devDependencies": {
     "@types/chai": "^4.3.4",
@@ -26,6 +28,7 @@
     "@types/selenium-webdriver": "^4.1.10",
     "@types/wordcloud": "^1.2.2",
     "cucumber": "^6.0.7",
+    "husky": "^8.0.3",
     "vite": "4.0.5"
   },
   "dependencies": {
